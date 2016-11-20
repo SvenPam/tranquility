@@ -1,0 +1,33 @@
+{
+  "name": "tranquility",
+  "version": "1.0.0",
+  "description": "CMS for Stephen Pammenter's sites.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SvenPam/tranquility.git"
+  },
+  "keywords": [
+    "cms",
+    "umbraco",
+    "stephen",
+    "pammenter"
+  ],
+  "author": "Stephen Pammenter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SvenPam/tranquility/issues"
+  },
+  "homepage": "https://github.com/SvenPam/tranquility#readme",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
