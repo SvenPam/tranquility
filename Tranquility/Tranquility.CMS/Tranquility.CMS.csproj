@@ -303,6 +303,7 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="a\dist\css\ste-pam.min.css" />
     <Content Include="Config\grid.editors.config.js" />
     <Content Include="Config\Lang\cs-CZ.user.xml" />
     <Content Include="Config\Lang\da-DK.user.xml" />
@@ -324,7 +325,7 @@
     <Content Include="Config\Lang\zh-CN.user.xml" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="gulptasks.js" />
+    <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Media\Web.config" />
@@ -354,6 +355,11 @@
     <Content Include="Views\Partials\Grid\Fanoe.cshtml" />
     <Content Include="Views\Partials\MainNavigation.cshtml" />
     <Content Include="Views\TextPage.cshtml" />
+    <Content Include="Views\Partials\HeaderNav.cshtml" />
+    <Content Include="Views\Partials\Grid\Home.cshtml" />
+    <Content Include="package.json" />
+    <Content Include="a\src\styles\ste-pam.scss" />
+    <Content Include="a\dist\css\ste-pam.min.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -381,7 +387,10 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="a\Src\" />
+    <Folder Include="a\dist\img\" />
+    <Folder Include="a\dist\js\" />
+    <Folder Include="a\src\js\" />
+    <Folder Include="a\src\scripts\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>

@@ -2,49 +2,25 @@
 @{ 
     var home = CurrentPage.Site();
 }
-
-@if (home.Children.Where("Visible").Any())
-{
-    @* For each child page under the home node, where the property umbracoNaviHide is not True *@
-    foreach (var childPage in home.Children.Where("Visible"))
-    {   
-        <div class="col-xs-6 col-sm-3">
-            @if (childPage.Children.Where("Visible").Any())
-            {                    
-                <strong>@childPage.Name</strong>
-                @childPages(childPage.Children)
-            }
-        </div>
-    }
-}
-
-<div class="col-xs-6 col-sm-3">
-    <strong>Find us</strong>
-    <ul>
-        <li>
-            <a href="https://twitter.com/umbracoproject" target="_blank">Twitter</a>
-        </li>
-        <li>
-            <a href="https://www.facebook.com/Umbraco" target="_blank">Facebook</a>
-        </li>
-        <li>
-            <a href="http://umbraco.com/?utm_source=core&utm_medium=starterkit&utm_content=topic-link&utm_campaign=fanoe" target="_blank">Umbraco.com</a>
-        </li>
-    </ul>
+<div href="javascript:void(0)" id="mobileMenu" class="menu-mobile"><span class="glyphicon glyphicon-menu-hamburger hidden-lg hidden-md"></span></div>
+<div class="container">
+	<nav class="row">
+		@*@Html.Partial("~/Areas/ste_pam/Views/Shared/_Links.cshtml")*@
+	</nav>
+	<hr />
+	<div class="row">
+		<div class="col-sm-6 col-xs-12">
+			<p>
+				&copy; 2012 - @DateTime.UtcNow.ToLocalTime().Year Stephen Pammenter
+				<a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+					<span style="font: 80% Arial,sans-serif; color:#0783B6;">
+						<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+					</span>
+				</a>
+			</p>
+		</div>
+		<div class="col-sm-6 col-xs-12 text-right">
+			Built using <a href="http://www.asp.net/mvc">ASP.NET MVC</a> and <a href="http://getbootstrap.com">Bootstrap.</a>
+		</div>
+	</div>
 </div>
-
-@helper childPages(dynamic pages)
-{
-    @* Ensure that we have a collection of pages *@
-    if (pages.Any())
-    {
-        <ul>
-            @foreach (var page in pages.Where("Visible"))
-            {
-                <li>
-                    <a href="@page.Url">@page.Name</a>
-                </li>
-            }
-        </ul>
-    }
-}

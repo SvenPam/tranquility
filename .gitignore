@@ -245,4 +245,5 @@ ModelManifest.xml
 .fake/
 
 /Tranquility/Tranquility/connectionString.config
-/Tranquility/Tranquility/App_Data
+/Tranquility/Tranquility/App_Data/**
+/Tranquility/Tranquility.CMS/App_Data/cache/
