@@ -20,31 +20,29 @@ const projectProperties =
 }
 const path = {
 	build: {
-		style: `${projectProperties.assetDirectory + projectProperties.distName}/Styles`,
-		js: `${projectProperties.assetDirectory + projectProperties.distName}/Scripts`,
-		img: `${projectProperties.assetDirectory + projectProperties.distName}/Images`,
-		video: `${projectProperties.assetDirectory + projectProperties.distName}/Videos`,
-		config: `${projectProperties.assetDirectory + projectProperties.distName}`
+		style: `${projectProperties.assetDirectory + projectProperties.sourceName}/Styles`,
+		js: `${projectProperties.assetDirectory + projectProperties.sourceName}/Scripts`,
+		img: `${projectProperties.assetDirectory + projectProperties.sourceName}/Images`,
+		config: `${projectProperties.assetDirectory + projectProperties.sourceName}`
 	},
 	src: {
-		style: `${projectProperties.assetDirectory + projectProperties.sourceName}/css`,
-		js: `${projectProperties.assetDirectory + projectProperties.sourceName}/js`,
-		img: `${projectProperties.assetDirectory + projectProperties.sourceName}/img`,
-		video: `${projectProperties.assetDirectory + projectProperties.sourceName}/vid`,
-		config: `${projectProperties.assetDirectory + projectProperties.sourceName}`
+		style: `${projectProperties.assetDirectory + projectProperties.distName}/css`,
+		js: `${projectProperties.assetDirectory + projectProperties.distName}/js`,
+		img: `${projectProperties.assetDirectory + projectProperties.distName}/img`,
+		config: `${projectProperties.assetDirectory + projectProperties.distName}`
 	},
 	clean: `${projectProperties.assetDirectory + projectProperties.distName}`
 };
 
 gulp.task('default', () => {
-	runSequence('clean', ['styles', 'images', 'scripts', 'externalScripts', 'videos', 'configs']);
+	runSequence('clean', ['styles', 'images', 'scripts', 'externalScripts', 'configs']);
 });
 gulp.task('clean', () =>
 	gulp.src([`${path.clean}/*`, `!${path.build.img}`], { read: false })
         .pipe(clean({ force: true }))
 );
 gulp.task('styles', () =>
-	gulp.src([`${path.src.style}/main.scss`], [`${path.src.style}/main.scss`])
+	gulp.src([`${path.src.style}/ste-pam/main.scss`], [`${path.src.style}/main.scss`])
         .pipe(sourcemaps.init())
         .pipe(changed(path.build.style))
         .pipe(sass().on('error', sass.logError))
@@ -91,11 +89,6 @@ gulp.task('configs', () =>
         .pipe(gulp.dest(path.build.config))
 );
 
-gulp.task('videos', () =>
-	gulp.src(`${path.src.video}/**/**.**`)
-        .pipe(changed(path.build.video))
-        .pipe(gulp.dest(path.build.video))
-);
 gulp.task('watch', () => {
 	gulp.watch(`${path.src.style}/**/*.scss`, ['styles']);
 	gulp.watch(`${path.src.img}/**/**.**`, ['images']);
