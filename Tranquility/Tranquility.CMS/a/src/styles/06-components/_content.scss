@@ -1,0 +1,22 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+.article-body {
+	padding-top: 50px;
+	max-width: 100%;
+	overflow: hidden;
+
+	img {
+		max-width: 100%;
+	}
+}
+
+
+.latest-blog-posts {
+	padding: 50px;
+
+	.media {
+		img {
+			max-width: 100px;
+		}
+	}
+}

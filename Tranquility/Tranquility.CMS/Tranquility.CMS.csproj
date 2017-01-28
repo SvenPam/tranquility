@@ -303,7 +303,6 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
-    <Content Include="a\dist\css\ste-pam.min.css" />
     <Content Include="Config\grid.editors.config.js" />
     <Content Include="Config\Lang\cs-CZ.user.xml" />
     <Content Include="Config\Lang\da-DK.user.xml" />
@@ -359,7 +358,25 @@
     <Content Include="Views\Partials\Grid\Home.cshtml" />
     <Content Include="package.json" />
     <Content Include="a\src\styles\ste-pam.scss" />
-    <Content Include="a\dist\css\ste-pam.min.css.map" />
+    <Content Include="a\src\styles\01-settings\settings.scss" />
+    <Content Include="a\src\styles\02-tools\tools.scss" />
+    <Content Include="a\src\styles\03-generic\generic.scss" />
+    <Content Include="a\src\styles\04-elements\elements.scss" />
+    <Content Include="a\src\styles\05-objects\objects.scss" />
+    <Content Include="a\src\styles\06-components\components.scss" />
+    <Content Include="a\src\styles\07-trumps\trumps.scss" />
+    <Content Include="a\src\scripts\external-references.json" />
+    <Content Include="sasslint-config.json" />
+    <Content Include="a\src\styles\06-components\_hero.scss" />
+    <Content Include="a\src\styles\06-components\_section.scss" />
+    <Content Include="a\src\styles\06-components\_stacks.scss" />
+    <Content Include="a\src\styles\06-components\_social.scss" />
+    <Content Include="a\src\styles\06-components\_mockup.scss" />
+    <Content Include="a\src\styles\06-components\_timeline.scss" />
+    <Content Include="a\src\styles\06-components\_nav.scss" />
+    <Content Include="a\src\styles\06-components\_spinner.scss" />
+    <Content Include="a\src\styles\06-components\_content.scss" />
+    <Content Include="a\src\styles\06-components\_footer.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -387,10 +404,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="a\dist\img\" />
-    <Folder Include="a\dist\js\" />
     <Folder Include="a\src\js\" />
-    <Folder Include="a\src\scripts\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>

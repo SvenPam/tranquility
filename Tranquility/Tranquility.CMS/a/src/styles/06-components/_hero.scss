@@ -1,0 +1,79 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+
+.hero {
+	@include media-breakpoint-up(md) {
+		min-height: 370px;
+	}
+
+	background: none;
+	margin: 0;
+
+	.hero-avatar {
+		margin: 0 auto;
+		display: block;
+		border: $gray-light solid 4px;
+		box-shadow: $black -1px 7px 30px;
+	}
+
+	&.light {
+		color: $white;
+	}
+}
+
+
+.bg-static {
+	background-position: center;
+	background-repeat: repeat;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	bottom: 30%;
+	left: 0;
+	right: 0;
+	z-index: -1;
+
+	&.wilderness {
+		background-image: url('/Areas/ste_pam/Content/Image/nant-gwynant.jpg');
+	}
+
+	&.code {
+		background-image: url('/Areas/ste_pam/Content/Image/code-bg.jpg');
+	}
+
+	&.mountains {
+		background-image: url('/Areas/ste_pam/Content/Image/mountains.jpg');
+	}
+
+	&.glade {
+		background-image: url('/Areas/ste_pam/Content/Image/glade.jpg');
+	}
+
+	&.miru {
+		background-image: url('/Areas/ste_pam/Content/Image/miru.jpg');
+	}
+
+	@include media-breakpoint-down(sm) {
+		bottom: 30%;
+
+		&.wilderness {
+			background-image: url('/Areas/ste_pam/Content/Image/nant-gwynant.jpg?w=300&h=500&mode=crop');
+		}
+
+		&.code {
+			background-image: url('/Areas/ste_pam/Content/Image/code-bg.jpg?w=300&h=500&mode=crop');
+		}
+
+		&.mountains {
+			background-image: url('/Areas/ste_pam/Content/Image/mountains.jpg?w=300&h=500&mode=crop');
+		}
+
+		&.glade {
+			background-image: url('/Areas//ste_pam/Content/Image/glade.jpg?w=300&h=500&mode=crop');
+		}
+
+		&.miru {
+			background-image: url('/Areas/ste_pam/Content/Image/miru.jpg');
+		}
+	}
+}

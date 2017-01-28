@@ -1,0 +1,39 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+.development {
+    .stack {
+        padding: 20px 0;
+        border-right: $gray-dark solid 2px;
+
+        .stack-logo-wrapper {
+            min-height: 182px;
+            padding: 10px;
+
+            .stack-logo {
+                max-width: 100%;
+                width: 100px;
+                display: block;
+                margin: 0 auto;
+                padding-bottom: 20px;
+
+                &.visual-studio, &.sql {
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+
+    .stack:nth-last-child(1) {
+        border-right: none;
+    }
+}
+
+.design {
+    .design-example {
+        img {
+            max-width: 100%;
+        }
+
+        padding: 40px;
+    }
+}

@@ -1,0 +1,98 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+.section-group {
+    > h2 {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .split {
+        padding-top: $grid-gutter-width-base;
+        padding-bottom: $grid-gutter-width-base;
+    }
+
+    > section:nth-child(odd)  {
+        background-color: $gray;
+        color: $white;
+        padding-bottom: 20px;
+
+        .split-sections {
+            padding: 60px;
+
+           @include media-breakpoint-down(sm) {
+                padding: 60px 0;
+            }
+
+            .split:nth-child(odd) {
+                background-color: $gray-light;
+            }
+        }
+    }
+
+    > section:nth-child(even) {
+        background-color: $gray-lighter;
+
+        .split-sections {
+            padding: 60px;
+
+            @include media-breakpoint-down(sm) {
+                padding: 60px 0;
+            }
+
+            .split:nth-child(odd) {
+                background-color: $gray-lightest;
+            }
+        }
+    }
+
+    .icon {
+        display: block;
+        margin: 0 auto;
+        border-radius: 100%;
+        background-color: $white;
+        color: $brand-subtle;
+        font-size: 100px;
+        width: 170px;
+        padding: 25px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 40px;
+            width: 100px;
+            padding: 25px;
+        }
+
+        @include media-breakpoint-between(sm, md) {
+            font-size: 70px;
+            width: 115px;
+            padding: 25px;
+        }
+
+        //Centres the glyphicon cos its really wide for some reason.
+        &.glyphicon-send {
+            padding-left: 0;
+        }
+    }
+
+    .fact {
+        font-size: 9rem;
+        font-family: $headings-font-family;
+        @include media-breakpoint-down(md) {
+            font-size: 6rem;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: 2rem;
+        }
+    }
+
+    .section-intro {
+        padding-bottom: 30px;
+    }
+
+    .section-outro {
+        padding: 150px 0;
+    }
+
+    .section-text {
+        padding-top: 50px;
+    }
+}
