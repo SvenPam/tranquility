@@ -247,3 +247,4 @@ ModelManifest.xml
 /Tranquility/Tranquility/connectionString.config
 App_Data/
 **/a/dist/*
+Thumbs.db
