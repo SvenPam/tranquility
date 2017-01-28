@@ -1,0 +1,25 @@
+﻿{
+  "rules": {
+    "no-ids": 2,
+    "no-duplicate-properties": 2,
+    "no-vendor-prefixes": 2,
+    "no-color-literals": 2,
+    "no-empty-rulesets": 2,
+    "indentation": 0,
+    "final-newline": 0,
+    "force-pseudo-nesting": 0,
+    "property-sort-order": 0,
+    "class-name-format": 0,
+    "placeholder-in-extend": 0,
+    "no-css-comments": 0,
+    "hex-notation": {
+      "style": "uppercase"
+    },
+    "brace-style": {
+      "style": "stroustrup"
+    },
+    "nesting-depth": {
+      "max-depth": "3"
+    }
+  }
+}
