@@ -98,7 +98,8 @@ gulp.task('js', function () {
 
 // Images copy
 gulp.task('img', function () {
-	return gulp.src('**/*.*', { cwd: config.paths.src.images })
+	return gulp.src(`${config.paths.src.images}/**/*.*`)
+		.pipe(changed(config.paths.dist.images))
         .pipe(imagemin())
         .pipe(gulp.dest(config.paths.dist.images));
 });
@@ -129,6 +130,7 @@ gulp.task('build', gulp.series(
 function watch() {
 	gulp.watch(`${config.paths.src.styles}/**/*.scss`, { awaitWriteFinish: true }).on('change', gulp.series('css'));
 	gulp.watch(`${config.paths.src.js}/**/*.js`, { awaitWriteFinish: true }).on('change', gulp.series('js'));
+	gulp.watch(`${config.paths.src.images}/**/*.*`, { awaitWriteFinish: true }).on('change', gulp.series('img'));
 }
 
 /******************************************************
