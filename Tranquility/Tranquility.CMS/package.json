@@ -47,9 +47,9 @@
   "paths": {
     "src": {
       "styles": "./a/src/styles",
-      "scripts": "./a/src/scripts",	
-			"images": "./a/src/images",
-			"externalJs": "./a/src/scripts/external-references.json"
+      "scripts": "./a/src/scripts",
+      "images": "./a/src/images",
+      "externalJs": "./a/src/scripts/external-references.json"
     },
     "dist": {
       "styles": "./a/dist/css",

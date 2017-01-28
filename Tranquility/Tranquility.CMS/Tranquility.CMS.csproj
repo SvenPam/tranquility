@@ -428,6 +428,7 @@
     <Content Include="a\src\styles\06-components\_spinner.scss" />
     <Content Include="a\src\styles\06-components\_content.scss" />
     <Content Include="a\src\styles\06-components\_footer.scss" />
+    <Content Include="a\src\styles\06-components\_icon.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

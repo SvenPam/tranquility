@@ -11,8 +11,8 @@
         padding-bottom: $grid-gutter-width-base;
     }
 
-    > section:nth-child(odd)  {
-        background-color: $gray;
+    > section:nth-child(even)  {
+        background-color: $gray-dark;
         color: $white;
         padding-bottom: 20px;
 
@@ -29,7 +29,7 @@
         }
     }
 
-    > section:nth-child(even) {
+    > section:nth-child(odd) {
         background-color: $gray-lighter;
 
         .split-sections {
@@ -53,6 +53,8 @@
         color: $brand-subtle;
         font-size: 100px;
         width: 170px;
+		height: 170px;
+		fill: $brand-subtle;
         padding: 25px;
 
         @include media-breakpoint-down(md) {

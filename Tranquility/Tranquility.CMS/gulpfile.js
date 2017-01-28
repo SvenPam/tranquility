@@ -7,7 +7,6 @@
 const gulp = require('gulp'),
     config = require('./package.json'),
     changed = require('gulp-changed'),
-    //browserSync = require('browser-sync').create(),
     clean = require('gulp-clean'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
@@ -20,7 +19,7 @@ const gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     babel = require('gulp-babel'),
     sassLintConfig = require('./sasslint-config.json'),
-	externalJS = require('./a/src/scripts/external-references.json');
+	externalJs = require('./a/src/scripts/external-references.json');
 
 // Custom project tasks.
 
@@ -90,11 +89,11 @@ gulp.task('js', function () {
         .pipe(gulp.dest(config.paths.dist.scripts));
 });
 
-//// Copy external frameworks over.
-//gulp.task('external-js', function () {
-//	return gulp.src(externalJs)
-//      .pipe(gulp.dest(resolvePath(config.paths.src.scripts)));
-//});
+// Copy external frameworks over.
+gulp.task('external-js', function () {
+	return gulp.src(externalJs.references)
+      .pipe(gulp.dest(config.paths.dist.scripts));
+});
 
 // Images copy
 gulp.task('img', function () {
@@ -119,7 +118,7 @@ gulp.task('build', gulp.series(
   gulp.parallel(
     'css',
     'js',
-    //'external-js',
+    'external-js',
     'img'
   ),
   function (done) {
