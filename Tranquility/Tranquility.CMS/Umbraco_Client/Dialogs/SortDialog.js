@@ -22,11 +22,11 @@
                     s = s.replace(/\-/g, "/");
                     //all of these basically transform the string into year-month-day since that
                     //is what JS understands when creating a Date object
-                    if (c.dateFormat.indexOf("dd/MM/yyyy") == 0 || c.dateFormat.indexOf("dd-MM-yyyy") == 0 || c.dateFormat.indexOf("dd.MM.yyyy") == 0) {
-                        s = s.replace(/(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{4})/, "$3-$2-$1");
+                    if (c.dateFormat.indexOf("dd/MM/yyyy") == 0 || c.dateFormat.indexOf("dd-MM-yyyy") == 0) {
+                        s = s.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/, "$3-$2-$1");
                     }
-                    else if (c.dateFormat.indexOf("dd/MM/yy") == 0 || c.dateFormat.indexOf("dd-MM-yy") == 0 || c.dateFormat.indexOf("dd.MM.yy") == 0) {
-                        s = s.replace(/(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{2})/, "$3-$2-$1");
+                    else if (c.dateFormat.indexOf("dd/MM/yy") == 0 || c.dateFormat.indexOf("dd-MM-yy") == 0) {
+                        s = s.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2})/, "$3-$2-$1");
                     }
                     else if (c.dateFormat.indexOf("MM/dd/yyyy") == 0 || c.dateFormat.indexOf("MM-dd-yyyy") == 0) {
                         s = s.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/, "$3-$1-$2");
@@ -43,23 +43,24 @@
         },
 
         _saveSort: function() {
-            var rows = $('#sortableNodes tbody tr');
+            var rows = jQuery('#sortableNodes tbody tr');
             var sortOrder = "";
 
             $.each(rows, function () {
                 sortOrder += $(this).attr("id").replace("node_", "") + ",";
             });
 
-            $("#sortingDone").hide();
-            $("#sortArea").hide();
-            $("#loading").show();
-            
+            document.getElementById("sortingDone").style.display = 'none';
+            document.getElementById("sortArea").style.display = 'none';
+
+            document.getElementById("loading").style.display = 'block';
+
             var self = this;
 
             $.ajax({
                 type: "POST",
                 url: self._opts.serviceUrl,
-                data: '{ "ParentId": "' + self._opts.currentId + '", "SortOrder": "' + sortOrder + '"}',
+                data: '{ "ParentId": ' + parseInt(self._opts.currentId) + ', "SortOrder": "' + sortOrder + '"}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function(msg) {
@@ -68,10 +69,9 @@
             });
         },
         
-        _showConfirm: function () {
-            $(".umb-dialog-footer").hide();
-            $("#loading").hide();
-            $("#sortingDone").show();
+        _showConfirm: function() {
+            document.getElementById("loading").style.display = 'none';
+            document.getElementById("sortingDone").style.display = 'block';
             UmbClientMgr.mainTree().reloadActionNode();
         },
 
@@ -101,7 +101,7 @@
             });
             
             //setup the drag/drop sorting
-            $("#sortableNodes").tableDnD({ containment: $("#sortableFrame") });
+            $("#sortableNodes").tableDnD({ containment: jQuery("#sortableFrame") });
             
             //wire up the submit button
             self._opts.submitButton.click(function() {

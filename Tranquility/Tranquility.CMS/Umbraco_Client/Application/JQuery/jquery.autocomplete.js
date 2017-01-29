@@ -429,8 +429,7 @@
             return value.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + term.replace(/([\^\$\(\)\[\]\{\}\*\.\+\?\|\\])/gi, "\\$1") + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
         },
         scroll: true,
-        scrollHeight: 180,
-        focus: function (event, ui) { }
+        scrollHeight: 180
     };
 
     $.Autocompleter.Cache = function(options) {
@@ -600,7 +599,6 @@
                 if (target(event).nodeName && target(event).nodeName.toUpperCase() == 'LI') {
                     active = $("li", list).removeClass(CLASSES.ACTIVE).index(target(event));
                     $(target(event)).addClass(CLASSES.ACTIVE);
-                    options.focus(event, target(event));
                 }
             }).click(function(event) {
                 $(target(event)).addClass(CLASSES.ACTIVE);
@@ -634,8 +632,6 @@
             listItems.slice(active, active + 1).removeClass(CLASSES.ACTIVE);
             movePosition(step);
             var activeItem = listItems.slice(active, active + 1).addClass(CLASSES.ACTIVE);
-            options.focus(null, activeItem);
-
             if (options.scroll) {
                 var offset = 0;
                 listItems.slice(0, active).each(function() {

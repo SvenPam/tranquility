@@ -395,7 +395,6 @@
                 //** THIS IS A MODIFICATION TO JSTREE, IN FIREFOX THE ORIGINAL CONTEXT OF THIS SELECTOR IS LOST IN THE TINY MCE OVERLAY
                 //$("li", this.container.get(0))
                 $("#" + this.container.attr("id") + " li")
-                    //has to be .live, do not change to .on, it doesn't work
 					.live("click", function (event) { // WHEN CLICK IS ON THE ARROW
 					    if (event.target.tagName != "LI") return true;
 					    _this.off_height();
@@ -405,7 +404,6 @@
 					    return false;
 					});
                 $("a", this.container.get(0))
-                    //has to be .live, do not change to .on, it doesn't work
 					.live("click", function (event) { // WHEN CLICK IS ON THE TEXT OR ICON
 					    if (event.which && event.which == 3) return true;
 					    if (_this.locked) {
@@ -419,7 +417,6 @@
 					    event.target.blur();
 					    return false;
 					})
-                    //has to be .live, do not change to .on, it doesn't work
 					.live("dblclick", function (event) { // WHEN DOUBLECLICK ON TEXT OR ICON
 					    if (_this.locked) {
 					        event.preventDefault();
@@ -432,7 +429,6 @@
 					    event.stopPropagation();
 					    event.target.blur();
 					})
-                    //has to be .live, do not change to .on, it doesn't work
 					.live("contextmenu", function (event) {
 					    if (_this.locked) {
 					        event.target.blur();
@@ -440,7 +436,6 @@
 					    }
 					    return _this.callback("onrgtclk", [_this.get_node(event.target).get(0), _this, event]);
 					})
-                    //has to be .live, do not change to .on, it doesn't work
 					.live("mouseover", function (event) {
 					    if (_this.locked) {
 					        event.preventDefault();
@@ -453,7 +448,6 @@
 					    }
 					    _this.callback("onhover", [_this.get_node(event.target).get(0), _this]);
 					})
-                    //has to be .live, do not change to .on, it doesn't work
 					.live("mousedown", function (event) {
 					    if (_this.settings.rules.drag_button == "left" && event.which && event.which != 1) return true;
 					    if (_this.settings.rules.drag_button == "right" && event.which && event.which != 3) return true;

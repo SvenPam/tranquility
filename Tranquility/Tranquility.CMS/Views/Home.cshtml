@@ -2,7 +2,11 @@
 @{
 	Layout = "Master.cshtml";
 }
-<section class="hero mountains">
+
+@CurrentPage.GetGridHtml("content", "home")
+
+
+@*<section class="hero mountains">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -12,9 +16,9 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section>*@
 <div class="section-group">
-	<section>
+	@*<section>
 		<div class="container-fluid split-sections hidden-print">
 			<div class="row">
 				<div class="col-12 col-md-4 split">
@@ -61,7 +65,7 @@
 			</div>
 		</div>
 		<div class="clearfix"></div>
-	</section>
+	</section>*@
 	<section>
 		<div class="container article-body">
 			<div class="row">

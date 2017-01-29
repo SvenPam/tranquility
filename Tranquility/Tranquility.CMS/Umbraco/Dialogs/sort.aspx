@@ -2,7 +2,6 @@
 
 <%@ Import Namespace="System.Globalization" %>
 <%@ Import Namespace="Umbraco.Core.IO" %>
-<%@ Import Namespace="Umbraco.Web" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 <%@ Register TagPrefix="umb" Namespace="ClientDependency.Core.Controls" Assembly="ClientDependency.Core" %>
 
@@ -11,59 +10,55 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="body" runat="server">
-
+    
     <umb:JsInclude ID="JsInclude3" runat="server" FilePath="Dialogs/SortDialog.js" PathNameAlias="UmbracoClient" />
     <umb:JsInclude ID="JsInclude1" runat="server" FilePath="tablesorting/jquery.tablesorter.min.js" PathNameAlias="UmbracoClient" />
     <umb:JsInclude ID="JsInclude2" runat="server" FilePath="tablesorting/tableDragAndDrop.js" PathNameAlias="UmbracoClient" />
 
-    <div class="umb-dialog-body">
-        <cc1:Pane runat="server">
+    <div id="loading" style="display: none;">
+        <div class="notice">
+            <p><%= umbraco.ui.Text("sort", "sortPleaseWait") %></p>
+        </div>
+        <br />
+        <cc1:ProgressBar ID="prog1" runat="server" Title="sorting.." />
+    </div>
 
-          <div id="loading" style="display: none; margin-bottom: 35px;">
-                <div class="notice">
-                    <p><%= umbraco.ui.Text("sort", "sortPleaseWait") %></p>
-                </div>
-                
-                <div class="umb-loader-wrapper">
-                    <cc1:ProgressBar ID="prog1" runat="server" Title="sorting.." />
-                </div>
-            </div>
+    <div id="sortingDone" style="display: none;" class="success">
+        <p>
+            <asp:Literal runat="server" ID="sortDone"></asp:Literal></p>
+        <p>
+            <a href="#" onclick="UmbClientMgr.closeModalWindow()"><%= umbraco.ui.Text("defaultdialogs", "closeThisWindow")%></a>
+        </p>
+    </div>
 
-            <div id="sortingDone" style="display: none;" class="success">
-                <p>
-                    <asp:Literal runat="server" ID="sortDone"></asp:Literal>
-                </p>
-                <p>
-                    <a href="#" onclick="UmbClientMgr.closeModalWindow()"><%= umbraco.ui.Text("defaultdialogs", "closeThisWindow")%></a>
-                </p>
-            </div>
+    <div id="sortArea">
+        <cc1:Pane runat="server" ID="sortPane">
+          
+            <p class="help">
+                <%= umbraco.ui.Text("sort", "sortHelp") %>
+            </p>
 
-            <div id="sortArea">
-                <p class="help">
-                    <%= umbraco.ui.Text("sort", "sortHelp") %>
-                </p>
-
-                <div id="sortableFrame">
-                    <table id="sortableNodes">
-                        <thead>
-                            <tr>
-                                <th style="width: 100%"><%= umbraco.ui.Text("general", "name") %></th>
-                                <th class="nowrap" style="display: <%= HideDateColumn ? "none" : "table-cell" %>;"><%= umbraco.ui.Text("sort", "sortCreationDate") %></th>
-                                <th class="nowrap"><%= umbraco.ui.Text("sort", "sortOrder") %></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <asp:Literal ID="lt_nodes" runat="server" />
-                        </tbody>
-                    </table>
-                </div>
+            <div id="sortableFrame">
+                <table id="sortableNodes">
+                    <thead>
+                        <tr>
+                            <th style="width: 100%">Name</th>
+                            <th class="nowrap">Creation date</th>
+                            <th class="nowrap">Sort order</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <asp:Literal ID="lt_nodes" runat="server" />
+                    </tbody>
+                </table>
             </div>
         </cc1:Pane>
 
-    </div>
-    <div class="umb-dialog-footer btn-toolbar umb-btn-toolbar">
-        <a id="closeWindowButton" href="#" class="btn btn-link"><%=umbraco.ui.Text("general", "cancel", this.getUser())%></a>
-        <input id="submitButton" type="button" class="btn btn-primary" value="<%=umbraco.ui.Text("save") %>" />
+        <br />
+        <p>
+            <input id="submitButton" type="button" value="<%=umbraco.ui.Text("save") %>" />
+            <em>or </em><a id="closeWindowButton" href="#" style="color: blue"><%=umbraco.ui.Text("general", "cancel", this.getUser())%></a>
+        </p>
     </div>
 
     <script type="text/javascript">
@@ -72,10 +67,10 @@
 
             var sortDialog = new Umbraco.Dialogs.SortDialog({
                 submitButton: jQuery("#submitButton"),
-                closeWindowButton: jQuery("#closeWindowButton"),
+                closeWindowButton : jQuery("#closeWindowButton"),
                 dateTimeFormat: "<%=CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern%> <%=CultureInfo.CurrentCulture.DateTimeFormat.ShortTimePattern%>",
-                currentId: "<%=Request.CleanForXss("ID")%>",
-                serviceUrl: "<%= IOHelper.ResolveUrl(SystemDirectories.Umbraco)%>/WebServices/NodeSorter.asmx/UpdateSortOrder?app=<%=Request.CleanForXss("app")%>"
+                currentId: "<%=umbraco.helper.Request("ID")%>",
+                serviceUrl: "<%= IOHelper.ResolveUrl(SystemDirectories.Umbraco)%>/WebServices/NodeSorter.asmx/UpdateSortOrder?app=<%=umbraco.helper.Request("app")%>"
             });
 
             sortDialog.init();

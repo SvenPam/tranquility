@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditRelationType.aspx.cs" Inherits="umbraco.cms.presentation.developer.RelationTypes.EditRelationType" MasterPageFile="../../masterpages/umbracoPage.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditRelationType.aspx.cs" Inherits="umbraco.cms.presentation.developer.RelationTypes.EditRelationType" MasterPageFile="/umbraco/masterpages/umbracoPage.Master" %>
 <%@ Register TagPrefix="umb" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" runat="server">
@@ -28,8 +28,8 @@
         table.relations td.DataType {}
                 
         /* direction icons */
-        table.relations td.parentToChild { background-image: url('../../developer/RelationTypes/Images/ParentToChild.png'); }
-        table.relations td.bidirectional { background-image: url('../../developer/RelationTypes/Images/Bidirectional.png'); }
+        table.relations td.parentToChild { background-image: url('/umbraco/developer/RelationTypes/Images/ParentToChild.png'); }
+        table.relations td.bidirectional { background-image: url('/umbraco/developer/RelationTypes/Images/Bidirectional.png'); }
     </style>  
   
     <script type="text/javascript">
@@ -70,7 +70,7 @@
     <umb:Pane ID="directionPane" runat="server" Text="">
 
         <umb:PropertyPanel runat="server" id="dualPropertyPanel" Text="Direction">
-                <asp:RadioButtonList ID="dualRadioButtonList" runat="server" RepeatDirection="Vertical">
+                <asp:RadioButtonList ID="dualRadioButtonList" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Enabled="true" Selected="False" Text="Parent to Child" Value="0" /> 
                     <asp:ListItem Enabled="true" Selected="False" Text="Bidirectional" Value="1"/>
                 </asp:RadioButtonList>
@@ -107,7 +107,7 @@
             
             <asp:Repeater ID="relationsRepeater" runat="server">
                 <HeaderTemplate>
-                    <table class="table relations">
+                    <table class="relations">
                         <thead>
                             <tr>
                                 <th class="objectTypeIcon">&nbsp;</th>

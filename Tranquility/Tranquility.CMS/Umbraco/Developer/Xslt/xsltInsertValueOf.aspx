@@ -1,5 +1,4 @@
 <%@ Page Language="c#" MasterPageFile="../../masterpages/umbracoDialog.Master" Codebehind="xsltInsertValueOf.aspx.cs" AutoEventWireup="True"  Inherits="umbraco.developer.xsltInsertValueOf" %>
-<%@ Import Namespace="Umbraco.Web" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 <%@ Register TagPrefix="umb" Namespace="ClientDependency.Core.Controls" Assembly="ClientDependency.Core" %>
 
@@ -14,13 +13,13 @@
     result = '<xsl:value-of select="' + document.getElementById('<%= valueOf.ClientID %>').value + '"' + checked + '/>';
 
     UmbClientMgr.contentFrame().focus();
-    UmbClientMgr.contentFrame().UmbEditor.Insert(result, '', '<%=Request.CleanForXss("objectId")%>');
+    UmbClientMgr.contentFrame().UmbEditor.Insert(result, '', '<%=umbraco.helper.Request("objectId")%>');
 
     UmbClientMgr.closeModalWindow();
   }
 
   function getExtensionMethod() {
-    document.location = 'xsltChooseExtension.aspx?objectId=<%=Request.CleanForXss("objectId")%>';
+    document.location = 'xsltChooseExtension.aspx?objectId=<%=umbraco.helper.Request("objectId")%>';
   }
 
   function recieveExtensionMethod(theValue) {

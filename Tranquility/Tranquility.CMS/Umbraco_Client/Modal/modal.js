@@ -118,7 +118,6 @@ Umbraco.Sys.registerNamespace("Umbraco.Controls");
                 /// The callback will receive one parameter with 2 properties:
                 /// modalContent = the jQuery object for the popup window to query against
                 /// outVal = the value passed to the close window method that was used to close the window (if it was specified)
-                /// </param>
                 /// <returns>The generated jquery object bound to the modal window</returns>
 
 
@@ -356,7 +355,7 @@ Umbraco.Sys.registerNamespace("Umbraco.Controls");
     $.fn.jqmAddClose = function(e) { return hs(this, e, 'jqmHide'); };
     $.fn.jqmAddTrigger = function(e) { return hs(this, e, 'jqmShow'); };
     $.fn.jqmShow = function(t) { return this.each(function() { $.jqm.open(this._jqm, t); }); };
-    $.fn.jqmHide = function(t) { return this.each(function() { $.jqm.close(this._jqm, t); }); };
+    $.fn.jqmHide = function(t) { return this.each(function() { $.jqm.close(this._jqm, t) }); };
 
     $.jqm = {
         hash: {},
@@ -386,7 +385,7 @@ Umbraco.Sys.registerNamespace("Umbraco.Controls");
         },
         params: {}
     };
-    var s = 0, H = $.jqm.hash, A = [], ie6 = $.browser && $.browser.msie && ($.browser.version == "6.0"), F = false,
+    var s = 0, H = $.jqm.hash, A = [], ie6 = $.browser.msie && ($.browser.version == "6.0"), F = false,
 i = $('<iframe src="javascript:false;document.write(\'\');" class="jqm"></iframe>').css({ opacity: 0 }),
 e = function(h) { if (ie6) if (h.o) h.o.html('<p style="width:100%;height:100%"/>').prepend(i); else if (!$('iframe.jqm', h.w)[0]) h.w.prepend(i); },
     //f = function(h) { try { $(':input:visible', h.w)[0].focus(); } catch (_) { } },

@@ -122,7 +122,6 @@
     $(function () {
         $.tree.plugins.contextmenu.object.hide().appendTo("body");
         $("a", $.tree.plugins.contextmenu.object[0])
-            //has to be .live, do not change to .on, it doesn't work
 			.live("click", function (event) {
 			    if (!$(this).hasClass("disabled")) {
 			        $.tree.plugins.contextmenu.exec.apply(null, [$(this).attr("rel")]);

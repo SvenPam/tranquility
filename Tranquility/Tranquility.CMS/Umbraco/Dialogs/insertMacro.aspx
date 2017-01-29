@@ -1,6 +1,5 @@
 <%@ Page Language="c#" MasterPageFile="../masterpages/umbracoPage.Master" ValidateRequest="false" Codebehind="insertMacro.aspx.cs" AutoEventWireup="True"
   Inherits="umbraco.dialogs.insertMacro" Trace="false" %>
-<%@ Import Namespace="Umbraco.Web" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
@@ -73,8 +72,8 @@
     
     <%if (Request["macroID"] != null || Request["macroAlias"] != null) {%>
     
-    <input type="hidden" name="macroID" value="<%=Request.CleanForXss("macroID")%>" />
-    <input type="hidden" name="macroAlias" value="<%=Request.CleanForXss("macroAlias")%>" />
+    <input type="hidden" name="macroID" value="<%=umbraco.helper.Request("macroID")%>" />
+    <input type="hidden" name="macroAlias" value="<%=umbraco.helper.Request("macroAlias")%>" />
     
     <div class="macroProperties">
       <cc1:Pane id="pane_edit" runat="server">
@@ -82,9 +81,9 @@
       </cc1:Pane>
     </div>
     <p>
-    <input type="button" value="<%=umbraco.ui.Text("general", "ok", UmbracoUser)%>" onclick="updateMacro()" />
+    <input type="button" value="<%=umbraco.ui.Text("general", "ok", this.getUser())%>" onclick="updateMacro()" />
     &nbsp; <em> or </em> &nbsp;
-     <a href="#" style="color: blue"  onclick="UmbClientMgr.closeModalWindow()"><%=umbraco.ui.Text("general", "cancel", UmbracoUser)%></a>
+     <a href="#" style="color: blue"  onclick="UmbClientMgr.closeModalWindow()"><%=umbraco.ui.Text("general", "cancel", this.getUser())%></a>
     </p>
     <%} else {%>
     
@@ -94,9 +93,9 @@
       </cc1:PropertyPanel>
     </cc1:Pane>
     <p>
-    <input type="submit" value="<%=umbraco.ui.Text("general", "ok", UmbracoUser)%>" />
+    <input type="submit" value="<%=umbraco.ui.Text("general", "ok", this.getUser())%>" />
     &nbsp; <em> or </em> &nbsp;
-     <a href="#" style="color: blue"  onclick="UmbClientMgr.closeModalWindow()"><%=umbraco.ui.Text("general", "cancel", UmbracoUser)%></a>
+     <a href="#" style="color: blue"  onclick="UmbClientMgr.closeModalWindow()"><%=umbraco.ui.Text("general", "cancel", this.getUser())%></a>
     </p>
     
     <%}%>

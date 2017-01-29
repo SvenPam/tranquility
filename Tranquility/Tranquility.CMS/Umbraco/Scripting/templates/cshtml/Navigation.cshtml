@@ -6,16 +6,15 @@
 	the css class "current". 
 *@
 
+
 @{ 
-	@* Get the root of the website *@
+	@*Get the root of the website *@
     var root = Model.AncestorOrSelf(1);
 }
 
 <ul>
     @foreach (var page in root.Children.Where("Visible"))
     { 
-        <li class="@page.IsAncestorOrSelf(Model, "current", "")">
-            <a href="@page.Url">@page.Name</a>
-        </li>
-	}
-</ul>
+        <li class="@page.IsAncestorOrSelf(Model, "current", "")""><a href="@page.Url">@page.Name</a></li>
+			}
+		</ul>

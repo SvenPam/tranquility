@@ -51,9 +51,21 @@ Umbraco.Sys.registerNamespace("Umbraco.Application");
                 /// </summary>
                 /// <returns type="Umbraco.Controls.UmbracoTree" />
 
-                
                 if (this._mainTree == null) {
-                    this._mainTree = top.UmbClientMgr.mainTree();
+                    if (this.mainWindow().jQuery == null
+                        || this.mainWindow().jQuery(".umbTree").length == 0
+                        || this.mainWindow().jQuery(".umbTree").UmbracoTreeAPI() == null) {
+                        //creates a false tree with all the public tree params set to a false method.
+                        var tmpTree = {};
+                        var treeProps = ["init", "setRecycleBinNodeId", "clearTreeCache", "toggleEditMode", "refreshTree", "rebuildTree", "saveTreeState", "syncTree", "childNodeCreated", "moveNode", "copyNode", "findNode", "selectNode", "reloadActionNode", "getActionNode", "setActiveTreeType", "getNodeDef"];
+                        for (var p in treeProps) {
+                            tmpTree[treeProps[p]] = function() { return false; };
+                        }
+                        this._mainTree = tmpTree;
+                    }
+                    else {
+                        this._mainTree = this.mainWindow().jQuery(".umbTree").UmbracoTreeAPI();
+                    }
                 }
                 return this._mainTree;
             },
@@ -82,15 +94,15 @@ Umbraco.Sys.registerNamespace("Umbraco.Application");
             //    windowMgr: function() 
             //        return null;
             //    },
-            contentFrameAndSection: function(app, rightFrameUrl) {
+            contentFrameAndSection: function(app, rightFrameUrl){
                 //this.appActions().shiftApp(app, this.uiKeys()['sections_' + app]);
                 var self = this;
-                self.mainWindow().UmbClientMgr.historyManager().addHistory(app, true);
-                window.setTimeout(function() {
+                self.mainWindow().UmbClientMgr.historyManager().addHistory(app,true);
+                window.setTimeout(function(){
                     self.mainWindow().UmbClientMgr.contentFrame(rightFrameUrl);
-                }, 200);
+                },200);
             },
-            contentFrame: function (strLocation) {
+            contentFrame: function(strLocation) {
                 /// <summary>
                 /// This will return the reference to the right content frame if strLocation is null or empty,
                 /// or set the right content frames location to the one specified by strLocation.
@@ -107,77 +119,28 @@ Umbraco.Sys.registerNamespace("Umbraco.Application");
                     }
                 }
                 else {
-                    
-                    //its a hash change so process that like angular
-                    if (strLocation.substr(0, 1) !== "#") {                        
-                        if (strLocation.substr(0, 1) != "/") {
-                            //if the path doesn't start with "/" or with the root path then 
-                            //prepend the root path
-                            strLocation = this._rootPath + "/" + strLocation;
-                        }
-                        else if (strLocation.length >= this._rootPath.length
-                            && strLocation.substr(0, this._rootPath.length) != this._rootPath) {
-                            strLocation = this._rootPath + "/" + strLocation;
-                        }
-                    }                    
+                    //if the path doesn't start with "/" or with the root path then 
+                    //prepend the root path
+                    if (strLocation.substr(0, 1) != "/") {
+                        strLocation = this._rootPath + "/" + strLocation;
+                    }
+                    else if (strLocation.length >= this._rootPath.length
+                        && strLocation.substr(0, this._rootPath.length) != this._rootPath) {
+                        strLocation = this._rootPath + "/" + strLocation;
+                    }
 
                     this._debug("contentFrame: parsed location: " + strLocation);
-
-                    if (!this.mainWindow().UmbClientMgr) {
-                        window.setTimeout(function() {
-                            var self = this;
-                            self.mainWindow().location.href = strLocation;
-                        }, 200);
-                    }
-                    else {
-                        this.mainWindow().UmbClientMgr.contentFrame(strLocation);
-                    }
+                    var self = this;
+                    window.setTimeout(function(){
+                        if (typeof self.mainWindow().right != "undefined") {
+                            self.mainWindow().right.location.href = strLocation;
+                        }
+                        else {
+                            self.mainWindow().location.href = strLocation; //set the current windows location if the right frame doesn't exist int he current context
+                        }
+                    },200);
                 }
             },
-            reloadContentFrameUrlIfPathLoaded: function (url) {
-                var contentFrame;
-                if (typeof this.mainWindow().right != "undefined") {
-                    contentFrame = this.mainWindow().right;
-                }
-                else {
-                    contentFrame = this.mainWindow(); 
-                }
-
-                var currentPath = contentFrame.location.pathname + (contentFrame.location.search ? contentFrame.location.search : "");
-                if (currentPath == url) {
-                    contentFrame.location.reload();
-                }
-            },
-            
-            /** This is used to launch an angular based modal window instead of the legacy window */
-            openAngularModalWindow: function (options) {
-                if (!this.mainWindow().UmbClientMgr) {
-                    throw "An angular modal window can only be launched when the modal is running within the main Umbraco application";
-                }
-                else {
-                    this.mainWindow().UmbClientMgr.openAngularModalWindow.apply(this.mainWindow().UmbClientMgr, [options]);
-                }
-
-            },
-
-            /** This is used to launch an angular based modal window instead of the legacy window */
-            rootScope: function () {
-
-                if (!this.mainWindow().UmbClientMgr) {
-                    throw "An angular modal window can only be launched when the modal is running within the main Umbraco application";
-                }
-                else {
-                    return this.mainWindow().UmbClientMgr.rootScope();
-                }
-
-            },
-
-            reloadLocation: function () {
-                if (this.mainWindow().UmbClientMgr) {
-                    this.mainWindow().UmbClientMgr.reloadLocation();
-                }
-            },
-
             openModalWindow: function(url, name, showHeader, width, height, top, leftOffset, closeTriggers, onCloseCallback) {
                 //need to create the modal on the top window if the top window has a client manager, if not, create it on the current window                
 
@@ -192,26 +155,6 @@ Umbraco.Sys.registerNamespace("Umbraco.Application");
                     if (this.mainWindow().UmbClientMgr) {
                         this.mainWindow().UmbClientMgr.openModalWindow.apply(this.mainWindow().UmbClientMgr,
                             [url, name, showHeader, width, height, top, leftOffset, closeTriggers, onCloseCallback]);
-                    }
-                    else {
-                        return; //exit recurse.
-                    }
-                }
-            },
-            openModalWindowForContent: function (jQueryElement, name, showHeader, width, height, top, leftOffset, closeTriggers, onCloseCallback) {
-                //need to create the modal on the top window if the top window has a client manager, if not, create it on the current window                
-
-                //if this is the top window, or if the top window doesn't have a client manager, create the modal in this manager
-                if (window == this.mainWindow() || !this.mainWindow().UmbClientMgr) {
-                    var m = new Umbraco.Controls.ModalWindow();
-                    this._modal.push(m);
-                    m.show(jQueryElement, name, showHeader, width, height, top, leftOffset, closeTriggers, onCloseCallback);
-                }
-                else {
-                    //if the main window has a client manager, then call the main window's open modal method whilst keeping the context of it's manager.
-                    if (this.mainWindow().UmbClientMgr) {
-                        this.mainWindow().UmbClientMgr.openModalWindowForContent.apply(this.mainWindow().UmbClientMgr,
-                            [jQueryElement, name, showHeader, width, height, top, leftOffset, closeTriggers, onCloseCallback]);
                     }
                     else {
                         return; //exit recurse.
@@ -255,8 +198,8 @@ Umbraco.Sys.registerNamespace("Umbraco.Application");
             set_isDirty: function(value) {
                 this._isDirty = value;
             }
-        };
-    };
+        }
+    }
 })(jQuery);
 
 //define alias for use throughout application
