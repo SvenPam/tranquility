@@ -934,7 +934,6 @@
     <Content Include="a\src\styles\07-trumps\trumps.scss" />
     <Content Include="a\src\styles\ste-pam.scss" />
     <Content Include="Media\Web.config" />
-    <Content Include="connectionString.config" />
     <Content Include="package.json" />
     <Content Include="sasslint-config.json" />
     <Content Include="packages.config" />
