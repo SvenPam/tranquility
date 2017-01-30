@@ -244,10 +244,10 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-/Tranquility/Tranquility/connectionString.config
 App_Data/
 **/a/dist/*
 Media/
 Thumbs.db
 dummy.txt
 web.config.backup
+/Tranquility.CMS/connectionString.config
