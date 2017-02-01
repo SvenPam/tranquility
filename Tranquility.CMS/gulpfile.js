@@ -18,7 +18,7 @@ const gulp = require('gulp'),
     sassLint = require('gulp-sass-lint'),
     imagemin = require('gulp-imagemin'),
     babel = require('gulp-babel'),
-	jshint = require('jshint'),
+	jshint = require('gulp-jshint'),
 	externalJs = require('./a/src/scripts/external-references.json');
 
 // Custom project tasks.
@@ -31,7 +31,7 @@ gulp.task('lint-sass', function () {
 });
 
 gulp.task('lint-js', function () {
-	return gulp.src(``)
+	return gulp.src(`${pckg.paths.src.styles}/**/*.js`)
 	.pipe(jshint(pckg.jshintConfig))
 	.pipe(jshint.reporter('default'))
 	.pipe(jshint.reporter('fail'))
@@ -84,11 +84,11 @@ gulp.task('styles', function () {
 })
 
 gulp.task('scripts', function () {
-	return gulp.src('**/*.js', { cwd: pckg.paths.src.scripts })
+	return gulp.src(`${pckg.paths.src.styles}/**/*.js`)
         .pipe(babel({
         	presets: ['es2015']
         }))
-        .pipe(sourcemaps.write('.'))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(pckg.paths.dist.scripts));
 });
 
