@@ -5,7 +5,7 @@
  * The gulp wrapper around patternlab-node core, providing tasks to interact with the core library and move supporting frontend assets.
 ******************************************************/
 const gulp = require('gulp'),
-    config = require('./package.json'),
+    pckg = require('./package.json'),
     changed = require('gulp-changed'),
     clean = require('gulp-clean'),
     sass = require('gulp-sass'),
@@ -18,21 +18,29 @@ const gulp = require('gulp'),
     sassLint = require('gulp-sass-lint'),
     imagemin = require('gulp-imagemin'),
     babel = require('gulp-babel'),
-    sassLintConfig = require('./sasslint-config.json'),
+	jshint = require('jshint'),
 	externalJs = require('./a/src/scripts/external-references.json');
 
 // Custom project tasks.
 
 gulp.task('lint-sass', function () {
-	return gulp.src(`${config.paths.src.styles}/**/*.s+(a|c)ss`)
-        .pipe(sassLint(sassLintConfig))
+	return gulp.src(`${pckg.paths.src.styles}/**/*.s+(a|c)ss`)
+        .pipe(sassLint(pckg.sassLintConfig))
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError());
 });
 
+gulp.task('lint-js', function () {
+	return gulp.src(``)
+	.pipe(jshint(pckg.jshintConfig))
+	.pipe(jshint.reporter('default'))
+	.pipe(jshint.reporter('fail'))
+})
+
+
 gulp.task('styles', function () {
-	return gulp.src(`${config.paths.src.styles}/*.s+(a|c)ss`)
-       // .pipe(changed(`${config.paths.src.styles}`))
+	return gulp.src(`${pckg.paths.src.styles}/*.s+(a|c)ss`)
+        .pipe(changed('./'))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
         	browsers: [
@@ -71,40 +79,40 @@ gulp.task('styles', function () {
         }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(config.paths.dist.styles))
+        .pipe(gulp.dest(pckg.paths.dist.styles))
       //  .pipe(browserSync.stream());
 })
 
-
-/******************************************************
- * COPY TASKS - stream assets from source to destination
-******************************************************/
-// JS copy
-gulp.task('js', function () {
-	return gulp.src('**/*.js', { cwd: config.paths.src.scripts })
+gulp.task('scripts', function () {
+	return gulp.src('**/*.js', { cwd: pckg.paths.src.scripts })
         .pipe(babel({
         	presets: ['es2015']
         }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.paths.dist.scripts));
+        .pipe(gulp.dest(pckg.paths.dist.scripts));
 });
 
+/******************************************************
+ * COPY TASKS - stream assets from source to destination
+******************************************************/
 // Copy external frameworks over.
 gulp.task('external-js', function () {
 	return gulp.src(externalJs.references)
-      .pipe(gulp.dest(config.paths.dist.scripts));
+      .pipe(gulp.dest(pckg.paths.dist.scripts));
 });
 
 // Images copy
 gulp.task('img', function () {
-	return gulp.src(`${config.paths.src.images}/**/*.*`)
-		.pipe(changed(config.paths.dist.images))
+	return gulp.src(`${pckg.paths.src.images}/**/*.*`)
+		.pipe(changed(pckg.paths.dist.images))
         .pipe(imagemin())
-        .pipe(gulp.dest(config.paths.dist.images));
+        .pipe(gulp.dest(pckg.paths.dist.images));
 });
 
 // CSS Copy
 gulp.task('css', gulp.series('lint-sass', 'styles'));
+
+gulp.task('js', gulp.series('lint-js', 'scripts'));
 
 function paths() {
 	return config;
@@ -127,9 +135,9 @@ gulp.task('build', gulp.series(
 );
 
 function watch() {
-	gulp.watch(`${config.paths.src.styles}/**/*.scss`, { awaitWriteFinish: true }).on('change', gulp.series('css'));
-	gulp.watch(`${config.paths.src.js}/**/*.js`, { awaitWriteFinish: true }).on('change', gulp.series('js'));
-	gulp.watch(`${config.paths.src.images}/**/*.*`, { awaitWriteFinish: true }).on('change', gulp.series('img'));
+	gulp.watch(`${pckg.paths.src.styles}/**/*.scss`, { awaitWriteFinish: true }).on('change', gulp.series('css'));
+	gulp.watch(`${pckg.paths.src.js}/**/*.js`, { awaitWriteFinish: true }).on('change', gulp.series('js'));
+	gulp.watch(`${pckg.paths.src.images}/**/*.*`, { awaitWriteFinish: true }).on('change', gulp.series('img'));
 }
 
 /******************************************************
