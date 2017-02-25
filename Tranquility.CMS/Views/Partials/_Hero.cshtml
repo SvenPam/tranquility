@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<section class="hero">
+    <picture class="hero__img">
+        <source media="(max-width: 576px)" srcset="@Url.GetCropUrl(Model.Content, "Image", "Small", true)" />
+        <source media="(max-width: 768px)" srcset="@Url.GetCropUrl(Model.Content, "Image", "Medium", true)" />
+        <source srcset="@Url.GetCropUrl(Model.Content, "Image", "Large", true)" />
+        <img src="@Url.GetCropUrl(Model.Content, "Image", "Large", true)" />
+    </picture>
+    <div class="hero_block">
+                <h2 class="card__title col-md-6">@Umbraco.Field("titleAlt", altFieldAlias: "pageName")</h2>
+                <h3 class="card__subtitle col-md-6">@Umbraco.Field("description")</h3>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{ var nav = CurrentPage.Site().Children.Where("Visible"); }
+<header class="header">
+	<div class="header__site">
+		<h1>Bakehouse 2.0</h1>
+		<h2>Artisian Bakery</h2>
+	</div>
+	<nav class="header__nav">
+		<ul>
+			@foreach (var item in nav)
+			{
+				<li class="@(item.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
+					<a href="@item.Url">@item.Name</a>
+				</li>
+			}
+		</ul>
+	</nav>
+</header>
