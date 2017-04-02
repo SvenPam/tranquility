@@ -6,43 +6,31 @@
 ******************************************************/
 const gulp = require('gulp'),
     pckg = require('./package.json'),
-    changed = require('gulp-changed'),
-    clean = require('gulp-clean'),
-    sass = require('gulp-sass'),
-    concat = require('gulp-concat'),
-    cleanCSS = require('gulp-clean-css'),
-    sourcemaps = require('gulp-sourcemaps'),
-    rename = require("gulp-rename"),
-    autoprefixer = require("gulp-autoprefixer"),
-    jeditor = require('gulp-json-editor'),
-    sassLint = require('gulp-sass-lint'),
-    imagemin = require('gulp-imagemin'),
-    babel = require('gulp-babel'),
-	jshint = require('gulp-jshint'),
-	externalJs = require('./a/src/scripts/external-references.json');
+    externalJs = require('./a/src/scripts/external-references.json'),
+    $ = require('gulp-load-plugins')({ lazy: true });
 
 // Custom project tasks.
 
 gulp.task('lint-sass', function () {
 	return gulp.src(`${pckg.paths.src.styles}/**/*.s+(a|c)ss`)
-        .pipe(sassLint(pckg.sassLintConfig))
-        .pipe(sassLint.format())
-        .pipe(sassLint.failOnError());
+        .pipe($.sassLint(pckg.sassLintConfig))
+        .pipe($.sassLint.format())
+        .pipe($.sassLint.failOnError());
 });
 
 gulp.task('lint-js', function () {
 	return gulp.src(`${pckg.paths.src.styles}/**/*.js`)
-	.pipe(jshint(pckg.jshintConfig))
-	.pipe(jshint.reporter('default'))
-	.pipe(jshint.reporter('fail'))
+        .pipe($.jshint(pckg.jshintConfig))
+        .pipe($.jshint.reporter('default'))
+        .pipe($.jshint.reporter('fail'))
 })
 
 
 gulp.task('styles', function () {
 	return gulp.src(`${pckg.paths.src.styles}/*.s+(a|c)ss`)
-        .pipe(changed('./'))
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
+        .pipe($.changed('./'))
+        .pipe($.sass().on('error', sass.logError))
+        .pipe($.autoprefixer({
         	browsers: [
           //
           // Official browser support policy:
@@ -73,22 +61,21 @@ gulp.task('styles', function () {
           'Opera >= 12'
         	]
         }))
-        .pipe(cleanCSS({ debug: true, semanticMerging: true }, function (details) {
+        .pipe($.cleanCSS({ debug: true, semanticMerging: true }, function (details) {
         	console.log(`Original ${details.name}: ${details.stats.originalSize}`);
         	console.log(`Cleaned ${details.name}: ${details.stats.minifiedSize} (${Math.round((details.stats.minifiedSize / details.stats.originalSize) * 100)}%)`);
         }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write('./'))
+        .pipe($.rename({ suffix: '.min' }))
+        .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest(pckg.paths.dist.styles))
-      //  .pipe(browserSync.stream());
 })
 
 gulp.task('scripts', function () {
 	return gulp.src(`${pckg.paths.src.styles}/**/*.js`)
-        .pipe(babel({
+        .pipe($.babel({
         	presets: ['es2015']
         }))
-        .pipe(sourcemaps.write('./'))
+        .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest(pckg.paths.dist.scripts));
 });
 
@@ -97,15 +84,15 @@ gulp.task('scripts', function () {
 ******************************************************/
 // Copy external frameworks over.
 gulp.task('external-js', function () {
-	return gulp.src(externalJs.references)
-      .pipe(gulp.dest(pckg.paths.dist.scripts));
+    return gulp.src(externalJs.references)
+        .pipe(gulp.dest(pckg.paths.dist.scripts));
 });
 
 // Images copy
 gulp.task('img', function () {
 	return gulp.src(`${pckg.paths.src.images}/**/*.*`)
-		.pipe(changed(pckg.paths.dist.images))
-        .pipe(imagemin())
+        .pipe($.changed(pckg.paths.dist.images))
+        .pipe($.imagemin())
         .pipe(gulp.dest(pckg.paths.dist.images));
 });
 
@@ -113,14 +100,6 @@ gulp.task('img', function () {
 gulp.task('css', gulp.series('lint-sass', 'styles'));
 
 gulp.task('js', gulp.series('lint-js', 'scripts'));
-
-function paths() {
-	return config;
-}
-
-function build(done) {
-	patternlab.build(done, getConfiguredCleanOption());
-}
 
 gulp.task('build', gulp.series(
   gulp.parallel(
