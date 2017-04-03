@@ -70,5 +70,39 @@
             "max": 1,
             "frontView": ""
         }
+    },
+    {
+        "name": "CTA",
+        "alias": "cta",
+        "view": "/App_Plugins/LeBlender/editors/leblendereditor/LeBlendereditor.html",
+        "icon": "icon-link",
+        "render": "/App_Plugins/LeBlender/editors/leblendereditor/views/Base.cshtml",
+        "config": {
+            "editors": [
+                {
+                    "name": "URL",
+                    "alias": "url",
+                    "propretyType": {},
+                    "dataType": "a6857c73-d6e9-480c-b6e6-f15f6ad11125",
+                    "description": "The page this link will take you too."
+                },
+                {
+                    "name": "Button Text",
+                    "alias": "buttonText",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                }
+            ],
+            "renderInGrid": "1",
+            "max": 1,
+            "frontView": ""
+        }
+    },
+    {
+        "name": "Plain Text",
+        "alias": "plainText",
+        "view": "textstring",
+        "icon": "icon-info",
+        "config": {}
     }
 ]
