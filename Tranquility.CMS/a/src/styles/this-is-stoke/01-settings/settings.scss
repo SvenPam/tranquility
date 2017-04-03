@@ -1,16 +1,13 @@
-﻿$brand-primary:         #29B8B9;
-$brand-primary2:        #F90;
-$brand-success:         #5CB85C;
-$brand-info:            #5BC0DE;
-$brand-warning:         #F0AD4E;
-$brand-danger:          #F44;
-$dark-bg:				#0C0C0E;
-$body-bg:               #EEE;
-$text-color:            #444;
-$link-color:            $brand-primary;
-$link-hover-color:      lighten($link-color, 15%);
-$brand-subtle:			#95A5A6;
+﻿/// <reference path="../../../../../node_modules/bootstrap/scss/variables.scss" />
+
+// Project
 
 $image-url: '/a/dist/img';
 
+// Bootstrap
+
+$btn-border-radius: 3rem;
+$btn-padding-x: 2rem;
+
 @import '../../../../../node_modules/bootstrap/scss/variables';
+
