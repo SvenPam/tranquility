@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = null;
+    Layout = null;
+    var metadata = Model.Content.GetPropertyValue<Epiphany.SeoMetadata.SeoMetadata>("metadata");
 }
 <!DOCTYPE html>
 <html lang="en-gb">
@@ -10,13 +11,13 @@
 	<link rel="icon" href="" />
 	<meta name="theme-color" content="#29B8B9">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@(metadata != null ? metadata.Title : null) ?? @Model.Content.Name</title>
+    <meta name="description" content=" @(metadata != null ? metadata.Description : null) ?? @Model.Content.GetPropertyValue("description")" />
 	<meta property="og:locale" content="en_GB">
 	<link href="~/a/dist/css/this-is-stoke.min.css" rel="stylesheet" />
 </head>
 <body>
-	<main>
-		@Html.Partial("Partials/_Hero")
 		@RenderBody()
-	</main>
 </body>
 </html>
