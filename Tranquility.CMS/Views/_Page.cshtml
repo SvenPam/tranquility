@@ -1,5 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "_Page.cshtml";
+    Layout = "Master.cshtml";
 }
+
+<main>
+    @Html.Partial("Partials/_Hero")
+
+    @RenderBody()
+</main>
