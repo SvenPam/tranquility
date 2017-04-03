@@ -2,6 +2,9 @@
 @{
     Layout = null;
     var metadata = Model.Content.GetPropertyValue<Epiphany.SeoMetadata.SeoMetadata>("metadata");
+    var siteName = @Model.Content.AncestorOrSelf(1).Name;
+    var pageTite = (((metadata != null ? metadata.Title : null) ?? Model.Content.Name));
+    pageTite = pageTite.Equals(siteName, StringComparison.CurrentCultureIgnoreCase) ? siteName : pageTite + " | " + siteName;
 }
 <!DOCTYPE html>
 <html lang="en-gb">
@@ -12,8 +15,8 @@
 	<meta name="theme-color" content="#29B8B9">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@(metadata != null ? metadata.Title : null) ?? @Model.Content.Name</title>
-    <meta name="description" content=" @(metadata != null ? metadata.Description : null) ?? @Model.Content.GetPropertyValue("description")" />
+    <title>@pageTite</title>
+    <meta name="description" content=" @((metadata != null ? metadata.Description : null) ?? @Model.Content.GetPropertyValue("description"))" />
 	<meta property="og:locale" content="en_GB">
 	<link href="~/a/dist/css/this-is-stoke.min.css" rel="stylesheet" />
 </head>
