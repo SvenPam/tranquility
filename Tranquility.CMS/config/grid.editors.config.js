@@ -1,28 +1,28 @@
-﻿[
-	{
-	    "name": "Rich text editor",
-	    "alias": "rte",
-	    "view": "rte",
-	    "icon": "icon-article"
-	},
-	{
-	    "name": "Image",
-	    "alias": "media",
-	    "view": "media",
-	    "icon": "icon-picture"
-	},
-	{
-	    "name": "Macro",
-	    "alias": "macro",
-	    "view": "macro",
-	    "icon": "icon-settings-alt"
-	},
-	{
-	    "name": "Embed",
-	    "alias": "embed",
-	    "view": "embed",
-	    "icon": "icon-movie-alt"
-	},
+[
+    {
+        "name": "Rich text editor",
+        "alias": "rte",
+        "view": "rte",
+        "icon": "icon-article"
+    },
+    {
+        "name": "Image",
+        "alias": "media",
+        "view": "media",
+        "icon": "icon-picture"
+    },
+    {
+        "name": "Macro",
+        "alias": "macro",
+        "view": "macro",
+        "icon": "icon-settings-alt"
+    },
+    {
+        "name": "Embed",
+        "alias": "embed",
+        "view": "embed",
+        "icon": "icon-movie-alt"
+    },
     {
         "name": "Headline",
         "alias": "headline",
@@ -33,14 +33,42 @@
             "markup": "<h1>#value#</h1>"
         }
     },
-	{
-	    "name": "Quote",
-	    "alias": "quote",
-	    "view": "textstring",
-	    "icon": "icon-quote",
-	    "config": {
-	        "style": "border-left: 3px solid #ccc; padding: 10px; color: #ccc; font-family: serif; font-style: italic; font-size: 18px",
-	        "markup": "<blockquote>#value#</blockquote>"
-	    }
-	}
+    {
+        "name": "Quote",
+        "alias": "quote",
+        "view": "textstring",
+        "icon": "icon-quote",
+        "config": {
+            "style": "border-left: 3px solid #ccc; padding: 10px; color: #ccc; font-family: serif; font-style: italic; font-size: 18px",
+            "markup": "<blockquote>#value#</blockquote>"
+        }
+    },
+    {
+        "name": "Team Member",
+        "alias": "teamMember",
+        "view": "/App_Plugins/LeBlender/editors/leblendereditor/LeBlendereditor.html",
+        "icon": "icon-user-glasses",
+        "render": "/App_Plugins/LeBlender/editors/leblendereditor/views/Base.cshtml",
+        "config": {
+            "editors": [
+                {
+                    "name": "Team Member Picture",
+                    "alias": "teamMemberPicture",
+                    "propretyType": {},
+                    "dataType": "93929b9a-93a2-4e2a-b239-d99334440a59",
+                    "description": "A picture of this team member."
+                },
+                {
+                    "name": "Team Member Name",
+                    "alias": "teamMemberName",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae",
+                    "description": "This persons name."
+                }
+            ],
+            "renderInGrid": "1",
+            "max": 1,
+            "frontView": ""
+        }
+    }
 ]
