@@ -29,7 +29,7 @@ gulp.task('lint-js', function () {
 gulp.task('styles', function () {
 	return gulp.src(`${pckg.paths.src.styles}/*.s+(a|c)ss`)
         .pipe($.changed('./'))
-        .pipe($.sass().on('error', sass.logError))
+        .pipe($.sass().on('error', $.sass.logError))
         .pipe($.autoprefixer({
         	browsers: [
           //
@@ -61,7 +61,7 @@ gulp.task('styles', function () {
           'Opera >= 12'
         	]
         }))
-        .pipe($.cleanCSS({ debug: true, semanticMerging: true }, function (details) {
+        .pipe($.cleanCss({ debug: true, semanticMerging: true }, function (details) {
         	console.log(`Original ${details.name}: ${details.stats.originalSize}`);
         	console.log(`Cleaned ${details.name}: ${details.stats.minifiedSize} (${Math.round((details.stats.minifiedSize / details.stats.originalSize) * 100)}%)`);
         }))
