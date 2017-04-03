@@ -2,7 +2,7 @@
 @{
     Layout = null;
     var metadata = Model.Content.GetPropertyValue<Epiphany.SeoMetadata.SeoMetadata>("metadata");
-    var siteName = @Model.Content.AncestorOrSelf(1).Name;
+    var siteName = Model.Content.AncestorOrSelf(1).Name;
     var pageTite = (((metadata != null ? metadata.Title : null) ?? Model.Content.Name));
     pageTite = pageTite.Equals(siteName, StringComparison.CurrentCultureIgnoreCase) ? siteName : pageTite + " | " + siteName;
 }
