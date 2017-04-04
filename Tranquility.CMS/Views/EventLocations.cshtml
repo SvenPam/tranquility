@@ -1,5 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.EventLocations>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+	Layout = "_Page.cshtml";
 }
+
+@Html.GetGridHtml(Model.Content, "locationsGrid", "bootstrap4")
