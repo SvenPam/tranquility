@@ -28,7 +28,7 @@ gulp.task('lint-js', function () {
 
 gulp.task('styles', function () {
     return gulp.src(`${pckg.paths.src.styles}/*.s+(a|c)ss`)
-        .pipe($.changed('./'))
+        .pipe($.sourcemaps.init())
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.autoprefixer({
             browsers: [
