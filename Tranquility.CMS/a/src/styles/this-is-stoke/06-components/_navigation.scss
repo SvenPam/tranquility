@@ -1,0 +1,84 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+
+.navigation {
+    @include media-breakpoint-up(lg) {
+        width: inherit;
+    }
+
+    width: 100%;
+
+
+    &__list {
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            align-items: center;
+        }
+
+        @include list-unstyled;
+        margin-bottom: 0;
+    }
+
+    &__point {
+        @include media-breakpoint-up(lg) {
+            display: inline-block;
+            text-align: center;
+        }
+
+        color: $gray-dark;
+
+        &--active {
+            color: $link-color;
+        }
+
+        &--disabled {
+            color: $nav-disabled-link-color;
+
+            .navigation__link {
+                cursor: not-allowed;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+
+        &--separator {
+            @include media-breakpoint-up(lg) {
+                border-left: $gray-light solid 2px;
+                padding-left: 1.25rem;
+            }
+        }
+    }
+
+    &__link {
+        @include media-breakpoint-up(lg) {
+            padding: 0 1.25rem;
+        }
+
+        color: inherit;
+        display: block;
+        padding: 15px;
+    }
+
+    &--primary {
+        .navigation__point {
+            @include media-breakpoint-up(lg) {
+                background-color: transparent;
+            }
+
+            @include media-breakpoint-down(md) {
+                &--active {
+                    background-color: $brand-primary;
+
+                    .navigation__link {
+                        color: $white;
+                    }
+                }
+            }
+
+            margin-bottom: 5px;
+            background-color: $gray-lightest;
+            font-family: $headings-font-family;
+            text-transform: uppercase;
+        }
+    }
+}
