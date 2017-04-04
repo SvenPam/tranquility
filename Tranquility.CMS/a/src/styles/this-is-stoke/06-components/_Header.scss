@@ -1,0 +1,173 @@
+﻿/// <reference path='../01-settings/settings' />
+/// <reference path='../02-tools/tools' />
+$header-height: 60px;
+
+.header {
+    @include media-breakpoint-down(lg) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(0);
+        transition: transform ease-in-out .25s;
+        box-shadow: $gray 0 1px 10px;
+        z-index: $zindex-navbar;
+        background-color: $white;
+
+        &__toggle-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        &--unstuck {
+            transform: translateY(-$header-height);
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        position: relative;
+
+        &__toggle-icon {
+            display: none;
+        }
+
+        &__navigation {
+            max-height: none;
+        }
+    }
+
+    user-select: none;
+
+    &__container {
+        @include make-container;
+        @include make-container-max-widths;
+
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        //Added gutter padding to top and bottom.
+        padding: 13px;
+    }
+
+    &__row {
+        @include media-breakpoint-up(lg) {
+            display: flex;
+        }
+
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        @include img-fluid;
+    }
+
+    &__navigation {
+        @include media-breakpoint-up(lg) {
+            flex-grow: 0;
+            overflow: visible;
+            max-height: none;
+        }
+
+        flex-grow: 2;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height ease-in-out .25s;
+
+        .navigation__list {
+            @include media-breakpoint-up(lg) {
+                padding-top: 0;
+            }
+
+            padding-top: $grid-gutter-width-base / 2;
+        }
+    }
+    // Local vars for header icon.
+    $bar-width: 17px;
+    $bar-height: 2px;
+    $bar-spacing: 5px;
+
+    &__menu-icon-text {
+        &::before {
+            @include media-breakpoint-up(lg) {
+                min-width: 50px;
+            }
+
+            font-family: $font-family-base;
+            color: $body-color;
+            content: 'Menu';
+            display: inline-block;
+            padding-right: 6px;
+            font-weight: bold;
+            // Stop judder when text changes.
+            min-width: 45px;
+        }
+    }
+
+    &__menu-icon,
+    &__menu-icon::after,
+    &__menu-icon::before {
+        height: $bar-height;
+        transition: transform 300ms cubic-bezier(.23, 1, .32, 1);
+    }
+
+    &__menu-icon {
+        position: relative;
+        background: $gray-dark;
+        width: $bar-width;
+
+        &::before,
+        &::after {
+            background: $gray-dark;
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+
+        &::before {
+            width: 120%;
+            transform: translateY(-$bar-spacing);
+        }
+
+        &::after {
+            width: 110%;
+            transform: translateY($bar-spacing);
+        }
+    }
+
+
+    &--open {
+        .header__navigation {
+            max-height: 400px;
+        }
+
+        .header__menu-icon {
+            background-color: transparent;
+
+            &::before,
+            &::after {
+                width: $bar-width;
+            }
+
+            &::after {
+                top: 0;
+                transform: rotate(45deg);
+            }
+
+            &::before {
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
+        }
+
+        .header__menu-icon-text {
+            &::before {
+                content: 'Close';
+            }
+        }
+    }
+}

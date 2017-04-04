@@ -1023,6 +1023,7 @@
     <Content Include="App_Plugins\Terratype\Views\grid.cshtml" />
     <Content Include="App_Plugins\Terratype\package.manifest" />
     <Content Include="Views\EventLocations.cshtml" />
+    <Content Include="a\src\styles\this-is-stoke\06-components\_header.scss" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
