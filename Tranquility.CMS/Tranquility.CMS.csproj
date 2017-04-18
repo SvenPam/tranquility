@@ -1005,6 +1005,13 @@
     <Content Include="a\src\styles\ste-pam\06-components\_section.scss" />
     <Content Include="a\src\styles\ste-pam\06-components\_footer.scss" />
     <Content Include="a\src\styles\ste-pam\06-components\_social.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_content.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_icon.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_mockup.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_nav.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_spinner.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_stacks.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_timeline.scss" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
