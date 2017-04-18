@@ -1,0 +1,138 @@
+﻿/// <reference path='../01-settings/settings' />
+/// <reference path='../02-tools/tools' />
+
+.section-group {
+    > h2 {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .split {
+        padding-top: $grid-gutter-width;
+        padding-bottom: $grid-gutter-width;
+    }
+
+    > section:nth-child(odd) {
+        background-color: $gray-darker;
+        color: #FFF;
+        padding-bottom: 20px;
+
+        .split-sections {
+            padding: 60px;
+
+            @media (max-width: $screen-xs-max) {
+                padding: 60px 0;
+            }
+
+            .split:nth-child(odd) {
+                background-color: lighten($gray-darker, 3%);
+            }
+        }
+    }
+
+    > section:nth-child(even) {
+        background-color: $gray-lighter;
+
+        .split-sections {
+            padding: 60px;
+
+            @media (max-width: $screen-xs-max) {
+                padding: 60px 0;
+            }
+
+            .split:nth-child(odd) {
+                background-color: lighten($gray-lighter, 3%);
+            }
+        }
+    }
+
+    .icon {
+        display: block;
+        margin: 0 auto;
+        border-radius: 100%;
+        background-color: #FFF;
+        color: #95a5a6;
+        font-size: 100px;
+        width: 170px;
+        padding: 25px;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 40px;
+            width: 100px;
+            padding: 25px;
+        }
+
+        @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+            font-size: 70px;
+            width: 115px;
+            padding: 25px;
+        }
+        //Centres the glyphicon cos its really wide for some reason.
+        &.glyphicon-send {
+            padding-left: 0;
+        }
+    }
+
+    .fact {
+        font-size: 9rem;
+        font-family: $headings-font-family;
+
+        @media (max-width: $screen-md-max) {
+            font-size: 6rem;
+        }
+
+        @media (max-width: $screen-sm-max) {
+            font-size: 2rem;
+        }
+    }
+
+    .section-intro {
+        padding-bottom: 30px;
+    }
+
+    .section-outro {
+        padding: 150px 0;
+    }
+
+    .section-text {
+        padding-top: 50px;
+    }
+}
+
+.development {
+    .stack {
+        padding: 20px 0;
+        border-right: #212121 solid 2px;
+
+        .stack-logo-wrapper {
+            min-height: 182px;
+            padding: 10px;
+
+            .stack-logo {
+                max-width: 100%;
+                width: 100px;
+                display: block;
+                margin: 0 auto;
+                padding-bottom: 20px;
+
+                &.visual-studio, &.sql {
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+
+    .stack:nth-last-child(1) {
+        border-right: none;
+    }
+}
+
+&.design {
+    .design-example {
+        img {
+            max-width: 100%;
+        }
+
+        padding: 40px;
+    }
+}

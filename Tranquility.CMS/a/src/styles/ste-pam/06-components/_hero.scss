@@ -1,0 +1,22 @@
+﻿/// <reference path='../01-settings/settings' />
+/// <reference path='../02-tools/tools' />
+
+.hero {
+    background: none;
+    margin: 0;
+
+    @media(min-width: @screen-lg-min) {
+        min-height: 370px;
+    }
+
+    &__avatar {
+        margin: 0 auto;
+        display: block;
+        border: #F7F7F7 solid 4px;
+        box-shadow: #000 -1px 7px 30px;
+    }
+
+    &--light {
+        color: #FFF;
+    }
+}

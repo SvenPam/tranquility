@@ -1,0 +1,87 @@
+﻿/// <reference path='../01-settings/settings' />
+/// <reference path='../02-tools/tools' />
+
+.social {
+    a {
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        padding-left: 30px;
+        line-height: 30px;
+        margin: 5px;
+
+        &.twitter {
+            background-image: url('../Content/Image/social/twitter.svg');
+        }
+
+        &.linkedin {
+            background-image: url('../Content/Image/social/linkedin.svg');
+        }
+
+        &.stack-overflow {
+            background-image: url('../Content/Image/social/stackoverflow.svg');
+        }
+
+        &.github {
+            background-image: url('../Content/Image/social/github.svg');
+        }
+
+        &.instagram {
+            background-image: url('../Content/Image/social/instagram.svg');
+        }
+
+        &.facebook {
+            background-image: url('../Content/Image/social/facebook-square.svg');
+        }
+
+        &.youtube {
+            background-image: url('../Content/Image/social/youtube.svg');
+        }
+
+        &.googleplus {
+            background-image: url('../Content/Image/social/googleplus-square.svg');
+        }
+    }
+
+    &.inline {
+        a {
+            display: inline;
+        }
+    }
+
+    &.dark {
+        a {
+            &.twitter {
+                background-image: url('../Content/Image/social/twitter-dark.svg');
+            }
+
+            &.linkedin {
+                background-image: url('../Content/Image/social/linkedin-dark.svg');
+            }
+
+            &.stack-overflow {
+                background-image: url('../Content/Image/social/stackoverflow-dark.svg');
+            }
+
+            &.github {
+                background-image: url('../Content/Image/social/github-dark.svg');
+            }
+
+            &.instagram {
+                background-image: url('../Content/Image/social/instagram-dark.svg');
+            }
+
+            &.facebook {
+                background-image: url('../Content/Image/social/facebook-square-dark.svg');
+            }
+
+            &.youtube {
+                background-image: url('../Content/Image/social/youtube-dark.svg');
+            }
+
+            &.googleplus {
+                background-image: url('../Content/Image/social/googleplus-square-dark.svg');
+            }
+        }
+    }
+}

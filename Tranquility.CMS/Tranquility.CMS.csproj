@@ -1001,6 +1001,10 @@
     <Content Include="config\uSyncCore.Config" />
     <Content Include="config\uSyncBackOffice.Config" />
     <Content Include="App_Plugins\uSync\package.manifest" />
+    <Content Include="a\src\styles\ste-pam\06-components\_hero.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_section.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_footer.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\_social.scss" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
