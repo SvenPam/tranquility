@@ -1,22 +1,82 @@
-﻿/// <reference path='../01-settings/settings' />
-/// <reference path='../02-tools/tools' />
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
 
 .hero {
-    background: none;
-    margin: 0;
+	@include media-breakpoint-up(md) {
+		min-height: 370px;
+		padding: 30px;
+	}
+	@include media-breakpoint-down(sm) {
+		&--wilderness {
+			background-image: url('#{$image-url}/nant-gwynant.jpg?w=300&h=500&mode=crop');
+		}
 
-    @media(min-width: @screen-lg-min) {
-        min-height: 370px;
-    }
+		&--code {
+			background-image: url('#{$image-url}/code-bg.jpg?w=300&h=500&mode=crop');
+		}
 
-    &__avatar {
-        margin: 0 auto;
-        display: block;
-        border: #F7F7F7 solid 4px;
-        box-shadow: #000 -1px 7px 30px;
-    }
+		&--mountains {
+			background-image: url('#{$image-url}/mountains-m.jpg');
+		}
 
-    &--light {
-        color: #FFF;
-    }
+		&--glade {
+			background-image: url('#{$image-url}/glade.jpg?w=300&h=500&mode=crop');
+		}
+
+		&--miru {
+			background-image: url('#{$image-url}/miru.jpg');
+		}
+	}
+	@include media-breakpoint-up(md) {
+		&--wilderness {
+			background-image: url('#{$image-url}/nant-gwynant.jpg');
+		}
+
+		&--code {
+			background-image: url('#{$image-url}/code-bg.jpg');
+		}
+
+		&--mountains {
+			background-image: url('#{$image-url}/mountains.jpg');
+		}
+
+		&--glade {
+			background-image: url('#{$image-url}/glade.jpg');
+		}
+
+		&--miru {
+			background-image: url('#{$image-url}/miru.jpg');
+		}
+	}
+
+	min-height: 370px;
+	overflow: hidden;
+	background-size: contain;
+	/*background-attachment: scroll;*/
+	background-attachment: fixed;
+	margin: 0;
+	text-align: center;
+
+	&__title
+	{
+		font-size: 4.5rem;
+	}
+
+	&__subtitle
+	{
+		font-size: 1.5rem;
+	}
+
+	.hero-avatar {
+		@include img-fluid;
+		border-radius: 100%;
+		margin: 0 auto;
+		display: block;
+		border: $gray-lighter solid 4px;
+		box-shadow: $black -1px 7px 30px;
+	}
+
+	&.light {
+		color: $white;
+	}
 }
