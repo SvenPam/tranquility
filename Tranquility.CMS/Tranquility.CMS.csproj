@@ -901,7 +901,7 @@
     <Content Include="gulpfile.js" />
     <Content Include="a\dist\img\hobbies\Thumbs.db" />
     <Content Include="a\src\scripts\external-references.json" />
-    <Content Include="a\src\styles\this-is-stoke.scss" />
+    <Content Include="a\src\styles\ste-pam.scss" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
   </ItemGroup>
@@ -928,22 +928,19 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="connectionString.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="config\Dashboard.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="Views\Article.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Hub.cshtml" />
     <Content Include="Views\Master.cshtml" />
-    <Content Include="a\src\styles\this-is-stoke\01-settings\settings.scss" />
-    <Content Include="a\src\styles\this-is-stoke\02-tools\tools.scss" />
-    <Content Include="a\src\styles\this-is-stoke\03-generic\generic.scss" />
-    <Content Include="a\src\styles\this-is-stoke\04-elements\elements.scss" />
-    <Content Include="a\src\styles\this-is-stoke\05-objects\objects.scss" />
-    <Content Include="a\src\styles\this-is-stoke\06-components\components.scss" />
-    <Content Include="a\src\styles\this-is-stoke\07-trumps\trumps.scss" />
+    <Content Include="a\src\styles\ste-pam\01-settings\settings.scss" />
+    <Content Include="a\src\styles\ste-pam\02-tools\tools.scss" />
+    <Content Include="a\src\styles\ste-pam\03-generic\generic.scss" />
+    <Content Include="a\src\styles\ste-pam\04-elements\elements.scss" />
+    <Content Include="a\src\styles\ste-pam\05-objects\objects.scss" />
+    <Content Include="a\src\styles\ste-pam\06-components\components.scss" />
+    <Content Include="a\src\styles\ste-pam\07-trumps\trumps.scss" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
@@ -974,7 +971,9 @@
     <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
     <Content Include="Media\Web.config" />
     <Content Include="config\UrlRewriting.config" />
-    <Content Include="config\trees.config" />
+    <Content Include="config\trees.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\scripting.config" />
     <Content Include="config\metablogConfig.config" />
@@ -987,6 +986,7 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="connectionString.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
