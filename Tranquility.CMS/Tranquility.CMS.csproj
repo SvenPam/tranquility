@@ -44,7 +44,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ExcludeFoldersFromDeployment>a\src</ExcludeFoldersFromDeployment>
-    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -106,9 +105,6 @@
     </Reference>
     <Reference Include="Jumoo.uSync.Core, Version=5.6.2.740, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\uSync.Core.5.6.2.740\lib\net45\Jumoo.uSync.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Lecoati.LeBlender.Extension, Version=1.0.8.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lecoati.LeBlender.1.0.8.4\lib\Lecoati.LeBlender.Extension.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\log4net.dll</HintPath>
@@ -304,28 +300,6 @@
     <Content Include="App_Plugins\Epiphany.SeoMetadata\views\epiphany.seo.metadata.html" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\views\serp1.png" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\views\serp2.png" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\delete.html" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\delete.js" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\edit.html" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\edit.js" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\sort.html" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\sort.js" />
-    <Content Include="App_Plugins\LeBlender\common\directive\blendereditorwrapper.js" />
-    <Content Include="App_Plugins\LeBlender\common\directive\layersresizabledraggable.js" />
-    <Content Include="App_Plugins\LeBlender\common\directive\propertygrideditorwrapper.js" />
-    <Content Include="App_Plugins\LeBlender\common\filter\orderobjectby.filter.js" />
-    <Content Include="App_Plugins\LeBlender\common\services\requesthelper.service.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\assets\parameterconfig.css" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\dialogs\parameterconfig.controller.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\dialogs\parameterconfig.html" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\dialogs\parameterconfig.prevalues.controller.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\dialogs\parameterconfig.prevalues.html" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblendereditor.controller.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblendereditor.html" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblenderproperties.controller.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblenderproperties.html" />
-    <Content Include="App_Plugins\LeBlender\editors\textstring\textstringconfig.html" />
-    <Content Include="App_Plugins\LeBlender\views_samples\sample_styles.css" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -666,13 +640,13 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Hub.cshtml" />
     <Content Include="Views\Master.cshtml" />
-    <Content Include="a\src\styles\ste-pam\01-settings\settings.scss" />
-    <Content Include="a\src\styles\ste-pam\02-tools\tools.scss" />
-    <Content Include="a\src\styles\ste-pam\03-generic\generic.scss" />
-    <Content Include="a\src\styles\ste-pam\04-elements\elements.scss" />
-    <Content Include="a\src\styles\ste-pam\05-objects\objects.scss" />
-    <Content Include="a\src\styles\ste-pam\06-components\components.scss" />
-    <Content Include="a\src\styles\ste-pam\07-trumps\trumps.scss" />
+    <Content Include="a\src\styles\01-settings\settings.scss" />
+    <Content Include="a\src\styles\02-tools\tools.scss" />
+    <Content Include="a\src\styles\03-generic\generic.scss" />
+    <Content Include="a\src\styles\04-elements\elements.scss" />
+    <Content Include="a\src\styles\05-objects\objects.scss" />
+    <Content Include="a\src\styles\06-components\components.scss" />
+    <Content Include="a\src\styles\07-trumps\trumps.scss" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
@@ -683,13 +657,6 @@
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Header.cshtml" />
     <Content Include="Views\Partials\_Hero.cshtml" />
-    <Content Include="App_Plugins\LeBlender\Web.config" />
-    <Content Include="App_Plugins\LeBlender\views_samples\Tabs.cshtml" />
-    <Content Include="App_Plugins\LeBlender\views_samples\Highlight.cshtml" />
-    <Content Include="App_Plugins\LeBlender\views_samples\Carousel.cshtml" />
-    <Content Include="App_Plugins\LeBlender\package.manifest" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\views\LeBlender.cshtml" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\views\Base.cshtml" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -718,10 +685,20 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
-    <Content Include="connectionString.config" />
     <Content Include="config\uSyncCore.Config" />
     <Content Include="config\uSyncBackOffice.Config" />
     <Content Include="App_Plugins\uSync\package.manifest" />
+    <Content Include="a\src\styles\06-components\_hero.scss" />
+    <Content Include="a\src\styles\06-components\_section.scss" />
+    <Content Include="a\src\styles\06-components\_footer.scss" />
+    <Content Include="a\src\styles\06-components\_social.scss" />
+    <Content Include="a\src\styles\06-components\_content.scss" />
+    <Content Include="a\src\styles\06-components\_icon.scss" />
+    <Content Include="a\src\styles\06-components\_mockup.scss" />
+    <Content Include="a\src\styles\06-components\_nav.scss" />
+    <Content Include="a\src\styles\06-components\_spinner.scss" />
+    <Content Include="a\src\styles\06-components\_stacks.scss" />
+    <Content Include="a\src\styles\06-components\_timeline.scss" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -768,6 +745,20 @@
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <Import Project="..\packages\UmbracoCms.7.5.13\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.5.13\build\UmbracoCms.targets')" />
   <Import Project="..\packages\uSync.3.3.2.740\build\uSync.targets" Condition="Exists('..\packages\uSync.3.3.2.740\build\uSync.targets')" />
+  <PropertyGroup>
+    <CopyAllFilesToSingleFolderForPackageDependsOn>
+      CustomCollectFiles;
+      $(CopyAllFilesToSingleFolderForPackageDependsOn);
+    </CopyAllFilesToSingleFolderForPackageDependsOn>
+  </PropertyGroup>
+  <Target Name="CustomCollectFiles">
+    <ItemGroup>
+      <_CustomFiles Include="a\dist\**\*" />
+      <FilesForPackagingFromProject  Include="%(_CustomFiles.Identity)">
+        <DestinationRelativePath>a\dist\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
