@@ -1,5 +1,76 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "_Page.cshtml";
+    Layout = "_Page.cshtml";
 }
+
+<section class="hero hero--mountains">
+    <div class="container">
+        <h1 class="hero__title">I'm Ste</h1>
+        <h2 class="hero__subtitle">Pleased to meet you.</h2>
+        <img class="hero__avatar" src="@Url.Content("~/a/dist/img/me3.png")" alt="Stephen Pammenter coming down Snowdon in Snowdonia, Wales" />
+    </div>
+</section>
+<div class="sections">
+    <section class="section">
+        <div class="row hidden-print">
+            <div class="col-12 col-md-4  section__fact">
+                <span class="section__icon icon icon--user"></span>
+                <span class="section__title">About</span>
+                <p class="section__subtitle">Skills and Experience</p>
+                <p><a href="/home/about"><span class="glyphicon glyphicon-chevron-left"></span> CV and Personal Info Here</a></p>
+            </div>
+            <div class="col-12 col-md-4 section__fact">
+                <span class="section__icon icon icon-pencil"></span>
+                <span class="section__title">Blog</span>
+                <p class="ection__subtitle hidden-xs hidden-sm">Writing about interesting things</p>
+                <p><a href="/blog">Read</a></p>
+            </div>
+            <div class="col-12 col-md-4 section__fact">
+                <span class="section__icon icon icon-console"></span>
+                <span class="section__title">Work</span>
+                <p class="section__subtitle">CMS Solution and Projects</p>
+                <p><a href="/home/work">My Work @*<span class="icon icon-chevron-right"></span>*@</a></p>
+            </div>
+        </div>
+        <div class="section__content">
+            <h2>Latest</h2>
+            @*@foreach (var article in Model.LatestBlogs.Take(4))
+                {
+                    <div class="media">
+                        <div class="media-left media-middle hidden-xs">
+                            <a href="@article.Url">
+                                <img class="media-object" src="@article.Image?w=100&quality=40" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">@article.Title</h4>
+                            <p>@article.Description</p>
+                            <a href="@article.Url">Read →</a>
+                        </div>
+                    </div>
+                }*@
+        </div>
+    </section>
+    <section class="section">
+        <div class="section__content">
+            <h1>Hello</h1>
+            <p class="lead section__intro">I'm Stephen Pammenter, full stack .NET Developer. I work full time for <a href="//theleadagency.com">The Lead Agency</a> in Liverpool.</p>
+            <h2>Employment</h2>
+            <p>
+                I am not actively seeking new employment, but I'm always happy to hear what your organization has to offer. No agencies please.
+                You can read more about my skills <a href="/home/about">here</a>, and if you think I might be a great fit, consider getting in <a href="/contact">touch</a>.
+            </p>
+            <br />
+            <h2>Bespoke CMS Solution</h2>
+            <p>
+                If you're interested in starting out your own website, I might be able to help. I've built a modular <abbr title="Content Management">CMS</abbr> that can be customized to suit your needs.
+                It already supports Blogs, Events, Notices and Pages - we can talk if you want something else. If you have a design in mind, I'll tailor the aesthetics to your dreams!
+            </p>
+            <p>Check out previous projects <a href="/home/work">here</a>, this site is built on my CMS too. I don't have a huge amount of time, as this is not my primary job. If I have the availability, I will be more than happy to help - let's have a <a href="/contact">chat</a>.</p>
+        </div>
+        <div class="col-12">
+            <p class="lead text-center section__outro"><a href="/contact">Get in touch <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+        </div>
+    </section>
+</div>

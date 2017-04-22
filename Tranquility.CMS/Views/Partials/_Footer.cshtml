@@ -1,5 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-<footer class="footer hidden-print">
+<footer class="section section--footer hidden-print">
     <div href="javascript:void(0)" id="mobileMenu" class="menu-mobile"><span class="glyphicon glyphicon-menu-hamburger hidden-lg hidden-md"></span></div>
     <div class="container">
         <div class="row">
@@ -58,7 +58,7 @@
         <hr />
         <div class="row">
             <div class="col-sm-6 col-12">
-                <small>Copyright  &copy; 2012 - @DateTime.UtcNow.ToLocalTime().Year @Model.Content.AncestorsOrSelf(1).Name 
+                <small>Copyright  &copy; 2012 - @DateTime.UtcNow.ToLocalTime().Year @Model.Content.AncestorsOrSelf(1).First().Name 
                     <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
                         <span style="font: 80% Arial,sans-serif; color:#0783B6;">
                             <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
