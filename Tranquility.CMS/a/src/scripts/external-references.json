@@ -1,3 +1,3 @@
 ﻿{
-  "references": [ "./node_modules/svg-injector/dist/svg-injector.min.js", "./node_modules/jquery/dist/jquery.slim.min.js" ]
+  "references": [ "./node_modules/jquery/dist/jquery.slim.min.js" ]
 }
