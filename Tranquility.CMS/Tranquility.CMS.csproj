@@ -910,7 +910,6 @@
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
-    <Content Include="a\dist\img\hobbies\Thumbs.db" />
     <Content Include="a\src\scripts\external-references.json" />
     <Content Include="a\src\styles\ste-pam.scss" />
     <Content Include="package.json" />
