@@ -1,11 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "_Page.cshtml";
+    Layout = "_Page.cshtml";
 }
 
 <div class="bg-static code"></div>
-<section class="hero hero--work">
+<section class="hero hero--code">
     <div class="container">
         <h1 class="hero__title">Work</h1>
         <h2 class="hero__subtitle">I've built a fancy pants CMS you might like.</h2>
@@ -13,120 +13,93 @@
     </div>
 </section>
 <div class="sections">
-    <section>
-        <div class="container-fluid hidden-print split-sections">
-            <div class="col-xs-12 col-md-4 split">
-                <div class="col-xs-12 text-center">
-                    <span class="glyphicon glyphicon-phone icon"></span>
-                    <span class="fact">XS</span>
-                    <p class="lead">Responsive & Mobile</p>
-                    <ul class="text-muted list-unstyled">
-                        <li>Sites Optimized for Mobile</li>
-                        <li>Lightweight</li>
-                        <li>Thumb Friendly <span class="glyphicon glyphicon-thumbs-up"></span></li>
-                    </ul>
-                </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-12 col-md-4 section__fact">
+                <span class="glyphicon glyphicon-phone icon"></span>
+                <span class="section__title">XS</span>
+                <p class="lead">Responsive & Mobile</p>
+                <ul class="text-muted list-unstyled">
+                    <li>Sites Optimized for Mobile</li>
+                    <li>Lightweight</li>
+                    <li>Thumb Friendly <span class="glyphicon glyphicon-thumbs-up"></span></li>
+                </ul>
             </div>
-            <div class="col-xs-12 col-md-4 split">
-                <div class="col-xs-12 text-center">
-                    <span class="glyphicon glyphicon-flash icon"></span>
-                    <span class="fact">Fast</span>
-                    <p class="lead">Your Site Set Up in No Time<sup>†</sup></p>
-                    <p class="text-muted small"><sup>†</sup>Depending on my availability.</p>
-                    <ul class="text-muted list-unstyled hidden-xs hidden-sm">
-                        <li>
-                            <a href="#cms">
-                                More
-                                <br />
-                                <span class="glyphicon glyphicon-chevron-down"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-12 col-md-4 section__fact">
+                <span class="glyphicon glyphicon-flash icon"></span>
+                <span class="section__title">Fast</span>
+                <p class="lead">Your Site Set Up in No Time<sup>†</sup></p>
+                <p class="text-muted small"><sup>†</sup>Depending on my availability.</p>
+                <ul class="text-muted list-unstyled hidden-xs hidden-sm">
+                    <li>
+                        <a href="#cms">
+                            More
+                            <br />
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-xs-12 col-md-4 split">
-                <div class="col-xs-12 text-center">
-                    <span class="glyphicon glyphicon-tasks icon"></span>
-                    <span class="fact">CMS</span>
-                    <p class="lead">Content Management System</p>
-                    <ul class="text-muted list-unstyled">
-                        <li>Built to Spec</li>
-                        <li>Supports Blogs, Events, Notices, Pages</li>
-                        <li>And more!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div id="cms" class="container section-text">
-                <div class="col-xs-12">
-                    <h1>A Bespoke CMS</h1>
-                    <p class="lead">Need a website?</p>
-                </div>
-                <div class="col-xs-12">
-                    <h2>Setup</h2>
-                    <p>I can help you with domain names and hosting. Let me know what you want from your potential site and I'll tailor a CMS to fit.</p>
-                </div>
-                <div class="col-xs-12">
-                    <h2>Manage</h2>
-                    <p>Control your own users, roles  and enquiries from one place. Want email notifications sent to specfic groups? Sure. You can do it here.</p>
-                </div>
-                <div class="col-xs-12">
-                    <h2>Create</h2>
-                    <p>Be it a blog article, event, notice, page or more - you can do it through my CMS. Furthermore, you don't have to know a line of code.</p>
-                </div>
-                <div class="col-xs-12">
-                    <h2>Showcase</h2>
-                    <p>Tell me want you want in terms of design and I'll build it. The content you create will <em>automagically</em> appear on your site, looking like it was branded by your hand.</p>
-                </div>
-                <div class="col-xs-12" style="padding-top: 50px;">
-                    <a class="lead text-center" href="/contact">Let's Talk <span class="glyphicon glyphicon-chevron-right"></span></a>
-                </div>
+            <div class="col-12 col-md-4 section__fact">
+                <span class="glyphicon glyphicon-tasks icon"></span>
+                <span class="section__title">CMS</span>
+                <p class="lead">Content Management System</p>
+                <ul class="text-muted list-unstyled">
+                    <li>Built to Spec</li>
+                    <li>Supports Blogs, Events, Notices, Pages</li>
+                    <li>And more!</li>
+                </ul>
             </div>
         </div>
-        <div class="clearfix"></div>
+        <div id="cms" class="section__content">
+            <div class="col-12">
+                <h1>A Bespoke CMS</h1>
+                <p class="section__intro">Need a website?</p>
+                <h2>Setup</h2>
+                <p>I can help you with domain names and hosting. Let me know what you want from your potential site and I'll tailor a CMS to fit.</p>
+                <h2>Manage</h2>
+                <p>Control your own users, roles  and enquiries from one place. Want email notifications sent to specfic groups? Sure. You can do it here.</p>
+                <h2>Create</h2>
+                <p>Be it a blog article, event, notice, page or more - you can do it through my CMS. Furthermore, you don't have to know a line of code.</p>
+                <h2>Showcase</h2>
+                <p>Tell me want you want in terms of design and I'll build it. The content you create will <em>automagically</em> appear on your site, looking like it was branded by your hand.</p>
+                <p class="section__outro"><a href="/contact">Let's Talk @*<span class="glyphicon glyphicon-chevron-right"></span>*@</a></p>
+            </div>
+        </div>
     </section>
-    <section>
-        <div class="container-fluid hidden-print split-sections">
-            <div class="col-xs-12 col-md-4 split">
-                <div class="col-xs-12 text-center">
-                    <span class="glyphicon glyphicon-user icon"></span>
-                    <span class="fact">Me</span>
-                    <p class="lead">Skills and Experience</p>
-                    <a href="/home/about" class="text-center"><span class="glyphicon glyphicon-chevron-left"></span> More About me</a>
-                    <div class="clearfix"></div>
-                </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-12 col-md-4 section__fact">
+                <span class="glyphicon glyphicon-user icon"></span>
+                <span class="section__title">Me</span>
+                <p class="lead">Skills and Experience</p>
+                <a href="/home/about" class="text-center"><span class="glyphicon glyphicon-chevron-left"></span> More About me</a>
+                <div class="clearfix"></div>
             </div>
-            <div class="col-xs-12 col-md-4 split hidden-xs hidden-sm">
-                <div class="col-xs-12 text-center">
-                    <div>
-                        <span class="glyphicon glyphicon-console icon"></span>
-                    </div>
-                    <span class="fact">Work</span>
-                    <p class="lead">Projects</p>
-                    <a href="#work" class="hidden-xs">
-                        <span class="glyphicon glyphicon-chevron-down"></span>
-                    </a>
-                </div>
+            <div class="col-12 col-md-4 section__fact hidden-xs hidden-sm">
+                <span class="glyphicon glyphicon-console icon"></span>
+                <span class="section__title">Work</span>
+                <p class="lead">Projects</p>
+                <a href="#work" class="hidden-xs">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </a>
             </div>
-            <div class="col-xs-12 col-md-4 split">
-                <div class="col-xs-12 text-center">
-                    <div>
-                        <span class="glyphicon glyphicon-send icon"></span>
-                    </div>
-                    <span class="fact">Contact</span>
-                    <p class="lead">Interested in my Work?</p>
-                    <a href="/contact" class="text-center">Get in touch <span class="glyphicon glyphicon-chevron-right"></span></a>
-                </div>
+            <div class="col-12 col-md-4 section__fact">
+                <span class="glyphicon glyphicon-send icon"></span>
+                <span class="section__title">Contact</span>
+                <p class="lead">Interested in my Work?</p>
+                <a href="/contact" class="text-center">Get in touch <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
-        <div class="container-fluid">
-            <p class="col-xs-12 text-center hidden-xs hidden-sm">I've worked on a few projects.</p>
-            <h1 class="visible-sm visible-xs">My Work</h1>
-        </div>
-        <div id="work" class="container design">
-            <div class="design-examples container">
-                <div class="design-example sg-contact col-xs-12">
-                    <section class="col-md-4 col-xs-12">
+        <div id="work" class="section__content">
+            <div class="col-12">
+                <div class="row">
+                    <p class="col-12 text-center hidden-xs hidden-sm">I've worked on a few projects.</p>
+                    <h1 class="col-12 visible-sm visible-xs">My Work</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-12">
                         <h3><a href="//www.swanswaygarages.com">Swansway Group</a></h3>
                         <p>I work full time for Swansway Group, working on a team with three great guys to maintain twenty dealership sites.</p>
                         <p>All of our sites run from single .NET MVC server application, we manage front-end responsive design through LESS on a brand-by-brand basis.</p>
@@ -139,64 +112,64 @@
                                 <li>Contact Pages</li>
                             </ul>
                         </p>
-                    </section>
-                    <section class="example col-md-8 hidden-xs hidden-sm">
+                    </div>
+                    <div class="example col-md-8 hidden-xs hidden-sm">
                         <div class="browser-mockup">
                             <div class="iframe-container">
                                 <iframe id="test" src="//swanswaygarages.com"></iframe>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </div>
-                <div class="design-example sg-mob col-xs-12">
-                    <section class="col-xs-12" style="background-color: #16698B; padding-top: 10px; padding-bottom: 10px;">
+                <div class="row">
+                    <div class="col-12" style="background-color: #16698B; padding-top: 10px; padding-bottom: 10px;">
                         <img class="example-image" style="display: block;margin: 0 auto;" src="~/Areas/ste_pam/Content/Image/sg-mob.png?w=607" />
-                    </section>
-                    <section class="col-xs-12">
+                    </div>
+                    <div class="col-12">
                         <h3><a href="//ste-pam.com/blog/article/dynamic-serving-and-performance">Swansway Group Mobile</a></h3>
                         <p>My crowning achivement so far, whilst working for Swansway has to be our mobile sites. Through dynamic serving, we deliver content optimized for mobile - this includes specific views and styles.</p>
                         <p>This work has put Swansway at the fore-front of the automotive industry in regards to web sites. I wrote all about the work I did <a href="http://ste-pam.com/blog/article/dynamic-serving-and-performance">here</a>.</p>
-                    </section>
+                    </div>
                 </div>
-                <div class="design-example t2t col-xs-12">
-                    <section class="col-md-4 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-12">
                         <h3><a href="//t2t.bike">Tower to Tower 2015</a></h3>
                         <p>To help my friends and myself raise awareness, I put my skills to work and built us our own site.</p>
-                    </section>
-                    <section class="example col-md-8 hidden-xs hidden-sm">
+                    </div>
+                    <div class="example col-md-8 hidden-xs hidden-sm">
                         <div class="browser-mockup">
                             <div class="iframe-container">
                                 <iframe src="http://t2t.bike"></iframe>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </div>
-                <div class="design-example col-xs-12">
-                    <section class="example col-md-8 hidden-xs hidden-sm">
+                <div class="row">
+                    <div class="example col-md-8 hidden-xs hidden-sm">
                         <div class="browser-mockup">
                             <div class="iframe-container">
                                 <iframe src="//www.stpaulswarton.co.uk"></iframe>
                             </div>
                         </div>
-                    </section>
-                    <section class="col-md-4 col-xs-12">
+                    </div>
+                    <div class="col-md-4 col-12">
                         <h3><a href="//www.stpaulswarton.co.uk">St. Pauls Church Warton</a></h3>
                         <p>To help out a family friend, I built her local church their own site. The front-end hooks up to the exisiting CMS I built for all my sites.</p>
-                    </section>
+                    </div>
                 </div>
-                <div class="design-example col-xs-12">
-                    <section class="col-md-4 col-xs-12">
+                <div class="row">
+                    <div class="col-md-4 col-12">
                         <h3>Miru</h3>
                         <p>In my final year at University, I built an Android augmented reality app for the process industry. You can find out more about it <a href="/miru">here</a>.</p>
-                    </section>
-                    <section class="example col-md-8 col-xs-12">
+                    </div>
+                    <div class="example col-md-8 col-12">
                         <img src="~/Areas/ste_pam/Content/Image/miru.jpg?w=300px;" />
-                    </section>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="section__outro">Want to know more about me? <a href="/about">Check me out <span class="glyphicon glyphicon-chevron-right"></span></a></p>
                 </div>
             </div>
         </div>
-        <div class="lead section-outro text-center">Want to know more about me? <a href="/about">Check me out <span class="glyphicon glyphicon-chevron-right"></span></a></div>
-        <div class="clearfix"></div>
     </section>
 </div>
-<div class="clearfix"></div>

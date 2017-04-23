@@ -2,82 +2,82 @@
 /// <reference path="../02-tools/tools" />
 
 .hero {
-	@include media-breakpoint-up(md) {
-		min-height: 370px;
-		padding: 30px;
-	}
-	@include media-breakpoint-down(sm) {
-		&--wilderness {
-			background-image: url('#{$image-url}/nant-gwynant.jpg?w=300&h=500&mode=crop');
-		}
+    @include media-breakpoint-up(md) {
+        min-height: 370px;
+        padding: 30px;
+    }
 
-		&--code {
-			background-image: url('#{$image-url}/code-bg.jpg?w=300&h=500&mode=crop');
-		}
+    @include media-breakpoint-down(sm) {
+        &--wilderness {
+            background-image: url('#{$image-url}/nant-gwynant.jpg?w=300&h=500&mode=crop');
+        }
 
-		&--mountains {
-			background-image: url('#{$image-url}/mountains-m.jpg');
-		}
+        &--code {
+            background-image: url('#{$image-url}/code-bg.jpg?w=300&h=500&mode=crop');
+        }
 
-		&--glade {
-			background-image: url('#{$image-url}/glade.jpg?w=300&h=500&mode=crop');
-		}
+        &--mountains {
+            background-image: url('#{$image-url}/mountains-m.jpg');
+        }
 
-		&--miru {
-			background-image: url('#{$image-url}/miru.jpg');
-		}
-	}
-	@include media-breakpoint-up(md) {
-		&--wilderness {
-			background-image: url('#{$image-url}/nant-gwynant.jpg');
-		}
+        &--glade {
+            background-image: url('#{$image-url}/glade.jpg?w=300&h=500&mode=crop');
+        }
 
-		&--code {
-			background-image: url('#{$image-url}/code-bg.jpg');
-		}
+        &--miru {
+            background-image: url('#{$image-url}/miru.jpg');
+        }
+    }
 
-		&--mountains {
-			background-image: url('#{$image-url}/mountains.jpg');
-		}
+    @include media-breakpoint-up(md) {
+        &--wilderness {
+            background-image: url('#{$image-url}/nant-gwynant.jpg');
+        }
 
-		&--glade {
-			background-image: url('#{$image-url}/glade.jpg');
-		}
+        &--code {
+            background-image: url('#{$image-url}/code-bg.jpg');
+        }
 
-		&--miru {
-			background-image: url('#{$image-url}/miru.jpg');
-		}
-	}
+        &--mountains {
+            background-image: url('#{$image-url}/mountains.jpg');
+        }
 
-	min-height: 370px;
-	overflow: hidden;
-	background-size: cover;
+        &--glade {
+            background-image: url('#{$image-url}/glade.jpg');
+        }
+
+        &--miru {
+            background-image: url('#{$image-url}/miru.jpg');
+        }
+    }
+
+    min-height: 370px;
+    overflow: hidden;
+    background-size: cover;
     background-repeat: no-repeat;
-	/*background-attachment: scroll;*/
-	background-attachment: fixed;
-	margin: 0;
-	text-align: center;
+    /*background-attachment: scroll;*/
+    background-attachment: fixed;
+    margin: 0;
+    text-align: center;
 
-	&__title
-	{
-		font-size: 4.5rem;
-	}
+    &__title {
+        font-size: 4.5rem;
+    }
 
-	&__subtitle
-	{
-		font-size: 1.5rem;
-	}
+    &__subtitle {
+        font-size: 1.5rem;
+    }
 
-	&__avatar {
-		@include img-fluid;
-		border-radius: 100%;
-		margin: 0 auto;
-		display: block;
-		border: $gray-lighter solid 4px;
-		box-shadow: $black -1px 7px 30px;
-	}
+    &__avatar {
+        @include img-fluid;
+        border-radius: 100%;
+        margin: 0 auto;
+        display: block;
+        border: $gray-lighter solid 4px;
+        box-shadow: $black -1px 7px 30px;
+    }
 
-	&--light {
-		color: $white;
-	}
+    &--code {
+        color: $white;
+    }
 }
