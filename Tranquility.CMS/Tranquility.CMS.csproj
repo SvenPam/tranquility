@@ -711,6 +711,8 @@
     <Content Include="Views\About.cshtml" />
     <Content Include="connectionString.config" />
     <Content Include="manifest.json" />
+    <Content Include="Views\Partials\_CV.cshtml" />
+    <Content Include="Views\Work.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

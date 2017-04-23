@@ -2,6 +2,7 @@
 /// <reference path="../02-tools/tools" />
 
 .section {
+    @include make-container;
     padding-top: $grid-gutter-width-base;
     padding-bottom: $grid-gutter-width-base;
 

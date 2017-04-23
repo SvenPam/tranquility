@@ -1,22 +1,31 @@
 ﻿/// <reference path="../01-settings/settings" />
 /// <reference path="../02-tools/tools" />
 .article-body {
-	padding-top: 50px;
-	max-width: 100%;
-	overflow: hidden;
+    padding-top: 50px;
+    max-width: 100%;
+    overflow: hidden;
 
-	img {
-		max-width: 100%;
-	}
+    img {
+        max-width: 100%;
+    }
 }
 
 
 .latest-blog-posts {
-	padding: 50px;
+    padding: 50px;
 
-	.media {
-		img {
-			max-width: 100px;
-		}
-	}
+    .media {
+        img {
+            max-width: 100px;
+        }
+    }
+}
+
+.cv {
+    margin-bottom: 22px;
+    background-color: $white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px transparentize($black, .95);
+    padding: $grid-gutter-width-base;
 }
