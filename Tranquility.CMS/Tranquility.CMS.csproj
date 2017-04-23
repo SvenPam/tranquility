@@ -296,6 +296,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android-chrome-192x192.png" />
+    <Content Include="android-chrome-384x384.png" />
+    <Content Include="apple-touch-icon.png" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\css\epiphany.seo.metadata.css" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\js\epiphany.seo.metadata.js" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\views\epiphany.seo.metadata.html" />
@@ -585,6 +588,7 @@
     <Content Include="a\src\images\sql-logo.svg" />
     <Content Include="a\src\images\t2t.png" />
     <Content Include="a\src\images\visual-studio-logo.svg" />
+    <Content Include="browserconfig.xml" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -605,10 +609,14 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="default.aspx" />
+    <Content Include="favicon-16x16.png" />
+    <Content Include="favicon-32x32.png" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="a\src\scripts\external-references.json" />
     <Content Include="a\src\styles\ste-pam.scss" />
+    <Content Include="mstile-150x150.png" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
   </ItemGroup>
@@ -700,6 +708,9 @@
     <Content Include="a\src\styles\06-components\_spinner.scss" />
     <Content Include="a\src\styles\06-components\_stacks.scss" />
     <Content Include="a\src\styles\06-components\_timeline.scss" />
+    <Content Include="Views\About.cshtml" />
+    <Content Include="connectionString.config" />
+    <Content Include="manifest.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -755,7 +766,7 @@
   <Target Name="CustomCollectFiles">
     <ItemGroup>
       <_CustomFiles Include="a\dist\**\*" />
-      <FilesForPackagingFromProject  Include="%(_CustomFiles.Identity)">
+      <FilesForPackagingFromProject Include="%(_CustomFiles.Identity)">
         <DestinationRelativePath>a\dist\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
     </ItemGroup>
