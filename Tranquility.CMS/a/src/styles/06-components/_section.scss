@@ -5,6 +5,19 @@
     padding-top: $grid-gutter-width-base;
     padding-bottom: $grid-gutter-width-base;
 
+    &__title {
+        font-size: 9rem;
+        font-family: $headings-font-family;
+
+        @include media-breakpoint-down(md) {
+            font-size: 6rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 2rem;
+        }
+    }
+
     &__content {
         @include make-container;
         @include make-container-max-widths;
@@ -83,22 +96,8 @@
         width: 115px;
         padding: 25px;
     }
-
     //Centres the glyphicon cos its really wide for some reason.
     &.glyphicon-send {
         padding-left: 0;
-    }
-}
-
-.fact {
-    font-size: 9rem;
-    font-family: $headings-font-family;
-
-    @include media-breakpoint-down(md) {
-        font-size: 6rem;
-    }
-
-    @include media-breakpoint-down(sm) {
-        font-size: 2rem;
     }
 }

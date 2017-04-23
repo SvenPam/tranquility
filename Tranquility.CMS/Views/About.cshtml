@@ -1,5 +1,158 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.About>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+    Layout = "_Page.cshtml";
 }
+<section class="hero hero--wilderness">
+    <div class="container">
+        <h1 class="hero__title">I'm Ste</h1>
+        <img class="hero__avatar" src="@Url.Content("~/a/dist/img/me3.png")" alt="Stephen Pammenter coming down Snowdon in Snowdonia, Wales" />
+        <h2 class="hero__subtitle">Full Stack .NET Developer</h2>
+    </div>
+</section>
+<div class="sections">
+    <span>@*Used this just to get a dark theme to start with.*@</span>
+    <section class="section development hidden-print">
+        <div class="row text-center">
+            <p class="col-12 h3">I build applications across several stacks.</p>
+        </div>
+        <div class="row">
+            <h3 class="md-offset-1 col-12 col-md-6">Web</h3>
+            <h3 class="col-md-4 hidden-sm hidden-xs">.NET</h3>
+        </div>
+        <div class="row">
+            <div class="offset-md-1 offset-sm-3 col-4 col-sm-2 stack">
+                <div class="stack-logo-wrapper">
+                    <img class="stack-logo" src="@Url.Content("~/a/dist/img/js-logo.svg")" />
+                </div>
+                <span>Javascript</span>
+            </div>
+            <div class="col-4 col-sm-2 stack">
+                <div class="stack-logo-wrapper">
+                    <img class="stack-logo" src="@Url.Content("~/a/dist/img/html5-logo.svg")" />
+                </div>
+                <span>HTML5</span>
+            </div>
+            <div class="col-4 col-sm-2 stack">
+                <div class="stack-logo-wrapper">
+                    <img class="stack-logo" src="@Url.Content("~/a/dist/img/css3-logo.svg")" />
+                </div>
+                <span>CSS3</span>
+            </div>
+            @*<div class="clearfix hidden-md hidden-lg"></div>
+                <h3 class="col-12 hidden-lg hidden-md">.NET</h3>*@
+            <div class="offset-sm-4 offset-md-0 offset-2 col-4 col-sm-2 stack">
+                <div class="stack-logo-wrapper">
+                    <img class="stack-logo visual-studio" src="@Url.Content("~/a/dist/img/visual-studio-logo.svg")" />
+                </div>
+                <span>C#</span>
+            </div>
+            <div class="col-4 col-sm-2 stack">
+                <div class="stack-logo-wrapper">
+                    <img class="stack-logo sql" src="@Url.Content("~/a/dist/img/sql-logo.svg")" />
+                </div>
+                <span>SQL</span>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <p class="col-xs-12 hidden-print h3 text-center section__intro">Here's some stuff about me.</p>
+        <div class="row hidden-print">
+            <div class="hidden-sm hidden-xs col-md-4 section__fact">
+                <span class="section__icon icon icon-education"></span>
+                <span class="section__title">1st</span>
+                <p class="section__subtitle">Computer Science</p>
+                <p class="section_description">Teesside University</p>
+            </div>
+            <div class="col-xs-12 col-md-4 section__fact">
+                <span class="section__icon icon icon-list-alt"></span>
+                <span class="section__title">CV</span>
+                <p class="section__subtitle hidden-xs hidden-sm">Online</p>
+                <p><a href="#cv"><span class="glyphicon glyphicon-chevron-down"></span></a></p>
+            </div>
+            <div class="col-md-4 section__fact col-xs-6 hidden-sm hidden-xs">
+                <span class="section__icon icon icon-briefcase"></span>
+                <span class="section__title">@(DateTime.Now.Year - 2013)</span>
+                <p class="section__subtitle">Years Commercial Experience</p>
+                <p><a href="/home/work">My Work <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+            </div>
+        </div>
+        <div class="container">
+            @*@Html.Partial("~/Areas/ste_pam/Views/Shared/_CV.cshtml")*@
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid hidden-print split-sections">
+            <div class="col-xs-12 col-md-4 split">
+                <div class="col-xs-12 text-center">
+                    <div>
+                        <span class="glyphicon glyphicon-music icon"></span>
+                    </div>
+                    <span class="fact">Music</span>
+                    <ul class="text-muted list-unstyled">
+                        <li><a href="https://open.spotify.com/user/svenpam">Spotify</a></li>
+                        <li><a href="https://www.youtube.com/user/Liquicity">Liquicty</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=cFnZeopsqos">2015 DnB Yearmix</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 split">
+                <div class="col-xs-12 text-center">
+                    <div>
+                        <span class="glyphicon glyphicon-sunglasses icon"></span>
+                    </div>
+                    <span class="fact">Hobbies</span>
+                    <ul class="text-muted list-unstyled">
+                        <li><a href="https://www.strava.com/athletes/stephen_pammenter">Cycling</a></li>
+                        <li>Sailing</li>
+                        <li>Walking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 split hidden-xs">
+                <div class="col-xs-12 text-center">
+                    <div>
+                        <span class="glyphicon glyphicon-book icon"></span>
+                    </div>
+                    <span class="fact">Reading</span>
+                    <ul class="text-muted list-unstyled">
+                        <li><a href="https://github.com/getify/You-Dont-Know-JS">You Don't Know JS - Kyle Simpson</a></li>
+                        <li>Malazan: Book of the Fallen - Stephen Erickson</li>
+                        <li>Demon Cycle - Peter V. Brett</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container hidden-print">
+            <div class="col-xs-12 hobbies-gallery">
+                <div class="col-sm-4 col-xs-12 hidden-xs">
+                    <img title="Stephen Pammenter celebrating cycling 600+ miles to the Eiffel Tower with his sister, Lauren." class="img-thumbnail hidden-xs" src="~/Areas/ste_pam/Content/Image/hobbies/eiffel-tower.jpg?w=340&quality=50" />
+                    <img title="Stephen Pammenter creeping in the bushes on a practice walk for the Cleveland Way." class="img-thumbnail hidden-xs hidden-sm" src="~/Areas/ste_pam/Content/Image/hobbies/bushes.jpg?w=340&quality=50" />
+                    <img title="Stephen Pammenter pondering thoughts at a waterfall on the Pennine Way." class="img-thumbnail hidden-sm" src="~/Areas/ste_pam/Content/Image/hobbies/waterfall.jpg?w=340&quality=50" />
+                    <img title="Stephen Pammenter Glad to have stopped for the night after a particularly arduous trek." class="img-thumbnail hidden-sm" src="~/Areas/ste_pam/Content/Image/hobbies/wild-camping.jpg?w=340&quality=50" />
+                    <img title="Stephen Pammenter proudly stands next to his Miru exihibition at ExpoTees 2014." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/miru.jpg" />
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <img title="View from Stephen Pammenter's time on rescue during a Winter race at Blackpool and Fleetwood Yacht club." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/wyre.jpg?w=710&quality=50" />
+                    <div class="row">
+                        <div class="col-xs-6 hidden-xs hidden-sm">
+                            <img title="Stephen Pammenter's shocked expression for no real reason." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/oh.jpg?w=340&quality=50" />
+                        </div>
+                        <div class="col-md-6 col-xs-12 hidden-xs hidden-sm">
+                            <img title="Stephen Pammenter posing for a picture whilst taking a course of students out to Wyre light." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/sailing.jpg?=w340&quality=50" />
+                            <img title="Views from a Stephen Pammenter's cycling adventure in the French Riviera." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/cycling-sun.jpg?=w340&quality=50" />
+                            <img title="Stephen Pammenter posing with my best friends Dan, beofre commencing the Cleveland Way." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/cleveland-way.jpg?=w340&quality=50" />
+                        </div>
+                    </div>
+                    <img title="Stephen Pammenter time for a pose on the walk down from Snowdon after conquering Watkins pass." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/snowdonia.jpg?w=710&quality=50" />
+                    <img title="Stephen Pammenter scuba diving in Turkey." class="img-thumbnail hidden-xs" src="~/Areas/ste_pam/Content/Image/hobbies/scuba.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 hidden-print">
+            <p class="lead text-center section-outro">Looking for more info? <a href="/home/work">Check out my work <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+        </div>
+        <div class="clearfix"></div>
+    </section>
+</div>
+<div class="clearfix"></div>
