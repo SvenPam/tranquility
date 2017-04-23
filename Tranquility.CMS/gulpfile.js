@@ -1,9 +1,4 @@
 ﻿/// <binding ProjectOpened='watch' />
-/******************************************************
- * PATTERN LAB NODE
- * EDITION-NODE-GULP
- * The gulp wrapper around patternlab-node core, providing tasks to interact with the core library and move supporting frontend assets.
-******************************************************/
 const gulp = require('gulp'),
     pckg = require('./package.json'),
     externalJs = require('./a/src/scripts/external-references.json'),
@@ -98,8 +93,5 @@ function watch() {
     gulp.watch(`${pckg.paths.src.images}/**/*.*`, { awaitWriteFinish: true }).on('change', gulp.series('img'));
 }
 
-/******************************************************
- * COMPOUND TASKS
-******************************************************/
 gulp.task('default', gulp.series('build'));
 gulp.task('watch', gulp.series('build', watch));
