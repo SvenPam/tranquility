@@ -56,7 +56,7 @@
         </div>
     </section>
     <section class="section">
-        <p class="col-xs-12 hidden-print h3 text-center section__intro">Here's some stuff about me.</p>
+        <p class="col-12 hidden-print h3 text-center section__intro">Here's some stuff about me.</p>
         <div class="row hidden-print">
             <div class="hidden-sm hidden-xs col-md-4 section__fact">
                 <span class="section__icon icon icon-education"></span>
@@ -64,13 +64,13 @@
                 <p class="section__subtitle">Computer Science</p>
                 <p class="section_description">Teesside University</p>
             </div>
-            <div class="col-xs-12 col-md-4 section__fact">
+            <div class="col-12 col-md-4 section__fact">
                 <span class="section__icon icon icon-list-alt"></span>
                 <span class="section__title">CV</span>
                 <p class="section__subtitle hidden-xs hidden-sm">Online</p>
                 <p><a href="#cv"><span class="glyphicon glyphicon-chevron-down"></span></a></p>
             </div>
-            <div class="col-md-4 section__fact col-xs-6 hidden-sm hidden-xs">
+            <div class="col-md-4 section__fact col-6 hidden-sm hidden-xs">
                 <span class="section__icon icon icon-briefcase"></span>
                 <span class="section__title">@(DateTime.Now.Year - 2013)</span>
                 <p class="section__subtitle">Years Commercial Experience</p>
@@ -81,78 +81,66 @@
             @*@Html.Partial("~/Areas/ste_pam/Views/Shared/_CV.cshtml")*@
         </div>
     </section>
-    <section>
-        <div class="container-fluid hidden-print split-sections">
-            <div class="col-xs-12 col-md-4 split">
-                <div class="col-xs-12 text-center">
-                    <div>
-                        <span class="glyphicon glyphicon-music icon"></span>
-                    </div>
-                    <span class="fact">Music</span>
-                    <ul class="text-muted list-unstyled">
-                        <li><a href="https://open.spotify.com/user/svenpam">Spotify</a></li>
-                        <li><a href="https://www.youtube.com/user/Liquicity">Liquicty</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=cFnZeopsqos">2015 DnB Yearmix</a></li>
-                    </ul>
-                </div>
+    <section class="section">
+        <div class="row hidden-print">
+            <div class="col-12 col-md-4 section__fact">
+                <span class="glyphicon glyphicon-music icon"></span>
+                <span class="section__title">Music</span>
+                <ul class="section__description list-unstyled">
+                    <li><a href="https://open.spotify.com/user/svenpam">Spotify</a></li>
+                    <li><a href="https://www.youtube.com/user/Liquicity">Liquicty</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=cFnZeopsqos">2015 DnB Yearmix</a></li>
+                </ul>
             </div>
-            <div class="col-xs-12 col-md-4 split">
-                <div class="col-xs-12 text-center">
-                    <div>
-                        <span class="glyphicon glyphicon-sunglasses icon"></span>
-                    </div>
-                    <span class="fact">Hobbies</span>
-                    <ul class="text-muted list-unstyled">
-                        <li><a href="https://www.strava.com/athletes/stephen_pammenter">Cycling</a></li>
-                        <li>Sailing</li>
-                        <li>Walking</li>
-                    </ul>
-                </div>
+            <div class="col-12 col-md-4 section__fact">
+                <span class="glyphicon glyphicon-sunglasses icon"></span>
+                <span class="section__title">Hobbies</span>
+                <ul class="section__description list-unstyled">
+                    <li><a href="https://www.strava.com/athletes/stephen_pammenter">Cycling</a></li>
+                    <li>Sailing</li>
+                    <li>Walking</li>
+                </ul>
             </div>
-            <div class="col-xs-12 col-md-4 split hidden-xs">
-                <div class="col-xs-12 text-center">
-                    <div>
-                        <span class="glyphicon glyphicon-book icon"></span>
-                    </div>
-                    <span class="fact">Reading</span>
-                    <ul class="text-muted list-unstyled">
-                        <li><a href="https://github.com/getify/You-Dont-Know-JS">You Don't Know JS - Kyle Simpson</a></li>
-                        <li>Malazan: Book of the Fallen - Stephen Erickson</li>
-                        <li>Demon Cycle - Peter V. Brett</li>
-                    </ul>
-                </div>
+            <div class="col-12 col-md-4 section__fact hidden-xs">
+                <span class="glyphicon glyphicon-book icon"></span>
+                <span class="section__title">Reading</span>
+                <ul class="section__description list-unstyled">
+                    <li><a href="https://github.com/getify/You-Dont-Know-JS">You Don't Know JS - Kyle Simpson</a></li>
+                    <li>Malazan: Book of the Fallen - Stephen Erickson</li>
+                    <li>Demon Cycle - Peter V. Brett</li>
+                </ul>
             </div>
         </div>
-        <div class="container hidden-print">
-            <div class="col-xs-12 hobbies-gallery">
-                <div class="col-sm-4 col-xs-12 hidden-xs">
-                    <img title="Stephen Pammenter celebrating cycling 600+ miles to the Eiffel Tower with his sister, Lauren." class="img-thumbnail hidden-xs" src="~/Areas/ste_pam/Content/Image/hobbies/eiffel-tower.jpg?w=340&quality=50" />
-                    <img title="Stephen Pammenter creeping in the bushes on a practice walk for the Cleveland Way." class="img-thumbnail hidden-xs hidden-sm" src="~/Areas/ste_pam/Content/Image/hobbies/bushes.jpg?w=340&quality=50" />
-                    <img title="Stephen Pammenter pondering thoughts at a waterfall on the Pennine Way." class="img-thumbnail hidden-sm" src="~/Areas/ste_pam/Content/Image/hobbies/waterfall.jpg?w=340&quality=50" />
-                    <img title="Stephen Pammenter Glad to have stopped for the night after a particularly arduous trek." class="img-thumbnail hidden-sm" src="~/Areas/ste_pam/Content/Image/hobbies/wild-camping.jpg?w=340&quality=50" />
-                    <img title="Stephen Pammenter proudly stands next to his Miru exihibition at ExpoTees 2014." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/miru.jpg" />
-                </div>
-                <div class="col-sm-8 col-xs-12">
-                    <img title="View from Stephen Pammenter's time on rescue during a Winter race at Blackpool and Fleetwood Yacht club." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/wyre.jpg?w=710&quality=50" />
-                    <div class="row">
-                        <div class="col-xs-6 hidden-xs hidden-sm">
-                            <img title="Stephen Pammenter's shocked expression for no real reason." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/oh.jpg?w=340&quality=50" />
+        <div class="section__content">
+            <div class="hobbies-gallery">
+                <div class="row">
+                    <div class="col-sm-4 col-12 hidden-xs">
+                        <img title="Stephen Pammenter celebrating cycling 600+ miles to the Eiffel Tower with his sister, Lauren." class="img-thumbnail hidden-xs" src="@Url.Content("~/a/dist/img/hobbies/eiffel-tower.jpg")" />
+                        <img title="Stephen Pammenter creeping in the bushes on a practice walk for the Cleveland Way." class="img-thumbnail hidden-xs hidden-sm" src="@Url.Content("~/a/dist/img/hobbies/bushes.jpg")" />
+                        <img title="Stephen Pammenter pondering thoughts at a waterfall on the Pennine Way." class="img-thumbnail hidden-sm" src="@Url.Content("~/a/dist/img/hobbies/waterfall.jpg")" />
+                        <img title="Stephen Pammenter Glad to have stopped for the night after a particularly arduous trek." class="img-thumbnail hidden-sm" src="@Url.Content("~/a/dist/img/hobbies/wild-camping.jpg")" />
+                        <img title="Stephen Pammenter proudly stands next to his Miru exihibition at ExpoTees 2014." class="img-thumbnail" src="@Url.Content("~/a/dist/img/hobbies/miru.jpg")" />
+                    </div>
+                    <div class="col-sm-8 col-12">
+                        <img title="View from Stephen Pammenter's time on rescue during a Winter race at Blackpool and Fleetwood Yacht club." class="img-thumbnail" src="@Url.Content("~/a/dist/img/hobbies/wyre.jpg")" />
+                        <div class="row">
+                            <div class="col-6 hidden-xs hidden-sm">
+                                <img title="Stephen Pammenter's shocked expression for no real reason." class="img-thumbnail" src="@Url.Content("~/a/dist/img/hobbies/oh.jpg")" />
+                            </div>
+                            <div class="col-md-6 col-12 hidden-xs hidden-sm">
+                                <img title="Stephen Pammenter posing for a picture whilst taking a course of students out to Wyre light." class="img-thumbnail" src="@Url.Content("~/a/dist/img/hobbies/sailing.jpg")" />
+                                <img title="Views from a Stephen Pammenter's cycling adventure in the French Riviera." class="img-thumbnail" src="@Url.Content("~/a/dist/img/hobbies/cycling-sun.jpg")" />
+                                <img title="Stephen Pammenter posing with my best friends Dan, beofre commencing the Cleveland Way." class="img-thumbnail" src="@Url.Content("~/a/dist/img/hobbies/cleveland-way.jpg")" />
+                            </div>
                         </div>
-                        <div class="col-md-6 col-xs-12 hidden-xs hidden-sm">
-                            <img title="Stephen Pammenter posing for a picture whilst taking a course of students out to Wyre light." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/sailing.jpg?=w340&quality=50" />
-                            <img title="Views from a Stephen Pammenter's cycling adventure in the French Riviera." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/cycling-sun.jpg?=w340&quality=50" />
-                            <img title="Stephen Pammenter posing with my best friends Dan, beofre commencing the Cleveland Way." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/cleveland-way.jpg?=w340&quality=50" />
-                        </div>
+                        <img title="Stephen Pammenter time for a pose on the walk down from Snowdon after conquering Watkins pass." class="img-thumbnail" src="@Url.Content("~/a/dist/img/hobbies/snowdonia.jpg")" />
+                        <img title="Stephen Pammenter scuba diving in Turkey." class="img-thumbnail hidden-xs" src="@Url.Content("~/a/dist/img/hobbies/scuba.jpg")" />
                     </div>
-                    <img title="Stephen Pammenter time for a pose on the walk down from Snowdon after conquering Watkins pass." class="img-thumbnail" src="~/Areas/ste_pam/Content/Image/hobbies/snowdonia.jpg?w=710&quality=50" />
-                    <img title="Stephen Pammenter scuba diving in Turkey." class="img-thumbnail hidden-xs" src="~/Areas/ste_pam/Content/Image/hobbies/scuba.jpg" />
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 hidden-print">
-            <p class="lead text-center section-outro">Looking for more info? <a href="/home/work">Check out my work <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+        <div class="col-12 hidden-print">
+            <p class="lead text-center section__outro">Looking for more info? <a href="/home/work">Check out my work <span class="glyphicon glyphicon-chevron-right"></span></a></p>
         </div>
-        <div class="clearfix"></div>
     </section>
 </div>
-<div class="clearfix"></div>
