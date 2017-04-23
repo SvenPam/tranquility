@@ -713,6 +713,8 @@
     <Content Include="manifest.json" />
     <Content Include="Views\Partials\_CV.cshtml" />
     <Content Include="Views\Work.cshtml" />
+    <Content Include="Views\Blog.cshtml" />
+    <Content Include="Views\BlogArticle.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
