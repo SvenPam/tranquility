@@ -1,5 +1,78 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Blog>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
+
 @{
-	Layout = "_Page.cshtml";
+    Layout = "_Page.cshtml";
+    var articles = (IEnumerable<IPublishedContent>)CurrentPage.Children().Where("Visible").OrderBy("CreateDate desc").Take(5);
 }
+
+<section class="hero hero--glade">
+    <div class="container">
+        <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+
+<div class="sections">
+
+
+    @if (articles.Any())
+    {
+        foreach (var article in articles)
+        {
+            @Html.Partial("Partials/_Article", article)
+        }
+    }
+    else
+    {
+        <section class="text-center" style="height: 60vh;">
+            <div class="container">
+                <div class="split-sections">
+                    <br />
+                    <section class="split">
+                        <span class="glyphicon glyphicon-search icon"></span>
+                        <p class="fact">OH</p>
+                        <p class="lead">There are no articles in these parts, not here.</p>
+                        <a href="/blog">Try here</a>
+                    </section>
+                </div>
+            </div>
+        </section>
+    }
+</div>
+
+@*@section scripts
+        {
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/stepam")
+        <script>
+        var scrollTimer = null;
+        var hasMoreArticles = true;
+        $(window).scroll(function () {
+            if (scrollTimer) {
+                clearTimeout(scrollTimer);
+            }
+            scrollTimer = setTimeout(detectNextArticle, 500);
+        });
+
+        function detectNextArticle() {
+            if (hasMoreArticles) {
+                scrollTimer = null;
+                var $footer = $("footer:in-viewport");
+
+                if ($footer.length) {
+                    var nextID = $('.js-loaded-article:last').data('prevArticleId');
+                    $.get('/blog/getarticle/' + nextID + '@Html.Raw("?showComments=false" + (pageTopic != null ? "&topicID=" + pageTopic.TopicID : ""))', function (response) {
+                        var $newArticle = $('<section>' + response + '</section>').hide();
+                        $('.js-articles').append($newArticle);
+                        $('.js-spinner').remove();
+                        $('.js-articles section:last').fadeIn().append('<div class="js-spinner spinner"></div><div class="clearfix"></div>');
+                    }).fail(function () {
+                        $('.js-spinner').remove();
+                        $('.js-articles').append('<section><div class="container split-sections js-loaded-article"><p class="text-center section-outro">Thats everything!</p></div></section>');
+                        hasMoreArticles = false;
+                    })
+                }
+            }
+        }
+        </script>
+    }*@

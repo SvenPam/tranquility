@@ -621,6 +621,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\DateTimeExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -715,6 +716,7 @@
     <Content Include="Views\Work.cshtml" />
     <Content Include="Views\Blog.cshtml" />
     <Content Include="Views\BlogArticle.cshtml" />
+    <Content Include="Views\Partials\_Article.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
