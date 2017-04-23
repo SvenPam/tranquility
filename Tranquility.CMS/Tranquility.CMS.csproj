@@ -617,6 +617,24 @@
     <Content Include="a\src\scripts\external-references.json" />
     <Content Include="a\src\styles\ste-pam.scss" />
     <Content Include="mstile-150x150.png" />
+    <Content Include="old\10k-finish.jpg" />
+    <Content Include="old\10k-start.jpg" />
+    <Content Include="old\Class1.jpg" />
+    <Content Include="old\ClassDiagram2.svg" />
+    <Content Include="old\CV-hover.png" />
+    <Content Include="old\CV.png" />
+    <Content Include="old\DiamondProblem.svg" />
+    <Content Include="old\MiruSccreen1.jpg" />
+    <Content Include="old\miruscreen2.png" />
+    <Content Include="old\miruscreen3.png" />
+    <Content Include="old\miruscreen4.png" />
+    <Content Include="old\miruscreen5.png" />
+    <Content Include="old\page-speed-screen.jpg" />
+    <Content Include="old\print-skills.png" />
+    <Content Include="old\sg-mob.png" />
+    <Content Include="old\thai-prep.jpg" />
+    <Content Include="old\thai.jpg" />
+    <Content Include="old\wwwroot.jpg" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
   </ItemGroup>
@@ -716,6 +734,15 @@
     <Content Include="Views\Blog.cshtml" />
     <Content Include="Views\BlogArticle.cshtml" />
     <Content Include="Views\Partials\_Article.cshtml" />
+    <Content Include="old\FYP Progress Review Poster %28K0025970%29.pdf" />
+    <Content Include="old\Placement Report 1 - October.pdf" />
+    <Content Include="old\Placement Report 2 - May.pdf" />
+    <Content Include="old\Placement Report 3 - Summarative.pdf" />
+    <Content Include="old\Stephen Pammenter - CV.pdf" />
+    <Content Include="old\Stephen-Pammenter-CV.pdf" />
+    <Content Include="old\Thumbs.db" />
+    <Content Include="old\WorldOfSwordCraft.zip" />
+    <Content Include="old\WoSPresentation.pdf" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
