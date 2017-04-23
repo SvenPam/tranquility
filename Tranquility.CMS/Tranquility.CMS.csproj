@@ -710,7 +710,6 @@
     <Content Include="a\src\styles\06-components\_stacks.scss" />
     <Content Include="a\src\styles\06-components\_timeline.scss" />
     <Content Include="Views\About.cshtml" />
-    <Content Include="connectionString.config" />
     <Content Include="manifest.json" />
     <Content Include="Views\Partials\_CV.cshtml" />
     <Content Include="Views\Work.cshtml" />
