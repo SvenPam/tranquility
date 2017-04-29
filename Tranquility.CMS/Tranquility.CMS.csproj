@@ -758,7 +758,6 @@
     <Content Include="old\Placement Report 3 - Summarative.pdf" />
     <Content Include="old\Stephen Pammenter - CV.pdf" />
     <Content Include="old\Stephen-Pammenter-CV.pdf" />
-    <Content Include="old\Thumbs.db" />
     <Content Include="old\WorldOfSwordCraft.zip" />
     <Content Include="old\WoSPresentation.pdf" />
     <Content Include="Views\MacroPartials\_ContactForm.cshtml" />
