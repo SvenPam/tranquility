@@ -774,9 +774,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web.Live.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
+    <Content Include="Web.Live.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
