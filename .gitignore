@@ -251,3 +251,5 @@ Thumbs.db
 dummy.txt
 web.config.backup
 /Tranquility.CMS/connectionString.config
+/Tranquility.CMS/config/connectionString.config
+/Tranquility.CMS/config/mailSettings.config
