@@ -695,7 +695,9 @@
     <Content Include="a\src\styles\07-trumps\trumps.scss" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="config\umbracoSettings.config" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\package.manifest" />
     <Content Include="Views\_Page.cshtml" />
@@ -764,12 +766,15 @@
     <Content Include="Views\Partials\_ContactForm.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="web.Live.config">
+    <Content Include="web.Live.config">
       <DependentUpon>web.config</DependentUpon>
-    </None>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <PropertyGroup>
