@@ -2,7 +2,7 @@
 
 namespace Tranquility.Service.Interface
 {
-    public interface IEmailService
+    public interface IEmailService : IDependency
     {
         void SendEmail(MailMessage email);
     }

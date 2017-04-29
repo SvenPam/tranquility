@@ -47,6 +47,15 @@
     <ExcludeFilesFromDeployment>gulpfile.js</ExcludeFilesFromDeployment>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -639,7 +648,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\DependencyRegistrar.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="GlobalEventHandler.cs" />
     <Compile Include="Helpers\DateTimeExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\EmailService.cs" />

@@ -10,6 +10,13 @@ namespace Tranquility.Service
 {
     public class NotificationService : INotificationService
     {
+        private readonly IEmailService _emailService;
+
+        public NotificationService(IEmailService emailService)
+        {
+            _emailService = emailService;
+        }
+
         public void SendEnquiry(ContactFormViewModel contactVM)
         {
             //Generate an email message object to send
@@ -20,6 +27,8 @@ namespace Tranquility.Service
             email.Body = "Test";
             email.Priority = MailPriority.Normal;
             email.IsBodyHtml = true;
+
+            _emailService.SendEmail(email);
         }
     }
 }
