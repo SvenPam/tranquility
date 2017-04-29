@@ -696,7 +696,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="config\umbracoSettings.config" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\package.manifest" />
@@ -764,17 +764,18 @@
     <Content Include="old\WoSPresentation.pdf" />
     <Content Include="Views\MacroPartials\_ContactForm.cshtml" />
     <Content Include="Views\Partials\_ContactForm.cshtml" />
-    <None Include="web.Debug.config">
+    <Content Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <Content Include="web.Live.config">
-      <DependentUpon>web.config</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="web.Release.config">
+    <Content Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Live.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
