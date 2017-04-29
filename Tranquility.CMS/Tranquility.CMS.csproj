@@ -774,7 +774,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.Live.config">
+    <Content Include="web.Live.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
