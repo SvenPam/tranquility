@@ -50,12 +50,14 @@
       "styles": "./a/src/styles",
       "scripts": "./a/src/scripts",
       "images": "./a/src/images",
-      "externalJs": "./a/src/scripts/external-references.json"
+      "externalJs": "./a/src/scripts/external-references.json",
+      "sprites": "./a/src/sprites"
     },
     "dist": {
       "styles": "./a/dist/css",
       "scripts": "./a/dist/js",
-      "images": "./a/dist/img"
+      "images": "./a/dist/img",
+      "sprites": "./a/dist/sprites"
     }
   },
   "jshintConfig": {},

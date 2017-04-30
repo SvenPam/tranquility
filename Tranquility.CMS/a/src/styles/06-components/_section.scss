@@ -33,6 +33,35 @@
         padding: 150px 0;
     }
 
+    &__badge {
+        display: block;
+        margin: 0 auto;
+        border-radius: 100%;
+        background-color: $white;
+        color: $brand-subtle;
+        font-size: 100px;
+        width: 170px;
+        height: 170px;
+        fill: $brand-subtle;
+        padding: 25px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 40px;
+            width: 100px;
+            padding: 25px;
+        }
+
+        @include media-breakpoint-between(sm, md) {
+            font-size: 70px;
+            width: 115px;
+            padding: 25px;
+        }
+        //Centres the glyphicon cos its really wide for some reason.
+        &.glyphicon-send {
+            padding-left: 0;
+        }
+    }
+
     &:nth-child(even) {
         background-color: $gray-dark;
         color: $white;
@@ -70,35 +99,5 @@
     &--footer {
         background-color: $dark-bg !important;
         color: $white !important;
-    }
-}
-
-
-.icon {
-    display: block;
-    margin: 0 auto;
-    border-radius: 100%;
-    background-color: $white;
-    color: $brand-subtle;
-    font-size: 100px;
-    width: 170px;
-    height: 170px;
-    fill: $brand-subtle;
-    padding: 25px;
-
-    @include media-breakpoint-down(md) {
-        font-size: 40px;
-        width: 100px;
-        padding: 25px;
-    }
-
-    @include media-breakpoint-between(sm, md) {
-        font-size: 70px;
-        width: 115px;
-        padding: 25px;
-    }
-    //Centres the glyphicon cos its really wide for some reason.
-    &.glyphicon-send {
-        padding-left: 0;
     }
 }

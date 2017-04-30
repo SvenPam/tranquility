@@ -15,57 +15,27 @@
         transition: left ease-in-out .1s;
 
         .nav-title {
-            font-size: 1rem;
+            font-size: .8rem;
             position: absolute;
             top: 3px;
             left: 2px;
             color: $brand-subtle;
         }
 
-        ul {
-            margin: 0;
-            padding: 0;
-            padding-left: 2px;
-
-            li {
-                a {
-                    padding: 5px;
-                    color: $white;
-                    border-bottom: 0!important;
-                    width: 45px;
-                    height: 45px;
-                    overflow: hidden;
-                    transition: width ease-in-out .1s;
-                    display: inline-block;
-
-                    &::after {
-                        content: attr(data-name);
-                    }
-
-                    &:hover {
-                        color: $link-hover-color;
-                    }
-
-                    .home-link {
-                        font-size: 2.4rem;
-                        margin-bottom: 2px;
-                    }
-                }
-            }
+        .list__link {
+            width: 0;
+            padding-left: 0;
+            padding-right: 0;
         }
 
         &:hover {
-
             .nav-title {
                 left: 60px;
             }
 
-            ul {
-                li {
-                    a {
-                        width: 180px;
-                    }
-                }
+            .list__link {
+                width: 180px;
+                padding-left: 10px;
             }
         }
 
@@ -74,16 +44,16 @@
         }
     }
 
-    .menu-mobile, 
-	.close-site-nav {
+    .menu-mobile,
+    .close-site-nav {
         display: none;
     }
 }
 
 @include media-breakpoint-down(sm) {
 
-    .menu-mobile, 
-	.close-site-nav {
+    .menu-mobile,
+    .close-site-nav {
         position: fixed;
         bottom: 5px;
         left: 5px;
@@ -124,32 +94,25 @@
             color: $brand-subtle;
         }
 
-        ul {
+        .list--nav {
             margin: 0;
             padding: 0;
 
-            li {
-                a {
-                    padding: 10px;
-                    color: $white;
-                    border-bottom: 0 !important;
-                    overflow: hidden;
-                    transition: width ease-in-out .1s;
-                    display: inline-block;
+            .list__link {
+                padding: 10px;
+                color: $white;
+                border-bottom: 0 !important;
+                overflow: hidden;
+                transition: width ease-in-out .1s;
+                display: inline-block;
 
-                    &:after {
-                        padding-left: 3px;
-                        content: attr(data-name);
-                    }
+                &:hover {
+                    color: $link-hover-color;
+                }
 
-                    &:hover {
-                        color: $link-hover-color;
-                    }
-
-                    .home-link {
-                        font-size: 2.4rem;
-                        margin-bottom: 2px;
-                    }
+                .home-link {
+                    font-size: 2.4rem;
+                    margin-bottom: 2px;
                 }
             }
         }
