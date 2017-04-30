@@ -253,3 +253,4 @@ web.config.backup
 /Tranquility.CMS/connectionString.config
 /Tranquility.CMS/config/connectionString.config
 /Tranquility.CMS/config/mailSettings.config
+/Tranquility.CMS/config/appSettings.config
