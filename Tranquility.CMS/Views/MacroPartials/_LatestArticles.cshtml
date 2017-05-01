@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var articles = Umbraco.TypedContentAtXPath("//blogArticle").Where(x => x.IsVisible()).OrderByDescending(x => x.CreateDate).Take(5);
+}
+<h3 class="h4">Latest</h3>
+@foreach (BlogArticle article in articles)
+{
+    string cropUrl;
+    if (article.Image == null || string.IsNullOrEmpty(article.Image.GetCropUrl("Thumb")))
+    {
+        Random ran = new Random(article.Id);
+        cropUrl = "/a/dist/img/generic/" + ran.Next(1, 7) + "-100.jpg";
+    }
+    else {
+        cropUrl = article.Image.GetCropUrl("Thumb");
+    }
+
+    <article class="media">
+        <div class="media__image hidden-xs">
+            <img src="@cropUrl" />
+        </div>
+        <div class="media_body">
+            <h4 class="media__heading"><a class="media__link" href="@article.Url">@article.Name</a></h4>
+            <p>@article.Description</p>
+        </div>
+    </article>
+}
