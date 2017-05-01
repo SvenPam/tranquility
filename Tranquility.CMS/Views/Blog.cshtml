@@ -1,9 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-
 @{
     Layout = "_Page.cshtml";
-    var articles = (IEnumerable<IPublishedContent>)CurrentPage.Children().Where("Visible").OrderBy("CreateDate desc").Take(5);
+    var articles = Model.Content.Children<BlogArticle>().Where(x=> x.IsVisible()).OrderByDescending(x=> x.CreateDate).Take(5);
 }
 
 <section class="hero hero--glade">
@@ -13,8 +11,6 @@
 </section>
 
 <div class="sections">
-
-
     @if (articles.Any())
     {
         foreach (var article in articles)

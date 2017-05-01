@@ -1,26 +1,22 @@
-﻿@model IPublishedContent
+﻿@inherits UmbracoViewPage<BlogArticle>
 @using Tranquility.Helpers
 <article class="section">
-    <div class="section__fact container">
-        <div class="row">
-            <div class="col-12">
-                <span class="left">@Model.CreatorName</span><span class="right">@Model.CreateDate.Friendly()</span>
+    <header class="section__facts section__facts--container">
+        <div class="section__fact">
+            <div class="section__meta">
+                <span>@Model.CreatorName</span><time datetime="@Model.CreateDate">@Model.CreateDate.Friendly()</time>
             </div>
+                <h1 class="lead"><a class="h2" href="@Model.Url">@Model.Name</a><sup><a href="@Model.Url">@*<span class="glyphicon glyphicon-link"></span>*@</a></sup></h1>
+            <p class="text-center"><a href="#">@Model.Topic</a></p>
+            <p class="text-muted">
+                @Model.Description
+            </p>
         </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="lead"><a class="h2" href="@Model.Url">@Model.Name</a><sup><a href="@Model.Url"><span class="glyphicon glyphicon-link"></span></a></sup></h1>
-                <p class="text-center"><a href="#">@Model.GetPropertyValue("topic")</a></p>
-                <p class="text-muted">
-                    @Model.GetPropertyValue("description")
-                </p>
-            </div>
-        </div>
-    </div>
+    </header>
     <div class="article-body section__content">
         @Html.GetGridHtml(Model, "content", "Bootstrap4")
     </div>
-    <div class="col-xs-12">
+    <footer class="col-xs-12">
         @*@if (ViewBag.IsIndex)
             {
             <a href="@Model.Url#comments">Comments →</a>
@@ -55,5 +51,5 @@
                 </script>
             </div>
             }*@
-    </div>
+    </footer>
 </article>
