@@ -7,4 +7,11 @@
         height: 30px;
         margin: 10px;
     }
+
+    &--badge {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 10px;
+        fill: $brand-subtle;
+    }
 }

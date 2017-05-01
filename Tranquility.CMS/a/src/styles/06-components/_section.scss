@@ -2,12 +2,14 @@
 /// <reference path="../02-tools/tools" />
 
 .section {
-    @include make-container;
-    padding-top: $grid-gutter-width-base;
-    padding-bottom: $grid-gutter-width-base;
+    @include media-breakpoint-up(md) {
+        padding: 60px;
+    }
+
+    padding: 10px 0;
 
     &__title {
-        font-size: 9rem;
+        font-size: 5rem;
         font-family: $headings-font-family;
 
         @include media-breakpoint-down(md) {
@@ -17,6 +19,24 @@
         @include media-breakpoint-down(sm) {
             font-size: 2rem;
         }
+    }
+
+    &__facts {
+        @include make-row;
+    }
+
+    &__fact {
+        @include media-breakpoint-down(md) {
+            @include make-col(12);
+        }
+
+        @include make-col(4);
+        padding: 60px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     &__content {
@@ -34,19 +54,18 @@
     }
 
     &__badge {
-        display: block;
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
         border-radius: 100%;
         background-color: $white;
-        color: $brand-subtle;
-        font-size: 100px;
         width: 170px;
         height: 170px;
-        fill: $brand-subtle;
         padding: 25px;
 
         @include media-breakpoint-down(md) {
-            font-size: 40px;
+            height: 100px;
             width: 100px;
             padding: 25px;
         }
@@ -54,11 +73,8 @@
         @include media-breakpoint-between(sm, md) {
             font-size: 70px;
             width: 115px;
+            height: 100px;
             padding: 25px;
-        }
-        //Centres the glyphicon cos its really wide for some reason.
-        &.glyphicon-send {
-            padding-left: 0;
         }
     }
 
@@ -68,12 +84,6 @@
         padding-bottom: 20px;
 
         .section__fact {
-            padding: 60px;
-
-            @include media-breakpoint-down(sm) {
-                padding: 60px 0;
-            }
-
             &:nth-child(odd) {
                 background-color: $gray-light;
             }
@@ -84,12 +94,6 @@
         background-color: $gray-lighter;
 
         .section__fact {
-            padding: 60px;
-
-            @include media-breakpoint-down(sm) {
-                padding: 60px 0;
-            }
-
             &:nth-child(odd) {
                 background-color: $gray-lightest;
             }
