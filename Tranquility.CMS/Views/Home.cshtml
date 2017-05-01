@@ -12,44 +12,36 @@
     </div>
 </section>
 <div class="sections">
-    <section class="section">
+    <section class="section container-fluid">
         <div class="row hidden-print">
-            <div class="col-12 col-md-4 section__fact">
-                <span class="section__icon icon icon--user"></span>
-                <span class="section__title">About</span>
-                <p class="section__subtitle">Skills and Experience</p>
-                <p><a href="/home/about">@*<span class="glyphicon glyphicon-chevron-left"></span>*@ CV and Personal Info Here</a></p>
+            <div class="col-12 col-md-4">
+                <div class="section__fact">
+                    <span class="section__icon icon icon--user"></span>
+                    <span class="section__title">About</span>
+                    <p class="section__subtitle">Skills and Experience</p>
+                    <p><a href="/home/about">@*<span class="glyphicon glyphicon-chevron-left"></span>*@ CV and Personal Info Here</a></p>
+                </div>
             </div>
-            <div class="col-12 col-md-4 section__fact">
-                <span class="section__icon icon icon-pencil"></span>
-                <span class="section__title">Blog</span>
-                <p class="section__subtitle hidden-xs hidden-sm-down">Writing about interesting things</p>
-                <p><a href="/blog">Read</a></p>
+            <div class="col-12 col-md-4">
+                <div class="section__fact">
+
+                    <span class="section__icon icon icon-pencil"></span>
+                    <span class="section__title">Blog</span>
+                    <p class="section__subtitle hidden-xs hidden-sm-down">Writing about interesting things</p>
+                    <p><a href="/blog">Read</a></p>
+                </div>
             </div>
-            <div class="col-12 col-md-4 section__fact">
-                <span class="section__icon icon icon-console"></span>
-                <span class="section__title">Work</span>
-                <p class="section__subtitle">CMS Solution and Projects</p>
-                <p><a href="/home/work">My Work @*<span class="icon icon-chevron-right"></span>*@</a></p>
+            <div class="col-12 col-md-4">
+                <div class="section__fact">
+                    <span class="section__icon icon icon-console"></span>
+                    <span class="section__title">Work</span>
+                    <p class="section__subtitle">CMS Solution and Projects</p>
+                    <p><a href="/home/work">My Work @*<span class="icon icon-chevron-right"></span>*@</a></p>
+                </div>
             </div>
         </div>
         <div class="section__content">
-            <h2>Latest</h2>
-            @*@foreach (var article in Model.LatestBlogs.Take(4))
-                {
-                    <div class="media">
-                        <div class="media-left media-middle hidden-xs">
-                            <a href="@article.Url">
-                                <img class="media-object" src="@article.Image?w=100&quality=40" />
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">@article.Title</h4>
-                            <p>@article.Description</p>
-                            <a href="@article.Url">Read →</a>
-                        </div>
-                    </div>
-                }*@
+            @Umbraco.RenderMacro("LatestArticles")
         </div>
     </section>
     <section class="section">

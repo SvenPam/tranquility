@@ -346,11 +346,17 @@
     <Content Include="App_Plugins\uSync\uSyncDashboardService.js" />
     <Content Include="a\src\images\code-bg.jpg" />
     <Content Include="a\src\images\css3-logo.svg" />
+    <Content Include="a\src\images\generic\1-100.jpg" />
     <Content Include="a\src\images\generic\1.jpg" />
+    <Content Include="a\src\images\generic\2-100.jpg" />
     <Content Include="a\src\images\generic\2.jpg" />
+    <Content Include="a\src\images\generic\3-100.jpg" />
     <Content Include="a\src\images\generic\3.jpg" />
+    <Content Include="a\src\images\generic\4-100.jpg" />
     <Content Include="a\src\images\generic\4.jpg" />
+    <Content Include="a\src\images\generic\5-100.jpg" />
     <Content Include="a\src\images\generic\5.jpg" />
+    <Content Include="a\src\images\generic\6-100.jpg" />
     <Content Include="a\src\images\generic\6.jpg" />
     <Content Include="a\src\images\glade.jpg" />
     <Content Include="a\src\images\hobbies\bushes.jpg" />
@@ -500,7 +506,9 @@
     <Content Include="web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\umbracoSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Plugins\Epiphany.SeoMetadata\package.manifest" />
     <Content Include="Views\_Page.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap4.cshtml" />
@@ -584,6 +592,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="a\src\styles\05-objects\_list.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MacroPartials\_LatestArticles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="a\src\styles\05-objects\_media.scss" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

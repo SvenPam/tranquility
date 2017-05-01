@@ -29,8 +29,8 @@
                 <div class="col-lg-6 col-xs-12">
                     <a href="/sitemap">Site Map</a>
                 </div>
-                <h3 class="col-xs-12">Blog Topics</h3>
-                @*@foreach (var topic in Sites.CurrentSite.Topics)
+                @*<h3 class="col-xs-12">Blog Topics</h3>
+                @foreach (var topic in Sites.CurrentSite.Topics)
                     {
                         <div class="col-lg-6 col-xs-12">
                             <a href="@Url.ActionDomain("Topic", "Blog", new { topicName = @topic.URLSlug })">@topic.Name</a>
@@ -58,7 +58,7 @@
                 <br />
                 <br />
                 <h3>Based In</h3>
-                <p">Liverpool, UK</p>
+                <p>Liverpool, UK</p>
             </div>
         </div>
         <hr />
