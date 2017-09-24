@@ -11,7 +11,7 @@
     </div>
 </section>
 <div class="sections">
-    <span>@*Used this just to get a dark theme to start with.*@</span>
+    <div></div>
     <section class="section development hidden-print">
         <div class="row text-center">
             <p class="col-12 h3">I build applications across several stacks.</p>
@@ -57,34 +57,49 @@
     </section>
     <section class="section">
         <p class="col-12 hidden-print h3 text-center section__intro">Here's some stuff about me.</p>
-        <div class="row hidden-print">
-            <div class="hidden-sm-down hidden-xs col-md-4 section__fact">
-                <span class="section__icon icon icon-education"></span>
+        <div class="section__facts">
+            <div class="section__fact">
+                <i class="section__badge">
+                    <svg class="icon icon--badge">
+                        <use xlink:href="a/dist/sprites/sprite.svg#badge"></use>
+                    </svg>
+                </i>
                 <span class="section__title">1st</span>
                 <p class="section__subtitle">Computer Science</p>
-                <p class="section_description">Teesside University</p>
+                <p class="section__description">Teesside University</p>
             </div>
-            <div class="col-12 col-md-4 section__fact">
-                <span class="section__icon icon icon-list-alt"></span>
+            <div class="section__fact">
+                <i class="section__badge">
+                    <svg class="icon icon--badge">
+                        <use xlink:href="a/dist/sprites/sprite.svg#excerpt"></use>
+                    </svg>
+                </i>
                 <span class="section__title">CV</span>
-                <p class="section__subtitle hidden-xs hidden-sm-down">Online</p>
-                <p><a href="#cv"><span class="glyphicon glyphicon-chevron-down"></span></a></p>
+                <p class="section__subtitle">Below</p>
             </div>
-            <div class="col-md-4 section__fact col-6 hidden-sm-down hidden-xs">
-                <span class="section__icon icon icon-briefcase"></span>
+            <div class="section__fact">
+                <i class="section__badge">
+                    <svg class="icon icon--badge">
+                        <use xlink:href="a/dist/sprites/sprite.svg#briefcase"></use>
+                    </svg>
+                </i>
                 <span class="section__title">@(DateTime.Now.Year - 2013)</span>
                 <p class="section__subtitle">Years Commercial Experience</p>
-                <p><a href="/home/work">My Work <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+                <p><a href="/home/work">My Work</a></p>
             </div>
         </div>
-        <div class="container">
+        <div class="section__content">
             @Html.Partial("Partials/_CV")
         </div>
     </section>
     <section class="section">
-        <div class="row hidden-print">
-            <div class="col-12 col-md-4 section__fact">
-                <span class="glyphicon glyphicon-music icon"></span>
+        <div class="section__facts">
+            <div class="section__fact">
+                <i class="section__badge">
+                    <svg class="icon icon--badge">
+                        <use xlink:href="a/dist/sprites/sprite.svg#headphones"></use>
+                    </svg>
+                </i>
                 <span class="section__title">Music</span>
                 <ul class="section__description list-unstyled">
                     <li><a href="https://open.spotify.com/user/svenpam">Spotify</a></li>
@@ -92,8 +107,12 @@
                     <li><a href="https://www.youtube.com/watch?v=cFnZeopsqos">2015 DnB Yearmix</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-md-4 section__fact">
-                <span class="glyphicon glyphicon-sunglasses icon"></span>
+            <div class="section__fact">
+                <i class="section__badge">
+                    <svg class="icon icon--badge">
+                        <use xlink:href="a/dist/sprites/sprite.svg#compass"></use>
+                    </svg>
+                </i>
                 <span class="section__title">Hobbies</span>
                 <ul class="section__description list-unstyled">
                     <li><a href="https://www.strava.com/athletes/stephen_pammenter">Cycling</a></li>
@@ -101,13 +120,16 @@
                     <li>Walking</li>
                 </ul>
             </div>
-            <div class="col-12 col-md-4 section__fact hidden-xs">
-                <span class="glyphicon glyphicon-book icon"></span>
+            <div class="section__fact hidden-xs">
+                <i class="section__badge">
+                    <svg class="icon icon--badge">
+                        <use xlink:href="a/dist/sprites/sprite.svg#book"></use>
+                    </svg>
+                </i>
                 <span class="section__title">Reading</span>
                 <ul class="section__description list-unstyled">
-                    <li><a href="https://github.com/getify/You-Dont-Know-JS">You Don't Know JS - Kyle Simpson</a></li>
                     <li>Malazan: Book of the Fallen - Stephen Erickson</li>
-                    <li>Demon Cycle - Peter V. Brett</li>
+                    <li>The Rise and Fall of the British Empire - Lawrence James</li>
                 </ul>
             </div>
         </div>
@@ -118,7 +140,7 @@
                         <img title="Stephen Pammenter celebrating cycling 600+ miles to the Eiffel Tower with his sister, Lauren." class="img-thumbnail hidden-xs" src="@Url.Content("~/a/dist/img/hobbies/eiffel-tower.jpg")" />
                         <img title="Stephen Pammenter creeping in the bushes on a practice walk for the Cleveland Way." class="img-thumbnail hidden-xs hidden-sm-down" src="@Url.Content("~/a/dist/img/hobbies/bushes.jpg")" />
                         <img title="Stephen Pammenter pondering thoughts at a waterfall on the Pennine Way." class="img-thumbnail hidden-sm-down" src="@Url.Content("~/a/dist/img/hobbies/waterfall.jpg")" />
-                        <img title="Stephen Pammenter Glad to have stopped for the night after a particularly arduous trek." class="img-thumbnail hidden-sm-down" src="@Url.Content("~/a/dist/img/hobbies/wild-camping.jpg")" />
+                        <img title="Stephen Pammenter glad to have stopped for the night after a particularly arduous trek." class="img-thumbnail hidden-sm-down" src="@Url.Content("~/a/dist/img/hobbies/wild-camping.jpg")" />
                         <img title="Stephen Pammenter proudly stands next to his Miru exihibition at ExpoTees 2014." class="img-thumbnail" src="@Url.Content("~/a/dist/img/hobbies/miru.jpg")" />
                     </div>
                     <div class="col-sm-8 col-12">
