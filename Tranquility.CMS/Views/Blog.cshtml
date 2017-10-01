@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "_Page.cshtml";
-    var articles = Model.Content.Children<BlogArticle>().Where(x=> x.IsVisible()).OrderByDescending(x=> x.CreateDate).Take(5);
+    var articles = Model.Content.Children<BlogArticle>().Where(x => x.IsVisible()).OrderByDescending(x => x.CreateDate).Take(20);
 }
 
 <section class="hero hero--glade">
@@ -11,64 +11,17 @@
 </section>
 
 <div class="sections">
-    @if (articles.Any())
-    {
-        foreach (var article in articles)
+    <section class="section">
+        @if (articles.Any())
         {
-            @Html.Partial("Partials/_Article", article)
+            foreach (var article in articles)
+            {
+                <article class="card" @*style="background-image: url('@article.Image.GetCropUrl("Thumb")')"*@>
+                    <a href="@article.Url" class="card__link"><h2 class="card__title">@article.Name</h2></a>
+                    <h3 class="card__subtitle">@article.Topic</h3>
+                    <p class="card__body">@article.Description</p>
+                </article>
+            }
         }
-    }
-    else
-    {
-        <section class="text-center" style="height: 60vh;">
-            <div class="container">
-                <div class="split-sections">
-                    <br />
-                    <section class="split">
-                        <span class="glyphicon glyphicon-search icon"></span>
-                        <p class="fact">OH</p>
-                        <p class="lead">There are no articles in these parts, not here.</p>
-                        <a href="/blog">Try here</a>
-                    </section>
-                </div>
-            </div>
-        </section>
-    }
+    </section>
 </div>
-
-@*@section scripts
-        {
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/stepam")
-        <script>
-        var scrollTimer = null;
-        var hasMoreArticles = true;
-        $(window).scroll(function () {
-            if (scrollTimer) {
-                clearTimeout(scrollTimer);
-            }
-            scrollTimer = setTimeout(detectNextArticle, 500);
-        });
-
-        function detectNextArticle() {
-            if (hasMoreArticles) {
-                scrollTimer = null;
-                var $footer = $("footer:in-viewport");
-
-                if ($footer.length) {
-                    var nextID = $('.js-loaded-article:last').data('prevArticleId');
-                    $.get('/blog/getarticle/' + nextID + '@Html.Raw("?showComments=false" + (pageTopic != null ? "&topicID=" + pageTopic.TopicID : ""))', function (response) {
-                        var $newArticle = $('<section>' + response + '</section>').hide();
-                        $('.js-articles').append($newArticle);
-                        $('.js-spinner').remove();
-                        $('.js-articles section:last').fadeIn().append('<div class="js-spinner spinner"></div><div class="clearfix"></div>');
-                    }).fail(function () {
-                        $('.js-spinner').remove();
-                        $('.js-articles').append('<section><div class="container split-sections js-loaded-article"><p class="text-center section-outro">Thats everything!</p></div></section>');
-                        hasMoreArticles = false;
-                    })
-                }
-            }
-        }
-        </script>
-    }*@
