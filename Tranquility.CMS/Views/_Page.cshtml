@@ -1,8 +1,34 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits UmbracoViewPage<ContentModels.IPage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
+@section styles {
 
+    @if (Model.Image != null)
+    {
+        <style>
+        .hero {
+
+            background-image: url('@(Model.Image.Src  + Model.Image.GetCropUrl("Hero - XS", true, true))');
+
+            @@media (min-width: 540px) {
+             background-image: url('@(Model.Image.Src + Model.Image.GetCropUrl("Hero - S", true, true))');
+            }
+
+         @@media (min-width: 720px) {
+            background-image: url('@(Model.Image.Src  + Model.Image.GetCropUrl("Hero - M", true, true))');
+        }
+         @@media (min-width: 960px) {
+            background-image: url('@(Model.Image.Src  + Model.Image.GetCropUrl("Hero - L", true, true))');
+        }
+         @@media (min-width: 1140px) {
+            background-image: url('@(Model.Image.Src  + Model.Image.GetCropUrl("Hero - XL", true, true))');
+        }
+    }
+        </style>
+    }
+
+}
 
 @RenderBody()

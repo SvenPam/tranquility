@@ -23,6 +23,7 @@
     <meta name="description" content=" @((metadata != null ? metadata.Description : null) ?? @Model.Content.GetPropertyValue("description"))" />
     <meta property="og:locale" content="en_GB">
     <link href="~/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    @RenderSection("styles")
 </head>
 <body>
     <nav id="siteNav" class="site-nav">
