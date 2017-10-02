@@ -513,7 +513,6 @@
     <Content Include="Views\Partials\Grid\Bootstrap4.cshtml" />
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Header.cshtml" />
-    <Content Include="Views\Partials\_Hero.cshtml" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Media\Web.config">
       <SubType>Designer</SubType>
