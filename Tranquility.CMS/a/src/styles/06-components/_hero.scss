@@ -7,64 +7,25 @@
         padding: 30px;
     }
 
-    @include media-breakpoint-down(sm) {
-        &--wilderness {
-            background-image: url('#{$image-url}/nant-gwynant.jpg?w=300&h=500&mode=crop');
-        }
-
-        &--code {
-            background-image: url('#{$image-url}/code-bg.jpg?w=300&h=500&mode=crop');
-        }
-
-        &--mountains {
-            background-image: url('#{$image-url}/mountains-m.jpg');
-        }
-
-        &--glade {
-            background-image: url('#{$image-url}/glade.jpg?w=300&h=500&mode=crop');
-        }
-
-        &--miru {
-            background-image: url('#{$image-url}/miru.jpg');
-        }
-    }
-
-    @include media-breakpoint-up(md) {
-        &--wilderness {
-            background-image: url('#{$image-url}/nant-gwynant.jpg');
-        }
-
-        &--code {
-            background-image: url('#{$image-url}/code-bg.jpg');
-        }
-
-        &--mountains {
-            background-image: url('#{$image-url}/mountains.jpg');
-        }
-
-        &--glade {
-            background-image: url('#{$image-url}/glade.jpg');
-        }
-
-        &--miru {
-            background-image: url('#{$image-url}/miru.jpg');
-        }
-    }
-
     min-height: 370px;
+    padding: 2rem;
     overflow: hidden;
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-    /*background-attachment: scroll;*/
     background-attachment: fixed;
     margin: 0;
     text-align: center;
 
     &__title {
-        font-size: 4.5rem;
+        margin-bottom: 30px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 4.5rem;
+        }
     }
 
     &__subtitle {
+        margin-bottom: 30px;
         font-size: 1.5rem;
     }
 
@@ -73,7 +34,7 @@
         border-radius: 100%;
         margin: 0 auto;
         display: block;
-        border: $gray-lighter solid 4px;
+        background-color: $black;
         box-shadow: $black -1px 7px 30px;
     }
 
