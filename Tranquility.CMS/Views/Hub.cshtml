@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Hub>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Blog>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "Master.cshtml";
@@ -6,7 +6,7 @@
 
 
 @{
-	var articles = CurrentPage.Site().FirstChild("hub").Children.Where("Visible").OrderBy("CreateDate desc");
+    var articles = Model.Children;
 }
 <ul>
 	@foreach(var item in articles){
