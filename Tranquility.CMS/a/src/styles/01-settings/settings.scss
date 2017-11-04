@@ -1,8 +1,7 @@
-﻿@import '../../../../node_modules/bootstrap/scss/functions';
-@import '../../../../node_modules/bootstrap/scss/variables';
-
-$brand-primary:         #29B8B9;
-$brand-primary2:        #F90;
+﻿$brand-primary:         #29B8B9;
+$primary:               $brand-primary;
+$brand-secondary:       #F90;
+$secondary:             $brand-secondary;
 $brand-success:         #5CB85C;
 $brand-info:            #5BC0DE;
 $brand-warning:         #F0AD4E;
@@ -15,3 +14,6 @@ $link-hover-color:      lighten($link-color, 15%);
 $brand-subtle:			#95A5A6;
 
 $image-url: '/a/dist/img';
+
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
