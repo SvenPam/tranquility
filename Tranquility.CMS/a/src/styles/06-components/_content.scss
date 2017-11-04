@@ -27,5 +27,5 @@
     border: 1px solid transparent;
     border-radius: 4px;
     box-shadow: 0 1px 1px transparentize($black, .95);
-    padding: $grid-gutter-width-base;
+    padding: ($grid-gutter-width / 2);
 }

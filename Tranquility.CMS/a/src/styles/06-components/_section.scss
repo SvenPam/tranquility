@@ -52,7 +52,7 @@
             @include make-col(12);
         }
 
-        padding: 60px $grid-gutter-width-base;
+        padding: 60px ($grid-gutter-width / 2);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -100,23 +100,23 @@
     }
 
     &:nth-child(even) {
-        background-color: $gray-dark;
+        background-color: $gray-700;
         color: $white;
         padding-bottom: 20px;
 
         .section__fact {
             &:nth-child(odd) {
-                background-color: $gray-light;
+                background-color: $gray-300;
             }
         }
     }
 
     &:nth-child(odd) {
-        background-color: $gray-lighter;
+        background-color: $gray-200;
 
         .section__fact {
             &:nth-child(odd) {
-                background-color: $gray-lightest;
+                background-color: $gray-100;
             }
         }
     }
