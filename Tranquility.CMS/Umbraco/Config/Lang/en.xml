@@ -1081,6 +1081,15 @@ To manage your website, simply open the Umbraco back office and start adding con
   <area alias="colorpicker">
     <key alias="noColors">You have not configured any approved colours</key>
   </area>
+  <area alias="contentPicker">
+    <key alias="pickedTrashedItem">You have picked a content item currently deleted or in the recycle bin</key>
+    <key alias="pickedTrashedItems">You have picked content items currently deleted or in the recycle bin</key>
+  </area>
+  <area alias="mediaPicker">
+    <key alias="pickedTrashedItem">You have picked a media item currently deleted or in the recycle bin</key>
+    <key alias="pickedTrashedItems">You have picked media items currently deleted or in the recycle bin</key>
+    <key alias="deletedItem">Deleted item</key>
+  </area>
   <area alias="relatedlinks">
     <key alias="enterExternal">enter external link</key>
     <key alias="chooseInternal">choose internal page</key>
@@ -1401,6 +1410,8 @@ To manage your website, simply open the Umbraco back office and start adding con
 
     <key alias="allowAllEditors">Allow all editors</key>
     <key alias="allowAllRowConfigurations">Allow all row configurations</key>
+    <key alias="maxItemsDescription">Leave blank or set to 0 for unlimited</key>
+    <key alias="maxItems">Maximum items</key>
     <key alias="setAsDefault">Set as default</key>
     <key alias="chooseExtra">Choose extra</key>
     <key alias="chooseDefault">Choose default</key>
@@ -1676,15 +1687,27 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="profile">Profile</key>
     <key alias="searchAllChildren">Search all children</key>
     <key alias="sectionsHelp">Add sections to give users access</key>
+    <key alias="selectUserGroups">Select user groups</key>
     <key alias="noStartNode">No start node selected</key>
     <key alias="noStartNodes">No start nodes selected</key>
+    <key alias="stateActive">Active</key>
+    <key alias="stateAll">All</key>
+    <key alias="stateDisabled">Disabled</key>
+    <key alias="stateLockedOut">Locked out</key>
+    <key alias="stateInvited">Invited</key>
     <key alias="startnode">Content start node</key>
     <key alias="startnodehelp">Limit the content tree to a specific start node</key>
     <key alias="startnodes">Content start nodes</key>
     <key alias="startnodeshelp">Limit the content tree to specific start nodes</key>
+    <key alias="sortNameAscending">Name (A-Z)</key>
+    <key alias="sortNameDescending">Name (Z-A)</key>
+    <key alias="sortCreateDateDescending">Newest</key>
+    <key alias="sortCreateDateAscending">Oldest</key>
+    <key alias="sortLastLoginDateDescending">Last login</key>
     <key alias="updateDate">User last updated</key>
     <key alias="userCreated">has been created</key>
     <key alias="userCreatedSuccessHelp">The new user has successfully been created. To log in to Umbraco use the password below.</key>
+    <key alias="userManagement">User management</key>
     <key alias="username">Name</key>
     <key alias="userPermissions">User permissions</key>
     <key alias="userGroupPermissions">User group permissions</key>

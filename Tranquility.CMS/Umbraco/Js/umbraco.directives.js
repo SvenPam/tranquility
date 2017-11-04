@@ -1418,9 +1418,9 @@ Use this directive to render a button with a dropdown of alternative actions.
             $scope.preview = function (content) {
                 if (!$scope.busy) {
                     // Chromes popup blocker will kick in if a window is opened 
-                    // outwith the initial scoped request. This trick will fix that.
+                    // without the initial scoped request. This trick will fix that.
                     //  
-                    var previewWindow = $window.open('preview/?id=' + content.id, 'umbpreview');
+                    var previewWindow = $window.open('preview/?init=true&id=' + content.id, 'umbpreview');
                     // Build the correct path so both /#/ and #/ work.
                     var redirect = Umbraco.Sys.ServerVariables.umbracoSettings.umbracoPath + '/preview/?id=' + content.id;
                     //The user cannot save if they don't have access to do that, in which case we just want to preview
@@ -6242,9 +6242,11 @@ Use this directive to render an avatar.
                 }
                 function getNameInitials(name) {
                     if (name) {
-                        var initials = name.match(/\b\w/g) || [];
-                        initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
-                        return initials;
+                        var names = name.split(' '), initials = names[0].substring(0, 1);
+                        if (names.length > 1) {
+                            initials += names[names.length - 1].substring(0, 1);
+                        }
+                        return initials.toUpperCase();
                     }
                     return null;
                 }
@@ -9586,6 +9588,27 @@ Use this directive to generate a pagination.
         }
         angular.module('umbraco.directives').directive('umbPagination', PaginationDirective);
     }());
+    (function () {
+        'use strict';
+        // comes from https://codepen.io/jakob-e/pen/eNBQaP
+        // works fine with Angular 1.6.5 - alas not with 1.1.5 - binding issue
+        function PasswordToggleDirective($compile) {
+            var directive = {
+                restrict: 'A',
+                scope: {},
+                link: function (scope, elem, attrs) {
+                    scope.tgl = function () {
+                        elem.attr('type', elem.attr('type') === 'text' ? 'password' : 'text');
+                    };
+                    var lnk = angular.element('<a data-ng-click="tgl()">Toggle</a>');
+                    $compile(lnk)(scope);
+                    elem.wrap('<div class="password-toggle"/>').after(lnk);
+                }
+            };
+            return directive;
+        }
+        angular.module('umbraco.directives').directive('umbPasswordToggle', PasswordToggleDirective);
+    }());
     /**
 @ngdoc directive
 @name umbraco.directives.directive:umbProgressBar
@@ -10839,8 +10862,8 @@ Use this directive to render a user group preview, where you can see the permiss
         };
     }
     angular.module('umbraco.directives.validation').directive('valEmail', valEmail).factory('valEmailExpression', function () {
-        //NOTE: This is the fixed regex which is part of the newer angular
-        return { EMAIL_REGEXP: /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i };
+        var emailRegex = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+        return { EMAIL_REGEXP: emailRegex };
     });
     /**
 * @ngdoc directive
