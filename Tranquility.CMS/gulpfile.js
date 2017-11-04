@@ -70,6 +70,12 @@ gulp.task('img', function () {
         .pipe(gulp.dest(pckg.paths.dist.images));
 });
 
+// Imagemin dosen't play well with sprites...
+gulp.task('sprites', function () {
+    return gulp.src(`${pckg.paths.src.sprites}/*.*`)
+        .pipe(gulp.dest(pckg.paths.dist.sprites));
+});
+
 // CSS Copy
 gulp.task('css', gulp.series('lint-sass', 'styles'));
 
@@ -79,6 +85,7 @@ gulp.task('build', gulp.series(
     gulp.parallel(
         'css',
         'js',
+        'sprites',
         'external-js',
         'img'
     ),

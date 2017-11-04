@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\UmbracoCms.7.7.4\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.7.4\build\UmbracoCms.props')" />
   <Import Project="..\packages\uSync.3.3.2.740\build\uSync.props" Condition="Exists('..\packages\uSync.3.3.2.740\build\uSync.props')" />
-  <Import Project="..\packages\UmbracoCms.7.5.13\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.5.13\build\UmbracoCms.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -18,7 +18,7 @@
     <RootNamespace>Tranquility</RootNamespace>
     <AssemblyName>Tranquility</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -47,6 +47,15 @@
     <ExcludeFilesFromDeployment>gulpfile.js</ExcludeFilesFromDeployment>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -55,8 +64,8 @@
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="businesslogic, Version=1.0.6309.16499, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\businesslogic.dll</HintPath>
+    <Reference Include="businesslogic, Version=1.0.6505.22496, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\businesslogic.dll</HintPath>
     </Reference>
     <Reference Include="ClientDependency.Core, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ClientDependency.1.9.2\lib\net45\ClientDependency.Core.dll</HintPath>
@@ -66,11 +75,11 @@
       <HintPath>..\packages\ClientDependency-Mvc5.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="cms, Version=1.0.6309.16500, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\cms.dll</HintPath>
+    <Reference Include="cms, Version=1.0.6505.22496, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\cms.dll</HintPath>
     </Reference>
-    <Reference Include="controls, Version=1.0.6309.16501, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\controls.dll</HintPath>
+    <Reference Include="controls, Version=1.0.6505.22497, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\controls.dll</HintPath>
     </Reference>
     <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
       <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
@@ -79,27 +88,24 @@
     <Reference Include="Epiphany.SeoMetadata, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Epiphany.SeoMetadata.0.4.0\lib\net40\Epiphany.SeoMetadata.dll</HintPath>
     </Reference>
-    <Reference Include="Examine, Version=0.1.82.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Examine.0.1.82\lib\net45\Examine.dll</HintPath>
+    <Reference Include="Examine, Version=0.1.85.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Examine.0.1.85\lib\net45\Examine.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ImageProcessor, Version=2.5.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ImageProcessor.2.5.2\lib\net45\ImageProcessor.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ImageProcessor, Version=2.5.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.5.5\lib\net45\ImageProcessor.dll</HintPath>
     </Reference>
-    <Reference Include="ImageProcessor.Web, Version=4.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ImageProcessor.Web.4.8.2\lib\net45\ImageProcessor.Web.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ImageProcessor.Web, Version=4.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.8.6\lib\net45\ImageProcessor.Web.dll</HintPath>
     </Reference>
-    <Reference Include="interfaces, Version=1.0.6309.16494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\interfaces.dll</HintPath>
+    <Reference Include="interfaces, Version=1.0.6505.22488, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Jumoo.uSync.BackOffice, Version=3.3.2.740, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\uSync.3.3.2.740\lib\net45\Jumoo.uSync.BackOffice.dll</HintPath>
@@ -107,8 +113,11 @@
     <Reference Include="Jumoo.uSync.Core, Version=5.6.2.740, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\uSync.Core.5.6.2.740\lib\net45\Jumoo.uSync.Core.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Log4Net.Async, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Log4Net.Async.2.0.4\lib\net40\Log4Net.Async.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
       <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
@@ -119,7 +128,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -128,6 +137,12 @@
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.0.0\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
@@ -142,33 +157,42 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.1\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.2\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.1\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=6.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.6.2.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
     <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
       <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
@@ -178,9 +202,11 @@
       <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Our.Umbraco.FileSystemProviders.Azure, Version=0.5.8.154, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoFileSystemProviders.Azure.0.5.8-beta\lib\net45\Our.Umbraco.FileSystemProviders.Azure.dll</HintPath>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -190,18 +216,18 @@
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SQLCE4Umbraco, Version=1.0.6309.16501, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\SQLCE4Umbraco.dll</HintPath>
+    <Reference Include="SQLCE4Umbraco, Version=1.0.6505.22497, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\SQLCE4Umbraco.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\System.Data.SqlServerCe.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -211,6 +237,12 @@
     <Reference Include="System.Reflection.Metadata, Version=1.0.21.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reflection.Metadata.1.0.21\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.7.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -261,34 +293,34 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\TidyNet.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\TidyNet.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco, Version=1.0.6309.16503, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\umbraco.dll</HintPath>
+    <Reference Include="umbraco, Version=1.0.6505.22498, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\umbraco.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Core, Version=1.0.6309.16496, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\Umbraco.Core.dll</HintPath>
+    <Reference Include="Umbraco.Core, Version=1.0.6505.22489, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\Umbraco.Core.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.DataLayer, Version=1.0.6309.16499, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\umbraco.DataLayer.dll</HintPath>
+    <Reference Include="umbraco.DataLayer, Version=1.0.6505.22495, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\umbraco.DataLayer.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.editorControls, Version=1.0.6309.16505, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\umbraco.editorControls.dll</HintPath>
+    <Reference Include="umbraco.editorControls, Version=1.0.6505.22503, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\umbraco.editorControls.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.MacroEngines, Version=1.0.6309.16506, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\umbraco.MacroEngines.dll</HintPath>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.6505.22504, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\umbraco.MacroEngines.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Umbraco.ModelsBuilder.3.0.7\lib\Umbraco.ModelsBuilder.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.providers, Version=1.0.6309.16502, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\umbraco.providers.dll</HintPath>
+    <Reference Include="umbraco.providers, Version=1.0.6505.22498, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\umbraco.providers.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Web.UI, Version=1.0.6309.16506, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\Umbraco.Web.UI.dll</HintPath>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.6505.22504, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\Umbraco.Web.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UmbracoExamine, Version=0.7.0.16500, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.7.5.13\lib\UmbracoExamine.dll</HintPath>
+    <Reference Include="UmbracoExamine, Version=0.7.0.22497, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\UmbracoExamine.dll</HintPath>
     </Reference>
     <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UrlRewritingNet.2.0.7\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
@@ -296,6 +328,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android-chrome-192x192.png" />
+    <Content Include="android-chrome-384x384.png" />
+    <Content Include="apple-touch-icon.png" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\css\epiphany.seo.metadata.css" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\js\epiphany.seo.metadata.js" />
     <Content Include="App_Plugins\Epiphany.SeoMetadata\views\epiphany.seo.metadata.html" />
@@ -310,11 +345,17 @@
     <Content Include="App_Plugins\uSync\uSyncDashboardService.js" />
     <Content Include="a\src\images\code-bg.jpg" />
     <Content Include="a\src\images\css3-logo.svg" />
+    <Content Include="a\src\images\generic\1-100.jpg" />
     <Content Include="a\src\images\generic\1.jpg" />
+    <Content Include="a\src\images\generic\2-100.jpg" />
     <Content Include="a\src\images\generic\2.jpg" />
+    <Content Include="a\src\images\generic\3-100.jpg" />
     <Content Include="a\src\images\generic\3.jpg" />
+    <Content Include="a\src\images\generic\4-100.jpg" />
     <Content Include="a\src\images\generic\4.jpg" />
+    <Content Include="a\src\images\generic\5-100.jpg" />
     <Content Include="a\src\images\generic\5.jpg" />
+    <Content Include="a\src\images\generic\6-100.jpg" />
     <Content Include="a\src\images\generic\6.jpg" />
     <Content Include="a\src\images\glade.jpg" />
     <Content Include="a\src\images\hobbies\bushes.jpg" />
@@ -331,229 +372,6 @@
     <Content Include="a\src\images\hobbies\wyre.jpg" />
     <Content Include="a\src\images\html5-logo.svg" />
     <Content Include="a\src\images\ico-share.png" />
-    <Content Include="a\src\images\icons\account-login.svg" />
-    <Content Include="a\src\images\icons\account-logout.svg" />
-    <Content Include="a\src\images\icons\action-redo.svg" />
-    <Content Include="a\src\images\icons\action-undo.svg" />
-    <Content Include="a\src\images\icons\align-center.svg" />
-    <Content Include="a\src\images\icons\align-left.svg" />
-    <Content Include="a\src\images\icons\align-right.svg" />
-    <Content Include="a\src\images\icons\aperture.svg" />
-    <Content Include="a\src\images\icons\arrow-bottom.svg" />
-    <Content Include="a\src\images\icons\arrow-circle-bottom.svg" />
-    <Content Include="a\src\images\icons\arrow-circle-left.svg" />
-    <Content Include="a\src\images\icons\arrow-circle-right.svg" />
-    <Content Include="a\src\images\icons\arrow-circle-top.svg" />
-    <Content Include="a\src\images\icons\arrow-left.svg" />
-    <Content Include="a\src\images\icons\arrow-right.svg" />
-    <Content Include="a\src\images\icons\arrow-thick-bottom.svg" />
-    <Content Include="a\src\images\icons\arrow-thick-left.svg" />
-    <Content Include="a\src\images\icons\arrow-thick-right.svg" />
-    <Content Include="a\src\images\icons\arrow-thick-top.svg" />
-    <Content Include="a\src\images\icons\arrow-top.svg" />
-    <Content Include="a\src\images\icons\audio-spectrum.svg" />
-    <Content Include="a\src\images\icons\audio.svg" />
-    <Content Include="a\src\images\icons\badge.svg" />
-    <Content Include="a\src\images\icons\ban.svg" />
-    <Content Include="a\src\images\icons\bar-chart.svg" />
-    <Content Include="a\src\images\icons\basket.svg" />
-    <Content Include="a\src\images\icons\battery-empty.svg" />
-    <Content Include="a\src\images\icons\battery-full.svg" />
-    <Content Include="a\src\images\icons\beaker.svg" />
-    <Content Include="a\src\images\icons\bell.svg" />
-    <Content Include="a\src\images\icons\bluetooth.svg" />
-    <Content Include="a\src\images\icons\bold.svg" />
-    <Content Include="a\src\images\icons\bolt.svg" />
-    <Content Include="a\src\images\icons\book.svg" />
-    <Content Include="a\src\images\icons\bookmark.svg" />
-    <Content Include="a\src\images\icons\box.svg" />
-    <Content Include="a\src\images\icons\briefcase.svg" />
-    <Content Include="a\src\images\icons\british-pound.svg" />
-    <Content Include="a\src\images\icons\browser.svg" />
-    <Content Include="a\src\images\icons\brush.svg" />
-    <Content Include="a\src\images\icons\bug.svg" />
-    <Content Include="a\src\images\icons\bullhorn.svg" />
-    <Content Include="a\src\images\icons\calculator.svg" />
-    <Content Include="a\src\images\icons\calendar.svg" />
-    <Content Include="a\src\images\icons\camera-slr.svg" />
-    <Content Include="a\src\images\icons\caret-bottom.svg" />
-    <Content Include="a\src\images\icons\caret-left.svg" />
-    <Content Include="a\src\images\icons\caret-right.svg" />
-    <Content Include="a\src\images\icons\caret-top.svg" />
-    <Content Include="a\src\images\icons\cart.svg" />
-    <Content Include="a\src\images\icons\chat.svg" />
-    <Content Include="a\src\images\icons\check.svg" />
-    <Content Include="a\src\images\icons\chevron-bottom.svg" />
-    <Content Include="a\src\images\icons\chevron-left.svg" />
-    <Content Include="a\src\images\icons\chevron-right.svg" />
-    <Content Include="a\src\images\icons\chevron-top.svg" />
-    <Content Include="a\src\images\icons\circle-check.svg" />
-    <Content Include="a\src\images\icons\circle-x.svg" />
-    <Content Include="a\src\images\icons\clipboard.svg" />
-    <Content Include="a\src\images\icons\clock.svg" />
-    <Content Include="a\src\images\icons\cloud-download.svg" />
-    <Content Include="a\src\images\icons\cloud-upload.svg" />
-    <Content Include="a\src\images\icons\cloud.svg" />
-    <Content Include="a\src\images\icons\cloudy.svg" />
-    <Content Include="a\src\images\icons\code.svg" />
-    <Content Include="a\src\images\icons\cog.svg" />
-    <Content Include="a\src\images\icons\collapse-down.svg" />
-    <Content Include="a\src\images\icons\collapse-left.svg" />
-    <Content Include="a\src\images\icons\collapse-right.svg" />
-    <Content Include="a\src\images\icons\collapse-up.svg" />
-    <Content Include="a\src\images\icons\command.svg" />
-    <Content Include="a\src\images\icons\comment-square.svg" />
-    <Content Include="a\src\images\icons\compass.svg" />
-    <Content Include="a\src\images\icons\contrast.svg" />
-    <Content Include="a\src\images\icons\copywriting.svg" />
-    <Content Include="a\src\images\icons\credit-card.svg" />
-    <Content Include="a\src\images\icons\crop.svg" />
-    <Content Include="a\src\images\icons\dashboard.svg" />
-    <Content Include="a\src\images\icons\data-transfer-download.svg" />
-    <Content Include="a\src\images\icons\data-transfer-upload.svg" />
-    <Content Include="a\src\images\icons\delete.svg" />
-    <Content Include="a\src\images\icons\dial.svg" />
-    <Content Include="a\src\images\icons\document.svg" />
-    <Content Include="a\src\images\icons\dollar.svg" />
-    <Content Include="a\src\images\icons\double-quote-sans-left.svg" />
-    <Content Include="a\src\images\icons\double-quote-sans-right.svg" />
-    <Content Include="a\src\images\icons\double-quote-serif-left.svg" />
-    <Content Include="a\src\images\icons\double-quote-serif-right.svg" />
-    <Content Include="a\src\images\icons\droplet.svg" />
-    <Content Include="a\src\images\icons\eject.svg" />
-    <Content Include="a\src\images\icons\elevator.svg" />
-    <Content Include="a\src\images\icons\ellipses.svg" />
-    <Content Include="a\src\images\icons\envelope-closed.svg" />
-    <Content Include="a\src\images\icons\envelope-open.svg" />
-    <Content Include="a\src\images\icons\euro.svg" />
-    <Content Include="a\src\images\icons\excerpt.svg" />
-    <Content Include="a\src\images\icons\expand-down.svg" />
-    <Content Include="a\src\images\icons\expand-left.svg" />
-    <Content Include="a\src\images\icons\expand-right.svg" />
-    <Content Include="a\src\images\icons\expand-up.svg" />
-    <Content Include="a\src\images\icons\external-link.svg" />
-    <Content Include="a\src\images\icons\eye.svg" />
-    <Content Include="a\src\images\icons\eyedropper.svg" />
-    <Content Include="a\src\images\icons\file.svg" />
-    <Content Include="a\src\images\icons\fire.svg" />
-    <Content Include="a\src\images\icons\flag.svg" />
-    <Content Include="a\src\images\icons\flash.svg" />
-    <Content Include="a\src\images\icons\folder.svg" />
-    <Content Include="a\src\images\icons\fork.svg" />
-    <Content Include="a\src\images\icons\fullscreen-enter.svg" />
-    <Content Include="a\src\images\icons\fullscreen-exit.svg" />
-    <Content Include="a\src\images\icons\globe.svg" />
-    <Content Include="a\src\images\icons\graph.svg" />
-    <Content Include="a\src\images\icons\grid-four-up.svg" />
-    <Content Include="a\src\images\icons\grid-three-up.svg" />
-    <Content Include="a\src\images\icons\grid-two-up.svg" />
-    <Content Include="a\src\images\icons\hard-drive.svg" />
-    <Content Include="a\src\images\icons\header.svg" />
-    <Content Include="a\src\images\icons\headphones.svg" />
-    <Content Include="a\src\images\icons\heart.svg" />
-    <Content Include="a\src\images\icons\home.svg" />
-    <Content Include="a\src\images\icons\image.svg" />
-    <Content Include="a\src\images\icons\inbox.svg" />
-    <Content Include="a\src\images\icons\infinity.svg" />
-    <Content Include="a\src\images\icons\info.svg" />
-    <Content Include="a\src\images\icons\italic.svg" />
-    <Content Include="a\src\images\icons\justify-center.svg" />
-    <Content Include="a\src\images\icons\justify-left.svg" />
-    <Content Include="a\src\images\icons\justify-right.svg" />
-    <Content Include="a\src\images\icons\key.svg" />
-    <Content Include="a\src\images\icons\laptop.svg" />
-    <Content Include="a\src\images\icons\layers.svg" />
-    <Content Include="a\src\images\icons\lightbulb.svg" />
-    <Content Include="a\src\images\icons\link-broken.svg" />
-    <Content Include="a\src\images\icons\link-intact.svg" />
-    <Content Include="a\src\images\icons\list-rich.svg" />
-    <Content Include="a\src\images\icons\list.svg" />
-    <Content Include="a\src\images\icons\location.svg" />
-    <Content Include="a\src\images\icons\lock-locked.svg" />
-    <Content Include="a\src\images\icons\lock-unlocked.svg" />
-    <Content Include="a\src\images\icons\loop-circular.svg" />
-    <Content Include="a\src\images\icons\loop-square.svg" />
-    <Content Include="a\src\images\icons\loop.svg" />
-    <Content Include="a\src\images\icons\magnifying-glass.svg" />
-    <Content Include="a\src\images\icons\map-marker.svg" />
-    <Content Include="a\src\images\icons\map.svg" />
-    <Content Include="a\src\images\icons\media-pause.svg" />
-    <Content Include="a\src\images\icons\media-play.svg" />
-    <Content Include="a\src\images\icons\media-record.svg" />
-    <Content Include="a\src\images\icons\media-skip-backward.svg" />
-    <Content Include="a\src\images\icons\media-skip-forward.svg" />
-    <Content Include="a\src\images\icons\media-step-backward.svg" />
-    <Content Include="a\src\images\icons\media-step-forward.svg" />
-    <Content Include="a\src\images\icons\media-stop.svg" />
-    <Content Include="a\src\images\icons\medical-cross.svg" />
-    <Content Include="a\src\images\icons\menu.svg" />
-    <Content Include="a\src\images\icons\microphone.svg" />
-    <Content Include="a\src\images\icons\minus.svg" />
-    <Content Include="a\src\images\icons\monitor.svg" />
-    <Content Include="a\src\images\icons\moon.svg" />
-    <Content Include="a\src\images\icons\move.svg" />
-    <Content Include="a\src\images\icons\musical-note.svg" />
-    <Content Include="a\src\images\icons\paperclip.svg" />
-    <Content Include="a\src\images\icons\pencil.svg" />
-    <Content Include="a\src\images\icons\people.svg" />
-    <Content Include="a\src\images\icons\person.svg" />
-    <Content Include="a\src\images\icons\phone.svg" />
-    <Content Include="a\src\images\icons\pie-chart.svg" />
-    <Content Include="a\src\images\icons\pin.svg" />
-    <Content Include="a\src\images\icons\play-circle.svg" />
-    <Content Include="a\src\images\icons\plus.svg" />
-    <Content Include="a\src\images\icons\power-standby.svg" />
-    <Content Include="a\src\images\icons\print.svg" />
-    <Content Include="a\src\images\icons\project.svg" />
-    <Content Include="a\src\images\icons\pulse.svg" />
-    <Content Include="a\src\images\icons\puzzle-piece.svg" />
-    <Content Include="a\src\images\icons\question-mark.svg" />
-    <Content Include="a\src\images\icons\rain.svg" />
-    <Content Include="a\src\images\icons\random.svg" />
-    <Content Include="a\src\images\icons\reload.svg" />
-    <Content Include="a\src\images\icons\resize-both.svg" />
-    <Content Include="a\src\images\icons\resize-height.svg" />
-    <Content Include="a\src\images\icons\resize-width.svg" />
-    <Content Include="a\src\images\icons\rss-alt.svg" />
-    <Content Include="a\src\images\icons\rss.svg" />
-    <Content Include="a\src\images\icons\script.svg" />
-    <Content Include="a\src\images\icons\share-boxed.svg" />
-    <Content Include="a\src\images\icons\share.svg" />
-    <Content Include="a\src\images\icons\shield.svg" />
-    <Content Include="a\src\images\icons\signal.svg" />
-    <Content Include="a\src\images\icons\signpost.svg" />
-    <Content Include="a\src\images\icons\sort-ascending.svg" />
-    <Content Include="a\src\images\icons\sort-descending.svg" />
-    <Content Include="a\src\images\icons\spreadsheet.svg" />
-    <Content Include="a\src\images\icons\star.svg" />
-    <Content Include="a\src\images\icons\sun.svg" />
-    <Content Include="a\src\images\icons\tablet.svg" />
-    <Content Include="a\src\images\icons\tag.svg" />
-    <Content Include="a\src\images\icons\tags.svg" />
-    <Content Include="a\src\images\icons\target.svg" />
-    <Content Include="a\src\images\icons\task.svg" />
-    <Content Include="a\src\images\icons\terminal.svg" />
-    <Content Include="a\src\images\icons\text.svg" />
-    <Content Include="a\src\images\icons\thumb-down.svg" />
-    <Content Include="a\src\images\icons\thumb-up.svg" />
-    <Content Include="a\src\images\icons\timer.svg" />
-    <Content Include="a\src\images\icons\transfer.svg" />
-    <Content Include="a\src\images\icons\trash.svg" />
-    <Content Include="a\src\images\icons\underline.svg" />
-    <Content Include="a\src\images\icons\vertical-align-bottom.svg" />
-    <Content Include="a\src\images\icons\vertical-align-center.svg" />
-    <Content Include="a\src\images\icons\vertical-align-top.svg" />
-    <Content Include="a\src\images\icons\video.svg" />
-    <Content Include="a\src\images\icons\volume-high.svg" />
-    <Content Include="a\src\images\icons\volume-low.svg" />
-    <Content Include="a\src\images\icons\volume-off.svg" />
-    <Content Include="a\src\images\icons\warning.svg" />
-    <Content Include="a\src\images\icons\wifi.svg" />
-    <Content Include="a\src\images\icons\wrench.svg" />
-    <Content Include="a\src\images\icons\x.svg" />
-    <Content Include="a\src\images\icons\yen.svg" />
-    <Content Include="a\src\images\icons\zoom-in.svg" />
-    <Content Include="a\src\images\icons\zoom-out.svg" />
     <Content Include="a\src\images\js-logo.svg" />
     <Content Include="a\src\images\me3-s.png" />
     <Content Include="a\src\images\me3.png" />
@@ -585,6 +403,7 @@
     <Content Include="a\src\images\sql-logo.svg" />
     <Content Include="a\src\images\t2t.png" />
     <Content Include="a\src\images\visual-studio-logo.svg" />
+    <Content Include="browserconfig.xml" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -605,18 +424,52 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="default.aspx" />
+    <Content Include="favicon-16x16.png" />
+    <Content Include="favicon-32x32.png" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="a\src\scripts\external-references.json" />
     <Content Include="a\src\styles\ste-pam.scss" />
+    <Content Include="mstile-150x150.png" />
+    <Content Include="old\10k-finish.jpg" />
+    <Content Include="old\10k-start.jpg" />
+    <Content Include="old\Class1.jpg" />
+    <Content Include="old\ClassDiagram2.svg" />
+    <Content Include="old\CV-hover.png" />
+    <Content Include="old\CV.png" />
+    <Content Include="old\DiamondProblem.svg" />
+    <Content Include="old\MiruSccreen1.jpg" />
+    <Content Include="old\miruscreen2.png" />
+    <Content Include="old\miruscreen3.png" />
+    <Content Include="old\miruscreen4.png" />
+    <Content Include="old\miruscreen5.png" />
+    <Content Include="old\page-speed-screen.jpg" />
+    <Content Include="old\print-skills.png" />
+    <Content Include="old\sg-mob.png" />
+    <Content Include="old\thai-prep.jpg" />
+    <Content Include="old\thai.jpg" />
+    <Content Include="old\wwwroot.jpg" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\DependencyRegistrar.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="GlobalEventHandler.cs" />
+    <Compile Include="Helpers\DateTimeExtension.cs" />
+    <Compile Include="Helpers\Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\EmailService.cs" />
+    <Compile Include="Service\Interface\IEmailService.cs" />
+    <Compile Include="Service\Interface\INotificationService.cs" />
+    <Compile Include="Service\NotificationService.cs" />
+    <Compile Include="ViewModel\ContactFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="a\src\js\" />
+    <Folder Include="a\src\sprites\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
@@ -626,20 +479,23 @@
     <Content Include="config\imageprocessor\security.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\imageprocessor\processing.config" />
+    <Content Include="config\imageprocessor\processing.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\imageprocessor\cache.config" />
+    <Content Include="config\imageprocessor\cache.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\Dashboard.config" />
-    <Content Include="config\ClientDependency.config" />
     <Content Include="Views\Article.cshtml" />
     <Content Include="Views\Home.cshtml" />
-    <Content Include="Views\Hub.cshtml" />
     <Content Include="Views\Master.cshtml" />
     <Content Include="a\src\styles\01-settings\settings.scss" />
     <Content Include="a\src\styles\02-tools\tools.scss" />
@@ -650,42 +506,22 @@
     <Content Include="a\src\styles\07-trumps\trumps.scss" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="web.config" />
-    <Content Include="config\umbracoSettings.config" />
+    <Content Include="web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="config\umbracoSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Plugins\Epiphany.SeoMetadata\package.manifest" />
     <Content Include="Views\_Page.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap4.cshtml" />
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Header.cshtml" />
-    <Content Include="Views\Partials\_Hero.cshtml" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
-    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
-    <Content Include="Media\Web.config" />
-    <Content Include="config\UrlRewriting.config" />
     <Content Include="config\trees.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="config\tinyMceConfig.config" />
-    <Content Include="config\scripting.config" />
-    <Content Include="config\metablogConfig.config" />
-    <Content Include="config\log4net.config" />
-    <Content Include="config\FileSystemProviders.config" />
-    <Content Include="config\feedProxy.config" />
-    <Content Include="config\ExamineSettings.config" />
-    <Content Include="config\ExamineIndex.config" />
-    <Content Include="config\EmbeddedMedia.config" />
-    <Content Include="config\BaseRestExtensions.config" />
-    <Content Include="config\applications.config" />
-    <Content Include="config\404handlers.config" />
     <Content Include="config\uSyncCore.Config" />
     <Content Include="config\uSyncBackOffice.Config" />
     <Content Include="App_Plugins\uSync\package.manifest" />
@@ -700,16 +536,146 @@
     <Content Include="a\src\styles\06-components\_spinner.scss" />
     <Content Include="a\src\styles\06-components\_stacks.scss" />
     <Content Include="a\src\styles\06-components\_timeline.scss" />
-    <None Include="web.Debug.config">
+    <Content Include="Views\About.cshtml" />
+    <Content Include="manifest.json" />
+    <Content Include="Views\Partials\_CV.cshtml" />
+    <Content Include="Views\Work.cshtml" />
+    <Content Include="Views\Blog.cshtml" />
+    <Content Include="Views\Partials\_Article.cshtml" />
+    <Content Include="old\FYP Progress Review Poster %28K0025970%29.pdf" />
+    <Content Include="old\Placement Report 1 - October.pdf" />
+    <Content Include="old\Placement Report 2 - May.pdf" />
+    <Content Include="old\Placement Report 3 - Summarative.pdf" />
+    <Content Include="old\Stephen Pammenter - CV.pdf" />
+    <Content Include="old\Stephen-Pammenter-CV.pdf" />
+    <Content Include="old\WorldOfSwordCraft.zip" />
+    <Content Include="old\WoSPresentation.pdf" />
+    <Content Include="Views\MacroPartials\_ContactForm.cshtml" />
+    <Content Include="Views\Partials\_ContactForm.cshtml" />
+    <Content Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.Live.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="a\src\styles\05-objects\_list.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MacroPartials\_LatestArticles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="a\src\styles\05-objects\_media.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\ClientDependency.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Media\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\tinyMceConfig.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\scripting.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\metablogConfig.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\HealthChecks.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\FileSystemProviders.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\feedProxy.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\ExamineSettings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\ExamineIndex.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\EmbeddedMedia.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\Dashboard.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\BaseRestExtensions.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\applications.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\404handlers.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\_ArticleSummary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\_Pagination.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Live|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -722,7 +688,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50016</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50016/</IISUrl>
+          <IISUrl>http://local.ste-pam.com/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -738,13 +704,12 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\UmbracoCms.7.5.13\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.5.13\build\UmbracoCms.props'))" />
-    <Error Condition="!Exists('..\packages\UmbracoCms.7.5.13\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.5.13\build\UmbracoCms.targets'))" />
     <Error Condition="!Exists('..\packages\uSync.3.3.2.740\build\uSync.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.3.3.2.740\build\uSync.props'))" />
     <Error Condition="!Exists('..\packages\uSync.3.3.2.740\build\uSync.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.3.3.2.740\build\uSync.targets'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.7.4\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.7.4\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.7.4\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.7.4\build\UmbracoCms.targets'))" />
   </Target>
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
-  <Import Project="..\packages\UmbracoCms.7.5.13\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.5.13\build\UmbracoCms.targets')" />
   <Import Project="..\packages\uSync.3.3.2.740\build\uSync.targets" Condition="Exists('..\packages\uSync.3.3.2.740\build\uSync.targets')" />
   <PropertyGroup>
     <CopyAllFilesToSingleFolderForPackageDependsOn>
@@ -755,11 +720,12 @@
   <Target Name="CustomCollectFiles">
     <ItemGroup>
       <_CustomFiles Include="a\dist\**\*" />
-      <FilesForPackagingFromProject  Include="%(_CustomFiles.Identity)">
+      <FilesForPackagingFromProject Include="%(_CustomFiles.Identity)">
         <DestinationRelativePath>a\dist\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
     </ItemGroup>
   </Target>
+  <Import Project="..\packages\UmbracoCms.7.7.4\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.7.4\build\UmbracoCms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

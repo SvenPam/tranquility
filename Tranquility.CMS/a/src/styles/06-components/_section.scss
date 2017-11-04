@@ -1,0 +1,128 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+
+.section {
+    @include media-breakpoint-up(md) {
+        padding: 60px;
+    }
+
+    padding: 10px 0;
+
+    &__title {
+        font-size: 5rem;
+        font-family: $headings-font-family;
+
+        @include media-breakpoint-down(md) {
+            font-size: 6rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 2rem;
+        }
+    }
+
+    &__facts {
+        @include make-row;
+
+        &--container {
+            @include make-container;
+            @include make-container-max-widths;
+        }
+    }
+
+    &__meta {
+        @include media-breakpoint-up(sm) {
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    &__fact {
+        @include media-breakpoint-down(md) {
+            @include make-col(12);
+        }
+
+        @include make-col(4);
+
+        &:only-child {
+            @include make-col(12);
+        }
+
+        padding: 60px ($grid-gutter-width / 2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__content {
+        @include make-container;
+        @include make-container-max-widths;
+        padding-top: 50px;
+    }
+
+    &__intro {
+        padding-bottom: 30px;
+    }
+
+    &__outro {
+        padding: 150px 0;
+    }
+
+    &__badge {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        border-radius: 100%;
+        background-color: $white;
+        width: 170px;
+        height: 170px;
+        padding: 25px;
+
+        @include media-breakpoint-down(md) {
+            height: 100px;
+            width: 100px;
+            padding: 25px;
+        }
+
+        @include media-breakpoint-between(sm, md) {
+            font-size: 70px;
+            width: 115px;
+            height: 100px;
+            padding: 25px;
+        }
+    }
+
+    &:nth-child(even) {
+        background-color: $gray-900;
+        color: $white;
+        padding-bottom: 20px;
+
+        .section__fact {
+            &:nth-child(odd) {
+                background-color: $gray-800;
+            }
+        }
+    }
+
+    &:nth-child(odd) {
+        background-color: $gray-200;
+
+        .section__fact {
+            &:nth-child(odd) {
+                background-color: $gray-100;
+            }
+        }
+    }
+
+    &--footer {
+        background-color: $dark-bg !important;
+        color: $white !important;
+    }
+}

@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "_Page.cshtml";
+    var articles = Model.Content.Children<BlogArticle>().Where(x => x.IsVisible()).OrderByDescending(x => x.CreateDate);
+
+    int page = 1;
+    if (!string.IsNullOrEmpty(Request.QueryString["page"]))
+    {
+        int.TryParse(Request.QueryString["page"], out page);
+    }
+
+    var pagination = new Tranquility.Helpers.Pagination(articles, page);
+}
+
+<section class="hero hero--glade">
+    <div class="container">
+        <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+
+<div class="sections">
+    <section class="section">
+        <div class="section__content">
+            @if (pagination.PagedList.Any())
+            {
+                <ul class="list list--unstyled">
+                    @foreach (var article in pagination.PagedList)
+                {
+                        <li>
+                            @Html.Partial("Partials/_ArticleSummary", article)
+                        </li>
+                    }
+                </ul>
+
+                @Html.Partial("Partials/_Pagination", pagination)
+            }
+        </div>
+    </section>
+</div>

@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var articles = Umbraco.TypedContentAtXPath("//blogArticle").Where(x => x.IsVisible()).OrderByDescending(x => x.CreateDate).Take(5);
+}
+<h3 class="h4">Latest</h3>
+<ul class="list list--unstyled">
+    @foreach (BlogArticle article in articles)
+    {
+        <li>
+            @Html.Partial("Partials/_ArticleSummary", article)
+        </li>
+    }
+</ul>

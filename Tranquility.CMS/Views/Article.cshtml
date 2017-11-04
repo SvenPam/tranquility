@@ -1,5 +1,15 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Article>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.BlogArticle>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
+
+<section class="hero hero--glade">
+    <div class="container">
+        <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+
+<div class="sections">
+    @Html.Partial("Partials/_Article", Model)
+</div>
