@@ -12,16 +12,18 @@
 
 <div class="sections">
     <section class="section">
-        @if (articles.Any())
-        {
-            foreach (var article in articles)
+        <div class="section__content">
+            @if (articles.Any())
             {
-                <article class="card" @*style="background-image: url('@article.Image.GetCropUrl("Thumb")')"*@>
-                    <a href="@article.Url" class="card__link"><h2 class="card__title">@article.Name</h2></a>
-                    <h3 class="card__subtitle">@article.Topic</h3>
-                    <p class="card__body">@article.Description</p>
-                </article>
+                <ul class="list list--unstyled">
+                    @foreach (var article in articles)
+                {
+                        <li>
+                            @Html.Partial("Partials/_ArticleSummary", article)
+                        </li>
+                    }
+                </ul>
             }
-        }
+        </div>
     </section>
 </div>
