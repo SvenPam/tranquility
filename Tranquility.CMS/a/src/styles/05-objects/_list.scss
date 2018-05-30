@@ -10,9 +10,12 @@
     }
 
     &__link {
+        @include media-breakpoint-up(md) {
+            width: 45px;
+        }
+
         color: $white;
         border-bottom: 0 !important;
-        width: 45px;
         overflow: hidden;
         transition: width ease-in-out .1s;
         line-height: 1;
