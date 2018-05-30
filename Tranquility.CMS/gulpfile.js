@@ -86,7 +86,6 @@ gulp.task('build', gulp.series(
         'css',
         'js',
         'sprites',
-        'external-js',
         'img'
     ),
     function (done) {
