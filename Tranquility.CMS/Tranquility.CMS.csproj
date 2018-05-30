@@ -432,7 +432,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
-    <Content Include="a\src\scripts\external-references.json" />
     <Content Include="a\src\styles\ste-pam.scss" />
     <Content Include="mstile-150x150.png" />
     <Content Include="old\10k-finish.jpg" />
@@ -470,7 +469,7 @@
     <Compile Include="ViewModel\ContactFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="a\src\js\" />
+    <Folder Include="a\src\scripts\" />
     <Folder Include="a\src\sprites\" />
     <Folder Include="Views\Contact\" />
   </ItemGroup>
