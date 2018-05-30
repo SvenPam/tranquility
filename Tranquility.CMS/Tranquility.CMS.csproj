@@ -469,7 +469,6 @@
     <Compile Include="ViewModel\ContactFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="a\src\scripts\" />
     <Folder Include="a\src\sprites\" />
     <Folder Include="Views\Contact\" />
   </ItemGroup>
@@ -674,6 +673,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\404handlers.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="a\src\scripts\external-references.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
