@@ -1,0 +1,20 @@
+﻿@model Tranquility.Helpers.Pagination
+
+<nav>
+    <ul class="pagination">
+        @foreach (var pageNumber in Model.Paging)
+        {
+            var qs = HttpUtility.ParseQueryString(Request.QueryString.ToString());
+            qs.Set("page", pageNumber.ToString());
+            var uriBuilder = new UriBuilder(Request.Url);
+            uriBuilder.Query = qs.ToString();
+
+            <li class="page-item  @(Model.CurrentPage == pageNumber ? "active" : string.Empty)">
+                <a class="page-link" href="@uriBuilder.Uri">
+                    @pageNumber @if (Model.CurrentPage == pageNumber)
+                {<span class="sr-only">(Current)</span>}
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

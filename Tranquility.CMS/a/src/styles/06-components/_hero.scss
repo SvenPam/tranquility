@@ -1,0 +1,45 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+
+.hero {
+    @include media-breakpoint-up(md) {
+        min-height: 370px;
+        padding: 30px;
+        background-image: url('#{$image-url}/generic/2.jpg');
+    }
+
+    @include media-breakpoint-down(sm) {
+        background-image: url('#{$image-url}/generic/2-100.jpg');
+    }
+
+    min-height: 370px;
+    padding: 2rem;
+    overflow: hidden;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    text-align: center;
+
+    &__title {
+        margin-bottom: 30px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 4.5rem;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 30px;
+        font-size: 1.5rem;
+    }
+
+    &__avatar {
+        @include img-fluid;
+        border-radius: 100%;
+        margin: 0 auto;
+        display: block;
+        background-color: $black;
+        box-shadow: $black -1px 7px 30px;
+    }
+}

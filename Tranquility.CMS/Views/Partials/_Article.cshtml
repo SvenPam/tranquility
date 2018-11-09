@@ -1,0 +1,55 @@
+﻿@inherits UmbracoViewPage<BlogArticle>
+@using Tranquility.Helpers
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact">
+            <div class="section__meta">
+                <span>@Model.CreatorName</span><time datetime="@Model.CreateDate">@Model.CreateDate.Friendly()</time>
+            </div>
+                <h1 class="lead"><a class="h2" href="@Model.Url">@Model.Name</a><sup><a href="@Model.Url">@*<span class="glyphicon glyphicon-link"></span>*@</a></sup></h1>
+            <p class="text-center"><a href="#">@Model.Topic</a></p>
+            <p class="text-muted">
+                @Model.Description
+            </p>
+        </div>
+    </header>
+    <div class="article-body section__content">
+        @Html.GetGridHtml(Model, "content", "Bootstrap4")
+    </div>
+    <footer class="col-xs-12">
+        @*@if (ViewBag.IsIndex)
+            {
+            <a href="@Model.Url#comments">Comments →</a>
+            }
+            else
+            {
+            <nav>
+                <ul class="pager">
+                    @if (!string.IsNullOrEmpty(Model.PrevArticleURL))
+                    {
+                    <li class="previous"><a href="@Model.PrevArticleURL"><span>&larr;</span> Older</a></li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.NextArticleURL))
+                    {
+                    <li class="next"><a href="@Model.NextArticleURL">Newer <span>&rarr;</span></a></li>
+                    }
+                </ul>
+            </nav>
+            <div id="comments">
+                <h2>Comments</h2>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                        var disqus_shortname = 'ste-pam';
+                        var disqus_identifier = 'article-@Model.ArticleID';
+                        var disqus_title = '@Model.Title';
+                        var disqus_url = '@Model.UrlWithDomain';
+                        (function () {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                </script>
+            </div>
+            }*@
+    </footer>
+</article>

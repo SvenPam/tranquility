@@ -1,11 +1,80 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
-
-<footer class="footer">
+<footer class="section section--footer hidden-print">
+    <button id="mobileMenu" class="menu-mobile">
+        <i class="hidden-lg hidden-md">
+            <svg class="icon icon--menu">
+                <use xlink:href="a/dist/sprites/sprite.svg#menu"></use>
+            </svg>
+        </i>
+    </button>
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <small>Copyright @Model.Content.AncestorsOrSelf(1).Name</small>
+            <nav class="col-lg-4 col-md-4 col-xs-12">
+                <h3 class="col-xs-12">Site</h3>
+                <div class="col-lg-6 col-xs-12">
+                    <a href="/">Home</a>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <a href="/about">About Me</a>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <a href="/work">CMS Solution</a>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <a href="/#work">Work</a>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <a href="/blog">Blog</a>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <a href="/sitemap">Site Map</a>
+                </div>
+                @*<h3 class="col-xs-12">Blog Topics</h3>
+                @foreach (var topic in Sites.CurrentSite.Topics)
+                    {
+                        <div class="col-lg-6 col-xs-12">
+                            <a href="@Url.ActionDomain("Topic", "Blog", new { topicName = @topic.URLSlug })">@topic.Name</a>
+                        </div>
+                    }*@
+            </nav>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Social</h3>
+                <div class="col-xs-12 social">
+                    <a class="twitter" href="//twitter.com/SvenPam">Twitter</a>
+                    <a class="linkedin" href="//linkedin.com/in/spammenter">Linkedin</a>
+                    <a class="stack-overflow" href="//stackoverflow.com/cv/spammenter">Stack Overflow</a>
+                    <a class="github" href="//github.com/SvenPam">Github</a>
+                    <a class="instagram" href="//www.instagram.com/spammenter/">Instagram</a>
+                    <a class="facebook" href="//www.facebook.com/spammenter">Facebook</a>
+                    <a class="youtube" href="//www.youtube.com/user/SvenPam">Youtube</a>
+                    <a class="googleplus" href="//plus.google.com/+StephenPammenter">Google+</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>More</h3>
+                <a href="/CV">CV</a>
+                <br />
+                <a href="/contact">Contact</a>
+                <br />
+                <br />
+                <h3>Based In</h3>
+                <p>Liverpool, UK</p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <small>
+                    Copyright  &copy; 2012 - @DateTime.UtcNow.ToLocalTime().Year @Model.Content.AncestorsOrSelf(1).First().Name
+                    <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+                        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+                        </span>
+                    </a>
+                </small>
+            </div>
+            <div class="col-sm-6 col-xs-12 text-right">
+                Built using <a href="http://www.asp.net/mvc">ASP.NET MVC</a> and <a href="http://getbootstrap.com">Bootstrap.</a>
             </div>
         </div>
     </div>
