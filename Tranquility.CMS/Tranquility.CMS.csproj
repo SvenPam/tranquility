@@ -532,7 +532,7 @@
     <Content Include="a\src\styles\06-components\_social.scss" />
     <Content Include="a\src\styles\06-components\_content.scss" />
     <Content Include="a\src\styles\06-components\_icon.scss" />
-    <Content Include="a\src\styles\06-components\_mockup.scss" />
+    <Content Include="a\src\styles\06-components\_example.scss" />
     <Content Include="a\src\styles\06-components\_nav.scss" />
     <Content Include="a\src\styles\06-components\_spinner.scss" />
     <Content Include="a\src\styles\06-components\_stacks.scss" />
