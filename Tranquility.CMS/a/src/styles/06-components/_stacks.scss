@@ -3,9 +3,9 @@
 .development {
     .stack {
         border-right: $gray-900 solid 2px;
+        text-align: center;
 
         .stack-logo-wrapper {
-            min-height: 182px;
             padding: 10px;
 
             .stack-logo {
@@ -21,7 +21,6 @@
             }
         }
     }
-
     .stack:nth-last-child(1) {
         border-right: none;
     }

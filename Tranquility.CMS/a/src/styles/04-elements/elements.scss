@@ -4,3 +4,10 @@
 textarea {
     resize: vertical;
 }
+
+blockquote {
+    padding: 11px 22px;
+    margin: 0 0 22px;
+    font-size: 17.6px;
+    border-left: 5px solid $brand-subtle;
+}
