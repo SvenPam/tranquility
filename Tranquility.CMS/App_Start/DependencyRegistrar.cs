@@ -89,8 +89,11 @@ namespace Tranquility
             builder.RegisterInstance(applicationContext.Services.ExternalLoginService).As<IExternalLoginService>();
             builder.RegisterInstance(applicationContext.Services.RedirectUrlService).As<IRedirectUrlService>();
 
+            UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
+            builder.RegisterInstance(umbracoHelper.ContentQuery).As<ITypedPublishedContentQuery>();
+
             builder.Register(c => UmbracoContext.Current);
-            builder.Register(c => new UmbracoHelper(UmbracoContext.Current));
+            builder.Register(c => umbracoHelper);
             builder.RegisterInstance(applicationContext.ProfilingLogger.Logger).As<ILogger>();
         }
     }
