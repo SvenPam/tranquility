@@ -254,3 +254,6 @@ web.config.backup
 /Tranquility.CMS/config/connectionString.config
 /Tranquility.CMS/config/mailSettings.config
 /Tranquility.CMS/config/appSettings.config
+
+!**/App_Data/[Pp]ackages/*
+!**/[Uu]mbraco/[Dd]eveloper/[Pp]ackages/*
