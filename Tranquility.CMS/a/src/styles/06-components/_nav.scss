@@ -5,13 +5,12 @@
         position: fixed;
         top: 50%;
         left: 0;
-        font-size: 3rem;
         background: $gray-900;
         opacity: .8;
         z-index: 100;
         border-radius: 0 5px 5px 0;
         margin-top: -175.5px;
-        padding-top: 15px;
+        padding-top: 25px;
         transition: left ease-in-out .1s;
 
         .nav-title {
