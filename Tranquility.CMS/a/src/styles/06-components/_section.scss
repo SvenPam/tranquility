@@ -39,6 +39,7 @@
         display: flex;
         flex-direction: column-reverse;
         width: 100%;
+        font-size: .8rem;
     }
 
     &__fact {
@@ -52,12 +53,17 @@
             @include make-col(12);
         }
 
-        padding: 60px ($grid-gutter-width / 2);
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+
+        &--lift {
+            margin-top: -190px;
+            box-shadow: transparentize($gray-700, .5) 3px 2px 3px 2px;
+        }
     }
 
     &__content {
