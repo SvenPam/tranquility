@@ -9,9 +9,6 @@
     padding: 10px 0;
 
     &__title {
-        font-size: 5rem;
-        font-family: $headings-font-family;
-
         @include media-breakpoint-down(md) {
             font-size: 6rem;
         }
@@ -19,6 +16,9 @@
         @include media-breakpoint-down(sm) {
             font-size: 2rem;
         }
+
+        font-size: 5rem;
+        font-family: $headings-font-family;
     }
 
     &__facts {
@@ -48,17 +48,16 @@
         }
 
         @include make-col(4);
-
-        &:only-child {
-            @include make-col(12);
-        }
-
         padding: 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+
+        &:only-child {
+            @include make-col(12);
+        }
 
         &--lift {
             margin-top: -190px;
@@ -81,16 +80,6 @@
     }
 
     &__badge {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        border-radius: 100%;
-        background-color: $white;
-        width: 170px;
-        height: 170px;
-        padding: 25px;
-
         @include media-breakpoint-down(md) {
             height: 100px;
             width: 100px;
@@ -103,6 +92,16 @@
             height: 100px;
             padding: 25px;
         }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        border-radius: 100%;
+        background-color: $white;
+        width: 170px;
+        height: 170px;
+        padding: 25px;
     }
 
     &:nth-child(even) {
@@ -117,7 +116,7 @@
         }
     }
 
-    &:nth-child(odd) {
+    &:nth-child(odd):not(&--footer) {
         background-color: $gray-200;
 
         .section__fact {
@@ -128,7 +127,7 @@
     }
 
     &--footer {
-        background-color: $dark-bg !important;
-        color: $white !important;
+        background-color: $dark-bg;
+        color: $white;
     }
 }

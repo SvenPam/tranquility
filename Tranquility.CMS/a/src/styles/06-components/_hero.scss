@@ -22,11 +22,11 @@
     text-align: center;
 
     &__title {
-        margin-bottom: 30px;
-
         @include media-breakpoint-up(md) {
             font-size: 4.5rem;
         }
+
+        margin-bottom: 30px;
     }
 
     &__subtitle {

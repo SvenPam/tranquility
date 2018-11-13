@@ -5,33 +5,25 @@
         border-right: $gray-900 solid 2px;
         text-align: center;
 
-        .stack-logo-wrapper {
+        &-logo-wrapper {
             padding: 10px;
+        }
 
-            .stack-logo {
-                max-width: 100%;
-                width: 100px;
-                display: block;
-                margin: 0 auto;
-                padding-bottom: 20px;
+        &-logo {
+            max-width: 100%;
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 20px;
 
-                &.visual-studio, &.sql {
-                    padding-top: 20px;
-                }
+            &.visual-studio,
+            &.sql {
+                padding-top: 20px;
             }
         }
     }
+
     .stack:nth-last-child(1) {
-        border-right: none;
-    }
-}
-
-.design {
-    .design-example {
-        img {
-            max-width: 100%;
-        }
-
-        padding: 40px;
+        border-right: 0;
     }
 }
