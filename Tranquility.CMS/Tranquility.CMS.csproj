@@ -3591,7 +3591,7 @@
     <Content Include="Umbraco\Views\Preview\Radius.cshtml" />
     <Content Include="Umbraco\Views\Preview\Shadow.cshtml" />
     <Content Include="Umbraco\Views\Preview\Slider.cshtml" />
-    <Content Include="Umbraco\Views\Preview\web.config" />
+    <None Include="Umbraco\Views\Preview\web.config" />
     <Content Include="Umbraco\Webservices\MediaUploader.ashx" />
     <Content Include="Umbraco\Webservices\TagsAutoCompleteHandler.ashx" />
     <Content Include="Umbraco\Webservices\TreeDataService.ashx" />
