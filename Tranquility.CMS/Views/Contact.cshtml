@@ -1,7 +1,23 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Contact>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "_Page.cshtml";
+    Layout = "_Page.cshtml";
 }
 
-@Umbraco.RenderMacro("ContactForm")
+<section class="hero hero--wilderness">
+    <div class="container">
+        <h1 class="hero__title">Contact Me</h1>
+    </div>
+</section>
+<div class="sections">
+    <section class="section">
+        <div class="section__content">
+            <h1>Let's talk</h1>
+            <p>You can contact me via:</p>
+            <ul>
+                <li><a href="//linkedin.com/in/spammenter">LinkedIn</a></li>
+                <li><a href="//twiter.com/svenpam">Twitter</a></li>
+            </ul>
+        </div>
+    </section>
+</div>
