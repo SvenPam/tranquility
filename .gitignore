@@ -257,3 +257,4 @@ web.config.backup
 
 !**/App_Data/[Pp]ackages/*
 !**/[Uu]mbraco/[Dd]eveloper/[Pp]ackages/*
+!**/[Uu]mbraco/**/[Mm]edia*
