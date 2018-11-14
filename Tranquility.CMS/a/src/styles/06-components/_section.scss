@@ -61,7 +61,7 @@
 
         &--lift {
             margin-top: -190px;
-            box-shadow: transparentize($gray-700, .5) 3px 2px 3px 2px;
+            box-shadow: darken($gray-800, 5%) 4px 4px 0 0;
         }
     }
 
