@@ -3474,7 +3474,7 @@
     <Content Include="Umbraco\assets\less\shadow.less" />
     <Content Include="Umbraco\assets\less\slider.less" />
     <Content Include="Umbraco\Install\Views\Index.cshtml" />
-    <Content Include="Umbraco\Install\Views\Web.config" />
+    <None Include="Umbraco\Install\Views\Web.config" />
     <Content Include="Umbraco\Js\web.config" />
     <Content Include="Umbraco\lib\angular-dynamic-locale\tmhDynamicLocale.min.js.map" />
     <Content Include="Umbraco\lib\angular-local-storage\angular-local-storage.min.js.map" />
