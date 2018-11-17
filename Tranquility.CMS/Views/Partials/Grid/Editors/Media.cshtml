@@ -1,25 +1,62 @@
-﻿@model dynamic
+﻿@inherits UmbracoViewPage<dynamic>
 @using Umbraco.Web.Templates
-
 @if (Model.value != null)
-{   
+{
+    int mediaId = (int)Model.value.id.Value;
+    var media = Umbraco.TypedMedia(mediaId);
+
+    double width = 1020;
+    double height = 300;
+
     var url = Model.value.image;
-    if(Model.editor.config != null && Model.editor.config.size != null){
+    if (Model.editor.config != null && Model.editor.config.size != null)
+    {
         url += "?width=" + Model.editor.config.size.width;
         url += "&height=" + Model.editor.config.size.height;
 
-        if(Model.value.focalPoint != null){
-            url += "&center=" + Model.value.focalPoint.top +"," + Model.value.focalPoint.left;
+        if (Model.value.focalPoint != null)
+        {
+            url += "&center=" + Model.value.focalPoint.top + "," + Model.value.focalPoint.left;
             url += "&mode=crop";
         }
     }
-
-    var altText = Model.value.altText ?? Model.value.caption ?? string.Empty;
-    
-    <img src="@url" alt="@altText">
-    
-    if (Model.value.caption != null)
+    else
     {
-        <p class="caption">@Model.value.caption</p>
+        url += "?width=1020&mode=max&format=webp";
+    }
+
+    if (media != null)
+    {
+        width = media.GetPropertyValue<double>("umbracoWidth");
+        height = media.GetPropertyValue<double>("umbracoHeight");
+    }
+
+    if (Model.value.caption != null && !string.IsNullOrEmpty(Model.value.caption.ToString()))
+    {
+        @Html.Raw("<figure>")
+    }
+
+    @**FED wizardry in the back end... To explain: *@
+    @* To lazy load images, we don't want stuff jumping all over the place.*
+        @* We also cannot predict the aspect ratio of images, so we have to calculate it. *@
+    @* The img holder just needs the padding bottom set to the aspect ratio and boom - perfect sized image placeholder.*@
+    <div @if (media != null) { <text>
+         class="article__img-holder"
+         style="padding-bottom: @(media.GetPropertyValue<double>("umbracoHeight") / media.GetPropertyValue<double>("umbracoWidth") * 100)%;"
+         </text> }>
+        <img width="@width" height="@height" class="lazyload @(media == null ? "img-fluid" : string.Empty)" alt="@Model.value.altText"
+             sizes="auto"
+             data-src="@url"
+             data-srcset=" @(Model.value.image + "?width=286&format=webp") 322w,
+    @(Model.value.image + "?width=540&mode=max&format=webp") 576w,
+    @(Model.value.image + "?width=732&mode=max&format=webp") 768w,
+    @(Model.value.image + "?width=625&mode=max&format=webp") 992w,
+    @url" />
+    </div>
+
+    if (Model.value.caption != null && !string.IsNullOrEmpty(Model.value.caption.ToString()))
+    {
+        <figcaption>@Model.value.caption</figcaption>
+        @Html.Raw("</figure>")
     }
 }

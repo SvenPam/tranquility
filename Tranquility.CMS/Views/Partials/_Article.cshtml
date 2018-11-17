@@ -14,7 +14,7 @@
             </p>
         </div>
     </header>
-    <div class="article-body section__content">
+    <div class="article section__content">
         @if (Model.UpdateDate < DateTime.Now.AddYears(-1))
         {
             <div class="alert alert--old">
@@ -28,6 +28,10 @@
                 This content may be out of date or broken, please take care.
             </div>
         }
+
+
+
+
         @Html.GetGridHtml(Model, "content", "Bootstrap4")
     </div>
     <footer class="section__content">

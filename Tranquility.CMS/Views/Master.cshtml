@@ -18,12 +18,20 @@
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#0c0c0e">
-
     <title>@pageTite</title>
     <meta name="description" content=" @((metadata != null ? metadata.Description : null) ?? @Model.Content.GetPropertyValue("description"))" />
     <meta property="og:locale" content="en_GB">
     <link href="~/a/dist/css/ste-pam.min.css" rel="stylesheet" />
     @RenderSection("styles")
+
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
 </head>
 <body>
     <nav id="siteNav" class="site-nav">

@@ -385,6 +385,7 @@
     <Content Include="a\src\images\html5-logo.svg" />
     <Content Include="a\src\images\ico-share.png" />
     <Content Include="a\src\images\js-logo.svg" />
+    <Content Include="a\src\images\loading.svg" />
     <Content Include="a\src\images\me3-s.png" />
     <Content Include="a\src\images\me3.png" />
     <Content Include="a\src\images\miru.jpg" />
@@ -3510,6 +3511,7 @@
     <Content Include="a\src\styles\06-components\_pager.scss" />
     <Content Include="a\src\styles\06-components\_media.scss" />
     <Content Include="a\src\styles\06-components\_alert.scss" />
+    <Content Include="a\src\styles\06-components\_lazyload.scss" />
     <None Include="Umbraco\Install\Views\Web.config" />
     <None Include="Umbraco\Js\web.config" />
     <Content Include="Umbraco\lib\angular-dynamic-locale\tmhDynamicLocale.min.js.map" />
