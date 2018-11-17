@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<Generic>
+@{
+    Layout = "_Page.cshtml";
+}
+
+<section class="section">
+    <div class="section__content">
+        @Html.GetGridHtml(Model.Content, "content", "Bootstrap4")
+    </div>
+</section>

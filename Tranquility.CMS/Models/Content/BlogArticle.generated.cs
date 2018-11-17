@@ -112,7 +112,7 @@ namespace Tranquility.Models.Content
 		/// Theme
 		///</summary>
 		[ImplementPropertyType("theme")]
-		public object Theme
+		public string Theme
 		{
 			get { return Tranquility.Models.Content.Page.GetTheme(this); }
 		}

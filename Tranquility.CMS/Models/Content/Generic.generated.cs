@@ -20,39 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Tranquility.Models.Content
 {
-	// Mixin content Type 1050 with alias "page"
-	/// <summary>_Page</summary>
-	public partial interface IPage : IPublishedContent
-	{
-		/// <summary>altTitle</summary>
-		string AltTitle { get; }
-
-		/// <summary>Description</summary>
-		string Description { get; }
-
-		/// <summary>Image</summary>
-		Umbraco.Web.Models.ImageCropDataSet Image { get; }
-
-		/// <summary>SEO</summary>
-		Epiphany.SeoMetadata.SeoMetadata SEO { get; }
-
-		/// <summary>Subtitle</summary>
-		string Subtitle { get; }
-
-		/// <summary>Theme</summary>
-		string Theme { get; }
-	}
-
-	/// <summary>_Page</summary>
-	[PublishedContentModel("page")]
-	public partial class Page : PublishedContentModel, IPage
+	/// <summary>Generic</summary>
+	[PublishedContentModel("generic")]
+	public partial class Generic : PublishedContentModel, IPage
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "page";
+		public new const string ModelTypeAlias = "generic";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Page(IPublishedContent content)
+		public Generic(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -63,9 +40,18 @@ namespace Tranquility.Models.Content
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Page, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Generic, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Content
+		///</summary>
+		[ImplementPropertyType("content")]
+		public Newtonsoft.Json.Linq.JToken Content
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
 		}
 
 		///<summary>
@@ -74,11 +60,8 @@ namespace Tranquility.Models.Content
 		[ImplementPropertyType("altTitle")]
 		public string AltTitle
 		{
-			get { return GetAltTitle(this); }
+			get { return Tranquility.Models.Content.Page.GetAltTitle(this); }
 		}
-
-		/// <summary>Static getter for altTitle</summary>
-		public static string GetAltTitle(IPage that) { return that.GetPropertyValue<string>("altTitle"); }
 
 		///<summary>
 		/// Description: A short paragraph to describe the contents of this page.
@@ -86,11 +69,8 @@ namespace Tranquility.Models.Content
 		[ImplementPropertyType("description")]
 		public string Description
 		{
-			get { return GetDescription(this); }
+			get { return Tranquility.Models.Content.Page.GetDescription(this); }
 		}
-
-		/// <summary>Static getter for Description</summary>
-		public static string GetDescription(IPage that) { return that.GetPropertyValue<string>("description"); }
 
 		///<summary>
 		/// Image: An image to define the content of this page.
@@ -98,11 +78,8 @@ namespace Tranquility.Models.Content
 		[ImplementPropertyType("image")]
 		public Umbraco.Web.Models.ImageCropDataSet Image
 		{
-			get { return GetImage(this); }
+			get { return Tranquility.Models.Content.Page.GetImage(this); }
 		}
-
-		/// <summary>Static getter for Image</summary>
-		public static Umbraco.Web.Models.ImageCropDataSet GetImage(IPage that) { return that.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("image"); }
 
 		///<summary>
 		/// SEO: SEO information for this page.
@@ -110,11 +87,8 @@ namespace Tranquility.Models.Content
 		[ImplementPropertyType("sEO")]
 		public Epiphany.SeoMetadata.SeoMetadata SEO
 		{
-			get { return GetSEO(this); }
+			get { return Tranquility.Models.Content.Page.GetSEO(this); }
 		}
-
-		/// <summary>Static getter for SEO</summary>
-		public static Epiphany.SeoMetadata.SeoMetadata GetSEO(IPage that) { return that.GetPropertyValue<Epiphany.SeoMetadata.SeoMetadata>("sEO"); }
 
 		///<summary>
 		/// Subtitle
@@ -122,11 +96,8 @@ namespace Tranquility.Models.Content
 		[ImplementPropertyType("subtitle")]
 		public string Subtitle
 		{
-			get { return GetSubtitle(this); }
+			get { return Tranquility.Models.Content.Page.GetSubtitle(this); }
 		}
-
-		/// <summary>Static getter for Subtitle</summary>
-		public static string GetSubtitle(IPage that) { return that.GetPropertyValue<string>("subtitle"); }
 
 		///<summary>
 		/// Theme
@@ -134,10 +105,7 @@ namespace Tranquility.Models.Content
 		[ImplementPropertyType("theme")]
 		public string Theme
 		{
-			get { return GetTheme(this); }
+			get { return Tranquility.Models.Content.Page.GetTheme(this); }
 		}
-
-		/// <summary>Static getter for Theme</summary>
-		public static string GetTheme(IPage that) { return that.GetPropertyValue<string>("theme"); }
 	}
 }
