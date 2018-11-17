@@ -3373,12 +3373,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="config\Dashboard.config" />
   </ItemGroup>
   <ItemGroup>
@@ -3407,12 +3401,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Media\Web.config" />
