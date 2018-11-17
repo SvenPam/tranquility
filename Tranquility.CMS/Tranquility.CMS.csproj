@@ -467,7 +467,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\DependencyRegistrar.cs" />
-    <Compile Include="ContentFinder\OldArticleFinder.cs" />
     <Compile Include="Controllers\SiteMapController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="GlobalEventHandler.cs" />
