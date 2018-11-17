@@ -42,7 +42,11 @@
         box-shadow: $black -1px 7px 30px;
     }
 
-    &--code {
+    &--light {
         color: $white;
+    }
+
+    &--dark {
+        color: $body-color;
     }
 }

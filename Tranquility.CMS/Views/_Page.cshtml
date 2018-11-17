@@ -39,12 +39,19 @@
 
 }
 
-<section class="hero">
+<section class="hero@(Model.Theme != null ? " hero--" + Model.Theme.ToString().ToLowerInvariant() : string.Empty)">
     <div class="container">
-        <h1 class="hero__title">@(string.IsNullOrWhiteSpace(Model.AltTitle) ? Model.Name : Model.AltTitle)</h1>
-        @if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+        @if (Model is BlogArticle)
         {
-            <h3 class="hero__subtitle">@Model.Subtitle</h3>
+            <h1 class="hero__title">Blog</h1>
+        }
+        else
+        {
+            <h1 class="hero__title">@(string.IsNullOrWhiteSpace(Model.AltTitle) ? Model.Name : Model.AltTitle)</h1>
+            if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+            {
+                <h3 class="hero__subtitle">@Model.Subtitle</h3>
+            }
         }
     </div>
 </section>

@@ -38,6 +38,9 @@ namespace Tranquility.Models.Content
 
 		/// <summary>Subtitle</summary>
 		string Subtitle { get; }
+
+		/// <summary>Theme</summary>
+		object Theme { get; }
 	}
 
 	/// <summary>_Page</summary>
@@ -124,5 +127,17 @@ namespace Tranquility.Models.Content
 
 		/// <summary>Static getter for Subtitle</summary>
 		public static string GetSubtitle(IPage that) { return that.GetPropertyValue<string>("subtitle"); }
+
+		///<summary>
+		/// Theme
+		///</summary>
+		[ImplementPropertyType("theme")]
+		public object Theme
+		{
+			get { return GetTheme(this); }
+		}
+
+		/// <summary>Static getter for Theme</summary>
+		public static object GetTheme(IPage that) { return that.GetPropertyValue("theme"); }
 	}
 }

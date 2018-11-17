@@ -107,5 +107,14 @@ namespace Tranquility.Models.Content
 		{
 			get { return Tranquility.Models.Content.Page.GetSubtitle(this); }
 		}
+
+		///<summary>
+		/// Theme
+		///</summary>
+		[ImplementPropertyType("theme")]
+		public object Theme
+		{
+			get { return Tranquility.Models.Content.Page.GetTheme(this); }
+		}
 	}
 }
