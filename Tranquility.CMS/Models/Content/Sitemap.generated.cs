@@ -22,7 +22,7 @@ namespace Tranquility.Models.Content
 {
 	/// <summary>Sitemap</summary>
 	[PublishedContentModel("sitemap")]
-	public partial class Sitemap : PublishedContentModel
+	public partial class Sitemap : PublishedContentModel, IPage
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "sitemap";
@@ -43,6 +43,51 @@ namespace Tranquility.Models.Content
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Sitemap, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// altTitle: A title used on the page which overrides the name of this content.
+		///</summary>
+		[ImplementPropertyType("altTitle")]
+		public string AltTitle
+		{
+			get { return Tranquility.Models.Content.Page.GetAltTitle(this); }
+		}
+
+		///<summary>
+		/// Description: A short paragraph to describe the contents of this page.
+		///</summary>
+		[ImplementPropertyType("description")]
+		public string Description
+		{
+			get { return Tranquility.Models.Content.Page.GetDescription(this); }
+		}
+
+		///<summary>
+		/// Image: An image to define the content of this page.
+		///</summary>
+		[ImplementPropertyType("image")]
+		public Umbraco.Web.Models.ImageCropDataSet Image
+		{
+			get { return Tranquility.Models.Content.Page.GetImage(this); }
+		}
+
+		///<summary>
+		/// SEO: SEO information for this page.
+		///</summary>
+		[ImplementPropertyType("sEO")]
+		public Epiphany.SeoMetadata.SeoMetadata SEO
+		{
+			get { return Tranquility.Models.Content.Page.GetSEO(this); }
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return Tranquility.Models.Content.Page.GetSubtitle(this); }
 		}
 	}
 }

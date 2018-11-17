@@ -9,40 +9,50 @@ using X.Web.Sitemap;
 
 namespace Tranquility.Controllers
 {
-    public class SiteMapController : RenderMvcController
+    public class SitemapController : RenderMvcController
     {
         private readonly ITypedPublishedContentQuery typedPublishedContentQuery;
 
-        public SiteMapController(ITypedPublishedContentQuery typedPublishedContentQuery)
+        public SitemapController(ITypedPublishedContentQuery typedPublishedContentQuery)
         {
             this.typedPublishedContentQuery = typedPublishedContentQuery;
         }
 
-        [OutputCache(Duration = 3600)]
-        public override ActionResult Index(RenderModel model) {
-            var sitemap = new Sitemap();
-
-            var root = typedPublishedContentQuery.TypedContentAtRoot().FirstOrDefault();
-            var contentItems = new List<IPublishedContent>();
-            contentItems.Add(root);
-            foreach (var child in root.Descendants())
+        //[OutputCache(Duration = 3600)]
+        public ActionResult Sitemap(RenderModel model)
+        {
+            if (Request.Url.AbsolutePath.EndsWith(".xml"))
             {
-                contentItems.Add(child);
-                if (child.Descendants().Any()) {
-                }
-                contentItems = contentItems.Concat(child.Descendants()).ToList();
-            }
+                var sitemap = new Sitemap();
 
-            foreach (var content in contentItems.Where(x=> x.IsVisible())) {
-                sitemap.Add(new Url
+                var root = typedPublishedContentQuery.TypedContentAtRoot().FirstOrDefault();
+                var contentItems = new List<IPublishedContent>();
+                contentItems.Add(root);
+                foreach (var child in root.Descendants())
                 {
-                    ChangeFrequency = ChangeFrequency.Daily,
-                    Location = content.UrlAbsolute(),
-                    Priority = 0.5,
-                    TimeStamp = content.CreateDate
-                });
+                    contentItems.Add(child);
+                    if (child.Descendants().Any())
+                    {
+                    }
+                    contentItems = contentItems.Concat(child.Descendants()).ToList();
+                }
+
+                foreach (var content in contentItems.Where(x => x.IsVisible()))
+                {
+                    sitemap.Add(new Url
+                    {
+                        ChangeFrequency = ChangeFrequency.Daily,
+                        Location = content.UrlAbsolute(),
+                        Priority = 0.5,
+                        TimeStamp = content.CreateDate
+                    });
+                }
+                return this.Content(sitemap.ToXml(), "text/xml");
             }
-            return this.Content(sitemap.ToXml(), "text/xml");
+            else
+            {
+                return this.CurrentTemplate(model);
+            }
         }
     }
 }

@@ -39,4 +39,15 @@
 
 }
 
-@RenderBody()
+<section class="hero">
+    <div class="container">
+        <h1 class="hero__title">@(string.IsNullOrWhiteSpace(Model.AltTitle) ? Model.Name : Model.AltTitle)</h1>
+        @if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+        {
+            <h3 class="hero__subtitle">@Model.Subtitle</h3>
+        }
+    </div>
+</section>
+<div class="sections">
+    @RenderBody()
+</div>

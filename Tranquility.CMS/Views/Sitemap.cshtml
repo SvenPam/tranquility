@@ -1,7 +1,26 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "_Page.cshtml";
+    Layout = "_Page.cshtml";
 }
 
-@* the fun starts here *@
+@{ 
+    var rootContent = Model.Content.Siblings();
 
+}
+
+<ul>
+@foreach (var item in rootContent) {
+    <li>
+        @item.Name
+
+        @if (item.Children.Any()) {
+            <ul>
+                @foreach (var child in item.Children) {
+                    <li>@child.Name</li>
+                }
+            </ul>
+        }
+
+    </li>
+}
+</ul>

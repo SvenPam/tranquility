@@ -3,74 +3,66 @@
 @{
     Layout = "_Page.cshtml";
 }
-<section class="hero hero--wilderness">
-    <div class="container">
-        <h1 class="hero__title">Ste Pammenter</h1>
-        <h2 class="hero__subtitle">Lead Full Stack .NET Developer</h2>
+<div></div>
+<section class="section development hidden-print">
+    <div class="row text-center">
+        <p class="col-12 h3">I build applications across several stacks.</p>
+    </div>
+    <div class="row">
+        <div class="offset-md-1 offset-sm-3 col-4 col-sm-2 stack">
+            <div class="stack-logo-wrapper">
+                <img class="stack-logo" src="@Url.Content("~/a/dist/img/js-logo.svg")" />
+            </div>
+            <span>Javascript</span>
+        </div>
+        <div class="col-4 col-sm-2 stack">
+            <div class="stack-logo-wrapper">
+                <img class="stack-logo" src="@Url.Content("~/a/dist/img/html5-logo.svg")" />
+            </div>
+            <span>HTML5</span>
+        </div>
+        <div class="col-4 col-sm-2 stack">
+            <div class="stack-logo-wrapper">
+                <img class="stack-logo" src="@Url.Content("~/a/dist/img/css3-logo.svg")" />
+            </div>
+            <span>CSS3</span>
+        </div>
+        <div class="offset-sm-4 offset-md-0 offset-2 col-4 col-sm-2 stack">
+            <div class="stack-logo-wrapper">
+                <img class="stack-logo visual-studio" src="@Url.Content("~/a/dist/img/visual-studio-logo.svg")" />
+            </div>
+            <span>C#</span>
+        </div>
+        <div class="col-4 col-sm-2 stack">
+            <div class="stack-logo-wrapper">
+                <img class="stack-logo sql" src="@Url.Content("~/a/dist/img/sql-logo.svg")" />
+            </div>
+            <span>SQL</span>
+        </div>
     </div>
 </section>
-<div class="sections">
-    <div></div>
-    <section class="section development hidden-print">
-        <div class="row text-center">
-            <p class="col-12 h3">I build applications across several stacks.</p>
-        </div>
-        <div class="row">
-            <div class="offset-md-1 offset-sm-3 col-4 col-sm-2 stack">
-                <div class="stack-logo-wrapper">
-                    <img class="stack-logo" src="@Url.Content("~/a/dist/img/js-logo.svg")" />
-                </div>
-                <span>Javascript</span>
-            </div>
-            <div class="col-4 col-sm-2 stack">
-                <div class="stack-logo-wrapper">
-                    <img class="stack-logo" src="@Url.Content("~/a/dist/img/html5-logo.svg")" />
-                </div>
-                <span>HTML5</span>
-            </div>
-            <div class="col-4 col-sm-2 stack">
-                <div class="stack-logo-wrapper">
-                    <img class="stack-logo" src="@Url.Content("~/a/dist/img/css3-logo.svg")" />
-                </div>
-                <span>CSS3</span>
-            </div>
-            <div class="offset-sm-4 offset-md-0 offset-2 col-4 col-sm-2 stack">
-                <div class="stack-logo-wrapper">
-                    <img class="stack-logo visual-studio" src="@Url.Content("~/a/dist/img/visual-studio-logo.svg")" />
-                </div>
-                <span>C#</span>
-            </div>
-            <div class="col-4 col-sm-2 stack">
-                <div class="stack-logo-wrapper">
-                    <img class="stack-logo sql" src="@Url.Content("~/a/dist/img/sql-logo.svg")" />
-                </div>
-                <span>SQL</span>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <p class="col-12 hidden-print h3 text-center section__intro">Here's some stuff about me.</p>
-        <div class="section__content">
-            <h2>Hi</h2>
-            <p>You can find my CV at; <a href="//stackoverflow.com/cv/spammenter">stackoverflow.com/cv/spammenter</a></p>
-            <h3>Server Side</h3>
-            <p>I work with <abbr title="Microsoft">MS</abbr> technologies; C# & SQL. My C# skillset ranges from MVC 5 through to .NET core, but always around the web. I most commonly work with Umbraco 7 and I also write RESTful web APIs.</p>
-            <p>Clean, testable, maintainable code can be adopted by anyone if they follow:</p>
-            <ul>
-                <li>SOLID principles</li>
-                <li>TDD</li>
-                <li>Onion/Clean architecture</li>
-            </ul>
-            <h3>Front End</h3>
-            <p>I work with HTML5, SASS/CSS and JavaScript. These days, I mostly use Vue.js and Typescript.</p>
-            <p>I have introduced a process that incorporates an array of processes and methodologies to create a clean and maintainable style architecture. This comes through a combination of:</p>
-            <ul>
-                <li>PatternLab/Atomic Design</li>
-                <li>BEM</li>
-                <li>ITCSS</li>
-            </ul>
-            <h3>DevOps</h3>
-            <p>I work with Azure and Azure DevOps (was VSTS).</p>
-        </div>
-    </section>
-</div>
+<section class="section">
+    <p class="col-12 hidden-print h3 text-center section__intro">Here's some stuff about me.</p>
+    <div class="section__content">
+        <h2>Hi</h2>
+        <p>You can find my CV at; <a href="//stackoverflow.com/cv/spammenter">stackoverflow.com/cv/spammenter</a></p>
+        <h3>Server Side</h3>
+        <p>I work with <abbr title="Microsoft">MS</abbr> technologies; C# & SQL. My C# skillset ranges from MVC 5 through to .NET core, but always around the web. I most commonly work with Umbraco 7 and I also write RESTful web APIs.</p>
+        <p>Clean, testable, maintainable code can be adopted by anyone if they follow:</p>
+        <ul>
+            <li>SOLID principles</li>
+            <li>TDD</li>
+            <li>Onion/Clean architecture</li>
+        </ul>
+        <h3>Front End</h3>
+        <p>I work with HTML5, SASS/CSS and JavaScript. These days, I mostly use Vue.js and Typescript.</p>
+        <p>I have introduced a process that incorporates an array of processes and methodologies to create a clean and maintainable style architecture. This comes through a combination of:</p>
+        <ul>
+            <li>PatternLab/Atomic Design</li>
+            <li>BEM</li>
+            <li>ITCSS</li>
+        </ul>
+        <h3>DevOps</h3>
+        <p>I work with Azure and Azure DevOps (was VSTS).</p>
+    </div>
+</section>

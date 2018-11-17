@@ -467,7 +467,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\DependencyRegistrar.cs" />
-    <Compile Include="Controllers\SiteMapController.cs" />
+    <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="GlobalEventHandler.cs" />
     <Compile Include="Helpers\DateTimeExtension.cs" />
@@ -504,9 +504,9 @@
       <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
     </Compile>
     <Compile Include="Models\Content\ModelsBuilder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\Content\Page.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -3634,6 +3634,7 @@
     <Content Include="Umbraco\Webservices\TreeDataService.ashx" />
     <Content Include="Umbraco\Webservices\UltimatePickerAutoCompleteHandler.ashx" />
     <None Include="Umbraco\Xslt\Web.config" />
+    <Content Include="Views\Sitemap.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

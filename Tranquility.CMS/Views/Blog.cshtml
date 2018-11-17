@@ -11,29 +11,20 @@
 
     var pagination = new Tranquility.Helpers.Pagination(articles, page);
 }
+<section class="section">
+    <div class="section__content">
+        @if (pagination.PagedList.Any())
+        {
+            <ul class="list list--unstyled">
+                @foreach (var article in pagination.PagedList)
+                {
+                    <li>
+                        @Html.Partial("Partials/_ArticleSummary", article)
+                    </li>
+                }
+            </ul>
 
-<section class="hero hero--glade">
-    <div class="container">
-        <h1 class="hero__title">Blog</h1>
+            @Html.Partial("Partials/_Pagination", pagination)
+        }
     </div>
 </section>
-
-<div class="sections">
-    <section class="section">
-        <div class="section__content">
-            @if (pagination.PagedList.Any())
-            {
-                <ul class="list list--unstyled">
-                    @foreach (var article in pagination.PagedList)
-                {
-                        <li>
-                            @Html.Partial("Partials/_ArticleSummary", article)
-                        </li>
-                    }
-                </ul>
-
-                @Html.Partial("Partials/_Pagination", pagination)
-            }
-        </div>
-    </section>
-</div>

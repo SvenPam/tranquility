@@ -2,13 +2,7 @@
 @{
     Layout = "_Page.cshtml";
 }
-<section class="hero">
-    <div class="container">
-        <h1 class="hero__title">Blog</h1>
-    </div>
-</section>
-<div class="sections">
-    @Html.Partial("Partials/_Article", Model.Content)
-</div>
+
+@Html.Partial("Partials/_Article", Model.Content)
 
 <script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>

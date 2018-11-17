@@ -80,5 +80,14 @@ namespace Tranquility.Models.Content
 		{
 			get { return Tranquility.Models.Content.Page.GetSEO(this); }
 		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return Tranquility.Models.Content.Page.GetSubtitle(this); }
+		}
 	}
 }

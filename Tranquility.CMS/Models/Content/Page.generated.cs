@@ -35,6 +35,9 @@ namespace Tranquility.Models.Content
 
 		/// <summary>SEO</summary>
 		Epiphany.SeoMetadata.SeoMetadata SEO { get; }
+
+		/// <summary>Subtitle</summary>
+		string Subtitle { get; }
 	}
 
 	/// <summary>_Page</summary>
@@ -109,5 +112,17 @@ namespace Tranquility.Models.Content
 
 		/// <summary>Static getter for SEO</summary>
 		public static Epiphany.SeoMetadata.SeoMetadata GetSEO(IPage that) { return that.GetPropertyValue<Epiphany.SeoMetadata.SeoMetadata>("sEO"); }
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return GetSubtitle(this); }
+		}
+
+		/// <summary>Static getter for Subtitle</summary>
+		public static string GetSubtitle(IPage that) { return that.GetPropertyValue<string>("subtitle"); }
 	}
 }
