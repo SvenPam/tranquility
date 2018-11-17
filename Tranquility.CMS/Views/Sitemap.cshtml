@@ -3,24 +3,31 @@
     Layout = "_Page.cshtml";
 }
 
-@{ 
+@{
     var rootContent = Model.Content.Siblings();
 
 }
+<div></div>
+<section class="section">
+    <div class="section__content">
+        <ul>
+            @foreach (var item in rootContent)
+            {
+                <li>
+                    <a href="@item.Url">@item.Name</a>
 
-<ul>
-@foreach (var item in rootContent) {
-    <li>
-        @item.Name
+                    @if (item.Children.Any())
+                    {
+                        <ul>
+                            @foreach (var child in item.Children)
+                            {
+                                <li><a  href="@item.Url">@child.Name</a></li>
+                            }
+                        </ul>
+                    }
 
-        @if (item.Children.Any()) {
-            <ul>
-                @foreach (var child in item.Children) {
-                    <li>@child.Name</li>
-                }
-            </ul>
-        }
-
-    </li>
-}
-</ul>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
