@@ -13,6 +13,7 @@ $link-color:            $brand-primary;
 $link-hover-color:      lighten($link-color, 15%);
 $brand-subtle:			#95A5A6;
 
+$font-family-base: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $image-url: '/a/dist/img';
 
 @import '../../../../node_modules/bootstrap/scss/functions';
