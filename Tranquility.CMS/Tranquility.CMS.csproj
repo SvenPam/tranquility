@@ -3326,9 +3326,7 @@
     <Content Include="a\src\styles\06-components\_icon.scss" />
     <Content Include="a\src\styles\06-components\_example.scss" />
     <Content Include="a\src\styles\06-components\_nav.scss" />
-    <Content Include="a\src\styles\06-components\_spinner.scss" />
     <Content Include="a\src\styles\06-components\_stacks.scss" />
-    <Content Include="a\src\styles\06-components\_timeline.scss" />
     <Content Include="Views\About.cshtml" />
     <Content Include="manifest.json" />
     <Content Include="Views\Work.cshtml" />
@@ -3523,6 +3521,7 @@
     <Content Include="Umbraco\assets\less\slider.less" />
     <Content Include="Umbraco\Install\Views\Index.cshtml" />
     <Content Include="a\src\styles\06-components\_pager.scss" />
+    <Content Include="a\src\styles\06-components\_media.scss" />
     <None Include="Umbraco\Install\Views\Web.config" />
     <None Include="Umbraco\Js\web.config" />
     <Content Include="Umbraco\lib\angular-dynamic-locale\tmhDynamicLocale.min.js.map" />

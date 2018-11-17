@@ -1,22 +1,6 @@
 ﻿@model BlogArticle
 
-@{
-    string cropUrl;
-    if (Model.Image == null || string.IsNullOrEmpty(Model.Image.GetCropUrl("Thumb")))
-    {
-        Random ran = new Random(Model.Id);
-        cropUrl = "/a/dist/img/generic/" + ran.Next(1, 7) + "-100.jpg";
-    }
-    else
-    {
-        cropUrl = Model.Image.GetCropUrl("Thumb");
-    }
-}
-
 <article class="media">
-    <div class="media__image hidden-xs">
-        <img src="@cropUrl" />
-    </div>
     <div class="media_body">
         <h4 class="media__heading"><a class="media__link" href="@Model.Url">@Model.Name</a></h4>
         <p>@Model.Description</p>
