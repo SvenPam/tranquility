@@ -1,0 +1,28 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+.alert {
+    padding: 15px;
+    margin-bottom: 15px;
+
+    &__icon {
+        width: 1rem;
+        height: 1rem;
+        display: inline-block;
+        svg {
+            height: 90%;
+            width: 90%;
+            fill: $gray-500;
+        }
+    }
+
+    &__title {
+        color: $gray-500;
+        font-size: 1rem;
+    }
+
+    &--old {
+        background-color: $gray-300;
+        border: $gray-600 solid 3px;
+        color: $gray-600;
+    }
+}

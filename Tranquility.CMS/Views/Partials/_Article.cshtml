@@ -1,4 +1,4 @@
-﻿@inherits UmbracoViewPage<BlogArticle>
+﻿@model Tranquility.Models.Content.BlogArticle
 @using Tranquility.Helpers
 <div></div>
 <article class="section">
@@ -15,6 +15,19 @@
         </div>
     </header>
     <div class="article-body section__content">
+        @if (Model.UpdateDate < DateTime.Now.AddYears(-1))
+        {
+            <div class="alert alert--old">
+                <h4 class="alert__title">
+                    <i class="alert__icon">
+                        <svg>
+                            <use xlink:href="/a/dist/sprites/sprite.svg#warning"></use>
+                        </svg>
+                    </i> Old Article
+                </h4>
+                This content may be out of date or broken, please take care.
+            </div>
+        }
         @Html.GetGridHtml(Model, "content", "Bootstrap4")
     </div>
     <footer class="section__content">

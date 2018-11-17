@@ -10,7 +10,6 @@
     }
 }
 
-
 .latest-blog-posts {
     padding: 50px;
 
@@ -19,13 +18,4 @@
             max-width: 100px;
         }
     }
-}
-
-.cv {
-    margin-bottom: 22px;
-    background-color: $white;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px transparentize($black, .95);
-    padding: ($grid-gutter-width / 2);
 }

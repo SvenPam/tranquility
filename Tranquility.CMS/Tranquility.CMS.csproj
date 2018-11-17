@@ -3320,7 +3320,6 @@
     <Content Include="App_Plugins\uSync\package.manifest" />
     <Content Include="a\src\styles\06-components\_hero.scss" />
     <Content Include="a\src\styles\06-components\_section.scss" />
-    <Content Include="a\src\styles\06-components\_footer.scss" />
     <Content Include="a\src\styles\06-components\_social.scss" />
     <Content Include="a\src\styles\06-components\_content.scss" />
     <Content Include="a\src\styles\06-components\_icon.scss" />
@@ -3522,6 +3521,7 @@
     <Content Include="Umbraco\Install\Views\Index.cshtml" />
     <Content Include="a\src\styles\06-components\_pager.scss" />
     <Content Include="a\src\styles\06-components\_media.scss" />
+    <Content Include="a\src\styles\06-components\_alert.scss" />
     <None Include="Umbraco\Install\Views\Web.config" />
     <None Include="Umbraco\Js\web.config" />
     <Content Include="Umbraco\lib\angular-dynamic-locale\tmhDynamicLocale.min.js.map" />
