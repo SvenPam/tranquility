@@ -10,7 +10,6 @@
     }
 
     &__img-holder {
-        // Use an image holder to
         background-image: url('#{$image-url}/loading.svg');
         background-repeat: no-repeat;
         background-position: 50%;
@@ -21,8 +20,7 @@
         margin: 40px auto;
         display: block;
 
-        img,
-        picture {
+        img, picture {
             position: absolute;
             width: 100%;
             height: 100%;

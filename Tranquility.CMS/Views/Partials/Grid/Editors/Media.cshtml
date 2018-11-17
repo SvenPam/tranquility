@@ -22,7 +22,7 @@
     }
     else
     {
-        url += "?width=1020&mode=max&format=webp";
+        url += "?width=1020&mode=max";
     }
 
     if (media != null)
@@ -47,10 +47,10 @@
         <img width="@width" height="@height" class="lazyload @(media == null ? "img-fluid" : string.Empty)" alt="@Model.value.altText"
              sizes="auto"
              data-src="@url"
-             data-srcset=" @(Model.value.image + "?width=286&format=webp") 322w,
-    @(Model.value.image + "?width=540&mode=max&format=webp") 576w,
-    @(Model.value.image + "?width=732&mode=max&format=webp") 768w,
-    @(Model.value.image + "?width=625&mode=max&format=webp") 992w,
+             data-srcset=" @(Model.value.image + "?width=286") 322w,
+    @(Model.value.image + "?width=540&mode=max") 576w,
+    @(Model.value.image + "?width=732&mode=max") 768w,
+    @(Model.value.image + "?width=625&mode=max") 992w,
     @url" />
     </div>
 
