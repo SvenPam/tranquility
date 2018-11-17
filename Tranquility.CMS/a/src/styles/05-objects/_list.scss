@@ -46,36 +46,3 @@
         @include list-unstyled;
     }
 }
-
-
-/*ul {
-    margin: 0;
-    padding: 0;
-    padding-left: 2px;
-
-    li {
-        a {
-            padding: 5px;
-            color: $white;
-            border-bottom: 0 !important;
-            width: 45px;
-            height: 45px;
-            overflow: hidden;
-            transition: width ease-in-out .1s;
-            display: inline-block;
-
-            &::after {
-                content: attr(data-name);
-            }
-
-            &:hover {
-                color: $link-hover-color;
-            }
-
-            .home-link {
-                font-size: 2.4rem;
-                margin-bottom: 2px;
-            }
-        }
-    }
-}*/
