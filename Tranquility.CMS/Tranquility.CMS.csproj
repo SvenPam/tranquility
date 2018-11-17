@@ -3468,6 +3468,7 @@
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="config\mailSettings.config" />
     <None Include="Umbraco\Install\Views\Web.config" />
     <None Include="Umbraco\Js\web.config" />
     <Content Include="Umbraco\lib\angular-dynamic-locale\tmhDynamicLocale.min.js.map" />
