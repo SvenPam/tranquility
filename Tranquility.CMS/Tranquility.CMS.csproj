@@ -3511,6 +3511,7 @@
     <Content Include="a\src\styles\06-components\_media.scss" />
     <Content Include="a\src\styles\06-components\_alert.scss" />
     <Content Include="a\src\styles\06-components\_lazyload.scss" />
+    <Content Include="a\src\styles\06-components\_footer.scss" />
     <None Include="Umbraco\Install\Views\Web.config" />
     <None Include="Umbraco\Js\web.config" />
     <Content Include="Umbraco\lib\angular-dynamic-locale\tmhDynamicLocale.min.js.map" />
