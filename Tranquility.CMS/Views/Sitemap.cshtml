@@ -4,7 +4,7 @@
 }
 
 @{
-    var rootContent = Model.Content.Siblings();
+    var rootContent = Model.Content.Siblings().Where(x=> !x.Name.Equals("Not Found"));
 
 }
 <div></div>
@@ -21,7 +21,7 @@
                         <ul>
                             @foreach (var child in item.Children)
                             {
-                                <li><a  href="@item.Url">@child.Name</a></li>
+                                <li><a  href="@child.Url">@child.Name</a></li>
                             }
                         </ul>
                     }
