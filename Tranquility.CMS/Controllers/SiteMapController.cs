@@ -19,9 +19,9 @@ namespace Tranquility.Controllers
         }
 
         //[OutputCache(Duration = 3600)]
-        public ActionResult Sitemap(RenderModel model)
+        public ActionResult Sitemap(RenderModel model, string xml)
         {
-            if (Request.Url.AbsolutePath.EndsWith(".xml"))
+            if (!string.IsNullOrWhiteSpace(xml))
             {
                 var sitemap = new Sitemap();
 
