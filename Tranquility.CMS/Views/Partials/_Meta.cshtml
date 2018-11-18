@@ -5,7 +5,7 @@
     var siteName = Model.AncestorOrSelf(1).Name;
     var pageTite = Model.Name;
     pageTite = pageTite.Equals(siteName, StringComparison.CurrentCultureIgnoreCase) ? siteName : pageTite + " | " + siteName;
-    var imageUrl = !string.IsNullOrWhiteSpace(Model.CoverImageUrl) ? (Model.Image.Src + Model.Image.GetCropUrl("OG Image", true, true)) : Model.CoverImageUrl;
+    var imageUrl = string.IsNullOrWhiteSpace(Model.CoverImageUrl) ? (Model.Image == null ? string.Empty : (Model.Image.Src + Model.Image.GetCropUrl("OG Image", true, true))) : Model.CoverImageUrl;
 }
 
 <title>@pageTite</title>
