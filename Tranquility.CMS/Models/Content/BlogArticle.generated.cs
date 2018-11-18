@@ -55,6 +55,15 @@ namespace Tranquility.Models.Content
 		}
 
 		///<summary>
+		/// Has Been Tweeted: Indicates when a tweet was sent for this.
+		///</summary>
+		[ImplementPropertyType("hasBeenTweeted")]
+		public bool HasBeenTweeted
+		{
+			get { return this.GetPropertyValue<bool>("hasBeenTweeted"); }
+		}
+
+		///<summary>
 		/// Topic
 		///</summary>
 		[ImplementPropertyType("topic")]
@@ -70,6 +79,15 @@ namespace Tranquility.Models.Content
 		public string AltTitle
 		{
 			get { return Tranquility.Models.Content.Page.GetAltTitle(this); }
+		}
+
+		///<summary>
+		/// Cover Image URL: Image to use for Twitter & OG.
+		///</summary>
+		[ImplementPropertyType("coverImageURL")]
+		public string CoverImageUrl
+		{
+			get { return Tranquility.Models.Content.Page.GetCoverImageUrl(this); }
 		}
 
 		///<summary>

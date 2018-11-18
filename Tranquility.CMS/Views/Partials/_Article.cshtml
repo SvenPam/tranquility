@@ -4,14 +4,14 @@
 <article class="section">
     <header class="section__facts section__facts--container">
         <div class="section__fact section__fact--lift">
-            <div class="section__meta">
-                <span>@Model.CreatorName</span><time datetime="@Model.CreateDate">@Model.CreateDate.Friendly()</time>
-            </div>
-            <h1 class="lead"><a class="h2" href="@Model.Url">@Model.Name</a><sup><a href="@Model.Url">@*<span class="glyphicon glyphicon-link"></span>*@</a></sup></h1>
+            <h1 class="lead"><a class="h2" href="@Model.Url">@Model.Name</a></h1>
             <p class="text-center">@Model.Topic</p>
             <p class="text-muted">
                 @Model.Description
             </p>
+            <div class="section__meta">
+                <span>@Model.CreatorName <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@@SvenPam</a></span><time datetime="@Model.CreateDate">@Model.CreateDate.Friendly()</time>
+            </div>
         </div>
     </header>
     <div class="article section__content">
@@ -28,9 +28,6 @@
                 This content may be out of date or broken, please take care.
             </div>
         }
-
-
-
 
         @Html.GetGridHtml(Model, "content", "Bootstrap4")
     </div>

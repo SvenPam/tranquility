@@ -1,0 +1,36 @@
+﻿@model IPage
+@{
+    var description = (Model.SEO != null ? Model.SEO.Description : null) ?? Model.Description;
+
+    var siteName = Model.AncestorOrSelf(1).Name;
+    var pageTite = Model.Name;
+    pageTite = pageTite.Equals(siteName, StringComparison.CurrentCultureIgnoreCase) ? siteName : pageTite + " | " + siteName;
+    var imageUrl = string.IsNullOrWhiteSpace(Model.CoverImageUrl) ? Model.CoverImageUrl : (Model.Image.Src + Model.Image.GetCropUrl("OG Image", true, true));
+}
+
+<title>@pageTite</title>
+<meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c0c0e">
+
+<meta name="description" content="@description">
+<link href="@Model.UrlAbsolute()" rel="canonical">
+
+<meta property="og:title" content="@pageTite"/>
+<meta property="og:locale" content="en_GB">
+<meta property="og:description" content="@description" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="@Model.UrlAbsolute()" />
+<meta property="og:image" content="@imageUrl" />
+<meta property="og:site_name" content="@siteName" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@("@SvenPam")" />
+<meta name="twitter:creator" content="@("@SvenPam")" />
+<meta name="twitter:image" content="@imageUrl" />
