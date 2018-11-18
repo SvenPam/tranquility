@@ -1,29 +1,13 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
-    var metadata = Model.Content.GetPropertyValue<Epiphany.SeoMetadata.SeoMetadata>("metadata");
-    var siteName = Model.Content.AncestorOrSelf(1).Name;
-    var pageTite = (((metadata != null ? metadata.Title : null) ?? Model.Content.Name));
-    pageTite = pageTite.Equals(siteName, StringComparison.CurrentCultureIgnoreCase) ? siteName : pageTite + " | " + siteName;
 }
 <!DOCTYPE html>
 <html lang="en-gb">
 <head>
-    <meta charset="utf-8" />
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#0c0c0e">
-    <title>@pageTite</title>
-    <meta name="description" content=" @((metadata != null ? metadata.Description : null) ?? @Model.Content.GetPropertyValue("description"))" />
-    <meta property="og:locale" content="en_GB">
+    @Html.Partial("Partials/_Meta", (Model.Content as IPage))
     <link href="~/a/dist/css/ste-pam.min.css" rel="stylesheet" />
     @RenderSection("styles")
-
     <script>
         window.lazyLoadOptions = {
             elements_selector: ".lazyload",

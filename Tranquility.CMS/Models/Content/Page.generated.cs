@@ -27,6 +27,9 @@ namespace Tranquility.Models.Content
 		/// <summary>altTitle</summary>
 		string AltTitle { get; }
 
+		/// <summary>Cover Image URL</summary>
+		string CoverImageUrl { get; }
+
 		/// <summary>Description</summary>
 		string Description { get; }
 
@@ -79,6 +82,18 @@ namespace Tranquility.Models.Content
 
 		/// <summary>Static getter for altTitle</summary>
 		public static string GetAltTitle(IPage that) { return that.GetPropertyValue<string>("altTitle"); }
+
+		///<summary>
+		/// Cover Image URL: Image to use for Twitter & OG.
+		///</summary>
+		[ImplementPropertyType("coverImageURL")]
+		public string CoverImageUrl
+		{
+			get { return GetCoverImageUrl(this); }
+		}
+
+		/// <summary>Static getter for Cover Image URL</summary>
+		public static string GetCoverImageUrl(IPage that) { return that.GetPropertyValue<string>("coverImageURL"); }
 
 		///<summary>
 		/// Description: A short paragraph to describe the contents of this page.

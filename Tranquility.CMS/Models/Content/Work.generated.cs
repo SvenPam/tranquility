@@ -55,6 +55,15 @@ namespace Tranquility.Models.Content
 		}
 
 		///<summary>
+		/// Cover Image URL: Image to use for Twitter & OG.
+		///</summary>
+		[ImplementPropertyType("coverImageURL")]
+		public string CoverImageUrl
+		{
+			get { return Tranquility.Models.Content.Page.GetCoverImageUrl(this); }
+		}
+
+		///<summary>
 		/// Description: A short paragraph to describe the contents of this page.
 		///</summary>
 		[ImplementPropertyType("description")]
