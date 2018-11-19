@@ -64,6 +64,15 @@ namespace Tranquility.Models.Content
 		}
 
 		///<summary>
+		/// Tags: Tags that represent this article.
+		///</summary>
+		[ImplementPropertyType("tags")]
+		public IEnumerable<string> Tags
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("tags"); }
+		}
+
+		///<summary>
 		/// Topic
 		///</summary>
 		[ImplementPropertyType("topic")]

@@ -3506,7 +3506,9 @@
     <Content Include="a\src\styles\06-components\_alert.scss" />
     <Content Include="a\src\styles\06-components\_lazyload.scss" />
     <Content Include="a\src\styles\06-components\_footer.scss" />
-    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\tinyMceConfig.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="config\scripting.config" />
     <Content Include="config\metablogConfig.config" />
     <Content Include="config\log4net.config" />
@@ -3523,6 +3525,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="a\src\styles\06-components\_tag.scss" />
     <None Include="config\mailSettings.config" />
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
     <None Include="Umbraco\Install\Views\Web.config" />

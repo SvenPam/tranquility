@@ -10,7 +10,15 @@
                 @Model.Description
             </p>
             <div class="section__meta">
-                <span>@Model.CreatorName <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@@SvenPam</a></span><time datetime="@Model.CreateDate">@Model.CreateDate.Friendly()</time>
+                <span>@Model.CreatorName <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@@SvenPam</a> <span class="text-muted">//</span>
+                    @if (Model.Tags != null && Model.Tags.Any())
+                    {
+                        foreach (var tag in Model.Tags) {
+                            <span class="tag">@tag</span>
+                        }
+                    }
+
+                    </span><time datetime="@Model.CreateDate">@Model.CreateDate.Friendly()</time>
             </div>
         </div>
     </header>

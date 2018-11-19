@@ -1,0 +1,13 @@
+﻿/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+.tag {
+    background-color: $brand-secondary;
+    color: $gray-300;
+    padding: 2px 4px;
+    font-size: 80%;
+    border-radius: 10px;
+
+    &:before {
+        content: '#';
+    }
+}
