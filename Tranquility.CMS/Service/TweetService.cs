@@ -17,6 +17,11 @@ namespace Tranquility.Service
                 {
                     Status = tweet
                 });
+
+                if (result.Response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    Umbraco.Core.Logging.LogHelper.Warn(this.GetType(), $"Twitter {result.Response.StatusDescription}");
+                }
             }
             catch (Exception e)
             {

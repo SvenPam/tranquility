@@ -24,9 +24,15 @@ namespace Tranquility.EventHandlers
             if (content != null && content.ContentType.Alias.InvariantEquals("blogarticle") && !content.GetValue<bool>("hasBeenTweeted"))
             {
                 var umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
-                var publishedDoc = umbracoHelper.TypedContent(content.Id) as IPage;
+                var blogArticle = umbracoHelper.TypedContent(content.Id) as BlogArticle;
                 var tweetService = new TweetService();
-                Task.Run(() => tweetService.Tweet($"{publishedDoc.Description} {publishedDoc.UrlWithDomain()}").GetAwaiter().GetResult());
+                var hashtags = "";
+                if (blogArticle.Tags != null && blogArticle.Tags.Any())
+                {
+                    hashtags = string.Join(" ", blogArticle.Tags.Select(x => $"#{x}"));
+                }
+
+                Task.Run(() => tweetService.Tweet($"{blogArticle.Description} {hashtags} {blogArticle.UrlWithDomain()}").GetAwaiter().GetResult());
 
                 content.SetValue("hasBeenTweeted", true);
                 ApplicationContext.Current.Services.ContentService.SaveAndPublishWithStatus(content, raiseEvents: false);
