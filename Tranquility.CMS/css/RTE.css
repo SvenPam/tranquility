@@ -1,0 +1,31 @@
+/**umb_name:h1*/
+h1{
+font-sise: 2rem;
+}
+
+/**umb_name:h2*/
+h2{
+font-sise: 1.8rem;
+}
+
+/**umb_name:h3*/
+h3{
+font-sise: 1.6rem;
+}
+
+/**umb_name:h4*/
+h4{
+font-sise: 1.4rem;
+}
+
+/**umb_name:h5*/
+h5{
+font-sise: 1.2rem;
+}
+
+/**umb_name:code*/
+code{
+	background-color: #EEE;
+color: #D00;
+border-radius: 6px;
+}
