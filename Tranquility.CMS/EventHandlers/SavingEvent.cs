@@ -9,11 +9,11 @@ using Umbraco.Web;
 
 namespace Tranquility.EventHandlers
 {
-    public class SaveEvent : ApplicationEventHandler
+    public class SavingEvent : ApplicationEventHandler
     {
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            ContentService.Saved += ContentServicePublished;
+            ContentService.Saving += ContentServicePublished;
         }
 
         void ContentServicePublished(IContentService contentService, SaveEventArgs<Umbraco.Core.Models.IContent> e)
@@ -26,7 +26,6 @@ namespace Tranquility.EventHandlers
                 var coverImageService = new CoverImageService();
                 var coverImageUrl = coverImageService.GetCoverImage(publishedDoc);
                 content.SetValue("coverImageURL", coverImageUrl);
-                ApplicationContext.Current.Services.ContentService.Save(content, raiseEvents: false);
             }
             catch (Exception ex)
             {

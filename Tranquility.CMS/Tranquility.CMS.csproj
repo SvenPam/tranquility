@@ -513,8 +513,8 @@
     <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
-    <Compile Include="EventHandlers\SaveEvent.cs" />
-    <Compile Include="EventHandlers\PublishedEvent.cs" />
+    <Compile Include="EventHandlers\SavingEvent.cs" />
+    <Compile Include="EventHandlers\PublishingEvent.cs" />
     <Compile Include="FilterConfig.cs" />
     <Compile Include="GlobalEventHandler.cs" />
     <Compile Include="Helpers\DateTimeExtension.cs" />
