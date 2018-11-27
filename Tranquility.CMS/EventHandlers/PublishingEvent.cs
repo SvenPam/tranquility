@@ -27,7 +27,7 @@ namespace Tranquility.EventHandlers
                 var hashtags = "";
                 if (!string.IsNullOrWhiteSpace(tags))
                 {
-                    hashtags = string.Join(" ", tags.Split(',').Select(x => $"#{x}"));
+                    hashtags = string.Join(" ", tags.Split(',').Select(x => $"#{x.Replace("-", string.Empty)}"));
                 }
                 Task.Run(() => tweetService.Tweet($"{content.GetValue<string>("description")} {hashtags} {"https://ste-pam.com/blog/" + content.Name.ToUrlSegment()}"));
 
