@@ -9,6 +9,8 @@ namespace Tranquility.Service
     {
         public async Task Tweet(string tweet)
         {
+            // Wait until the article has been published to allow Twitter to pick up the cover image.
+            System.Threading.Thread.Sleep(15000);
             try
             {
                 TwitterService service = new TwitterService(ConfigurationManager.AppSettings["Twitter.ConsumerKey"], ConfigurationManager.AppSettings["Twitter.ConsumerSecret"]);

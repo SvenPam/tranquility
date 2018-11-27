@@ -29,7 +29,7 @@ namespace Tranquility.EventHandlers
                 {
                     hashtags = string.Join(" ", tags.Split(',').Select(x => $"#{x}"));
                 }
-                Task.Run(() => tweetService.Tweet($"{content.GetValue<string>("description")} {hashtags} {"https://ste-pam.com/blog/" + content.Name.ToUrlSegment()}").GetAwaiter().GetResult());
+                Task.Run(() => tweetService.Tweet($"{content.GetValue<string>("description")} {hashtags} {"https://ste-pam.com/blog/" + content.Name.ToUrlSegment()}"));
 
                 content.SetValue("hasBeenTweeted", true);
                 ApplicationContext.Current.Services.ContentService.Save(content, raiseEvents: false);
