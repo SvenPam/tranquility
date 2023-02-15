@@ -2,25 +2,23 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Page.cshtml";
+    var years = DateTime.UtcNow.Year - 2012;
 }
-<section class="section">
-    <div class="section__content">
-        @Umbraco.RenderMacro("LatestArticles")
-    </div>
-</section>
-<section class="section">
+<section class="section section--dark">
     <div class="section__content">
         <h1>Hello</h1>
-        <p class="section__intro">I'm Stephen Pammenter, a full-stack Development Lead. I work full time for <a href="//frontierlabs.co.uk>Frontier Labs</a> in Liverpool.</p>
-        <p>I work full-stack with C#, MVC, .NET Core & RESTful APIs built on an event-driven microservice architecture. Client-side, I work with ES5/6, Typescript & Vue.js and use SASS & BEM for styling. I also dabble with deployment through Azure pipelines to a containerised production environment in Azure.</p>
-        <p>Ocassionally, I try to <a href="/blog">blog</a> — which I really need to keep up to date as I work with some mad tech!</p>
+        <p class="section__intro">I'm Ste Pammenter, a full-stack Development Lead. I work full time for <a
+                href="//staffcircle.com">StaffCircle</a> remotely. I am based in Liverpool, UK.</p>
+        <p>I'm dynamic lead with a proven track record of driving results through @years+ years of experience in
+            development & optimizing cross-functional engineering teams to deliver clean, testable code and drive value
+            for scalable SaaS products.</p>
+        <p>Specialized in full-stack development with a focus on .NET and expertise in Vue.js. Azure certified.</p>
         <br />
         <h2>Employment</h2>
         <p>
-            I am not actively seeking new employment.
+            If you require an expert in building technical teams and SaaS products, I am open to the right
+            opportunities. Take a look at my <a href="/my-cv">CV</a> and see if we're a good fit.
         </p>
-        <br />
-        <p>Check out previous projects <a href="/home/work">here</a>.</p>
         <p class="section__outro"><a href="/contact">Get in touch</a></p>
     </div>
 </section>
