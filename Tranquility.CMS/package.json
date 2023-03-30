@@ -2,11 +2,6 @@
   "name": "tranquility",
   "version": "1.0.0",
   "description": "CMS for Stephen Pammenter's sites.",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SvenPam/tranquility.git"
-  },
   "keywords": [
     "cms",
     "umbraco",
@@ -14,33 +9,23 @@
     "pammenter"
   ],
   "author": "Stephen Pammenter",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SvenPam/tranquility/issues"
-  },
-  "homepage": "https://github.com/SvenPam/tranquility#readme",
   "devDependencies": {
     "autoprefixer": "^6.5.4",
-    "babel-preset-es2015": "^6.22.0",
-    "bootstrap": "^4.0.0-beta.2",
-    "gulp": "^4.0.0",
+    "bootstrap": "^4.0.0",
+    "gulp": "4.0.2",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^6.1.2",
     "gulp-changed": "^1.3.2",
     "gulp-clean-css": "^2.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^3.1.1",
     "gulp-jshint": "^2.0.4",
-    "gulp-json-editor": "^2.2.1",
     "gulp-load-plugins": "^1.5.0",
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sass-lint": "^1.3.2",
     "gulp-sourcemaps": "^1.9.1",
-    "jquery": "^3.1.1",
-    "jshint": "^2.9.4",
-    "node-sass": "^4.10.0",
+    "node-sass": "^8.0.0",
     "sass-lint": "^1.10.2"
   },
   "scripts": {
@@ -49,16 +34,11 @@
   "paths": {
     "src": {
       "styles": "./a/src/styles",
-      "scripts": "./a/src/scripts",
-      "images": "./a/src/images",
-      "externalJs": "./a/src/scripts/external-references.json",
-      "sprites": "./a/src/sprites"
+      "images": "./a/src/images"
     },
     "dist": {
       "styles": "./a/dist/css",
-      "scripts": "./a/dist/js",
-      "images": "./a/dist/img",
-      "sprites": "./a/dist/sprites"
+      "images": "./a/dist/img"
     }
   },
   "jshintConfig": {},

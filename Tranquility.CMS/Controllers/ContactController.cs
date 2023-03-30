@@ -20,20 +20,5 @@ namespace Tranquility.Controllers
         {
             return PartialView("Partials/_ContactForm", new ContactFormViewModel());
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Contact(ContactFormViewModel contactFormVM)
-        {
-            if (!ModelState.IsValid)
-            {
-                return CurrentUmbracoPage();
-            }
-
-            _notificationService.SendEnquiry(contactFormVM);
-
-
-            return PartialView("Partials/_ContactForm");
-        }
     }
 }

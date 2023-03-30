@@ -1,8 +1,14 @@
 ﻿/// <binding ProjectOpened='watch' />
+/******************************************************
+ * PATTERN LAB NODE
+ * EDITION-NODE-GULP
+ * The gulp wrapper around patternlab-node core, providing tasks to interact with the core library and move supporting frontend assets.
+******************************************************/
 const gulp = require('gulp'),
     pckg = require('./package.json'),
-    externalJs = require('./a/src/scripts/external-references.json'),
     $ = require('gulp-load-plugins')({ lazy: true });
+
+const sass = require('gulp-sass')(require('node-sass'));
 
 // Custom project tasks.
 
@@ -24,7 +30,7 @@ gulp.task('lint-js', function () {
 gulp.task('styles', function () {
     return gulp.src(`${pckg.paths.src.styles}/*.s+(a|c)ss`)
         .pipe($.sourcemaps.init())
-        .pipe($.sass().on('error', $.sass.logError))
+        .pipe(sass().on('error', sass.logError))
         .pipe($.autoprefixer({
             browsers: [
                 'Chrome >= 35',
@@ -47,21 +53,6 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(pckg.paths.dist.styles))
 })
 
-gulp.task('scripts', function () {
-    return gulp.src(`${pckg.paths.src.styles}/**/*.js`)
-        .pipe($.babel({
-            presets: ['es2015']
-        }))
-        .pipe($.sourcemaps.write('./'))
-        .pipe(gulp.dest(pckg.paths.dist.scripts));
-});
-
-// Copy external frameworks over.
-gulp.task('external-js', function () {
-    return gulp.src(externalJs.references)
-        .pipe(gulp.dest(pckg.paths.dist.scripts));
-});
-
 // Images copy
 gulp.task('img', function () {
     return gulp.src(`${pckg.paths.src.images}/**/*.*`)
@@ -70,22 +61,12 @@ gulp.task('img', function () {
         .pipe(gulp.dest(pckg.paths.dist.images));
 });
 
-// Imagemin dosen't play well with sprites...
-gulp.task('sprites', function () {
-    return gulp.src(`${pckg.paths.src.sprites}/*.*`)
-        .pipe(gulp.dest(pckg.paths.dist.sprites));
-});
-
 // CSS Copy
 gulp.task('css', gulp.series('lint-sass', 'styles'));
-
-gulp.task('js', gulp.series('lint-js', 'scripts'));
 
 gulp.task('build', gulp.series(
     gulp.parallel(
         'css',
-        'js',
-        'sprites',
         'img'
     ),
     function (done) {
@@ -95,9 +76,11 @@ gulp.task('build', gulp.series(
 
 function watch() {
     gulp.watch(`${pckg.paths.src.styles}/**/*.scss`, { awaitWriteFinish: true }).on('change', gulp.series('css'));
-    gulp.watch(`${pckg.paths.src.js}/**/*.js`, { awaitWriteFinish: true }).on('change', gulp.series('js'));
     gulp.watch(`${pckg.paths.src.images}/**/*.*`, { awaitWriteFinish: true }).on('change', gulp.series('img'));
 }
 
+/******************************************************
+ * COMPOUND TASKS
+******************************************************/
 gulp.task('default', gulp.series('build'));
 gulp.task('watch', gulp.series('build', watch));
