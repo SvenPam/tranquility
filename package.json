@@ -1,0 +1,47 @@
+{
+  "name": "tranquility",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Source for ste-pam.com",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "npm run validate && eleventy",
+    "serve": "node scripts/dev.mjs",
+    "audit": "npm audit",
+    "validate": "node scripts/validate-content.mjs",
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "test:core": "node --test --test-skip-pattern=\"\\[content\\]\" \"tests/**/*.test.mjs\"",
+    "test:visual": "node tests/visual/run.mjs",
+    "test:remote": "TEST_MODE=http node --test \"tests/urls.test.mjs\"",
+    "convert": "node scripts/convert-live.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@resvg/resvg-js": "2.6.2",
+    "autoprefixer": "10.6.1",
+    "bootstrap": "4.0.0-beta.2",
+    "cheerio": "1.2.0",
+    "clean-css": "5.3.3",
+    "gray-matter": "4.0.3",
+    "pixelmatch": "8.0.0",
+    "playwright": "1.56.1",
+    "pngjs": "7.0.0",
+    "postcss": "8.5.30",
+    "sass": "1.77.8",
+    "satori": "0.56.1",
+    "satori-html": "0.3.2",
+    "sharp": "0.35.5",
+    "turndown": "7.2.4",
+    "turndown-plugin-gfm": "1.0.2",
+    "zod": "4.6.7"
+  },
+  "overrides": {
+    "chokidar": "4.0.3",
+    "argparse": "2.0.1",
+    "fflate": "0.7.5"
+  }
+}
