@@ -1,6 +1,6 @@
 # Phase 2: Plan
 
-Status: **Draft, awaiting approval**
+Status: **Approved** (2026-10-13). Next: Phase 3 specs
 Date: 2026-10-13
 Inputs: [Phase 1 discovery](phase-1-discovery.md), your answers to its decisions
 
@@ -34,6 +34,25 @@ Inputs: [Phase 1 discovery](phase-1-discovery.md), your answers to its decisions
 - **`main` vs `master`.** Confirmed: rename the default branch `master` to `main` at cut-over (C11).
 - **The Entra problem.** The new pipeline deploys with the Static Web App's **deployment token**, not an Azure service connection, so it doesn't depend on Entra at all. The only identity it needs is ADO's GitHub connection to read the repo.
 - **Future JSON Resume CV.** This fits Eleventy well. Either drop the HTML that a JSON Resume theme produces into `src/cv/`, or load `resume.json` as Eleventy global data and render it with your own template. Both are a small follow-up and need no design decisions now. `/cv` is reserved for it.
+
+### Why Eleventy over Astro
+
+Both were viable. Eleventy was chosen because:
+
+- **Low maintenance.** The site will change rarely. Eleventy has fewer dependencies and less upgrade churn than Astro, which has shipped a major version roughly once a year.
+- **Faithful port.** Nunjucks layouts and partials map almost one-to-one onto the Razor views, which keeps the markup identical and the existing CSS matching.
+- **Nothing needs Vue.** Output ships no framework JS either way.
+- **Future CV is easy.** A JSON Resume file loads as global data, or a theme's HTML output drops straight in.
+
+What Astro would have given that we add ourselves:
+
+| Astro built-in | Eleventy equivalent in this plan |
+| --- | --- |
+| Front matter schema (content collections + zod) | A schema check over `src/blog/*.md` in `npm test` (C1 adds the validator, C10 runs it on all articles) |
+| SCSS with no config | A Sass build step wired into Eleventy (C2) |
+| OG image endpoints | An Eleventy template that writes PNGs (C6) |
+
+Content (Markdown), CSS and media carry over to any framework, so switching later would only mean rewriting templates.
 
 ---
 
@@ -326,7 +345,7 @@ Each chunk is sized for one agent session with no prior context: a clear input, 
 | ID | Chunk | Scope | Depends on | Size |
 | --- | --- | --- | --- | --- |
 | **C0** | Clean slate | Delete `Tranquility.CMS/`, `Tranquility.sln`, old `.gitignore`/`.gitattributes` rules; new README. (Archive branch already done) | none | S |
-| **C1** | Eleventy scaffold | `package.json` with pinned deps, `.nvmrc`, `eleventy.config.js`, `src/` skeleton, `site.json`, passthrough copy, npm scripts, empty base layout, a smoke test | C0 | S |
+| **C1** | Eleventy scaffold | `package.json` with pinned deps, `.nvmrc`, `eleventy.config.js`, `src/` skeleton, `site.json`, passthrough copy, npm scripts, empty base layout, front matter schema validator for articles, a smoke test | C0 | S |
 | **C2** | Styles and static assets | Move SCSS, fix imports, pin Bootstrap beta.2, Sass + autoprefixer + minify to `/a/dist/css/ste-pam.min.css`; copy images, sprite, favicons, `/old`; CSS parity test | C1 | M |
 | **C3** | Layouts and partials | `base`, `page`, `article` layouts; meta, nav, footer, hero-style, article-summary partials; `/blog` list, `/sitemap` page; old-article and date filters; collections. Ported from the live HTML in `docs/baseline/html/` | C1 | L |
 | **C4** | Media and hero crops | Download the 13 media files; `eleventy-img` shortcode for 5 hero crops with focal points; per-page `<style>` output | C1 | M |
