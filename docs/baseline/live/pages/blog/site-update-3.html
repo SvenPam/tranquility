@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    
+
+<title>Site Update 3 | Stephen Pammenter</title>
+<meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c0c0e">
+
+<meta name="description" content="">
+<link href="https://ste-pam.com/blog/site-update-3" rel="canonical">
+
+<meta property="og:title" content="Site Update 3 | Stephen Pammenter" />
+<meta property="og:locale" content="en_GB">
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ste-pam.com/blog/site-update-3" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Stephen Pammenter" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SvenPam" />
+<meta name="twitter:creator" content="@SvenPam" />
+<meta name="twitter:image" content="" />
+    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    
+
+
+
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
+</head>
+<body>
+    <nav id="siteNav" class="site-nav">
+        <span class="nav-title">Site Nav</span>
+        <button id="closeMobMenu" class="close-site-nav">
+            <i class="hidden-lg hidden-md">
+                <svg class="icon icon--menu">
+                    <use xlink:href="/a/dist/sprites/sprite.svg#x"></use>
+                </svg>
+            </i>
+        </button>
+        <ul class="list list--nav">
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chevron-left"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="javascript:void(0)" onclick="history.back();">Back</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#home"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/">Home</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#person"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/about">About</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#pencil"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/blog">Blog</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#code"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/work">Work</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chat"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        
+
+<section class="hero hero--">
+    <div class="container">
+            <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+<div class="sections">
+    
+
+<div></div>
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact section__fact--lift">
+            <h1 class="lead"><a class="h2" href="/blog/site-update-3">Site Update 3</a></h1>
+            <p class="text-center">Site</p>
+            <p class="text-muted">
+                Site using MVC5 ASP.NET authentication and implementation of an email notification system.
+            </p>
+            <div class="section__meta">
+                <span>Ste Pammenter <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@SvenPam</a> <span class="text-muted">//</span>
+
+                    </span><time datetime="03/04/2014 12:26:16">03-Apr-14</time>
+            </div>
+        </div>
+    </header>
+    <div class="article section__content">
+            <div class="alert alert--old">
+                <h4 class="alert__title">
+                    <i class="alert__icon">
+                        <svg>
+                            <use xlink:href="/a/dist/sprites/sprite.svg#warning"></use>
+                        </svg>
+                    </i> Old Article
+                </h4>
+                This content may be out of date or broken, please take care.
+            </div>
+
+                    <div class="row">
+                    <div class="col-12 col-md-12">
+                                
+    
+<p>Hey folks!</p>
+<p>I have been spring cleaning the server side over the last few days, and you may have noticed some changes go live on the site this week. </p>
+<h2>CRUD and WebAPI</h2>
+<p>Initially I was creating blog posts by an editor and good old fashioned HTML, this then had to be parsed through a line break removal system then inserted into SQL. Quite laborious indeed! I just never had time to fix it up, and it didn't matter too much. Since this weekend though, that has all changed.</p>
+<h3>Introducing CRUD</h3>
+<p><a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> in the world of HTTP makes use of the request types available, and that's pretty much what I have done with the sites blog controller. As an admin, I can now create, update and delete articles; which is extremely helpful - especially when integrated with the JavaScript HTML editor <a href="http://ckeditor.com/">CKEditor</a>.</p>
+<h3>WebAPI</h3>
+<p>The changes to this only affect the in-dev Windows Store App version of the site I am creating; simply amended to reflect the changes made with CRUD.</p>
+<p> </p>
+<h2>Authentication</h2>
+<p>This is extremely crude at the moment, but should lay some foundations for future extension. It was mainly added as a way to secure the above CRUD functions, but I figured it would be quite a neat way to store some email addresses, so you can get a notification when I update my blog.</p>
+<p>I am going to post some more in-depth detail regarding this as there isn't much in date stuff on the web. In short, the system is built on the <a href="https://www.asp.net/identity/overview/getting-started/introduction-to-aspnet-identity">MVC Identity</a> and <a href="http://owin.org/">OWIN</a> (and OAuth) frameworks. The OWIN part is implemented but not used; I figured the only appropriate place for external authentication would be for comments - but DISQUS does the job well enough.</p>
+<p> </p>
+<h2>Notification</h2>
+<p>This was pretty sweet to work on. If you <a href="https://ste-pam.com/account/register">register</a> with my site, you will receive an email with a summary of the new blog. I based it on the HTML template I built a year ago for SABIC - making some minor style and optimization tweaks. What I like so much about what I did, was making use of a view model to generate the email. So feel free to register an account, I am sure at some point I will be adding some features that will apply specifically to authenticated users.</p>
+<p> </p>
+<h2>General</h2>
+<p>I've also fixed some of the bugs I have found on the mobile and tablet versions of the site. The biggest gripe I had was the horrid blue glow that stuck on focused buttons - which on mobile IE happens just from scrolling.</p>
+
+
+                    </div>
+            </div>
+
+    </div>
+    <footer class="section__content">
+        <nav>
+            <ul class="pager">
+                    <li><a href="/blog/final-year-project-complete"><span>&larr;</span> Older</a></li>
+                                    <li><a href="/blog/ssas-attribute-key-cannot-be-found">Newer <span>&rarr;</span></a></li>
+            </ul>
+        </nav>
+        <div id="comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                        var disqus_shortname = 'ste-pam';
+                        var disqus_identifier = 'article-1094';
+                        var disqus_title = 'Site Update 3';
+                        var disqus_url = 'https://ste-pam.com/blog/site-update-3';
+                        (function () {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+            </script>
+        </div>
+    </footer>
+</article>
+
+<script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+</div>
+    </main>
+    <footer class="section section--footer footer hidden-print">
+    <button id="mobileMenu" class="menu-mobile">
+        <i class="hidden-lg hidden-md">
+            <svg class="icon icon--menu">
+                <use xlink:href="/a/dist/sprites/sprite.svg#menu"></use>
+            </svg>
+        </i>
+    </button>
+    <div class="container">
+        <div class="row">
+            <nav class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Site</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Me</a>
+                    </li>
+                    <li>
+                        <a href="/work">Work</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/sitemap">Site Map</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Social</h3>
+                <ul class="footer__list social">
+                    <li> <a class="social__twitter" href="//twitter.com/SvenPam">Twitter</a> </li>
+                    <li> <a class="social__linkedin" href="//linkedin.com/in/spammenter">LinkedIn</a> </li>
+                    <li> <a class="social__stack-overflow" href="//stackoverflow.com/cv/spammenter">Stack Overflow</a> </li>
+                    <li> <a class="social__github" href="//github.com/SvenPam">Github</a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>More</h3>
+                <ul class="footer__list">
+                    <li><a href="//stackoverflow.com/cv/spammenter">CV</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <h3>Based In</h3>
+                <ul class="footer__list">
+                    <li>Liverpool, UK</li>
+                </ul>
+                <a href="https://stackoverflow.com/users/2818648/ste-pammenter">
+                    <img src="https://stackoverflow.com/users/flair/2818648.png?theme=clean" width="208" height="58" alt="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <small>
+                    Copyright  &copy; 2012 - 2026 Stephen Pammenter
+                    <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+                        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+                        </span>
+                    </a>
+                </small>
+            </div>
+            <div class="col-sm-6 col-xs-12 text-right">
+                <small>Built with Umbraco, see <a href="https://github.com/SvenPam/tranquility">Source</a>.</small>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45636226-1', 'ste-pam.com');
+        ga('send', 'pageview');
+
+        document.getElementById('mobileMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "none";
+            document.getElementById('siteNav').classList.add('active');
+            //$('.site-nav').addClass('active')
+            document.body.className += 'menu-open';
+            return false;
+        }, false);
+
+        document.getElementById('closeMobMenu').addEventListener('click', function (ev) {
+
+            document.getElementById('mobileMenu').style.display = "";
+            document.getElementById('siteNav').classList.remove('active');
+            document.body.className = '';
+            return false;
+        }, false);
+
+        </script>
+</body>
+</html>

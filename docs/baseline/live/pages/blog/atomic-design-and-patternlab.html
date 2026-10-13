@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    
+
+<title>Atomic Design and Patternlab | Stephen Pammenter</title>
+<meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c0c0e">
+
+<meta name="description" content="">
+<link href="https://ste-pam.com/blog/atomic-design-and-patternlab" rel="canonical">
+
+<meta property="og:title" content="Atomic Design and Patternlab | Stephen Pammenter" />
+<meta property="og:locale" content="en_GB">
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ste-pam.com/blog/atomic-design-and-patternlab" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Stephen Pammenter" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SvenPam" />
+<meta name="twitter:creator" content="@SvenPam" />
+<meta name="twitter:image" content="" />
+    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    
+
+
+
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
+</head>
+<body>
+    <nav id="siteNav" class="site-nav">
+        <span class="nav-title">Site Nav</span>
+        <button id="closeMobMenu" class="close-site-nav">
+            <i class="hidden-lg hidden-md">
+                <svg class="icon icon--menu">
+                    <use xlink:href="/a/dist/sprites/sprite.svg#x"></use>
+                </svg>
+            </i>
+        </button>
+        <ul class="list list--nav">
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chevron-left"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="javascript:void(0)" onclick="history.back();">Back</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#home"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/">Home</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#person"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/about">About</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#pencil"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/blog">Blog</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#code"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/work">Work</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chat"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        
+
+<section class="hero hero--">
+    <div class="container">
+            <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+<div class="sections">
+    
+
+<div></div>
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact section__fact--lift">
+            <h1 class="lead"><a class="h2" href="/blog/atomic-design-and-patternlab">Atomic Design and Patternlab</a></h1>
+            <p class="text-center">Guide</p>
+            <p class="text-muted">
+                Break down development and design walls with Patternlab and Atomic Design
+            </p>
+            <div class="section__meta">
+                <span>Ste Pammenter <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@SvenPam</a> <span class="text-muted">//</span>
+
+                    </span><time datetime="19/11/2018 15:32:58">19-Nov-18</time>
+            </div>
+        </div>
+    </header>
+    <div class="article section__content">
+            <div class="alert alert--old">
+                <h4 class="alert__title">
+                    <i class="alert__icon">
+                        <svg>
+                            <use xlink:href="/a/dist/sprites/sprite.svg#warning"></use>
+                        </svg>
+                    </i> Old Article
+                </h4>
+                This content may be out of date or broken, please take care.
+            </div>
+
+                    <div class="row">
+                    <div class="col-12 col-md-12">
+                                
+    
+<p>So I've spoken about <a data-udi="umb://document/635bf05d3ab44dd5a1fc3473784dc1cf" href="/blog/lifes-better-with-bem" title="Life's better with BEM">how to use BEM</a> and combining that with the <a data-udi="umb://document/a8b0146c7f1e4a1ea43f14dec1971956" href="/blog/inverted-triangle-css-itcss" title="Inverted Triangle CSS (ITCSS)">ITCSS methodology</a> to give you an architecture of clean, maintainable styles. You can take them both and now work with your design to development team process.</p>
+<p>In 2015 I went to the annual <a href="https://upfrontconf.com/">UpFront conference</a> in Manchester, one guest speaker was <a href="https://twitter.com/brad_frost">Brad Frost</a>. It was a really good conference, if you're a front-end developer or even a designer, it's well worth going. Brad introduced this concept of Atomic Design, a design methodology where you design the small pieces of UX first (atoms) and piece them together until you get to a full page. To support this concept, he also introduced the idea of putting Atomic Design into a style guide powered by Patternlab.</p>
+<p> </p>
+<h2>Atomic Design</h2>
+<p>I won't spend too much on this because I'm far more developer than a designer and I am very likely going to butcher this process...</p>
+<p>When designers come to designing a website, I've seen a few different approaches. Each unique, with their own respective pros and cons. With Atomic Design, you design the little bits first, group them together and make gradually bigger bits. For example, you might start with a text box atom and a button atom. Put the two together, and you have a search molecule. Put a search molecule and a navigation molecule together and you might get a header organism. Put a load of organisms together, and you end up with a template. It sounds simple, but being strict in practice is hard.</p>
+<p> </p>
+
+
+                                
+    <figure>    <div  
+         class="article__img-holder"
+         style="padding-bottom: 75%;"
+          >
+        <img width="1024" height="768" class="lazyload "
+             sizes="auto"
+             data-src="/media/1061/atomic-design-process.png?width=1020&amp;mode=max"
+             data-srcset=" /media/1061/atomic-design-process.png?width=286 322w,
+    /media/1061/atomic-design-process.png?width=540&amp;mode=max 576w,
+    /media/1061/atomic-design-process.png?width=732&amp;mode=max 768w,
+    /media/1061/atomic-design-process.png?width=625&amp;mode=max 992w,
+    /media/1061/atomic-design-process.png?width=1020&amp;mode=max" />
+    </div>
+        <figcaption>Atomic Design by Brad Frost</figcaption>
+</figure>
+
+                                
+    
+<p>What this process brings to the table loosely coupled UI elements. It makes design easier (I assume) and it makes handing designs over to developers really easy. At <em>The Lead Agency</em> we combine this with <a href="https://zeplin.io/">Zeplin</a>. Our designers create a style guide in a PSD or whatever software they work with and upload it to Zeplin. This gives us developers all the colours, margins, fonts, sizes - you name it - to work with. Having these little pieces, also means we can really concentrate on the quality of each little component and isolate styles at a micro level.</p>
+<p>If you want to read more about Atomic Design, Brad wrote a <a href="http://atomicdesign.bradfrost.com/table-of-contents/">book you can read for free</a>.</p>
+<p> </p>
+<h2>Patternlab</h2>
+<p>Flash forward to 2017 and we're seeing big problems with our design to development team process. Frequently we were seeing out of date designs, or there was a wait to get a PSD converted to something we could use. We were about to commence a redesign of a core site, and it was suggested we adopt atomic design as a trial. When I originally went to the conference, Patternlab was built only in PHP. This was an issue for us, as we're all full-stack .NET - we've never touched PHP! However, in 2017 there was a node version of Patternlab available.</p>
+<p>Patternlab is built entirely around the atomic design process. It's a super quick way to spin up prototypes and helps to retain a clean maintainable code structure. What we discovered as we adopted it was, developers were wholly able to focus on the quality of the front-end code. Once the style guide was updated, the devs working on Umbraco simply had to copy paste the HTML over and convert it to Razor, allowing them to focus on the back-end.</p>
+<p>If you're interested in seeing a demo of what we've tried to do with Patternlab and Atomic design, you can check out our style guides here:</p>
+<ul>
+<li><a href="http://styles.carkeys.co.uk/">Car Keys</a> (Car news)</li>
+<li><a href="http://styles.uk-tla.com">Landing Pages</a></li>
+<li><a href="https://styles.instantcompare.co.uk/">Instant Compare</a> (Property Valuation)</li>
+</ul>
+<p>It's really important you read the documentation on the Patternlab site because it's very easy to dive into. However, there are some really powerful features that you might miss. Always bear in mind that Patternlab <em>really helps</em> with DRY. So be sure to check out:</p>
+<ul>
+<li><span>Pseudo Patterns</span></li>
+<li><span>Style Modifiers</span></li>
+</ul>
+<h4>Getting Set Up</h4>
+<p>Patternlab takes a bit of getting used to because you can go overboard very quickly. I would suggest before starting you read up on two things:</p>
+<ol>
+<li><a href="https://patternlab.io/docs/index.html">Patternlab docs</a></li>
+<li><a href="https://mustache.github.io/mustache.5.html">Mustache.js</a></li>
+</ol>
+<p>The docs are really good, I've added the mustache.js one in there because if you haven't seen this before, it's simply a new concept to understand. I won't go into more detail than the docs - they show you how to set everything up and it's going to be far more up to date than this article will ever be!</p>
+<h4>Gotchas</h4>
+<p>Data precedence is an important part of PatternLab. At the lowest level, data comes from _data/data.json. Every pattern can then override values by using `<em>patternName</em>.json`, where the highest level wins.</p>
+<p>Avoid listItems - whilst it is a neat part of PatternLab, I found it buggy and it doesn't appear to follow the same data precedence as the rest of the data. It's easier to control lists via an array in JSON.</p>
+<p> </p>
+<h2>Cons</h2>
+<p>I've found PatternLab was unbelievable for enabling a laser-like focus on front-end performance. As times have changed, we've begun running into issues that we're still trying to solve. This is mostly around how PatternLab doesn't like SPA's or using JS frameworks very much. Mostly I've found this is due to their respective build tools conflicting with PatternLabs. For example, we moved over to Vue.js at the beginning of the year, and it took a lot of work to get Webpack setup to work with PatternLab Node.</p>
+<p>It gets much worse when you combine multiple themes and try and jam them into your build. I know it's a unique case, but it happens. Further to this, we tried to move from Webpack to the Vue CLI, and this still remains a task in the backlog. So if you're wanting to move to build tools beyond Gulp I would be wary with adopting Patternlab - this doesn't mean you shouldn't take a look at Atomic Design!</p>
+
+
+                    </div>
+            </div>
+
+    </div>
+    <footer class="section__content">
+        <nav>
+            <ul class="pager">
+                    <li><a href="/blog/svg-sprite-automation"><span>&larr;</span> Older</a></li>
+                                    <li><a href="/blog/inverted-triangle-css-itcss">Newer <span>&rarr;</span></a></li>
+            </ul>
+        </nav>
+        <div id="comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                        var disqus_shortname = 'ste-pam';
+                        var disqus_identifier = 'article-1202';
+                        var disqus_title = 'Atomic Design and Patternlab';
+                        var disqus_url = 'https://ste-pam.com/blog/atomic-design-and-patternlab';
+                        (function () {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+            </script>
+        </div>
+    </footer>
+</article>
+
+<script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+</div>
+    </main>
+    <footer class="section section--footer footer hidden-print">
+    <button id="mobileMenu" class="menu-mobile">
+        <i class="hidden-lg hidden-md">
+            <svg class="icon icon--menu">
+                <use xlink:href="/a/dist/sprites/sprite.svg#menu"></use>
+            </svg>
+        </i>
+    </button>
+    <div class="container">
+        <div class="row">
+            <nav class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Site</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Me</a>
+                    </li>
+                    <li>
+                        <a href="/work">Work</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/sitemap">Site Map</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Social</h3>
+                <ul class="footer__list social">
+                    <li> <a class="social__twitter" href="//twitter.com/SvenPam">Twitter</a> </li>
+                    <li> <a class="social__linkedin" href="//linkedin.com/in/spammenter">LinkedIn</a> </li>
+                    <li> <a class="social__stack-overflow" href="//stackoverflow.com/cv/spammenter">Stack Overflow</a> </li>
+                    <li> <a class="social__github" href="//github.com/SvenPam">Github</a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>More</h3>
+                <ul class="footer__list">
+                    <li><a href="//stackoverflow.com/cv/spammenter">CV</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <h3>Based In</h3>
+                <ul class="footer__list">
+                    <li>Liverpool, UK</li>
+                </ul>
+                <a href="https://stackoverflow.com/users/2818648/ste-pammenter">
+                    <img src="https://stackoverflow.com/users/flair/2818648.png?theme=clean" width="208" height="58" alt="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <small>
+                    Copyright  &copy; 2012 - 2026 Stephen Pammenter
+                    <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+                        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+                        </span>
+                    </a>
+                </small>
+            </div>
+            <div class="col-sm-6 col-xs-12 text-right">
+                <small>Built with Umbraco, see <a href="https://github.com/SvenPam/tranquility">Source</a>.</small>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45636226-1', 'ste-pam.com');
+        ga('send', 'pageview');
+
+        document.getElementById('mobileMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "none";
+            document.getElementById('siteNav').classList.add('active');
+            //$('.site-nav').addClass('active')
+            document.body.className += 'menu-open';
+            return false;
+        }, false);
+
+        document.getElementById('closeMobMenu').addEventListener('click', function (ev) {
+
+            document.getElementById('mobileMenu').style.display = "";
+            document.getElementById('siteNav').classList.remove('active');
+            document.body.className = '';
+            return false;
+        }, false);
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    
+
+<title>Life&#39;s better with BEM | Stephen Pammenter</title>
+<meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c0c0e">
+
+<meta name="description" content="">
+<link href="https://ste-pam.com/blog/lifes-better-with-bem" rel="canonical">
+
+<meta property="og:title" content="Life&#39;s better with BEM | Stephen Pammenter" />
+<meta property="og:locale" content="en_GB">
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ste-pam.com/blog/lifes-better-with-bem" />
+<meta property="og:image" content="https://hcti.io/v1/image/27add70a-baff-45c3-9506-cbcebdb4f038" />
+<meta property="og:site_name" content="Stephen Pammenter" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SvenPam" />
+<meta name="twitter:creator" content="@SvenPam" />
+<meta name="twitter:image" content="https://hcti.io/v1/image/27add70a-baff-45c3-9506-cbcebdb4f038" />
+    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    
+
+
+
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
+</head>
+<body>
+    <nav id="siteNav" class="site-nav">
+        <span class="nav-title">Site Nav</span>
+        <button id="closeMobMenu" class="close-site-nav">
+            <i class="hidden-lg hidden-md">
+                <svg class="icon icon--menu">
+                    <use xlink:href="/a/dist/sprites/sprite.svg#x"></use>
+                </svg>
+            </i>
+        </button>
+        <ul class="list list--nav">
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chevron-left"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="javascript:void(0)" onclick="history.back();">Back</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#home"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/">Home</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#person"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/about">About</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#pencil"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/blog">Blog</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#code"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/work">Work</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chat"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        
+
+<section class="hero hero--">
+    <div class="container">
+            <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+<div class="sections">
+    
+
+<div></div>
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact section__fact--lift">
+            <h1 class="lead"><a class="h2" href="/blog/lifes-better-with-bem">Life&#39;s better with BEM</a></h1>
+            <p class="text-center">Guide</p>
+            <p class="text-muted">
+                Utilising the BEM style methodology for clean architecture an maintainability gains &#128170;
+            </p>
+            <div class="section__meta">
+                <span>Ste Pammenter <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@SvenPam</a> <span class="text-muted">//</span>
+
+                    </span><time datetime="20/11/2018 17:48:18">20-Nov-18</time>
+            </div>
+        </div>
+    </header>
+    <div class="article section__content">
+            <div class="alert alert--old">
+                <h4 class="alert__title">
+                    <i class="alert__icon">
+                        <svg>
+                            <use xlink:href="/a/dist/sprites/sprite.svg#warning"></use>
+                        </svg>
+                    </i> Old Article
+                </h4>
+                This content may be out of date or broken, please take care.
+            </div>
+
+                    <div class="row">
+                    <div class="col-12 col-md-12">
+                                
+    
+<p>I plan to write a bit of a series of methodologies and processes I use with styles. The first methodology is the Block Element Modifier (BEM) style methodology. Before I get onto the that, I want to be upfront and say there are <em>many </em>methodologies out there. BEM is <em>my teams'</em> favourite and it works for <em>us</em>. I'll list a load of other methodologies towards the end if you're interested in comparing them.</p>
+<h2>What is BEM?</h2>
+<p>BEM is a naming convention for your styles. There isn't any more to it than that in terms of what you need to do, but it should get you to think more about how you write your styles. From this thinking, you will naturally find your CSS becomes cleaner and easier to maintain. BEM can be used with CSS, SASS, LESS - anything, so don't limit your dreams!</p>
+<p>The premise for BEM is that your pages should be made up of independent components. Each piece of UI should work in isolation to any other. Examples of UI blocks might be:</p>
+<ul>
+<li>buttons</li>
+<li>cards</li>
+<li>headers</li>
+<li>lists</li>
+</ul>
+<p>I always say CSS is easy to learn and hard to master. This is why: it's easy for me to list them components because I am not there with you now to see what you're trying to categorize and I find this is the <strong>root of all styling problems</strong>. Just knowing what is its own independent component. So a good exercise before using BEM is looking around sites just trying your best to identify bits of shared UI - it will carry you miles.</p>
+<p> </p>
+<h2>Really though, what is BEM?</h2>
+<p>Got your UI components in mind? Cool. Let's use a simple example.</p>
+<p class="codepen" data-height="352" data-theme-id="dark" data-slug-hash="RqxgvL" data-default-tab="html,result" data-user="svenpam" data-pen-title="BEM Example"> </p>
+<p>
+<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
+</p>
+<p>I've knocked up some markup for a simple product. Little by little, we'll work through the example bit by bit.</p>
+<p> </p>
+<h3>Blocks</h3>
+<p>The obvious choice here is <code>.product</code>, but that isn't the only one. We can also create one for the button. I've done this on purpose, because</p>
+
+
+                                
+    
+    
+        <blockquote>[A block] Encapsulates a standalone entity that is meaningful on its own</blockquote>
+    
+
+
+                                
+    
+<p>A button isn't specific to the product, we <em>could</em> have a button anywhere on our website. We can quite happily put blocks inside other blocks <em>but</em> blocks cannot have any dependency on another block. A good rule of thumb, if tomorrow you deleted that block, nothing else would change! So with our two blocks in mind, I'm going to add them to our styles. I'll use SASS here because I'm going to show something cool later. 😎</p>
+<p class="codepen" data-height="352" data-theme-id="dark" data-slug-hash="YRYxpe" data-default-tab="html" data-user="svenpam" data-pen-title="BEM Example (with blocks)"> </p>
+<p>
+<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
+</p>
+<p>Some examples of blocks might be:</p>
+<ul>
+<li>buttons</li>
+<li>lists</li>
+<li>cards</li>
+<li>header</li>
+<li>footer</li>
+</ul>
+<p>Now that we have identified our standalone components, it's time to get them sleeves rolled up.</p>
+<p> </p>
+<h3>Elements</h3>
+<p>The bulk of your styles will invariably end up as elements, which are dependent on blocks.</p>
+
+
+                                
+    
+    
+        <blockquote>[Elements are] Parts of a block and have no standalone meaning.</blockquote>
+    
+
+
+                                
+    
+<p>An element is defined by two underscores after the block name. So for our product title, we could have <code>.product__title</code> which denotes this title element is part of the <code>.product</code> block. As the buttons in the example don't have anything to them, we'll keep them as a block. So now we add the elements to our product block.</p>
+<p class="codepen" data-height="573" data-theme-id="dark" data-slug-hash="mQpMxz" data-default-tab="html" data-user="svenpam" data-pen-title="BEM Example (with blocks &amp; elements)"> </p>
+<p>
+<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
+</p>
+<p>Here you can a little SASS trick that works so well with BEM. I'll touch on that later.</p>
+<p>Examples of elements could be anything, just as long as it pertains to its own block.</p>
+<p> </p>
+
+
+                                
+    
+<h3>Modifiers</h3>
+<p>Blocks and elements build our baselines. Everything should look relatively ok with just blocks and elements. Sometimes though, we need to take other things into account like element state, or themes. A good example would be: how would you show a price was discounted? We would break DRY principles if we wrote how a price looked all over again. Modifiers just the thing for this situation.</p>
+
+
+                                
+    
+    
+        <blockquote>[Modifiers are] Flags on blocks or elements. Use them to change appearance, behavior or state.</blockquote>
+    
+
+
+                                
+    
+<p>Note here, that they can be used on both blocks and elements. We can define a modifier by two dashes, so say we want a discount variant of our price we might write <code>.product__price--discount</code>. Here we're saying we have created a variant of the price element which is an element of the product block. Here the true power of BEM comes to live, with three simple names we can clear show the purpose of a component.</p>
+<p>In the next stages, I will add a discount to the price and update the buttons to be different colours.</p>
+<p class="codepen" data-height="265" data-theme-id="dark" data-slug-hash="aQELvY" data-default-tab="html,result" data-user="svenpam" data-pen-title="BEM Example (with blocks &amp; elements &amp; modifiers)"> </p>
+<p>
+<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
+</p>
+<p>Notice I still keep the block or element name associated with a modifier. This is crucial, because if you don't do it - what are you actually modifying?</p>
+<p>Some examples of when you use modifiers would be:</p>
+<ul>
+<li>button themes - i.e. bootstraps danger, success, warning etc.</li>
+<li>transition states - open, closed, faded etc.</li>
+<li>general states - active, inactive etc.</li>
+</ul>
+<p> </p>
+
+
+                                
+    
+<h2>Full Example</h2>
+<p>I've added in some styles to give this example more character. It's still the same HTML from the first step, just will classes.</p>
+<p class="codepen" data-height="656" data-theme-id="dark" data-slug-hash="yQpzab" data-default-tab="css,result" data-user="svenpam" data-pen-title="BEM Example - Full"> </p>
+<p>
+<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
+</p>
+<p> </p>
+<h2>Benefits</h2>
+<p>BEM is really powerful, especially when it's used with the SASS tools. I've written a fully flexible version of BEM here, which demonstrates the combination. Should a name change, we only have to update HTML and one place in the SASS.</p>
+
+
+                                
+    
+    
+        <script src="https://gist.github.com/SvenPam/84c0c47d4cc93541a21dfa22f5dfd3ed.js"></script>
+    
+
+
+                                
+    
+<p>We get the readability benefits of nesting, but none of the specificity problems. The output CSS is flat.</p>
+<p>I always put <strong>one block per file</strong>. This further goes to help with the flexibility of turning features on and off at the removal or addition of an import. This also feeds back into what I said earlier with blocks. They should be so standalone, you can delete a file without affecting any other CSS.</p>
+<p>In a work environment, we're able to place people on code they have never seen before and they hit the ground running with BEM - which is a huge benefit in itself. There is no more search through lines and lines of CSS to find something, you simply use the HTML as a reference.</p>
+<p>BEM is easy to use, but it relies heavily on knowing what components are stand alone and what is not. The other criticisms I've heard of BEM has been searchability. Especially when you nest things with SASS. I'd personally feel this isn't a problem, but I'll let the <em>dear reader</em> form your own opinions.</p>
+<p> </p>
+
+
+                                
+    
+<h2>Further Reading</h2>
+<p>This is my take on BEM and SASS, before you plough into rearchitecting your styles it's best to get familiar with identifying UI components that are stand alone. This comes with practice. Here's more information:</p>
+<ul>
+<li><a href="http://getbem.com">Official BEM Site</a></li>
+<li><a href="https://en.bem.info/">More BEM docs</a></li>
+</ul>
+<p>BEM isn't the only methodology out there, some methodologies work better for certain project types. Here are some more you can check out:</p>
+<ul>
+<li><a href="https://www.keycdn.com/blog/oocss">OOCSS</a></li>
+<li><a href="https://smacss.com/">SMACSS</a></li>
+<li><a href="https://suitcss.github.io/">SuitCSS</a></li>
+</ul>
+<p>I would love to hear thought from anyone working with BEM and the others.</p>
+<p> </p>
+
+
+                    </div>
+            </div>
+
+    </div>
+    <footer class="section__content">
+        <nav>
+            <ul class="pager">
+                    <li><a href="/blog/inverted-triangle-css-itcss"><span>&larr;</span> Older</a></li>
+                                    <li><a href="/blog/authentication-through-azure">Newer <span>&rarr;</span></a></li>
+            </ul>
+        </nav>
+        <div id="comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                        var disqus_shortname = 'ste-pam';
+                        var disqus_identifier = 'article-1211';
+                        var disqus_title = 'Life&#39;s better with BEM';
+                        var disqus_url = 'https://ste-pam.com/blog/lifes-better-with-bem';
+                        (function () {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+            </script>
+        </div>
+    </footer>
+</article>
+
+<script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+</div>
+    </main>
+    <footer class="section section--footer footer hidden-print">
+    <button id="mobileMenu" class="menu-mobile">
+        <i class="hidden-lg hidden-md">
+            <svg class="icon icon--menu">
+                <use xlink:href="/a/dist/sprites/sprite.svg#menu"></use>
+            </svg>
+        </i>
+    </button>
+    <div class="container">
+        <div class="row">
+            <nav class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Site</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Me</a>
+                    </li>
+                    <li>
+                        <a href="/work">Work</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/sitemap">Site Map</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Social</h3>
+                <ul class="footer__list social">
+                    <li> <a class="social__twitter" href="//twitter.com/SvenPam">Twitter</a> </li>
+                    <li> <a class="social__linkedin" href="//linkedin.com/in/spammenter">LinkedIn</a> </li>
+                    <li> <a class="social__stack-overflow" href="//stackoverflow.com/cv/spammenter">Stack Overflow</a> </li>
+                    <li> <a class="social__github" href="//github.com/SvenPam">Github</a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>More</h3>
+                <ul class="footer__list">
+                    <li><a href="//stackoverflow.com/cv/spammenter">CV</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <h3>Based In</h3>
+                <ul class="footer__list">
+                    <li>Liverpool, UK</li>
+                </ul>
+                <a href="https://stackoverflow.com/users/2818648/ste-pammenter">
+                    <img src="https://stackoverflow.com/users/flair/2818648.png?theme=clean" width="208" height="58" alt="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <small>
+                    Copyright  &copy; 2012 - 2026 Stephen Pammenter
+                    <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+                        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+                        </span>
+                    </a>
+                </small>
+            </div>
+            <div class="col-sm-6 col-xs-12 text-right">
+                <small>Built with Umbraco, see <a href="https://github.com/SvenPam/tranquility">Source</a>.</small>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45636226-1', 'ste-pam.com');
+        ga('send', 'pageview');
+
+        document.getElementById('mobileMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "none";
+            document.getElementById('siteNav').classList.add('active');
+            //$('.site-nav').addClass('active')
+            document.body.className += 'menu-open';
+            return false;
+        }, false);
+
+        document.getElementById('closeMobMenu').addEventListener('click', function (ev) {
+
+            document.getElementById('mobileMenu').style.display = "";
+            document.getElementById('siteNav').classList.remove('active');
+            document.body.className = '';
+            return false;
+        }, false);
+
+        </script>
+</body>
+</html>

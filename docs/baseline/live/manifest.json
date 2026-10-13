@@ -1,0 +1,349 @@
+{
+  "captured": "2026-10-13",
+  "source": "https://ste-pam.com",
+  "pages": [
+    {
+      "url": "/",
+      "status": 200,
+      "file": "pages/index.html"
+    },
+    {
+      "url": "/about",
+      "status": 200,
+      "file": "pages/about.html"
+    },
+    {
+      "url": "/blog",
+      "status": 200,
+      "file": "pages/blog.html"
+    },
+    {
+      "url": "/blog/acceptance-to-expotees-and-project-progression",
+      "status": 200,
+      "file": "pages/blog/acceptance-to-expotees-and-project-progression.html"
+    },
+    {
+      "url": "/blog/analysis-complete",
+      "status": 200,
+      "file": "pages/blog/analysis-complete.html"
+    },
+    {
+      "url": "/blog/api-support",
+      "status": 200,
+      "file": "pages/blog/api-support.html"
+    },
+    {
+      "url": "/blog/atomic-design-and-patternlab",
+      "status": 200,
+      "file": "pages/blog/atomic-design-and-patternlab.html"
+    },
+    {
+      "url": "/blog/authentication-through-azure",
+      "status": 200,
+      "file": "pages/blog/authentication-through-azure.html"
+    },
+    {
+      "url": "/blog/c-60-features",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/class-design",
+      "status": 200,
+      "file": "pages/blog/class-design.html"
+    },
+    {
+      "url": "/blog/coast-to-coast-cancer-research-uk",
+      "status": 200,
+      "file": "pages/blog/coast-to-coast-cancer-research-uk.html"
+    },
+    {
+      "url": "/blog/coast-to-coast-pately-bridge",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/coast-to-coast-success",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/corrupted-html-when-using-visual-studio",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/crewe-10k-run",
+      "status": 200,
+      "file": "pages/blog/crewe-10k-run.html"
+    },
+    {
+      "url": "/blog/decorator-pattern",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/dynamic-serving-and-performance",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/expotees-complete",
+      "status": 200,
+      "file": "pages/blog/expotees-complete.html"
+    },
+    {
+      "url": "/blog/final-year-project-complete",
+      "status": 200,
+      "file": "pages/blog/final-year-project-complete.html"
+    },
+    {
+      "url": "/blog/final-year-project-miru-awarded-preliminary-first-class-honours",
+      "status": 200,
+      "file": "pages/blog/final-year-project-miru-awarded-preliminary-first-class-honours.html"
+    },
+    {
+      "url": "/blog/find-matching-brace-in-visual-studio",
+      "status": 200,
+      "file": "pages/blog/find-matching-brace-in-visual-studio.html"
+    },
+    {
+      "url": "/blog/geotag-update-and-parsing-woes",
+      "status": 200,
+      "file": "pages/blog/geotag-update-and-parsing-woes.html"
+    },
+    {
+      "url": "/blog/getting-the-most-out-of-fonts",
+      "status": 200,
+      "file": "pages/blog/getting-the-most-out-of-fonts.html"
+    },
+    {
+      "url": "/blog/google-maps-api-authorization-error-getting-round-it",
+      "status": 200,
+      "file": "pages/blog/google-maps-api-authorization-error-getting-round-it.html"
+    },
+    {
+      "url": "/blog/hello-world",
+      "status": 200,
+      "file": "pages/blog/hello-world.html"
+    },
+    {
+      "url": "/blog/implementation-of-miru",
+      "status": 200,
+      "file": "pages/blog/implementation-of-miru.html"
+    },
+    {
+      "url": "/blog/inverted-triangle-css-itcss",
+      "status": 200,
+      "file": "pages/blog/inverted-triangle-css-itcss.html"
+    },
+    {
+      "url": "/blog/just-giving-api-and-t2t-redesign",
+      "status": 200,
+      "file": "pages/blog/just-giving-api-and-t2t-redesign.html"
+    },
+    {
+      "url": "/blog/lets-get-coding",
+      "status": 200,
+      "file": "pages/blog/lets-get-coding.html"
+    },
+    {
+      "url": "/blog/lifes-better-with-bem",
+      "status": 200,
+      "file": "pages/blog/lifes-better-with-bem.html"
+    },
+    {
+      "url": "/blog/mvc5-authentication",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/mvp-complete",
+      "status": 200,
+      "file": "pages/blog/mvp-complete.html"
+    },
+    {
+      "url": "/blog/mvp-nearly-complete",
+      "status": 200,
+      "file": "pages/blog/mvp-nearly-complete.html"
+    },
+    {
+      "url": "/blog/new-job",
+      "status": 200,
+      "file": "pages/blog/new-job.html"
+    },
+    {
+      "url": "/blog/other-work",
+      "status": 200,
+      "file": "pages/blog/other-work.html"
+    },
+    {
+      "url": "/blog/post-multiple-images-to-c-server",
+      "status": 200,
+      "file": "pages/blog/post-multiple-images-to-c-server.html"
+    },
+    {
+      "url": "/blog/posting-to-a-facebook-page-via-server-c",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/research",
+      "status": 200,
+      "file": "pages/blog/research.html"
+    },
+    {
+      "url": "/blog/sass-loops",
+      "status": 200,
+      "file": "pages/blog/sass-loops.html"
+    },
+    {
+      "url": "/blog/share-linkedin-company-update-using-c",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/simple-waypoint-scroll",
+      "status": 200,
+      "file": "pages/blog/simple-waypoint-scroll.html"
+    },
+    {
+      "url": "/blog/site-30",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/site-40",
+      "status": 200,
+      "file": "pages/blog/site-40.html"
+    },
+    {
+      "url": "/blog/site-changes-and-seasons-greetings",
+      "status": 200,
+      "file": "pages/blog/site-changes-and-seasons-greetings.html"
+    },
+    {
+      "url": "/blog/site-redesign-the-rekoning",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/site-update-3",
+      "status": 200,
+      "file": "pages/blog/site-update-3.html"
+    },
+    {
+      "url": "/blog/spanking-new-site",
+      "status": 200,
+      "file": "pages/blog/spanking-new-site.html"
+    },
+    {
+      "url": "/blog/spec-refinement",
+      "status": 200,
+      "file": "pages/blog/spec-refinement.html"
+    },
+    {
+      "url": "/blog/speed-up-your-pc",
+      "status": 200,
+      "file": "pages/blog/speed-up-your-pc.html"
+    },
+    {
+      "url": "/blog/ssas-attribute-key-cannot-be-found",
+      "status": 200,
+      "file": "pages/blog/ssas-attribute-key-cannot-be-found.html"
+    },
+    {
+      "url": "/blog/string-to-enum-net-40plus",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/blog/svg-sprite-automation",
+      "status": 200,
+      "file": "pages/blog/svg-sprite-automation.html"
+    },
+    {
+      "url": "/blog/testing-android-app-on-the-nexus-7-on-windows-81",
+      "status": 200,
+      "file": "pages/blog/testing-android-app-on-the-nexus-7-on-windows-81.html"
+    },
+    {
+      "url": "/blog/thai-lime-ginger-and-prawn-stir-fry",
+      "status": 200,
+      "file": "pages/blog/thai-lime-ginger-and-prawn-stir-fry.html"
+    },
+    {
+      "url": "/blog/the-beginning",
+      "status": 200,
+      "file": "pages/blog/the-beginning.html"
+    },
+    {
+      "url": "/blog/the-diamond-problem",
+      "status": 200,
+      "file": "pages/blog/the-diamond-problem.html"
+    },
+    {
+      "url": "/blog/the-tarantula-hawk",
+      "status": 200,
+      "file": "pages/blog/the-tarantula-hawk.html"
+    },
+    {
+      "url": "/blog/time-to-design",
+      "status": 200,
+      "file": "pages/blog/time-to-design.html"
+    },
+    {
+      "url": "/blog/trip-to-rotterdam",
+      "status": 200,
+      "file": "pages/blog/trip-to-rotterdam.html"
+    },
+    {
+      "url": "/blog/uml-design",
+      "status": 200,
+      "file": "pages/blog/uml-design.html"
+    },
+    {
+      "url": "/blog/web-config-transform",
+      "status": 404,
+      "file": null,
+      "note": "listed in sitemap but renders Not Found (no template)"
+    },
+    {
+      "url": "/contact",
+      "status": 200,
+      "file": "pages/contact.html"
+    },
+    {
+      "url": "/not-found",
+      "status": 200,
+      "file": "pages/not-found.html"
+    },
+    {
+      "url": "/sitemap",
+      "status": 200,
+      "file": "pages/sitemap.html"
+    },
+    {
+      "url": "/this-does-not-exist",
+      "status": 404,
+      "file": "pages/404.html"
+    },
+    {
+      "url": "/work",
+      "status": 200,
+      "file": "pages/work.html"
+    }
+  ]
+}

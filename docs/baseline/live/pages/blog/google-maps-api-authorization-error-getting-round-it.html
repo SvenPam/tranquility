@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    
+
+<title>Google Maps API  Authorization Error -  Getting Round It | Stephen Pammenter</title>
+<meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c0c0e">
+
+<meta name="description" content="">
+<link href="https://ste-pam.com/blog/google-maps-api-authorization-error-getting-round-it" rel="canonical">
+
+<meta property="og:title" content="Google Maps API  Authorization Error -  Getting Round It | Stephen Pammenter" />
+<meta property="og:locale" content="en_GB">
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ste-pam.com/blog/google-maps-api-authorization-error-getting-round-it" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Stephen Pammenter" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SvenPam" />
+<meta name="twitter:creator" content="@SvenPam" />
+<meta name="twitter:image" content="" />
+    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    
+
+
+
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
+</head>
+<body>
+    <nav id="siteNav" class="site-nav">
+        <span class="nav-title">Site Nav</span>
+        <button id="closeMobMenu" class="close-site-nav">
+            <i class="hidden-lg hidden-md">
+                <svg class="icon icon--menu">
+                    <use xlink:href="/a/dist/sprites/sprite.svg#x"></use>
+                </svg>
+            </i>
+        </button>
+        <ul class="list list--nav">
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chevron-left"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="javascript:void(0)" onclick="history.back();">Back</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#home"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/">Home</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#person"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/about">About</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#pencil"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/blog">Blog</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#code"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/work">Work</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chat"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        
+
+<section class="hero hero--">
+    <div class="container">
+            <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+<div class="sections">
+    
+
+<div></div>
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact section__fact--lift">
+            <h1 class="lead"><a class="h2" href="/blog/google-maps-api-authorization-error-getting-round-it">Google Maps API  Authorization Error -  Getting Round It</a></h1>
+            <p class="text-center">Guide</p>
+            <p class="text-muted">
+                Stuck with Google Maps on Android? Look no further, here is a guide on how to win the war against the ARM EABI v7a System Image and Google API’s!
+            </p>
+            <div class="section__meta">
+                <span>Ste Pammenter <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@SvenPam</a> <span class="text-muted">//</span>
+
+                    </span><time datetime="12/12/2013 20:24:09">12-Dec-13</time>
+            </div>
+        </div>
+    </header>
+    <div class="article section__content">
+            <div class="alert alert--old">
+                <h4 class="alert__title">
+                    <i class="alert__icon">
+                        <svg>
+                            <use xlink:href="/a/dist/sprites/sprite.svg#warning"></use>
+                        </svg>
+                    </i> Old Article
+                </h4>
+                This content may be out of date or broken, please take care.
+            </div>
+
+                    <div class="row">
+                    <div class="col-12 col-md-12">
+                                
+    
+<p>Okay, so this took me forever to figure out – not helping is the fact I am a total newb when it comes to Android development… I don’t even have an Android phone!</p>
+<p>So before I begin with this guide let me lay down some scope: it should be able to get Google Maps working in the GenyMotion emulator – I gave up using the ADT emulators as they were far too slow. For this guide, I am going to use the Google Map API demo, they have code that works and this is all about the setup. Furthermore, I have done this in Windows 8, so if you have another OS, you’ll have to do some smart thinkin’. You’re going to need a google account too, if you haven’t already got one. Without further ado, let us step boldly into the unknowns of Android cartography – ironic eh?</p>
+<div class="dvNumber">1.</div>
+<div class="item">
+<p>Android SDK, I am going to assume you have this on your machine and have done some vagaries of android development. If you don’t, fear not! Here is the <a href="https://developer.android.com/sdk/index.html">whole package</a>, it has Eclipse too.</p>
+</div>
+<div class="dvNumber">2.</div>
+<div class="item">
+<p>Next up, we’re going to want to get the GooglePlay API setup. It comes part and parcel with the Android SDK, the only thing you need to do is install its package. Google have a <a href="https://developer.android.com/google/play-services/setup.html">guide</a> if you get stuck, but the gist is:</p>
+<ol>
+<li>
+<p>In Eclipse, Window&gt;Android SDK Manager</p>
+</li>
+<li>
+<p>You’re going to want to check Android #.# (API #)&gt; SDK Platform, ARM EABI v7a System Image and Google API’s. That is three packages in the version you want to use – the demo is for Android 4.4 (API 19).</p>
+</li>
+<li>
+<p>You also need to check Extras &gt; Google Play Services and Google Repository.</p>
+</li>
+</ol>
+</div>
+<div class="dvNumber">3.</div>
+<div class="item">
+<p>Taming the beast that is an API Key is next on our to-do list, and we’re going to use CMD to do it. Open command prompt: Windows Key + R&gt;"cmd"&gt;Hit enter.</p>
+<ol>
+<li>
+<p>You’re going to want to navigate to where your JDK has been installed eg. In CMD type: “cd “<span class="code">C:\Program Files\Java\jdk1.7.0_45\bin</span>" “ then press enter.</p>
+</li>
+<li>
+<p>Here we will use the Java keytool.exe to extract our API key. To do this, you will need to know where your debug.keystore file is. You will most likely find this here: %userprofile%\.android\debug.keystore</p>
+</li>
+<li>
+<p>When you know that enter this into CMD: “<span class="code">keytool -v -list -alias androiddebugkey –keystore "%userprofile%\.android\debug.keystore" -storepass android -keypass android</span>"</p>
+</li>
+<li>
+<p>You’re looking to get a load of info back, specifically the certificate finger print, SHA1. When you find that, you will need to copy it.</p>
+</li>
+<li>
+<p>Next you need to go to the <a href="https://cloud.google.com/console">Google API Console</a>.</p>
+</li>
+<li>
+<p>Create a new project, call it whatever you like.</p>
+</li>
+<li>
+<p>Register your app, choose Android as the platform, then enter its package name. For this demo it will be “com.example.mapdemo", then paste in the SHA1 key you copied earlier.</p>
+</li>
+<li>
+<p>This will return you an API key. Take a note of this.</p>
+</li>
+</ol>
+<p>If you have any problems with this step, you can get the google guide <a href="https://developers.google.com/maps/documentation/android/start#obtain_a_google_maps_api_key">here</a>.</p>
+</div>
+<div class="dvNumber">4.</div>
+<div class="item">
+<p>Before we go any further let’s get the map demo source. You can find it in the ADT package: \sdk\extras\google\google_play_services\samples\maps</p>
+</div>
+<div class="dvNumber">5.</div>
+<div class="item">
+<p>We’re going to want to modify the manifest of the map demo with our API key. Around line 33 in the Manifest of the demo you will find meta-tag with a value. Replace that value with your key – you can’t use the key that is already there.</p>
+</div>
+<div class="dvNumber">6.</div>
+<div class="item">
+<p>Here is where Google support stops, and you find that stuff isn’t quite working still? Alas, I have done the research and googling for you! Firstly, you need to hit up the <a href="https://cloud.google.com/console">Google API Console</a> again, and you’re going to want to turn on the “Google Maps Android API v2".</p>
+</div>
+<div class="dvNumber">7.</div>
+<div class="item">
+<p>Next, you will need double check that your project.propeties has the following line (it should): <span class="code">android.library.reference.1=google-play-services_lib</span></p>
+</div>
+<div class="dvNumber">8.</div>
+<div class="item">
+<p>Next, a setting in proguard-project.txt needs to be appended:</p>
+<span class="code">-keep class * extends java.util.ListResourceBundle {</span> <br /> <span class="code">protected Object[][] getContents();</span> <br /> <span class="code">}</span>
+<p>Stackoverflow user <a href="http://stackoverflow.com/users/422654/rusfearuth">Rusfearuth</a> explains this point (with pics) for this <a href="http://stackoverflow.com/questions/13696620/google-maps-android-api-v2-authorization-failure">question</a>.</p>
+</div>
+<div class="dvNumber">9.</div>
+<div class="item">
+<p>Finally, we need to fix up your emulator. Like I said earlier, I used GenyMotion, you can download it free (for personal use) when you <a>register</a>. They have an easy to follow guide, which will walk you through all the steps for setup and use <a href="https://cloud.genymotion.com/page/doc/">here</a>.</p>
+</div>
+<div class="dvNumber">10.</div>
+<div class="item">
+<p>For the Maps API to work with GenyMotion you need to add/install two files.</p>
+<ol>
+<li>
+<p>Open a GenyMotion Emulator.</p>
+</li>
+<li>
+<p>Download <a href="https://goo.gl/JBQmPa">ARM Translation Installer v.1.1</a>.</p>
+</li>
+<li>
+<p>Download <a href="http://goo.im/gapps/gapps-jb-20130813-signed.zip">Google Apps for Android 4.3.</a></p>
+</li>
+<li>
+<p>Drag and drop each file onto the Emulator, when it asks you about flash click Ok, after it finishes reboot. Then rinse repeat for the 2nd file. Stackoverflow user <a href="http://stackoverflow.com/users/1760502/japzone">japzone</a> answers this <a href="http://stackoverflow.com/questions/17831990/how-do-you-install-google-frameworks-play-accounts-etc-on-a-genymotion-virtu">question</a> with detailed steps for this.</p>
+</li>
+<li>
+<p>Download <a href="https://goo.gl/JBQmPa">ARM Translation Installer v.1.1</a>.</p>
+</li>
+</ol>
+</div>
+<div class="dvNumber">11.</div>
+<div class="item">
+<p>To test that Google Play is working, run the emulator, find it in the installed apps, and search for any android app – like SnapChat, if it works, you’re spot on.</p>
+</div>
+<p>Once all these steps have been completed it should work, if it dosen’t it could be because you need to uninstall your app to clear out the cache. As far as I am aware, this won't work in the ADT Emulator, at least there is another step involved somewhere.</p>
+
+
+                    </div>
+            </div>
+
+    </div>
+    <footer class="section__content">
+        <nav>
+            <ul class="pager">
+                    <li><a href="/blog/lets-get-coding"><span>&larr;</span> Older</a></li>
+                                    <li><a href="/blog/implementation-of-miru">Newer <span>&rarr;</span></a></li>
+            </ul>
+        </nav>
+        <div id="comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                        var disqus_shortname = 'ste-pam';
+                        var disqus_identifier = 'article-1080';
+                        var disqus_title = 'Google Maps API  Authorization Error -  Getting Round It';
+                        var disqus_url = 'https://ste-pam.com/blog/google-maps-api-authorization-error-getting-round-it';
+                        (function () {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+            </script>
+        </div>
+    </footer>
+</article>
+
+<script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+</div>
+    </main>
+    <footer class="section section--footer footer hidden-print">
+    <button id="mobileMenu" class="menu-mobile">
+        <i class="hidden-lg hidden-md">
+            <svg class="icon icon--menu">
+                <use xlink:href="/a/dist/sprites/sprite.svg#menu"></use>
+            </svg>
+        </i>
+    </button>
+    <div class="container">
+        <div class="row">
+            <nav class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Site</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Me</a>
+                    </li>
+                    <li>
+                        <a href="/work">Work</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/sitemap">Site Map</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Social</h3>
+                <ul class="footer__list social">
+                    <li> <a class="social__twitter" href="//twitter.com/SvenPam">Twitter</a> </li>
+                    <li> <a class="social__linkedin" href="//linkedin.com/in/spammenter">LinkedIn</a> </li>
+                    <li> <a class="social__stack-overflow" href="//stackoverflow.com/cv/spammenter">Stack Overflow</a> </li>
+                    <li> <a class="social__github" href="//github.com/SvenPam">Github</a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>More</h3>
+                <ul class="footer__list">
+                    <li><a href="//stackoverflow.com/cv/spammenter">CV</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <h3>Based In</h3>
+                <ul class="footer__list">
+                    <li>Liverpool, UK</li>
+                </ul>
+                <a href="https://stackoverflow.com/users/2818648/ste-pammenter">
+                    <img src="https://stackoverflow.com/users/flair/2818648.png?theme=clean" width="208" height="58" alt="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <small>
+                    Copyright  &copy; 2012 - 2026 Stephen Pammenter
+                    <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+                        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+                        </span>
+                    </a>
+                </small>
+            </div>
+            <div class="col-sm-6 col-xs-12 text-right">
+                <small>Built with Umbraco, see <a href="https://github.com/SvenPam/tranquility">Source</a>.</small>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45636226-1', 'ste-pam.com');
+        ga('send', 'pageview');
+
+        document.getElementById('mobileMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "none";
+            document.getElementById('siteNav').classList.add('active');
+            //$('.site-nav').addClass('active')
+            document.body.className += 'menu-open';
+            return false;
+        }, false);
+
+        document.getElementById('closeMobMenu').addEventListener('click', function (ev) {
+
+            document.getElementById('mobileMenu').style.display = "";
+            document.getElementById('siteNav').classList.remove('active');
+            document.body.className = '';
+            return false;
+        }, false);
+
+        </script>
+</body>
+</html>

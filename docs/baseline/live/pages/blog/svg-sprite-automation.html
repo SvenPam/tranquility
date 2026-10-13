@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    
+
+<title>SVG Sprite Automation | Stephen Pammenter</title>
+<meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c0c0e">
+
+<meta name="description" content="">
+<link href="https://ste-pam.com/blog/svg-sprite-automation" rel="canonical">
+
+<meta property="og:title" content="SVG Sprite Automation | Stephen Pammenter" />
+<meta property="og:locale" content="en_GB">
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ste-pam.com/blog/svg-sprite-automation" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Stephen Pammenter" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SvenPam" />
+<meta name="twitter:creator" content="@SvenPam" />
+<meta name="twitter:image" content="" />
+    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    
+
+
+
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
+</head>
+<body>
+    <nav id="siteNav" class="site-nav">
+        <span class="nav-title">Site Nav</span>
+        <button id="closeMobMenu" class="close-site-nav">
+            <i class="hidden-lg hidden-md">
+                <svg class="icon icon--menu">
+                    <use xlink:href="/a/dist/sprites/sprite.svg#x"></use>
+                </svg>
+            </i>
+        </button>
+        <ul class="list list--nav">
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chevron-left"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="javascript:void(0)" onclick="history.back();">Back</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#home"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/">Home</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#person"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/about">About</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#pencil"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/blog">Blog</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#code"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/work">Work</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chat"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        
+
+<section class="hero hero--">
+    <div class="container">
+            <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+<div class="sections">
+    
+
+<div></div>
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact section__fact--lift">
+            <h1 class="lead"><a class="h2" href="/blog/svg-sprite-automation">SVG Sprite Automation</a></h1>
+            <p class="text-center">Guide</p>
+            <p class="text-muted">
+                Looking at using automated SVG sprites to help with site performance
+            </p>
+            <div class="section__meta">
+                <span>Ste Pammenter <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@SvenPam</a> <span class="text-muted">//</span>
+                            <span class="tag">svg</span>
+                            <span class="tag">gulp</span>
+                            <span class="tag">front-end</span>
+
+                    </span><time datetime="19/11/2018 11:01:08">19-Nov-18</time>
+            </div>
+        </div>
+    </header>
+    <div class="article section__content">
+            <div class="alert alert--old">
+                <h4 class="alert__title">
+                    <i class="alert__icon">
+                        <svg>
+                            <use xlink:href="/a/dist/sprites/sprite.svg#warning"></use>
+                        </svg>
+                    </i> Old Article
+                </h4>
+                This content may be out of date or broken, please take care.
+            </div>
+
+                    <div class="row">
+                    <div class="col-12 col-md-12">
+                                
+    
+<p>Sprites are one of the classic web tricks you can use to prevent sequentially loading images and blocking other assets coming into the browser via network requests. This is a short guide on how you can automate the process of stitching images together and generating the CSS you need to display them on the page.</p>
+<h2>What Are They?</h2>
+<p>If you're not too sure what a sprite is, here is a brief educational journey. Firstly, what do they solve? You might be familiar with network requests browsers make to pull assets onto the page.</p>
+<p> </p>
+
+
+                                
+    <figure>    <div  
+         class="article__img-holder"
+         style="padding-bottom: 68.9530685920578%;"
+          >
+        <img width="831" height="573" class="lazyload "
+             sizes="auto"
+             data-src="/media/1059/chrome-network-requests.jpg?width=1020&amp;mode=max"
+             data-srcset=" /media/1059/chrome-network-requests.jpg?width=286 322w,
+    /media/1059/chrome-network-requests.jpg?width=540&amp;mode=max 576w,
+    /media/1059/chrome-network-requests.jpg?width=732&amp;mode=max 768w,
+    /media/1059/chrome-network-requests.jpg?width=625&amp;mode=max 992w,
+    /media/1059/chrome-network-requests.jpg?width=1020&amp;mode=max" />
+    </div>
+        <figcaption>Network Requests in Chrome</figcaption>
+</figure>
+
+                                
+    
+<p>Pressing F12 in Chrome and going to the network tab will show you the above for a site. That's cool and all that but why? Well, the thing is; <strong>browsers have a maximum number of connections they can make at any one time</strong>. Once that connection limit is reached, everything else is blocked until the asset for that connection has been downloaded and the connection closed.</p>
+<p>This is why we use sprites. Say you have 100 icons in an icon set, you're going to find them being loaded onto the page is batches (Chrome is 10 at a time), which isn't great for <em>perceived</em> page speed. Stitching many (small) images into one file is much quicker and more efficient. There is no overhead of finding a domain making a connection and closing 100 times, for example.</p>
+<p>The next bit is <em>unstiching</em> the sprite. You can use CSS for this. Imagine looking through a tube a sheet of images. Your vision is obscured to just that view, right? As you move the page around, you can see another image - this is what a sprite does! You can use background-positions for this. I won't go into more detail on the ins and outs, on this. You find more of this out <a href="https://css-tricks.com/css-sprites/">in this CSS tricks article</a>.</p>
+
+
+                                
+    
+<h2>SVGs</h2>
+<p>First things first, if you have icons (or logos), you <em>really</em> want to look at SVGs. If you're not au<em> </em>feit with SVGs, these are what we call vector graphics. You can't use them for a picture of the Mona Lisa, but for simple graphics, they are perfect. An SVG gives the browser instructions on how to draw an image, so whether an image is 1px or 10,000px, the quality is the same. This makes them perfect of high-resolution screens maintaining a crisp clear image. The best part about SVGs is; <strong>they are just HTML</strong>. Seriously, open an SVG in a browser and inspect it.</p>
+
+
+                                
+    
+<h2>Automation</h2>
+<p>So I spoke about the many benefits of sprites, but I didn't touch on the downsides. That is: <strong>maintainability</strong>. A good example of this is using a sprite for logos. What happens when you need to add a new logo to that sprite? If you put it in the right place, hopefully, you just have to add some more CSS positioning. Worst case, it throws all your other positions out - not cool!</p>
+<p>For those of use using build tools, there are plenty of packages to do this for us! So let's get the to crux of this guide: automating sprites. I use the NPM package <a href="https://www.npmjs.com/package/svg-sprite">SVG-Sprite</a>.</p>
+<p>I have a source folder of SVG icons - all separate images.</p>
+<p> </p>
+
+
+                                
+        <div  
+         class="article__img-holder"
+         style="padding-bottom: 69.2682926829268%;"
+          >
+        <img width="205" height="142" class="lazyload "
+             sizes="auto"
+             data-src="/media/1060/icon-files.jpg?width=1020&amp;mode=max"
+             data-srcset=" /media/1060/icon-files.jpg?width=286 322w,
+    /media/1060/icon-files.jpg?width=540&amp;mode=max 576w,
+    /media/1060/icon-files.jpg?width=732&amp;mode=max 768w,
+    /media/1060/icon-files.jpg?width=625&amp;mode=max 992w,
+    /media/1060/icon-files.jpg?width=1020&amp;mode=max" />
+    </div>
+
+
+                                
+    
+<p>The package will use your folder names and file names to generate the CSS classes. Here is my gulp:</p>
+<p>
+<script src="https://gist.github.com/SvenPam/5b47aa364f1931bdf8ff916e097776c1.js"></script>
+</p>
+<p>You can obviously play around with the options. SVGs will tend to come with a lot of metadata or rubbish you don't need. Adobe Illustrator is guilty of this. To clean the SVGs up, I added <a href="https://www.npmjs.com/package/gulp-imagemin">ImageMin</a> as well. This will spit a sprite, CSS and SCSS into the directory of your choosing. Take a look at what it produces, all the references are done on your behalf.</p>
+<p>There is a little trick to this package - especially if you're using build tools for your styles. It comes down to the order you run your scripts. I will run this <em>before</em> my main styles, because I will then reference the output SCSS in my own SCSS.</p>
+<p>After this, you will just need to use the references for background positions, and style the icons as required.</p>
+<p> </p>
+
+
+                    </div>
+            </div>
+
+    </div>
+    <footer class="section__content">
+        <nav>
+            <ul class="pager">
+                    <li><a href="/blog/getting-the-most-out-of-fonts"><span>&larr;</span> Older</a></li>
+                                    <li><a href="/blog/atomic-design-and-patternlab">Newer <span>&rarr;</span></a></li>
+            </ul>
+        </nav>
+        <div id="comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                        var disqus_shortname = 'ste-pam';
+                        var disqus_identifier = 'article-1198';
+                        var disqus_title = 'SVG Sprite Automation';
+                        var disqus_url = 'https://ste-pam.com/blog/svg-sprite-automation';
+                        (function () {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+            </script>
+        </div>
+    </footer>
+</article>
+
+<script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+</div>
+    </main>
+    <footer class="section section--footer footer hidden-print">
+    <button id="mobileMenu" class="menu-mobile">
+        <i class="hidden-lg hidden-md">
+            <svg class="icon icon--menu">
+                <use xlink:href="/a/dist/sprites/sprite.svg#menu"></use>
+            </svg>
+        </i>
+    </button>
+    <div class="container">
+        <div class="row">
+            <nav class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Site</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Me</a>
+                    </li>
+                    <li>
+                        <a href="/work">Work</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/sitemap">Site Map</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Social</h3>
+                <ul class="footer__list social">
+                    <li> <a class="social__twitter" href="//twitter.com/SvenPam">Twitter</a> </li>
+                    <li> <a class="social__linkedin" href="//linkedin.com/in/spammenter">LinkedIn</a> </li>
+                    <li> <a class="social__stack-overflow" href="//stackoverflow.com/cv/spammenter">Stack Overflow</a> </li>
+                    <li> <a class="social__github" href="//github.com/SvenPam">Github</a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>More</h3>
+                <ul class="footer__list">
+                    <li><a href="//stackoverflow.com/cv/spammenter">CV</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <h3>Based In</h3>
+                <ul class="footer__list">
+                    <li>Liverpool, UK</li>
+                </ul>
+                <a href="https://stackoverflow.com/users/2818648/ste-pammenter">
+                    <img src="https://stackoverflow.com/users/flair/2818648.png?theme=clean" width="208" height="58" alt="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <small>
+                    Copyright  &copy; 2012 - 2026 Stephen Pammenter
+                    <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+                        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+                        </span>
+                    </a>
+                </small>
+            </div>
+            <div class="col-sm-6 col-xs-12 text-right">
+                <small>Built with Umbraco, see <a href="https://github.com/SvenPam/tranquility">Source</a>.</small>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45636226-1', 'ste-pam.com');
+        ga('send', 'pageview');
+
+        document.getElementById('mobileMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "none";
+            document.getElementById('siteNav').classList.add('active');
+            //$('.site-nav').addClass('active')
+            document.body.className += 'menu-open';
+            return false;
+        }, false);
+
+        document.getElementById('closeMobMenu').addEventListener('click', function (ev) {
+
+            document.getElementById('mobileMenu').style.display = "";
+            document.getElementById('siteNav').classList.remove('active');
+            document.body.className = '';
+            return false;
+        }, false);
+
+        </script>
+</body>
+</html>
