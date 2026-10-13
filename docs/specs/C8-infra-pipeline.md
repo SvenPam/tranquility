@@ -136,6 +136,9 @@ steps:
   - script: npm ci
     displayName: Install
 
+  - script: npm audit
+    displayName: Dependency audit (must be 0 vulnerabilities)
+
   - script: npm run build
     displayName: Build
 
@@ -154,6 +157,7 @@ steps:
 ```
 
 Notes:
+- `npm audit` deliberately runs on every build, including the weekly schedule. A new advisory against a dependency fails the pipeline and blocks deploys until it's fixed; that's the intended signal.
 - `npm test` runs every suite including `[content]` tests. That's correct once C10 has landed. Before then, the pipeline isn't used for deploys.
 - Visual tests (`npm run test:visual`) need a browser and are local-only; don't add them here.
 - If `AzureStaticWebApp@0` requires `cwd`, set `cwd: $(System.DefaultWorkingDirectory)`.
@@ -162,7 +166,7 @@ Notes:
 
 No YAML library is installed, so do structural checks with string and regex matching:
 
-- `azure-pipelines.yml` exists, has `trigger` and `pr` blocks including `main`, a `schedules` block with `always: true`, `npm ci`, `npm run build`, `npm test`, `AzureStaticWebApp@0`, `skip_app_build: true`, `app_location: _site`, `$(SWA_DEPLOYMENT_TOKEN)`, and a deploy `condition` referencing `refs/heads/main`.
+- `azure-pipelines.yml` exists, has `trigger` and `pr` blocks including `main`, a `schedules` block with `always: true`, `npm ci`, `npm audit`, `npm run build`, `npm test`, `AzureStaticWebApp@0`, `skip_app_build: true`, `app_location: _site`, `$(SWA_DEPLOYMENT_TOKEN)`, and a deploy `condition` referencing `refs/heads/main`.
 - No line contains a literal token (nothing matching `/[0-9a-f]{40,}/i`) or `AzureCLI@`/`azureSubscription` (no service connection).
 - `infra/main.bicep` contains `Microsoft.Web/staticSites@`, `name: 'Free'`, and `dns-txt-token`.
 

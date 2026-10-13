@@ -13,7 +13,7 @@ Each spec is written so an agent with **no prior context** can implement it. Rea
 | Spec | Chunk | Wave | Depends on | Owner of |
 | --- | --- | --- | --- | --- |
 | [C0](C0-clean-slate.md) | Clean slate and asset relocation | 1 | none | `.gitignore`, `.gitattributes`, `README.md`, `src/styles/`, `src/assets/`, `src/old/`, `src/static/` |
-| [C1](C1-eleventy-scaffold.md) | Eleventy scaffold | 2 | C0 | `package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `tests/smoke.test.mjs`; stubs of `src/index.njk`, `layouts/base.njk` and `config/hero.js` (handed to C5, C3 and C4) |
+| [C1](C1-eleventy-scaffold.md) | Eleventy scaffold | 2 | C0 | `package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `scripts/dev.mjs`, `tests/smoke.test.mjs`; stubs of `src/index.njk`, `layouts/base.njk` and `config/hero.js` (handed to C5, C3 and C4) |
 | [C2](C2-styles-assets.md) | Styles and static assets | 3 | C1 | `config/assets.js`, `config/css.js`, `scripts/build-css.mjs`, `scripts/lib/css-normalise.mjs`, `tests/css-parity.test.mjs`, `tests/assets.test.mjs`; two named edits in `src/styles/` |
 | [C3](C3-layouts.md) | Layouts and partials | 3 | C1 | `src/_includes/**`, `config/filters.js`, `config/collections.js`, `src/blog.njk`, `src/sitemap.njk`, `src/blog/blog.11tydata.js`, 2 seed articles |
 | [C4](C4-media-hero.md) | Media and hero crops | 3 | C1 | `config/hero.js`, `scripts/lib/crop.mjs`, `src/media/**` |
@@ -30,6 +30,8 @@ Each spec is written so an agent with **no prior context** can implement it. Rea
 **Ownership rule:** only edit files your spec owns, plus files your spec explicitly says to edit. If you need a change in a file you don't own, stop and report it rather than editing it. This is what lets chunks in the same wave run in parallel without merge conflicts.
 
 `package.json` and `package-lock.json` belong to C1, which installs **every** dependency and defines **every** npm script up front. Later chunks must not add dependencies. If one is genuinely missing, report it.
+
+**Dependency audit:** `npm audit` must report **0 vulnerabilities at every severity** at all times. C1 sets `overrides` in `package.json` to achieve this; don't remove them. Every chunk's verifier runs `npm audit` as part of its checks, and the pipeline fails on any finding.
 
 ---
 
@@ -163,7 +165,8 @@ The CSS alternates section backgrounds with `.section:nth-child(odd|even)` insid
 | Script | Does |
 | --- | --- |
 | `npm run build` | `validate` then `eleventy` (CSS, crops, OG and SWA config run inside Eleventy hooks) |
-| `npm run serve` | `eleventy --serve` |
+| `npm run serve` | `scripts/dev.mjs`: build, watch `src/` and `config/`, serve `_site` on port 8080 |
+| `npm run audit` | `npm audit`; must report 0 vulnerabilities |
 | `npm run validate` | Front matter schema check |
 | `npm test` | All `tests/**/*.test.mjs` against `_site` (run `build` first) |
 | `npm run test:core` | Same, skipping tests whose name contains `[content]` |

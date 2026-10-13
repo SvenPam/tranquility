@@ -12,7 +12,7 @@ Create a working Eleventy 3 project: pinned dependencies (all of them, for every
 
 ## Owns
 
-`package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `src/index.njk` (placeholder, replaced by C5), `src/_includes/layouts/base.njk` (stub, replaced by C3), `config/hero.js` (stub, replaced by C4), `tests/smoke.test.mjs`.
+`package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `scripts/dev.mjs`, `src/index.njk` (placeholder, replaced by C5), `src/_includes/layouts/base.njk` (stub, replaced by C3), `config/hero.js` (stub, replaced by C4), `tests/smoke.test.mjs`.
 
 ## Steps
 
@@ -36,7 +36,8 @@ Install with exact versions (`npm i -D -E ...`). These are every dependency the 
   "engines": { "node": ">=22" },
   "scripts": {
     "build": "npm run validate && eleventy",
-    "serve": "eleventy --serve",
+    "serve": "node scripts/dev.mjs",
+    "audit": "npm audit",
     "validate": "node scripts/validate-content.mjs",
     "test": "node --test \"tests/**/*.test.mjs\"",
     "test:core": "node --test --test-skip-pattern=\"\\[content\\]\" \"tests/**/*.test.mjs\"",
@@ -64,6 +65,11 @@ Install with exact versions (`npm i -D -E ...`). These are every dependency the 
     "turndown": "7.2.4",
     "turndown-plugin-gfm": "1.0.2",
     "zod": "4.6.7"
+  },
+  "overrides": {
+    "chokidar": "4.0.3",
+    "argparse": "2.0.1",
+    "fflate": "0.7.5"
   }
 }
 ```
@@ -71,6 +77,15 @@ Install with exact versions (`npm i -D -E ...`). These are every dependency the 
 Notes:
 - `bootstrap@4.0.0-beta.2` and `sass@1.77.8` are deliberate: together they rebuild to the live CSS (verified in Phase 3). Never upgrade them.
 - `playwright@1.56.1` matches the Chromium preinstalled in the cloud dev environment (`/opt/pw-browsers`). Set `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1` when installing there.
+- **`npm audit` must report 0 vulnerabilities at every severity.** The `overrides` block is what makes that true (checked in Phase 3, 2026-10-13). Without it, the pinned set reports 12 (6 high, 6 moderate):
+
+  | Override | Removes | Why it's safe |
+  | --- | --- | --- |
+  | `chokidar` 4.0.3 | `braces` <=3.0.3 (high, no fixed release) via chokidar 3 in Eleventy, its dev server, Nunjucks and Sass | chokidar 4 dropped `braces`. Builds are unaffected (verified). It does break Eleventy 3's own watch mode, so `npm run serve` uses `scripts/dev.mjs` instead (step 3b) |
+  | `argparse` 2.0.1 | `sprintf-js` (moderate, no fixed release) via gray-matter's js-yaml 3 | js-yaml 3 only uses argparse in its CLI binary, which nothing calls. Front matter parsing verified |
+  | `fflate` 0.7.5 | fflate 0.7.3 (moderate) via Satori | Patch release, same API. OG rendering verified |
+
+  If `npm audit` reports anything after install, stop and report it. Don't add `--omit=dev` or audit exceptions to get to zero.
 - If a pinned version fails to install, use the nearest patch release and record it in your report. Don't change major or minor versions.
 
 ### 3. `eleventy.config.js`
@@ -99,6 +114,15 @@ export const config = {
   htmlTemplateEngine: "njk",
 };
 ```
+
+### 3b. Dev server: `scripts/dev.mjs`
+
+Eleventy's built-in `--serve` relies on chokidar 3's glob support, which the audit override removes (verified: it starts but never rebuilds). Replace it with a small script, Node built-ins only:
+
+- Run one full build (`npx @11ty/eleventy`, inheriting stdio).
+- Watch `src/` and `config/` with `fs.watch(dir, { recursive: true })` (supported on Linux, macOS and Windows in Node 22). Debounce 200 ms, then rebuild. Ignore events while a build is running; queue one more build if something changed during it.
+- Serve `_site` on `http://localhost:8080` (or `PORT`) with `node:http`, mapping clean URLs the same way Static Web Apps does: `/` to `index.html`, `/about` to `about/index.html`, files as-is (decode `%20`), and `not-found/index.html` with status 404 for misses. Set `Content-Type` from the extension (html, css, js, json, xml, svg, png, jpg, jpeg, gif, ico, pdf, woff, txt).
+- No live reload; refresh the browser after the "built" log line.
 
 `config/` must exist with a `README.md` (one line per module and its owner chunk, copied from `docs/specs/README.md` section 1) so the loader finds the folder before other modules exist.
 
@@ -171,7 +195,7 @@ export const article = page.extend({
 </html>
 ```
 
-`src/index.njk` (placeholder, replaced by C5):
+`scripts/dev.mjs`, `src/index.njk` (placeholder, replaced by C5):
 
 ```njk
 ---
@@ -216,12 +240,14 @@ Commit `package-lock.json` too. Message: `feat(c1): scaffold Eleventy project`.
 | AC5 | Adding a throwaway `config/zz-probe.js` that calls `eleventyConfig.addGlobalData("probe", "ok")` makes `{{ probe }}` render in a page, proving the loader works. Remove the probe before committing. |
 | AC6 | `npm run validate` exits 1 and names the file and field when given a `src/blog/x.md` with `topic: Blogging`, and when given one with a missing `date`. Exits 0 when given a valid article. Remove the test files before committing. |
 | AC7 | `src/_data/site.json` matches README section 3.3 exactly. |
+| AC9 | `npm audit` reports `found 0 vulnerabilities`. |
+| AC10 | `npm run serve` serves `http://localhost:8080/` and rebuilds within a few seconds after a file in `src/` changes (show the log). |
 | AC8 | Nothing under `src/styles`, `src/assets`, `src/old`, `src/static` is copied to `_site` by this chunk. |
 
 ## Verify
 
 ```bash
-rm -rf node_modules _site && npm ci && npm run build && npm test
+rm -rf node_modules _site && npm ci && npm audit && npm run build && npm test
 ls _site
 node -e "const p=require('./package.json');console.log(Object.values(p.devDependencies).every(v=>/^\d/.test(v)))"
 ```
