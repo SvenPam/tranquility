@@ -1,6 +1,6 @@
 # Phase 1: Discovery
 
-Status: **Draft, awaiting your decisions** (see [Decisions needed](#8-decisions-needed))
+Status: **Complete.** Decisions are recorded in [Phase 2](phase-2-plan.md#1-decisions-recorded)
 Date: 2026-10-13
 Scope: ste-pam.com, Umbraco 7 to static site on Azure
 
