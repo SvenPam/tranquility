@@ -1,6 +1,6 @@
 # Phase 2: Plan
 
-Status: **Approved** (2026-10-13). Next: Phase 3 specs
+Status: **Approved** (2026-10-13). Specs: [docs/specs/](specs/README.md)
 Date: 2026-10-13
 Inputs: [Phase 1 discovery](phase-1-discovery.md), your answers to its decisions
 
@@ -351,7 +351,7 @@ Each chunk is sized for one agent session with no prior context: a clear input, 
 | **C4** | Media and hero crops | Download the 13 media files; `eleventy-img` shortcode for 5 hero crops with focal points; per-page `<style>` output | C1 | M |
 | **C5** | Static pages | Home, About, Contact, Not Found from live copy, with D9/D11 edits (CV links, typo); remove Work from nav/footer | C3, C4 | S |
 | **C6** | OG images | Satori + resvg card, font, per-page generation, absolute `og:image`/`twitter:image`, caching | C3 | M |
-| **C7** | Routing and SEO | `redirects.json`, `build-swa-config.mjs`, `staticwebapp.config.json` (trailing slash, redirects, 404, headers, MIME), `/sitemap.xml`, `robots.txt` | C1 (finalised after C5) | S |
+| **C7** | Routing and SEO | `redirects.json`, `staticwebapp.config.json` generated in a build hook (trailing slash, redirects, 404, headers, MIME), `/sitemap.xml`, `robots.txt` | C5, C9 | S |
 | **C8** | Infra and pipeline | `infra/main.bicep`, `infra/README.md`, `azure-pipelines.yml`, setup notes for ADO (GitHub connection, secret variable, schedule) | C1 | M |
 | **C9** | Baseline and test harness | Capture `docs/baseline/urls.json`, `live.min.css`, HTML snapshots of every page; write URL parity, link check and visual diff tests; wire `npm test` | C1 | M |
 | **C10** | Content conversion | `scripts/convert-live.mjs`, convert all articles, download inline media, D11 link fixes, migration report, full test run green | C3, C4, C9 (+ your step in 8.2) | L |
@@ -361,7 +361,7 @@ Each chunk is sized for one agent session with no prior context: a clear input, 
 
 ```
 C0 ──> C1 ──┬──> C2 ─────────────────────────────┐
-            ├──> C3 ──┬──> C5 ──> C7 (finalise) ──┤
+            ├──> C3 ──┬──> C5 ──> C7 ─────────────┤
             │         ├──> C6                     │
             ├──> C4 ──┘                           ├──> C10 ──> C11
             ├──> C8                               │
@@ -373,8 +373,8 @@ C0 ──> C1 ──┬──> C2 ───────────────�
 | 1 | C0 |
 | 2 | C1 |
 | 3 | C2, C3, C4, C8, C9 |
-| 4 | C5, C6, C7 |
-| 5 | C10 (after your Umbraco template step) |
+| 4 | C5, C6 |
+| 5 | C7, C10 (C10 after your Umbraco template step) |
 | 6 | C11 |
 
 C9 captures the live HTML snapshots early, so C3 and C5 can port markup from files in the repo rather than the live site.

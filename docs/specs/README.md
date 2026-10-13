@@ -1,6 +1,6 @@
 # Phase 3: Specs
 
-Status: **Draft for review**
+Status: **Draft for review**. Implementation hasn't started
 Date: 2026-10-13
 Plan: [phase-2-plan.md](../phase-2-plan.md)
 
@@ -13,15 +13,15 @@ Each spec is written so an agent with **no prior context** can implement it. Rea
 | Spec | Chunk | Wave | Depends on | Owner of |
 | --- | --- | --- | --- | --- |
 | [C0](C0-clean-slate.md) | Clean slate and asset relocation | 1 | none | `.gitignore`, `.gitattributes`, `README.md`, `src/styles/`, `src/assets/`, `src/old/`, `src/static/` |
-| [C1](C1-eleventy-scaffold.md) | Eleventy scaffold | 2 | C0 | `package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `tests/smoke.test.mjs`; stubs of `src/index.njk` and `layouts/base.njk` (handed to C5 and C3) |
+| [C1](C1-eleventy-scaffold.md) | Eleventy scaffold | 2 | C0 | `package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `tests/smoke.test.mjs`; stubs of `src/index.njk`, `layouts/base.njk` and `config/hero.js` (handed to C5, C3 and C4) |
 | [C2](C2-styles-assets.md) | Styles and static assets | 3 | C1 | `config/assets.js`, `config/css.js`, `scripts/build-css.mjs`, `scripts/lib/css-normalise.mjs`, `tests/css-parity.test.mjs`, `tests/assets.test.mjs`; two named edits in `src/styles/` |
 | [C3](C3-layouts.md) | Layouts and partials | 3 | C1 | `src/_includes/**`, `config/filters.js`, `config/collections.js`, `src/blog.njk`, `src/sitemap.njk`, `src/blog/blog.11tydata.js`, 2 seed articles |
 | [C4](C4-media-hero.md) | Media and hero crops | 3 | C1 | `config/hero.js`, `scripts/lib/crop.mjs`, `src/media/**` |
 | [C5](C5-static-pages.md) | Static pages | 4 | C3, C4 | `src/index.njk`, `src/about.njk`, `src/contact.njk`, `src/not-found.njk` |
 | [C6](C6-og-images.md) | OG images | 4 | C3 | `config/og.js`, `scripts/lib/og-card.mjs` |
-| [C7](C7-routing-seo.md) | Routing and SEO | 4 | C1, C5 | `src/_data/redirects.json`, `config/swa.js`, `src/sitemap.xml.njk`, `src/robots.txt.njk` |
+| [C7](C7-routing-seo.md) | Routing and SEO | 5 | C5, C9 | `src/_data/redirects.json`, `config/swa.js`, `src/sitemap.xml.njk`, `src/robots.txt.njk` |
 | [C8](C8-infra-pipeline.md) | Infra and pipeline | 3 | C1 | `azure-pipelines.yml`, `infra/**` |
-| [C9](C9-tests.md) | Baseline and test harness | 3 | C1 | `tests/lib/**`, `tests/urls.test.mjs`, `tests/links.test.mjs`, `tests/pages-parity.test.mjs`, `tests/articles-parity.test.mjs`, `tests/visual/**`, `docs/baseline/visual/**` |
+| [C9](C9-tests.md) | Baseline and test harness | 3 | C1 | `tests/lib/**`, `tests/urls.test.mjs`, `tests/links.test.mjs`, `tests/articles-parity.test.mjs`, `tests/expected-urls.json`, `tests/known-broken.json`, `tests/visual/**`, `docs/baseline/visual/**` |
 | [C10](C10-content-conversion.md) | Content conversion | 5 | C3, C4, C9 + owner action | `scripts/convert-live.mjs`, `src/blog/*.md`, `docs/migration-report.md`, additions to `docs/baseline/live/` |
 | [C11](C11-cutover.md) | Cut-over runbook | 6 | all | `docs/runbook-cutover.md` |
 
@@ -182,4 +182,17 @@ Two agents are defined in `.claude/agents/`:
 - **`spec-implementer`** implements one spec end to end, runs its Verify section and commits.
 - **`spec-verifier`** independently checks one implemented spec against its acceptance criteria, with no implementation context, and returns pass/fail per criterion with evidence. It doesn't fix anything.
 
-Phase 4 runs each wave in parallel: one implementer per chunk (each in its own worktree), then one verifier per chunk, then merge.
+Phase 4 runs each wave in parallel: one implementer per chunk (each in its own worktree, branched from the migration branch after the previous wave merged), then one verifier per chunk, then merge.
+
+### Waves and integration checks
+
+| Wave | Chunks | After merging, on the migration branch |
+| --- | --- | --- |
+| 1 | C0 | `git status` clean; `src/` holds relocated assets |
+| 2 | C1 | `npm ci && npm run build && npm test` green |
+| 3 | C2, C3, C4, C8, C9 | `npm run build` green. `npm test` runs; expected failures only: missing Home/About/Contact/Not Found pages (C5), missing `/sitemap.xml` and `/robots.txt` (C7), `[content]` tests (C10). Routing checks skip (C7) |
+| 4 | C5, C6 | `npm run build && npm run test:core` green apart from routing skips and the missing `/sitemap.xml`, `/robots.txt` (C7) |
+| 5 | C7, C10 | `npm run build && npm test` fully green; `npm run test:visual` within tolerance |
+| 6 | C11 | Runbook dry run attached |
+
+A chunk's verifier runs the chunk's own Verify section in the chunk's worktree. Suites owned by other chunks that aren't merged yet aren't the chunk's concern; the integration check after the merge catches cross-chunk problems.

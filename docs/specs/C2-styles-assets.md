@@ -159,7 +159,7 @@ and that every file under `src/assets/img` has a byte-identical copy under `_sit
 ## Verify
 
 ```bash
-npm run build && npm run test:core
+npm run build && node --test tests/css-parity.test.mjs tests/assets.test.mjs
 node scripts/build-css.mjs
 wc -c _site/a/dist/css/ste-pam.min.css
 grep -c 'section--footer) .section--dark' _site/a/dist/css/ste-pam.min.css   # 0

@@ -12,7 +12,7 @@ Create a working Eleventy 3 project: pinned dependencies (all of them, for every
 
 ## Owns
 
-`package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `src/index.njk` (placeholder, replaced by C5), `src/_includes/layouts/base.njk` (stub, replaced by C3), `tests/smoke.test.mjs`.
+`package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `src/index.njk` (placeholder, replaced by C5), `src/_includes/layouts/base.njk` (stub, replaced by C3), `config/hero.js` (stub, replaced by C4), `tests/smoke.test.mjs`.
 
 ## Steps
 
@@ -181,11 +181,22 @@ layout: layouts/base.njk
 <p>Scaffold</p>
 ```
 
-### 7. Smoke test
+### 7. `config/hero.js` stub
+
+C3's layouts call the `heroStyle` shortcode, and Nunjucks fails to compile a template that uses an unregistered tag. C3 and C4 run in parallel, so the shortcode is registered here as a no-op and C4 replaces this file with the real implementation:
+
+```js
+// Stub: replaced by C4 (hero crops). Returns no <style> block.
+export default function (eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncShortcode("heroStyle", async () => "");
+}
+```
+
+### 8. Smoke test
 
 `tests/smoke.test.mjs`, using `node:test` and `node:assert/strict`: asserts `_site/index.html` exists and contains `<html lang="en-gb">`. (C9 adds the real suites alongside it.)
 
-### 8. Install, build, commit
+### 9. Install, build, commit
 
 ```bash
 PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm install
