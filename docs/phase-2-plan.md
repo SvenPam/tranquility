@@ -30,8 +30,8 @@ Inputs: [Phase 1 discovery](phase-1-discovery.md), your answers to its decisions
 
 ### Notes on your answers
 
-- **Pagination.** You said "can be fixed" and yes to D5. I've read these together: a single `/blog` page *is* the fix. If you'd rather keep 10 per page with working links, say so and chunk C3 will generate `/blog/page/2` etc. instead.
-- **`main` vs `master`.** The repo's default branch is `master`. Publishing "on push to main" needs the default branch renamed to `main` in GitHub settings before cut-over. That's a one-click change for you (C11).
+- **Pagination.** Confirmed: pagination goes. A single `/blog` page lists every article, and old `?page=N` links land on it.
+- **`main` vs `master`.** Confirmed: rename the default branch `master` to `main` at cut-over (C11).
 - **The Entra problem.** The new pipeline deploys with the Static Web App's **deployment token**, not an Azure service connection, so it doesn't depend on Entra at all. The only identity it needs is ADO's GitHub connection to read the repo.
 - **Future JSON Resume CV.** This fits Eleventy well. Either drop the HTML that a JSON Resume theme produces into `src/cv/`, or load `resume.json` as Eleventy global data and render it with your own template. Both are a small follow-up and need no design decisions now. `/cv` is reserved for it.
 
@@ -296,7 +296,7 @@ PRs build and test only; `main` builds, tests and deploys. Exact syntax is settl
 1. Rename GitHub default branch `master` to `main`, merge the migration branch.
 2. Pipeline deploys to the SWA's `*.azurestaticapps.net` URL. Run the URL parity and visual tests against it.
 3. In SWA, add custom domain `ste-pam.com` (TXT validation). In Cloudflare, point the apex at the SWA hostname (CNAME, flattened). Set the proxy to DNS-only during validation, then decide whether to keep Cloudflare proxying on.
-4. Add `www.ste-pam.com` as a redirect to the apex if it's used today.
+4. `www.ste-pam.com` is not in use, so no `www` binding is needed.
 5. Re-run the parity tests against `https://ste-pam.com`.
 6. Submit `/sitemap.xml` in Google Search Console.
 7. After a cooling-off period, decommission: App Service, SQL database, storage account `stepam`, App Insights, the old ADO release pipeline, and the hcti.io and Twitter API credentials.
@@ -383,7 +383,4 @@ C9 captures the live HTML snapshots early, so C3 and C5 can port markup from fil
 | Cloudflare proxy interferes with SWA domain validation | Use DNS-only during validation (C11) |
 | Visual diff noise from third-party embeds and fonts | Mask embed regions; tolerance set per page in C9 |
 
-Open items for you:
-1. Confirm the reading of "pagination can be fixed" (single page) in section 1.
-2. Confirm you're happy to rename `master` to `main` at cut-over.
-3. Is `www.ste-pam.com` in use? (Affects C11 step 4.)
+Open items: none. Pagination removal, the `master` to `main` rename and no `www` host are confirmed.
