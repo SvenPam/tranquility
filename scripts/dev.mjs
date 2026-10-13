@@ -42,6 +42,7 @@ function build() {
   const child = spawn("npx", ["@11ty/eleventy"], { stdio: "inherit", shell: process.platform === "win32" });
   child.on("exit", (code) => {
     building = false;
+    startWatchers();
     const ms = Date.now() - started;
     if (code === 0) console.log(`[dev] built in ${ms} ms`);
     else console.error(`[dev] build failed (exit ${code})`);
@@ -59,10 +60,17 @@ function schedule(dir, file) {
   }, 200);
 }
 
-for (const dir of WATCH_DIRS) {
-  if (!existsSync(dir)) continue;
-  watch(dir, { recursive: true }, (_event, file) => schedule(dir, file));
+// On Linux, a file replaced by rename (sed -i, many editors' atomic save)
+// drops out of a recursive fs.watch, so later writes to it are missed, and Node
+// reports the replacing save as a plain "change". Re-create the watchers after
+// every build so replaced files are picked up again.
+let watchers = [];
+function startWatchers() {
+  for (const w of watchers) w.close();
+  watchers = WATCH_DIRS.filter((dir) => existsSync(dir)).map((dir) =>
+    watch(dir, { recursive: true }, (_event, file) => schedule(dir, file)));
 }
+startWatchers();
 
 // ---- server ----
 function resolveFile(urlPath) {
@@ -77,7 +85,7 @@ function resolveFile(urlPath) {
     : [p, path.join(p, "index.html")];
   for (const c of candidates) {
     const full = path.join(ROOT, c);
-    if (!full.startsWith(ROOT)) return null;
+    if (full !== ROOT && !full.startsWith(ROOT + path.sep)) return null;
     if (existsSync(full) && statSync(full).isFile()) return full;
   }
   return null;
