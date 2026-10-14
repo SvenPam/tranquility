@@ -232,5 +232,5 @@ Code: inline code added for `Web.config` in running text. The quotation from Say
 - Rendered text changes: 83 (2 title, 2 description, 79 body).
 - By kind: punctuation 29, spelling 27, typo 21, grammar 5, code 1.
 - Code blocks: 3 converted to fenced blocks (2 `less` from raw `<pre>`, 1 `csharp` from an indented block). No raw `<pre>` and no tab characters remain in the batch.
-- Inline code added (Markdown only, no rendered text change): 7 spans in 4 articles.
+- Inline code added (Markdown only, no rendered text change): 6 spans in 4 articles.
 - Links and images: none changed. Neither `known-broken.json` entry named in the spec belongs to this batch.
