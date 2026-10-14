@@ -375,7 +375,8 @@ C0 ──> C1 ──┬──> C2 ───────────────�
 | 3 | C2, C3, C4, C8, C9 |
 | 4 | C5, C6 |
 | 5 | C7, C10 (C10 after your Umbraco template step) |
-| 6 | C11 |
+| 6 | C12 (proofread articles, standardise code samples; added at the owner's request) |
+| 7 | C11 |
 
 C9 captures the live HTML snapshots early, so C3 and C5 can port markup from files in the repo rather than the live site.
 

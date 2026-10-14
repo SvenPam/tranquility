@@ -23,7 +23,8 @@ Each spec is written so an agent with **no prior context** can implement it. Rea
 | [C8](C8-infra-pipeline.md) | Infra and pipeline | 3 | C1 | `build/azure-pipelines.yml`, `infra/**` |
 | [C9](C9-tests.md) | Baseline and test harness | 3 | C1 | `tests/lib/**`, `tests/urls.test.mjs`, `tests/links.test.mjs`, `tests/articles-parity.test.mjs`, `tests/expected-urls.json`, `tests/known-broken.json`, `tests/visual/**`, `docs/baseline/visual/**` |
 | [C10](C10-content-conversion.md) | Content conversion | 5 | C3, C4, C9 + owner action | `scripts/convert-live.mjs`, `src/blog/*.md`, `docs/migration-report.md`, additions to `docs/baseline/live/` |
-| [C11](C11-cutover.md) | Cut-over runbook | 6 | all | `docs/runbook-cutover.md` |
+| [C12](C12-proofread.md) | Proofread articles, standardise code (3 batches) | 6 | C10 | `src/blog/*.md` and `docs/proofread/*` for its batch's slugs |
+| [C11](C11-cutover.md) | Cut-over runbook | 7 | all | `docs/runbook-cutover.md` |
 
 **Tests:** a chunk owns the test files its spec names (e.g. C2 owns `tests/css-parity.test.mjs`). C9 owns the shared harness and the site-wide suites.
 
@@ -197,6 +198,7 @@ Phase 4 runs each wave in parallel: one implementer per chunk (each in its own w
 | 3 | C2, C3, C4, C8, C9 | `npm run build` green. `npm test` runs; expected failures only: missing Home/About/Contact/Not Found pages (C5), missing `/sitemap.xml` and `/robots.txt` (C7), `[content]` tests (C10). Routing checks skip (C7) |
 | 4 | C5, C6 | `npm run build && npm run test:core` green apart from routing skips and the missing `/sitemap.xml`, `/robots.txt` (C7) |
 | 5 | C7, C10 | `npm run build && npm test` fully green; `npm run test:visual` within tolerance |
-| 6 | C11 | Runbook dry run attached |
+| 6 | C12a, C12b, C12c | `npm run build && npm test` fully green; owner reviews `docs/proofread/report-*.md` |
+| 7 | C11 | Runbook dry run attached |
 
 A chunk's verifier runs the chunk's own Verify section in the chunk's worktree. Suites owned by other chunks that aren't merged yet aren't the chunk's concern; the integration check after the merge catches cross-chunk problems.
