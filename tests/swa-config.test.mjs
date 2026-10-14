@@ -89,3 +89,8 @@ test("a newly built article gets its legacy redirect without other changes", asy
     await rm(out, { recursive: true, force: true });
   }
 });
+
+test("redirect routes are written decoded, because Azure matches the decoded path", () => {
+  const encoded = (config.routes ?? []).filter((r) => /%[0-9a-f]{2}/i.test(r.route)).map((r) => r.route);
+  assert.deepEqual(encoded, []);
+});
