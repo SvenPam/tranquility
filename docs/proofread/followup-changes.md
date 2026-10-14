@@ -22,7 +22,7 @@ Every rendered-text change is logged in the article's `docs/proofread/{slug}.jso
 - **lets-get-coding:** "a full guide on how I ended up setting it all up here" (the Google Maps API demo on an emulator) now links to the Google Maps API guide.
 - **google-maps-api-authorization-error-getting-round-it:** "Google APIs" is also the real name of the Android SDK package, so the plain plural is correct there too.
 - **Plural apostrophes** ("API's", "SVG's", "CTA's", "IDE's") became plain plurals. A search of all 58 articles found no others.
-- **"Github"** became "GitHub" in all four articles that used it in prose or link text (authentication-through-azure, final-year-project-complete, simple-waypoint-scroll, site-40). URLs were not touched.
+- **"Github"** became "GitHub" in all four articles that used it in prose or link text (authentication-through-azure, final-year-project-complete, simple-waypoint-scroll, site-40). URLs were not touched, apart from the broken simple-waypoint-scroll GitHub link listed under links.
 
 ## Changes by article
 
@@ -192,7 +192,7 @@ Every rendered-text change is logged in the article's `docs/proofread/{slug}.jso
 
 | Before | After | Kind |
 | --- | --- | --- |
-| community, and wanted to give | community, and I wanted to give | grammar |
+| community, and wanted to give | community, I wanted to give | grammar |
 | come up with a work around though | come up with a workaround though | spelling |
 | I put it on Github. | I put it on GitHub. | spelling |
 | link `http://github/svenpam/Simple-Waypoint-Scroll` | `https://github.com/SvenPam/Simple-Waypoint-Scroll` | link |

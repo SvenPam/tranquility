@@ -38,7 +38,7 @@ You'll notice the use of 'offset' which is picked up from a custom attribute in 
 
 ## Plugin
 
-Having learnt the majority of what I know from the coding community, and I wanted to give something back. Deciding this bit of code was unique enough to suffice, I put it on GitHub. I'm amazed by this process, it totally changes your mindset. Because you're making it public - and what's more, work to be used by peers - I found myself critically reviewing code. Several changes were made just from issues highlighted when producing some tutorials, and I love it.
+Having learnt the majority of what I know from the coding community, I wanted to give something back. Deciding this bit of code was unique enough to suffice, I put it on GitHub. I'm amazed by this process, it totally changes your mindset. Because you're making it public - and what's more, work to be used by peers - I found myself critically reviewing code. Several changes were made just from issues highlighted when producing some tutorials, and I love it.
 
 You can find it [here](https://github.com/SvenPam/Simple-Waypoint-Scroll).
 
