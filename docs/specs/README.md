@@ -16,7 +16,7 @@ Each spec is written so an agent with **no prior context** can implement it. Rea
 | [C1](C1-eleventy-scaffold.md) | Eleventy scaffold | 2 | C0 | `package.json`, `package-lock.json`, `.nvmrc`, `eleventy.config.js`, `config/README.md`, `src/_data/site.json`, `scripts/validate-content.mjs`, `scripts/lib/schema.mjs`, `scripts/dev.mjs`, `tests/smoke.test.mjs`; stubs of `src/index.njk`, `layouts/base.njk` and `config/hero.js` (handed to C5, C3 and C4) |
 | [C2](C2-styles-assets.md) | Styles and static assets | 3 | C1 | `config/assets.js`, `config/css.js`, `scripts/build-css.mjs`, `scripts/lib/css-normalise.mjs`, `tests/css-parity.test.mjs`, `tests/assets.test.mjs`; two named edits in `src/styles/` |
 | [C3](C3-layouts.md) | Layouts and partials | 3 | C1 | `src/_includes/**`, `config/filters.js`, `config/collections.js`, `src/blog.njk`, `src/sitemap.njk`, `src/blog/blog.11tydata.js`, 2 seed articles |
-| [C4](C4-media-hero.md) | Media and hero crops | 3 | C1 | `config/hero.js`, `scripts/lib/crop.mjs`, `src/media/**` |
+| [C4](C4-media-hero.md) | Media and hero image | 3 | C1 | `config/hero.js`, `scripts/fetch-media.mjs`, `tests/hero.test.mjs`, `src/media/**` |
 | [C5](C5-static-pages.md) | Static pages | 4 | C3, C4 | `src/index.njk`, `src/about.njk`, `src/contact.njk`, `src/not-found.njk` |
 | [C6](C6-og-images.md) | OG images | 4 | C3 | `config/og.js`, `scripts/lib/og-card.mjs` |
 | [C7](C7-routing-seo.md) | Routing and SEO | 5 | C5, C9 | `src/_data/redirects.json`, `config/swa.js`, `src/sitemap.xml.njk`, `src/robots.txt.njk` |
@@ -157,7 +157,7 @@ The CSS alternates section backgrounds with `.section:nth-child(odd|even)` insid
 | `ogImagePath` | filter | C3 | `'/'` gives `/og/index.png`; `'/blog/x/'` gives `/og/blog/x.png` |
 | `articles` | collection | C3 | `src/blog/*.md`, newest first |
 | `articlesAsc` | collection | C3 | Same, oldest first (used for Older/Newer and the HTML sitemap) |
-| `heroStyle` | async shortcode | C4 | `{% heroStyle heroImage, heroFocus %}` returns the `<style>` block, or `''` |
+| `heroStyle` | async shortcode | C4 | `{% heroStyle heroImage, heroFocus %}` returns `<style>.hero { background-image: url('<heroImage>'); }</style>`, or `''`. Uses the original image, as live does (no crops) |
 | OG PNGs | `eleventy.after` | C6 | Writes `_site` + `ogImagePath(url)` for every HTML page |
 | `staticwebapp.config.json` | `eleventy.after` | C7 | Written to `_site/` |
 

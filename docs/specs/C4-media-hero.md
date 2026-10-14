@@ -2,6 +2,8 @@
 
 Wave 3 · Depends on: C1 · Size: M
 
+> **Revised during implementation (2026-10-14):** the live site's ImageProcessor no longer crops. Every hero request, whatever the query string, returns the original image, so visitors see the uncropped photo scaled by the CSS. To keep the design identical, `heroStyle` now emits a single `.hero { background-image: url('<original /media path>'); }` rule and no crops are generated. The crop maths below is kept for the record only. `heroFocus` stays valid in front matter but is ignored.
+
 ## Goal
 
 1. Bring the 13 Umbraco media files into the repo at their current URLs (`/media/{id}/{file}`).
