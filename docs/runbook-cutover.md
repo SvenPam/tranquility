@@ -1,6 +1,6 @@
 # Runbook: cut over ste-pam.com to the Static Web App
 
-How to move ste-pam.com from Umbraco on App Service to the Azure Static Web App, with a check at every step and a way back. Most steps are the owner's, because they need GitHub, Azure, Cloudflare or Azure DevOps access. The agent prepares and verifies what it can.
+How to move ste-pam.com from Umbraco on App Service to the Azure Static Web App, with a check at every step and a way back. Most steps are the owner's, because they need GitHub, Azure, Cloudflare or Azure DevOps (for the old pipelines) access. The agent prepares and verifies what it can.
 
 ## Facts
 
@@ -8,9 +8,9 @@ How to move ste-pam.com from Umbraco on App Service to the Azure Static Web App,
 | --- | --- |
 | Domain | `ste-pam.com` (apex only; `www` isn't used) |
 | DNS | Cloudflare, currently proxied (orange cloud) to the App Service |
-| New host | Static Web App `swa-ste-pam` in resource group `rg-ste-pam`, Free tier, `westeurope` (`infra/main.bicep`) |
+| New host | Static Web App `swa-ste-pam`, Free tier, in resource group `rg-ste-pam`. The group is in `ukwest`; the app's control plane is in `westeurope` because UK West isn't a supported Static Web Apps region (`infra/main.bicep`). Content is served from the edge network either way. |
 | Default branch | `master`, to be renamed `main` |
-| Pipeline | `build/azure-pipelines.yml` in Azure DevOps, deploys `main`; secret variable `SWA_DEPLOYMENT_TOKEN`; weekly rebuild Mondays 05:00 UTC |
+| Pipeline | `.github/workflows/deploy.yml` in GitHub Actions, deploys `main`; repository secret `SWA_DEPLOYMENT_TOKEN`; weekly rebuild Mondays 05:00 UTC |
 | Old stack to retire | App Service, Azure SQL database, storage account `stepam`, Application Insights, old ADO release pipeline, hcti.io and Twitter API credentials |
 
 The checkpoint script is `scripts/cutover-check.sh <base-url>`. It runs the URL parity tests over HTTP (`TEST_MODE=http`), prints status and content type for key URLs, shows the `/about/` redirect and checks that an unknown URL returns 404. It needs only `bash`, `curl` and `node`. It runs every part and exits non-zero if the URL tests failed.
@@ -27,9 +27,9 @@ The checkpoint script is `scripts/cutover-check.sh <base-url>`. It runs the URL 
    Check: the merge commit is on `master`.
 5. **Owner.** In GitHub settings, rename the default branch `master` to `main`.
    Check: `git ls-remote --symref origin HEAD` shows `ref: refs/heads/main`. Then update each local clone with `git branch -m master main`, `git fetch origin`, `git branch -u origin/main main` and `git remote set-head origin -a`.
-6. **Owner.** Provision Azure with `infra/README.md` steps 1 to 3 (resource group `rg-ste-pam`, Static Web App `swa-ste-pam`, deployment token). Store the token as the secret pipeline variable `SWA_DEPLOYMENT_TOKEN` in Azure DevOps. Create the pipeline from `build/azure-pipelines.yml`.
+6. **Owner.** Provision Azure with `infra/README.md` steps 1 to 3 (resource group `rg-ste-pam` in `ukwest`, Static Web App `swa-ste-pam`, deployment token). Store the token as the repository secret `SWA_DEPLOYMENT_TOKEN` (GitHub > Settings > Secrets and variables > Actions).
    Check: `az staticwebapp show --name swa-ste-pam --resource-group rg-ste-pam --query defaultHostname -o tsv` prints a hostname.
-7. **Owner.** Run the pipeline on `main`.
+7. **Owner.** Run the workflow on `main`: GitHub > Actions > Deploy > Run workflow.
    Check: the run deploys, and `scripts/cutover-check.sh https://<default-hostname>.azurestaticapps.net` passes, including the `/cv` redirect and every other redirect.
 8. **Agent or owner.** Routing checks the local emulator can't do. SWA CLI 2.0.10 ignores `trailingSlash` and breaks its 404 override after the first request, so confirm these against the `azurestaticapps.net` URL and record the results:
    - `curl -sI <url>/about` returns 200 with no redirect, and `curl -sI <url>/about/` returns 301 to `/about`. Same for `/blog/sass-loops`.
@@ -67,7 +67,7 @@ Certificate timing: with TXT validation Azure may issue the certificate before t
 2. **Owner.** Check social previews (LinkedIn Post Inspector, or the X card validator if available) for the home page and one article.
    Check: both show the generated OG card.
 3. **Owner.** Confirm the weekly scheduled run is configured.
-   Check: Azure DevOps shows the "Weekly rebuild" schedule for `main`, Mondays 05:00 UTC.
+   Check: `.github/workflows/deploy.yml` has the `0 5 * * 1` schedule, and the Actions tab shows a scheduled run after the first Monday.
 
 ## D. Rollback
 
