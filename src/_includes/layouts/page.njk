@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+---
+<section class="hero hero--{{ theme or '' }}">
+    <div class="container">
+            <h1 class="hero__title">{{ heroTitle or altTitle or title }}</h1>
+{%- if subtitle and not heroTitle %}
+                <h3 class="hero__subtitle">{{ subtitle }}</h3>
+{%- endif %}
+    </div>
+</section>
+<div class="sections">
+{%- if leadingSpacer %}
+<div></div>
+{%- endif %}
+{{ content | safe }}
+</div>
