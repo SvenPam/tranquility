@@ -1,6 +1,16 @@
 // Article content parity: each built article matches its live snapshot in
 // header, body text, images, links, embeds and hero theme. All tests need the
 // full article set, so they are tagged [content].
+//
+// Approved proofreading edits live in docs/proofread/{slug}.json. They are
+// applied to the live snapshot before comparing, so the only differences
+// allowed between live and built are the ones recorded there:
+//   { "title": [{ "from": "..", "to": ".." }], "description": [..],
+//     "body": [{ "from": "..", "to": "..", "kind": "spelling" }],
+//     "links": [{ "from": "/old/path", "to": "/new/path" }], "images": [..] }
+// "from" and "to" for title, description and body are whitespace-normalised
+// text; every "from" must appear in the live value or the edit is stale.
+import { existsSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { resolveFile } from "./lib/site.mjs";
@@ -52,6 +62,32 @@ function body($) {
   };
 }
 
+function approvedEdits(url) {
+  const file = new URL(`../docs/proofread/${url.split("/").pop()}.json`, import.meta.url);
+  return existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : {};
+}
+
+/** Applies recorded edits to a live value, reporting any that no longer match. */
+function applyText(value, edits = [], field, problems) {
+  for (const { from, to } of edits) {
+    const f = normalise(from);
+    if (!value.includes(f)) {
+      problems.push(`stale ${field} edit, not found in live: ${JSON.stringify(f)}`);
+      continue;
+    }
+    value = value.split(f).join(normalise(to));
+  }
+  return value;
+}
+
+function applyList(list, edits = [], field, problems) {
+  for (const { from, to } of edits) {
+    if (!list.includes(from)) problems.push(`stale ${field} edit, not found in live: ${from}`);
+    list = list.map((x) => (x === from ? to : x));
+  }
+  return list;
+}
+
 /** Short description of where two strings first differ. */
 function textDiff(a, b) {
   let i = 0;
@@ -81,8 +117,11 @@ for (const entry of articles()) {
     const live = load(snapshotPath(entry));
     const built = load(builtFile);
     const problems = [];
+    const edits = approvedEdits(entry.url);
 
     const lh = header(live);
+    lh.title = applyText(lh.title, edits.title, "title", problems);
+    lh.description = applyText(lh.description, edits.description, "description", problems);
     const bh = header(built);
     for (const key of ["title", "topic", "description", "date"]) {
       if (lh[key] !== bh[key]) problems.push(`${key}: live ${JSON.stringify(lh[key])} | built ${JSON.stringify(bh[key])}`);
@@ -90,6 +129,9 @@ for (const entry of articles()) {
     if (lh.tags.join("|") !== bh.tags.join("|")) problems.push(listDiff("tags", lh.tags, bh.tags));
 
     const lb = body(live);
+    lb.text = applyText(lb.text, edits.body, "body", problems);
+    lb.links = applyList(lb.links, edits.links, "links", problems);
+    lb.images = applyList(lb.images, edits.images, "images", problems);
     const bb = body(built);
     if (lb.text !== bb.text) problems.push(textDiff(lb.text, bb.text));
     if (lb.images.join("\n") !== bb.images.join("\n")) problems.push(listDiff("images", lb.images, bb.images));
