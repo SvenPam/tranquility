@@ -1,0 +1,3 @@
+*, *::before, *::after { animation: none !important; transition: none !important; }
+iframe, img[src^="http"], img[src^="//"], #comments, #disqus_thread { visibility: hidden !important; }
+#siteNav li:has(a[href="/work"]) { display: none !important; }
