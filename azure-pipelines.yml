@@ -1,0 +1,67 @@
+# Build, test and deploy ste-pam.com to Azure Static Web Apps.
+# PRs: build + test. main: build + test + deploy. Weekly: rebuild main so the
+# copyright year and "Old Article" banners stay current.
+
+trigger:
+  branches:
+    include: [main]
+
+pr:
+  branches:
+    include: [main]
+
+schedules:
+  - cron: "0 5 * * 1"
+    displayName: Weekly rebuild
+    branches:
+      include: [main]
+    always: true
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+
+steps:
+  - task: UseNode@1
+    displayName: Use Node 22
+    inputs:
+      version: 22.x
+
+  - task: Cache@2
+    displayName: Cache npm
+    inputs:
+      key: 'npm | "$(Agent.OS)" | package-lock.json'
+      path: $(npm_config_cache)
+
+  - task: Cache@2
+    displayName: Cache image crops and OG cards
+    inputs:
+      key: 'build-cache | "$(Agent.OS)" | package-lock.json'
+      restoreKeys: 'build-cache | "$(Agent.OS)"'
+      path: .cache
+
+  - script: npm ci
+    displayName: Install
+
+  - script: npm audit
+    displayName: Dependency audit (must be 0 vulnerabilities)
+
+  - script: npm run build
+    displayName: Build
+
+  - script: npm test
+    displayName: Test
+
+  - task: AzureStaticWebApp@0
+    displayName: Deploy to Azure Static Web Apps
+    condition: and(succeeded(), eq(variables.isMain, true))
+    inputs:
+      app_location: _site
+      output_location: ""
+      skip_app_build: true
+      skip_api_build: true
+      azure_static_web_apps_api_token: $(SWA_DEPLOYMENT_TOKEN)
