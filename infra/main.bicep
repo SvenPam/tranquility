@@ -5,8 +5,8 @@ param name string = 'swa-ste-pam'
 @allowed(['westeurope', 'centralus', 'eastus2', 'westus2', 'eastasia'])
 param location string = 'westeurope'
 
-@description('Apex custom domain. Leave empty on first deploy; add after DNS is ready (see docs/runbook-cutover.md)')
-param customDomain string = ''
+@description('Apex custom domain. Set to an empty string on a fresh deploy and add it after DNS is ready (see docs/runbook-cutover.md)')
+param customDomain string = 'ste-pam.com'
 
 resource swa 'Microsoft.Web/staticSites@2023-12-01' = {
   name: name

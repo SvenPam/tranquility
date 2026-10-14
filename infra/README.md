@@ -42,4 +42,4 @@ Then update the `SWA_DEPLOYMENT_TOKEN` secret with the new value.
 
 ## 6. Custom domain
 
-See `docs/runbook-cutover.md`. Once DNS is ready, set `customDomain` in `main.bicepparam` and redeploy.
+See `docs/runbook-cutover.md`. `customDomain` is `ste-pam.com`. For a fresh environment, deploy with it empty first and set it once DNS is ready.

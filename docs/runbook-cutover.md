@@ -6,10 +6,10 @@ How to move ste-pam.com from Umbraco on App Service to the Azure Static Web App,
 
 | Item | Value |
 | --- | --- |
-| Domain | `ste-pam.com` (apex only; `www` isn't used) |
-| DNS | Cloudflare, currently proxied (orange cloud) to the App Service |
+| Domain | `ste-pam.com` (apex). `www.ste-pam.com` redirects to the apex with a Cloudflare redirect rule. |
+| DNS | Cloudflare. Before cut-over: apex `A 51.141.12.112` proxied, `www` `A 51.141.12.112` proxied, `*` `A 51.141.12.112` DNS only, SSL/TLS mode Full, no rules. After: apex `CNAME` to the Static Web App default hostname. |
 | New host | Static Web App `swa-ste-pam`, Free tier, in resource group `rg-ste-pam`. The group is in `ukwest`; the app's control plane is in `westeurope` because UK West isn't a supported Static Web Apps region (`infra/main.bicep`). Content is served from the edge network either way. |
-| Default branch | `master`, to be renamed `main` |
+| Default branch | `main` (renamed from `master` during cut-over) |
 | Pipeline | `.github/workflows/deploy.yml` in GitHub Actions, deploys `main`; repository secret `SWA_DEPLOYMENT_TOKEN`; weekly rebuild Mondays 05:00 UTC |
 | Old stack to retire | App Service, Azure SQL database, storage account `stepam`, Application Insights, old ADO release pipeline, hcti.io and Twitter API credentials |
 
@@ -57,7 +57,7 @@ Certificate timing: with TXT validation Azure may issue the certificate before t
    Check: all tests and spot checks pass.
 6. **Owner (optional).** Turn the Cloudflare proxy back on. If you do, set SSL/TLS mode to **Full (strict)** and re-run the check. If anything breaks, return to DNS only.
    Check: `scripts/cutover-check.sh https://ste-pam.com` passes with the proxy on.
-7. **Owner (optional).** Set `customDomain: 'ste-pam.com'` in `infra/main.bicepparam` so the definition matches reality, and redeploy as described in `infra/README.md`.
+7. **Owner (optional).** `customDomain` is `ste-pam.com` in `infra/main.bicepparam` and `infra/main.bicep`, so the definition matches reality. Redeploy as described in `infra/README.md`. On a fresh deploy of a new environment set it to an empty string first.
    Check: the deployment succeeds and the domain stays "Ready".
 
 ## C. After cut-over
@@ -73,7 +73,7 @@ Certificate timing: with TXT validation Azure may issue the certificate before t
 
 Possible any time before decommissioning.
 
-1. **Owner.** In Cloudflare, set the apex record back to the value recorded in step B3, with the proxy on as before, and restore the SSL/TLS mode and any page or redirect rules recorded there. Leave the Static Web App in place.
+1. **Owner.** In Cloudflare, set the apex record back to the value recorded in step B3, with the proxy on as before, and restore the SSL/TLS mode and any page or redirect rules recorded there. Also set `www` back if its rule was changed. Leave the Static Web App in place.
    Check: `dig +short ste-pam.com` returns the recorded value.
 2. **Owner.** Confirm the old site is back.
    Check: `https://ste-pam.com` responds from the old Umbraco site (for example `/sitemap?xml=true` works and `/og/index.png` returns 404).
@@ -97,6 +97,7 @@ Only after at least two weeks without a rollback.
 
 Not part of the cut-over.
 
+- Delete the two `ste-pam.azurewebsites.net` TXT records (apex and `www`) and the wildcard `*` A record once the App Service is gone (step E2). Keep the Azure validation TXT. Keep the proxied `www` record, because the redirect rule only runs for proxied traffic; once the App Service is gone, repoint it at a placeholder such as `192.0.2.1`.
 - Replace the `/cv` redirect with the JSON Resume CV page.
 - Update the home page meta description, which still mentions StaffCircle.
 - Consider analytics (Google Analytics was dropped).
