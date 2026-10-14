@@ -12,7 +12,7 @@ On the twenty eighth day of March, two-thousand-fourteen in the year of our lord
 
 ## Report
 
-Basically, this has documented all the bits of my project in much greater detail then many of my blog posts have shown. It was a little more necessity then I had hoped for when I was writing it, but as I neared the end it was quite astounding to look back on all the work I have done.
+Basically, this has documented all the bits of my project in much greater detail than many of my blog posts have shown. It was a little more necessity than I had hoped for when I was writing it, but as I neared the end it was quite astounding to look back on all the work I have done.
 
 For your viewing pleasure, I have [**added the report to my site**](/fyp/fyp.pdf) (beware though, it's a good 4mb, [**here is a link to it on GoogleDrive**](https://drive.google.com/file/d/0B29X811p3JkwaktPWXU3aUR5ckE/edit?usp=sharing)). To complement the report, you can find the full source code on [**Github**](https://github.com/svenpam/miru).
 
@@ -22,4 +22,4 @@ It's not quite the end of Miru. I thoroughly anticipate in continuing work on th
 
 <p>&nbsp;</p>
 
-I will provide updates on any changes in due course, and perform the same blogging functions as I always have. The documentation will likely be less, if at all. Finally, as I have said Miru will be demoed at ExpoTess, so if you want to see it in action
+I will provide updates on any changes in due course, and perform the same blogging functions as I always have. The documentation will likely be less, if at all. Finally, as I have said Miru will be demoed at ExpoTees, so if you want to see it in action.

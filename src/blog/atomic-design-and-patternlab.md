@@ -26,7 +26,7 @@ When designers come to designing a website, I've seen a few different approaches
         <figcaption>Atomic Design by Brad Frost</figcaption>
 </figure>
 
-What this process brings to the table loosely coupled UI elements. It makes design easier (I assume) and it makes handing designs over to developers really easy. At _The Lead Agency_ we combine this with [Zeplin](https://zeplin.io/). Our designers create a style guide in a PSD or whatever software they work with and upload it to Zeplin. This gives us developers all the colours, margins, fonts, sizes - you name it - to work with. Having these little pieces, also means we can really concentrate on the quality of each little component and isolate styles at a micro level.
+What this process brings to the table is loosely coupled UI elements. It makes design easier (I assume) and it makes handing designs over to developers really easy. At _The Lead Agency_ we combine this with [Zeplin](https://zeplin.io/). Our designers create a style guide in a PSD or whatever software they work with and upload it to Zeplin. This gives us developers all the colours, margins, fonts, sizes - you name it - to work with. Having these little pieces, also means we can really concentrate on the quality of each little component and isolate styles at a micro level.
 
 If you want to read more about Atomic Design, Brad wrote a [book you can read for free](http://atomicdesign.bradfrost.com/table-of-contents/).
 
@@ -60,7 +60,7 @@ The docs are really good, I've added the mustache.js one in there because if you
 
 #### Gotchas
 
-Data precedence is an important part of PatternLab. At the lowest level, data comes from \_data/data.json. Every pattern can then override values by using \`_patternName_.json\`, where the highest level wins.
+Data precedence is an important part of PatternLab. At the lowest level, data comes from `_data/data.json`. Every pattern can then override values by using \`_patternName_.json\`, where the highest level wins.
 
 Avoid listItems - whilst it is a neat part of PatternLab, I found it buggy and it doesn't appear to follow the same data precedence as the rest of the data. It's easier to control lists via an array in JSON.
 
@@ -68,6 +68,6 @@ Avoid listItems - whilst it is a neat part of PatternLab, I found it buggy and i
 
 ## Cons
 
-I've found PatternLab was unbelievable for enabling a laser-like focus on front-end performance. As times have changed, we've begun running into issues that we're still trying to solve. This is mostly around how PatternLab doesn't like SPA's or using JS frameworks very much. Mostly I've found this is due to their respective build tools conflicting with PatternLabs. For example, we moved over to Vue.js at the beginning of the year, and it took a lot of work to get Webpack setup to work with PatternLab Node.
+I've found PatternLab was unbelievable for enabling a laser-like focus on front-end performance. As times have changed, we've begun running into issues that we're still trying to solve. This is mostly around how PatternLab doesn't like SPAs or using JS frameworks very much. Mostly I've found this is due to their respective build tools conflicting with PatternLab's. For example, we moved over to Vue.js at the beginning of the year, and it took a lot of work to get Webpack setup to work with PatternLab Node.
 
 It gets much worse when you combine multiple themes and try and jam them into your build. I know it's a unique case, but it happens. Further to this, we tried to move from Webpack to the Vue CLI, and this still remains a task in the backlog. So if you're wanting to move to build tools beyond Gulp I would be wary with adopting Patternlab - this doesn't mean you shouldn't take a look at Atomic Design!

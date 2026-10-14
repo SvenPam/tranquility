@@ -1,0 +1,23 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "brings to the table loosely coupled",
+      "to": "brings to the table is loosely coupled",
+      "kind": "grammar"
+    },
+    {
+      "from": "doesn't like SPA's or",
+      "to": "doesn't like SPAs or",
+      "kind": "punctuation"
+    },
+    {
+      "from": "conflicting with PatternLabs.",
+      "to": "conflicting with PatternLab's.",
+      "kind": "punctuation"
+    }
+  ],
+  "links": [],
+  "images": []
+}

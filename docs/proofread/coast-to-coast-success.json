@@ -1,0 +1,48 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "Farm in Pately Bridge",
+      "to": "Farm in Pateley Bridge",
+      "kind": "spelling"
+    },
+    {
+      "from": "Umbridge-esqe decor",
+      "to": "Umbridge-esque decor",
+      "kind": "spelling"
+    },
+    {
+      "from": "Bizarly the route",
+      "to": "Bizarrely the route",
+      "kind": "spelling"
+    },
+    {
+      "from": "the route lead straight",
+      "to": "the route led straight",
+      "kind": "grammar"
+    },
+    {
+      "from": "through the center of York",
+      "to": "through the centre of York",
+      "kind": "spelling"
+    },
+    {
+      "from": "the route pittered out",
+      "to": "the route petered out",
+      "kind": "spelling"
+    },
+    {
+      "from": "by the end we where at 70%",
+      "to": "by the end we were at 70%",
+      "kind": "typo"
+    },
+    {
+      "from": "on behalf of Dan Carl and myself",
+      "to": "on behalf of Dan, Carl and myself",
+      "kind": "punctuation"
+    }
+  ],
+  "links": [],
+  "images": []
+}

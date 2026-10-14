@@ -1,0 +1,28 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "in much greater detail then many",
+      "to": "in much greater detail than many",
+      "kind": "typo"
+    },
+    {
+      "from": "more necessity then I had hoped",
+      "to": "more necessity than I had hoped",
+      "kind": "typo"
+    },
+    {
+      "from": "demoed at ExpoTess, so",
+      "to": "demoed at ExpoTees, so",
+      "kind": "spelling"
+    },
+    {
+      "from": "want to see it in action",
+      "to": "want to see it in action.",
+      "kind": "punctuation"
+    }
+  ],
+  "links": [],
+  "images": []
+}

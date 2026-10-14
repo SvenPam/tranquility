@@ -10,7 +10,7 @@ One of the new things I've been up to recently has been running. It’s not some
 
 ## Training
 
-It only took was a little motivation from two good friends, and before I knew it I was on the treadmill and nailing as many 5k's as possible! I started out at doing a 5k in 45mins so not that good a time, but with practice comes the rewards!  Once I got through the aches and pains of “reconditioning” my legs from cycling to running, I really got to focus on improving my fitness.
+It only took a little motivation from two good friends, and before I knew it I was on the treadmill and nailing as many 5ks as possible! I started out at doing a 5k in 45mins so not that good a time, but with practice comes the rewards!  Once I got through the aches and pains of “reconditioning” my legs from cycling to running, I really got to focus on improving my fitness.
 
 One of my favourite training runs was with our designer in Stoke. We picked a beautiful day for it, and really got to witness the first days of spring in all its glory. The route took us round a lake, and along a canal, which by this point would be my second 10k.
 

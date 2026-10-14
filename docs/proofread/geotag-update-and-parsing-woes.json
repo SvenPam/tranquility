@@ -1,0 +1,28 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "asset data can hooked up",
+      "to": "asset data can be hooked up",
+      "kind": "grammar"
+    },
+    {
+      "from": "This have proven",
+      "to": "This has proven",
+      "kind": "grammar"
+    },
+    {
+      "from": "a little trickier then I had intended",
+      "to": "a little trickier than I had intended",
+      "kind": "typo"
+    },
+    {
+      "from": "to serialize then desterilize device data",
+      "to": "to serialise then deserialise device data",
+      "kind": "spelling"
+    }
+  ],
+  "links": [],
+  "images": []
+}

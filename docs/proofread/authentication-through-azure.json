@@ -1,0 +1,53 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "work with an Enterprise organization who",
+      "to": "work with an Enterprise organisation who",
+      "kind": "spelling"
+    },
+    {
+      "from": "app for your own organization;",
+      "to": "app for your own organisation;",
+      "kind": "spelling"
+    },
+    {
+      "from": "read on. if you want",
+      "to": "read on. If you want",
+      "kind": "punctuation"
+    },
+    {
+      "from": "which you can find in in the expose",
+      "to": "which you can find in the expose",
+      "kind": "typo"
+    },
+    {
+      "from": "If you're using framework like",
+      "to": "If you're using a framework like",
+      "kind": "grammar"
+    },
+    {
+      "from": "the pop-up get's stuck",
+      "to": "the pop-up gets stuck",
+      "kind": "punctuation"
+    },
+    {
+      "from": "another Azure AD organization can",
+      "to": "another Azure AD organisation can",
+      "kind": "spelling"
+    },
+    {
+      "from": "loop into your organization's AD",
+      "to": "loop into your organisation's AD",
+      "kind": "spelling"
+    },
+    {
+      "from": "I'm not 100% how secure",
+      "to": "I'm not 100% sure how secure",
+      "kind": "typo"
+    }
+  ],
+  "links": [],
+  "images": []
+}

@@ -1,0 +1,23 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "the breadth of the England",
+      "to": "the breadth of England",
+      "kind": "typo"
+    },
+    {
+      "from": "from Morcambe, Lancashire",
+      "to": "from Morecambe, Lancashire",
+      "kind": "spelling"
+    },
+    {
+      "from": "stay the night.The second day",
+      "to": "stay the night. The second day",
+      "kind": "punctuation"
+    }
+  ],
+  "links": [],
+  "images": []
+}
