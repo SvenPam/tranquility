@@ -26,7 +26,7 @@ Treat the token as a secret. Never commit it.
 
 ## 4. Azure DevOps setup
 
-- Create a pipeline from `azure-pipelines.yml` in the GitHub repo. This uses the Azure DevOps GitHub connection (OAuth or the GitHub App), not Entra ID.
+- Create a pipeline from the existing YAML file `build/azure-pipelines.yml` in the GitHub repo (choose "Existing Azure Pipelines YAML file" and that path). This uses the Azure DevOps GitHub connection (OAuth or the GitHub App), not Entra ID.
 - Add a secret pipeline variable `SWA_DEPLOYMENT_TOKEN` with the token. If you prefer a variable group named `ste-pam`, add `variables: - group: ste-pam` to the YAML.
 - Rename or disable the old release pipeline so it stops trying to deploy Umbraco.
 

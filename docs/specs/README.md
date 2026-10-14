@@ -20,7 +20,7 @@ Each spec is written so an agent with **no prior context** can implement it. Rea
 | [C5](C5-static-pages.md) | Static pages | 4 | C3, C4 | `src/index.njk`, `src/about.njk`, `src/contact.njk`, `src/not-found.njk` |
 | [C6](C6-og-images.md) | OG images | 4 | C3 | `config/og.js`, `scripts/lib/og-card.mjs` |
 | [C7](C7-routing-seo.md) | Routing and SEO | 5 | C5, C9 | `src/_data/redirects.json`, `config/swa.js`, `src/sitemap.xml.njk`, `src/robots.txt.njk` |
-| [C8](C8-infra-pipeline.md) | Infra and pipeline | 3 | C1 | `azure-pipelines.yml`, `infra/**` |
+| [C8](C8-infra-pipeline.md) | Infra and pipeline | 3 | C1 | `build/azure-pipelines.yml`, `infra/**` |
 | [C9](C9-tests.md) | Baseline and test harness | 3 | C1 | `tests/lib/**`, `tests/urls.test.mjs`, `tests/links.test.mjs`, `tests/articles-parity.test.mjs`, `tests/expected-urls.json`, `tests/known-broken.json`, `tests/visual/**`, `docs/baseline/visual/**` |
 | [C10](C10-content-conversion.md) | Content conversion | 5 | C3, C4, C9 + owner action | `scripts/convert-live.mjs`, `src/blog/*.md`, `docs/migration-report.md`, additions to `docs/baseline/live/` |
 | [C11](C11-cutover.md) | Cut-over runbook | 6 | all | `docs/runbook-cutover.md` |

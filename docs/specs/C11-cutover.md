@@ -25,7 +25,7 @@ Write and dry-run the runbook that takes ste-pam.com from Umbraco on App Service
 | DNS | Cloudflare, currently proxied (orange cloud) to the App Service |
 | New host | Static Web App `swa-ste-pam` in `rg-ste-pam`, Free tier (C8) |
 | Default branch | `master`, to be renamed `main` |
-| Pipeline | `azure-pipelines.yml` in Azure DevOps, deploys `main` |
+| Pipeline | `build/azure-pipelines.yml` in Azure DevOps, deploys `main` |
 | Old stack to retire | App Service, Azure SQL database, storage account `stepam`, Application Insights, old ADO release pipeline, hcti.io and Twitter API credentials |
 
 ## Steps
@@ -58,7 +58,7 @@ A how-to in British English, no em dashes, numbered steps with **who** (owner or
 2. Agent: on the migration branch, `npm ci && npm run build && npm test` all green; `npm run test:visual` within tolerance. Paste results.
 3. Owner: open a PR from the migration branch to `master` and merge it.
 4. Owner: in GitHub settings, rename the default branch `master` to `main`. Check: `git ls-remote --symref origin HEAD` shows `refs/heads/main`.
-5. Owner: provision Azure with `infra/README.md` steps 1 to 3; store `SWA_DEPLOYMENT_TOKEN` in ADO; create the pipeline from `azure-pipelines.yml`; disable the old release pipeline.
+5. Owner: provision Azure with `infra/README.md` steps 1 to 3; store `SWA_DEPLOYMENT_TOKEN` in ADO; create the pipeline from `build/azure-pipelines.yml`; disable the old release pipeline.
 6. Owner: run the pipeline on `main`. Check: it deploys, and `scripts/cutover-check.sh https://<default-hostname>.azurestaticapps.net` passes (the `/cv` redirect and every other check).
 
 **B. Domain switch** (do it at a quiet time; downtime should be minutes at most)
@@ -104,7 +104,7 @@ A how-to in British English, no em dashes, numbered steps with **who** (owner or
 | AC2 | `scripts/cutover-check.sh` is executable, uses only `bash`, `curl` and `node`, and runs against the emulator with all checks passing. |
 | AC3 | The dry run against today's live site completes and its output is attached, with the expected differences explained. |
 | AC5 | Final code hygiene: `grep -rnE '\bC(1[01]\|[0-9])\b\|wave [0-9]' --exclude-dir=node_modules --exclude-dir=docs --exclude-dir=.claude --exclude-dir=_site .` returns nothing. Remove any leftover chunk references in comments (and the owner column in `config/README.md`) as part of this chunk; this is the one cross-ownership edit C11 is allowed. |
-| AC4 | The runbook uses the resource names from `infra/main.bicep` and the pipeline variable name from `azure-pipelines.yml`. |
+| AC4 | The runbook uses the resource names from `infra/main.bicep` and the pipeline variable name from `build/azure-pipelines.yml`. |
 
 ## Verify
 

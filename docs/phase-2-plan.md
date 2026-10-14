@@ -62,7 +62,7 @@ Content (Markdown), CSS and media carry over to any framework, so switching late
                  author writes Markdown
                           |
                           v
-  GitHub repo (main) --push--> Azure DevOps pipeline (azure-pipelines.yml)
+  GitHub repo (main) --push--> Azure DevOps pipeline (build/azure-pipelines.yml)
                                  |  npm ci
                                  |  npm run build   (Eleventy + Sass + images + OG cards)
                                  |  npm test        (URL parity, links, schema)
@@ -87,7 +87,7 @@ Content (Markdown), CSS and media carry over to any framework, so switching late
 
 ```
 /
-  azure-pipelines.yml            # ADO pipeline: PR validation, main deploy, weekly rebuild
+  build/azure-pipelines.yml      # ADO pipeline: PR validation, main deploy, weekly rebuild
   infra/
     main.bicep                   # Static Web App (Free) definition, deployed once by hand
     README.md                    # how to provision and wire the deployment token
@@ -284,7 +284,7 @@ Redirect rules live in `src/_data/redirects.json` so the config and the URL test
 - **Provisioned once by hand** (`az deployment group create`) from your machine, not by the pipeline. That keeps Entra and service connections out of the pipeline entirely.
 - The SWA **deployment token** goes into an ADO secret variable (or variable group) `SWA_DEPLOYMENT_TOKEN`.
 
-### 10.2 Azure DevOps pipeline (`azure-pipelines.yml`)
+### 10.2 Azure DevOps pipeline (`build/azure-pipelines.yml`)
 
 ```yaml
 trigger:
@@ -352,7 +352,7 @@ Each chunk is sized for one agent session with no prior context: a clear input, 
 | **C5** | Static pages | Home, About, Contact, Not Found from live copy, with D9/D11 edits (CV links, typo); remove Work from nav/footer | C3, C4 | S |
 | **C6** | OG images | Satori + resvg card, font, per-page generation, absolute `og:image`/`twitter:image`, caching | C3 | M |
 | **C7** | Routing and SEO | `redirects.json`, `staticwebapp.config.json` generated in a build hook (trailing slash, redirects, 404, headers, MIME), `/sitemap.xml`, `robots.txt` | C5, C9 | S |
-| **C8** | Infra and pipeline | `infra/main.bicep`, `infra/README.md`, `azure-pipelines.yml`, setup notes for ADO (GitHub connection, secret variable, schedule) | C1 | M |
+| **C8** | Infra and pipeline | `infra/main.bicep`, `infra/README.md`, `build/azure-pipelines.yml`, setup notes for ADO (GitHub connection, secret variable, schedule) | C1 | M |
 | **C9** | Baseline and test harness | Capture `docs/baseline/urls.json`, `live.min.css`, HTML snapshots of every page; write URL parity, link check and visual diff tests; wire `npm test` | C1 | M |
 | **C10** | Content conversion | `scripts/convert-live.mjs`, convert all articles, download inline media, D11 link fixes, migration report, full test run green | C3, C4, C9 (+ your step in 8.2) | L |
 | **C11** | Cut-over runbook | Checklist and commands for branch rename, SWA domain, Cloudflare, Search Console, decommission and rollback. Mostly your actions; the agent prepares and verifies | All | S |

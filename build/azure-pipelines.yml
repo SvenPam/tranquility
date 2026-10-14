@@ -1,4 +1,5 @@
 # Build, test and deploy ste-pam.com to Azure Static Web Apps.
+# Lives in build/; steps run from the repository root.
 # PRs: build + test. main: build + test + deploy. Weekly: rebuild main so the
 # copyright year and "Old Article" banners stay current.
 

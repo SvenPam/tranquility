@@ -13,7 +13,7 @@ Define the Azure Static Web App in Bicep (deployed once by hand) and an Azure De
 
 ## Owns
 
-`azure-pipelines.yml`, `infra/main.bicep`, `infra/main.bicepparam`, `infra/README.md`, `tests/pipeline.test.mjs`.
+`build/azure-pipelines.yml`, `infra/main.bicep`, `infra/main.bicepparam`, `infra/README.md`, `tests/pipeline.test.mjs`.
 
 ## Steps
 
@@ -78,13 +78,13 @@ A short how-to (British English, no em dashes), with these sections and commands
    az staticwebapp secrets list --name swa-ste-pam --resource-group rg-ste-pam --query properties.apiKey -o tsv
    ```
 4. **Azure DevOps setup:**
-   - Create a pipeline from `azure-pipelines.yml` in the GitHub repo (this needs ADO's GitHub connection, which is OAuth or the GitHub App, not Entra).
+   - Create a pipeline from `build/azure-pipelines.yml` in the GitHub repo (this needs ADO's GitHub connection, which is OAuth or the GitHub App, not Entra).
    - Add a secret pipeline variable `SWA_DEPLOYMENT_TOKEN` with the token (or a variable group `ste-pam` if preferred; then add `variables: - group: ste-pam` to the YAML).
    - Rename the old release pipeline or disable it so it stops trying to deploy Umbraco.
 5. **Rotating the token:** `az staticwebapp secrets reset-api-key --name swa-ste-pam --resource-group rg-ste-pam`, then update the variable.
 6. **Custom domain:** pointer to `docs/runbook-cutover.md`.
 
-### 3. `azure-pipelines.yml`
+### 3. `build/azure-pipelines.yml`
 
 ```yaml
 # Build, test and deploy ste-pam.com to Azure Static Web Apps.
@@ -166,7 +166,7 @@ Notes:
 
 No YAML library is installed, so do structural checks with string and regex matching:
 
-- `azure-pipelines.yml` exists, has `trigger` and `pr` blocks including `main`, a `schedules` block with `always: true`, `npm ci`, `npm audit`, `npm run build`, `npm test`, `AzureStaticWebApp@0`, `skip_app_build: true`, `app_location: _site`, `$(SWA_DEPLOYMENT_TOKEN)`, and a deploy `condition` referencing `refs/heads/main`.
+- `build/azure-pipelines.yml` exists, has `trigger` and `pr` blocks including `main`, a `schedules` block with `always: true`, `npm ci`, `npm audit`, `npm run build`, `npm test`, `AzureStaticWebApp@0`, `skip_app_build: true`, `app_location: _site`, `$(SWA_DEPLOYMENT_TOKEN)`, and a deploy `condition` referencing `refs/heads/main`.
 - No line contains a literal token (nothing matching `/[0-9a-f]{40,}/i`) or `AzureCLI@`/`azureSubscription` (no service connection).
 - `infra/main.bicep` contains `Microsoft.Web/staticSites@`, `name: 'Free'`, and `dns-txt-token`.
 
@@ -174,7 +174,7 @@ No YAML library is installed, so do structural checks with string and regex matc
 
 | ID | Criterion |
 | --- | --- |
-| AC1 | `azure-pipelines.yml` matches step 3 (content may be reordered or commented, behaviour identical). |
+| AC1 | `build/azure-pipelines.yml` matches step 3 (content may be reordered or commented, behaviour identical). |
 | AC2 | The pipeline uses no Azure service connection; the deploy authenticates only with `$(SWA_DEPLOYMENT_TOKEN)`. |
 | AC3 | `tests/pipeline.test.mjs` passes. |
 | AC4 | If the Bicep CLI is available (`az bicep build` or `bicep build`), `infra/main.bicep` compiles with no errors. If not available, say so in the report; the owner will run it. |
@@ -186,5 +186,5 @@ No YAML library is installed, so do structural checks with string and regex matc
 ```bash
 node --test tests/pipeline.test.mjs
 (command -v az >/dev/null && az bicep build --file infra/main.bicep --stdout >/dev/null && echo "bicep ok") || echo "bicep CLI not available"
-grep -rnE '[0-9a-f]{40,}' azure-pipelines.yml infra || echo "no secrets"
+grep -rnE '[0-9a-f]{40,}' build infra || echo "no secrets"
 ```

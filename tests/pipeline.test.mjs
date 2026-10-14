@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const read = (p) => readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
-const pipeline = read('azure-pipelines.yml');
+const pipeline = read('build/azure-pipelines.yml');
 const bicep = read('infra/main.bicep');
 
 test('pipeline triggers on main for push and pull requests', () => {
