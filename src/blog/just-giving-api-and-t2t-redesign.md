@@ -12,7 +12,7 @@ We’re cycling to raise money for Mind this year, so it was also a good time to
 
 It’s always fun to start a new project – if not a little daunting. I didn’t really know what I wanted at first, so built everything up from picking a font and a colour palette. That’s really where the whole sort of _hero_ theme came from. I saw the [Bangers](https://www.google.com/fonts/specimen/Bangers) theme, and thought yes! That is the font for our cycle!
 
-Everything really took off from there, and it’s all been built on to that. I loved last year’s hero video and wanted to carry that across to the new site, with a jazzed up texture overlay. I roped in my designer colleague to help me with some flat graphics and I have expanded my knowledge of SVG’s to build some flags and optimize the original _.eps_ files of the graphics sent to me.
+Everything really took off from there, and it’s all been built on to that. I loved last year’s hero video and wanted to carry that across to the new site, with a jazzed up texture overlay. I roped in my designer colleague to help me with some flat graphics and I have expanded my knowledge of SVG’s to build some flags and optimise the original _.eps_ files of the graphics sent to me.
 
 <div class="browser-mockup">
 <div class="iframe-container"><iframe id="t2t" src="//t2t.bike"></iframe></div>
@@ -30,9 +30,9 @@ The project wasn’t just design either, it has required a little extra developm
 
 ### JustGiving API
 
-To get the donation meter on the front page I had to make some changes as well. Last year I really struggled to get the donations from _JustGiving_ directly, and resorted to using a third party API to pull down the information through JavaScript, client side. The obvious implications of this where sometimes the API I used failed; and, as the scripts to do this ran on page ready there was always going to be a delay in getting what should have been real-time data. Unfortunately, the API I used went down at some point between now and then, so I had to start from scratch. However, it looks like _JustGiving_ have been on the ball in that time, and they’ve built a full on API and SDK for an array of platforms including .NET. You can find their work on [GitHub](https://github.com/JustGiving/JustGiving.Api.Sdk), which is really cool of them to open source.
+To get the donation meter on the front page I had to make some changes as well. Last year I really struggled to get the donations from _JustGiving_ directly, and resorted to using a third party API to pull down the information through JavaScript, client side. The obvious implications of this were sometimes the API I used failed; and, as the scripts to do this ran on page ready there was always going to be a delay in getting what should have been real-time data. Unfortunately, the API I used went down at some point between now and then, so I had to start from scratch. However, it looks like _JustGiving_ have been on the ball in that time, and they’ve built a full on API and SDK for an array of platforms including .NET. You can find their work on [GitHub](https://github.com/JustGiving/JustGiving.Api.Sdk), which is really cool of them to open source.
 
-I wanted to have the data on my server, so pages would be server as quickly as possible, and it looks like the API may still be in beta – sometimes the server times out. To get round this, I have every visitor update a JSON file for the next visitor. Sounds a bit weird right? Thought so.
+I wanted to have the data on my server, so pages would be served as quickly as possible, and it looks like the API may still be in beta – sometimes the server times out. To get round this, I have every visitor update a JSON file for the next visitor. Sounds a bit weird right? Thought so.
 
 <p>&nbsp;</p>
 

@@ -1,0 +1,19 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    { "from": "the downsides to such help is a lack of documentation", "to": "the downsides to such help are a lack of documentation", "kind": "grammar" },
+    { "from": "will conduct is spirity magic", "to": "will conduct its spirity magic", "kind": "typo" },
+    { "from": "point your app way from the local database", "to": "point your app away from the local database", "kind": "typo" },
+    { "from": "inside you app data folder", "to": "inside your app data folder", "kind": "typo" },
+    { "from": "scripted to you database", "to": "scripted to your database", "kind": "typo" },
+    { "from": "Your quite likely to want", "to": "You're quite likely to want", "kind": "grammar" },
+    { "from": "the changes you make make to your models", "to": "the changes you make to your models", "kind": "typo" },
+    { "from": "bashed into you package manager", "to": "bashed into your package manager", "kind": "typo" },
+    { "from": "Customizing Authentication", "to": "Customising Authentication", "kind": "spelling" },
+    { "from": "go into to much depth", "to": "go into too much depth", "kind": "spelling" },
+    { "from": "settings that makes customization dead easy", "to": "settings that make customisation dead easy", "kind": "grammar" }
+  ],
+  "links": [],
+  "images": []
+}

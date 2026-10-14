@@ -6,7 +6,7 @@ topic: Site
 tags: []
 ---
 
-Over the last few months I have been working on a couple of personal projects. It's always a great feeling starting a new project, I'm sure any developer would agree. Intially, I was asked to build a site for close family friend's local church. This really set a snow-ball in motion that prompted another serverside overhaul.
+Over the last few months I have been working on a couple of personal projects. It's always a great feeling starting a new project, I'm sure any developer would agree. Initially, I was asked to build a site for close family friend's local church. This really set a snow-ball in motion that prompted another serverside overhaul.
 
 ## Church Site
 
@@ -26,7 +26,7 @@ One interesting problem I overlooked was the design and UX of the site. I’m no
 
 My friends and I decided we would take on another endurance challenge for charity, this year in the form of cycling from Blackpool Tower to the Eiffel Tower. I thought I would take the opportunity to build a site to promote the event. Again, this presented another great opportunity to try something new, it was also the project that pushed the main site overhaul.
 
-<p style="text-align: center;"><img src="/Areas/t2t2015/Uploads/t2t.png" alt="" width="800"></p>
+<p style="text-align: center;"><img src="/a/dist/img/t2t.png" alt="" width="800"></p>
 
 <p>&nbsp;</p>
 

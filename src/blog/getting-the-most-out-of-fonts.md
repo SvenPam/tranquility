@@ -23,7 +23,7 @@ The above comes from this [CSS Tricks article.](https://css-tricks.com/snippets/
 
 ## Source
 
-Next steps if you're wanting custom fonts is choosing the source. If you can use a free font, [Google Fonts](https://fonts.google.com/) is a solid source. It gives you all the code you need, a will correctly load fonts with minimal impact on performance. Furthermore, if you're using a popular font, you can take comfort in the fact there is a chance a visitor may already have that cached.
+Next steps if you're wanting custom fonts is choosing the source. If you can use a free font, [Google Fonts](https://fonts.google.com/) is a solid source. It gives you all the code you need, and will correctly load fonts with minimal impact on performance. Furthermore, if you're using a popular font, you can take comfort in the fact there is a chance a visitor may already have that cached.
 
 I've not used many font providers, but I did find [Adobe Typekit](https://fonts.adobe.com/) wasn't that great. Using their scripts, I frequently noticed FOIT - especially when testing on slow connections. I will generally request the TTF formats of fonts when I get given fonts from Adobe, in favour of hosting them via our own CDN.
 
@@ -37,7 +37,7 @@ If you opt to host fonts yourself (there is nothing wrong with this), you need t
 2.  woff
 3.  ttf
 
-I won't bother with OTF or SVG as the above cover all browsers. You can then use font-face to get the fonts to load in that order.
+I won't bother with OTF or SVG as the above cover all browsers. You can then use `font-face` to get the fonts to load in that order.
 
 <p>
 <script src="https://gist.github.com/SvenPam/033c4f5ad7777b873d409555944380fc.js"></script>
@@ -47,7 +47,7 @@ I won't bother with OTF or SVG as the above cover all browsers. You can then use
 
 ## Minification
 
-I spoke about opting to TTF fonts before, and now it's time for the reason - **build tools**. I'll be showing a way to do it with Gulp and then Webpack, but it will more than likely be possible to do it with other tools as well. There are two bits to this; formatting (as above) and filtering - that is removing the characters from font we are not going to use. This is really important as you're likely creating a site that's only going to in your language. For example, English isn't going to need Cyrillic or Japanese characters. This alone can reduce some fonts to a third of the size! If you need to support multiple character sets, check out my tricks below.
+I spoke about opting to TTF fonts before, and now it's time for the reason - **build tools**. I'll be showing a way to do it with Gulp and then Webpack, but it will more than likely be possible to do it with other tools as well. There are two bits to this; formatting (as above) and filtering - that is removing the characters from font we are not going to use. This is really important as you're likely creating a site that's only going to be in your language. For example, English isn't going to need Cyrillic or Japanese characters. This alone can reduce some fonts to a third of the size! If you need to support multiple character sets, check out my tricks below.
 
 #### Gulp
 
@@ -76,7 +76,7 @@ Using the original Fontmin, you can do the same as above. You will need:
 
 ### Tricks
 
-Here some tricks to help get a little more out of your fonts.
+Here are some tricks to help get a little more out of your fonts.
 
 #### Inline Fonts
 
@@ -84,13 +84,13 @@ When you strip back your character set and use woff2, you should find a very sma
 
 #### Preload
 
-You can preload fonts in your HTML and this can occur before the CSS is rendered. You can still use @font-face as normal.
+You can preload fonts in your HTML and this can occur before the CSS is rendered. You can still use `@font-face` as normal.
 
 `<link rel="preload" href="/fonts/chinchilla.woff2" as="font">`
 
 #### Unicode Range Selector
 
-You can expand on the build tools above, and break your fonts into multiple character sets. Once you have this, you can use the CSS unicode [range descriptor](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range). This descriptor goes into your font-face options and allows you to tell the browser what font-set matches a particular Unicode range. The _browser_ will then decide if it needs that based on the characters it has in its document.
+You can expand on the build tools above, and break your fonts into multiple character sets. Once you have this, you can use the CSS unicode [range descriptor](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range). This descriptor goes into your `font-face` options and allows you to tell the browser what font-set matches a particular Unicode range. The _browser_ will then decide if it needs that based on the characters it has in its document.
 
 #### Font Display
 
@@ -98,7 +98,7 @@ If you're having issues with FOIT, FOUT or FOFT you can use [font-display](https
 
 #### Local Directive
 
-When using @font-face, you don't just have to use url(). If you want a browser to try and get a font you think the system might have before it goes off into the web to get one, you can use local(). It's rare that you would want a specific font over a custom one, but it's just one extra tool to help you speed that font load up.
+When using `@font-face`, you don't just have to use `url()`. If you want a browser to try and get a font you think the system might have before it goes off into the web to get one, you can use `local()`. It's rare that you would want a specific font over a custom one, but it's just one extra tool to help you speed that font load up.
 
 <p>&nbsp;</p>
 

@@ -1,0 +1,28 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "so in the mean time I am working on LinkedIn",
+      "to": "so in the meantime I am working on LinkedIn",
+      "kind": "spelling"
+    },
+    {
+      "from": "after they have grant the application permissions",
+      "to": "after they have granted the application permissions",
+      "kind": "grammar"
+    },
+    {
+      "from": "the C# code I used below: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 private static bool ShareLinkedInUpdate",
+      "to": "the C# code I used below: private static bool ShareLinkedInUpdate",
+      "kind": "code"
+    },
+    {
+      "from": "allows you to serialize objects into JSON",
+      "to": "allows you to serialise objects into JSON",
+      "kind": "spelling"
+    }
+  ],
+  "links": [],
+  "images": []
+}

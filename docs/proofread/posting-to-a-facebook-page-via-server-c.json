@@ -1,0 +1,48 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "how the tokens works, using",
+      "to": "how the tokens work, using",
+      "kind": "grammar"
+    },
+    {
+      "from": "The next step is add it to your MVC application.",
+      "to": "The next step is to add it to your MVC application.",
+      "kind": "typo"
+    },
+    {
+      "from": "Here is my Facebook functions below",
+      "to": "Here are my Facebook functions below",
+      "kind": "grammar"
+    },
+    {
+      "from": "the function to post to Facebook: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 private static bool PostToFacebook",
+      "to": "the function to post to Facebook: private static bool PostToFacebook",
+      "kind": "code"
+    },
+    {
+      "from": "it has exprired.",
+      "to": "it has expired.",
+      "kind": "code"
+    },
+    {
+      "from": "An extended token last for 60 days",
+      "to": "An extended token lasts for 60 days",
+      "kind": "grammar"
+    },
+    {
+      "from": "The function to do this: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 private static void",
+      "to": "The function to do this: private static void",
+      "kind": "code"
+    },
+    {
+      "from": "a SSL/TSL exception",
+      "to": "a SSL/TLS exception",
+      "kind": "code"
+    }
+  ],
+  "links": [],
+  "images": []
+}

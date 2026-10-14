@@ -17,7 +17,7 @@ CSS is easy to learn but very hard to master. One of the main reasons for this i
 -   [CSS Tricks on](https://css-tricks.com/specifics-on-css-specificity/) specificity
 -   [MDN on specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
 
-It's an important principle because **high specificity indicates poor maintainability in your styles**. It doesn't mean you're bad at writing code, there are plenty of reasons that it can happen. I'm sure, however, at some point in your career you've had to fight specificity. Did you have to write an ID you beat that other class? Did you really sin and use an `!important` to really nuke that other style overriding yours? I did once upon a time, so don't feel bad.
+It's an important principle because **high specificity indicates poor maintainability in your styles**. It doesn't mean you're bad at writing code, there are plenty of reasons that it can happen. I'm sure, however, at some point in your career you've had to fight specificity. Did you have to write an ID to beat that other class? Did you really sin and use an `!important` to really nuke that other style overriding yours? I did once upon a time, so don't feel bad.
 
 If you want to measure your code maintainability, a useful tool is a [specificity graph generator](https://jonassebastianohlsson.com/specificity-graph/). A spiky graph is bad, one which is flat or curves upwards is good. This, of course, isn't the only measure and you shouldn't obsess over it. I hope by introducing you to ITCSS, it will really help make your styles more maintainable.
 
@@ -37,7 +37,7 @@ The basic concept is that your styles should be put into layers. It doesn't matt
 
 These layers can be defined as follows:
 
-1.  Settings - Global variables, colour values, font-sizes etc. I.e Bootstrap \_variables.scss
+1.  Settings - Global variables, colour values, font-sizes etc. I.e Bootstrap `_variables.scss`
 2.  Tools - Mixins and functions
 3.  Generic - box sizing, resets etc.
 4.  Base - HTML Tags
@@ -53,7 +53,7 @@ As your project becomes more mature, you will find yourself working mostly in th
 
 Once you have the project setup, anyone can follow it. That's the beauty of ITCSS.
 
-It allows you to deal with files and imports, instead of code. Having it in place means you can deal with specific much easier. Ultimately
+It allows you to deal with files and imports, instead of code. Having it in place means you can deal with specificity much easier. Ultimately
 
 <ul id="_uHEuMrzpufDduC">
 <li id="_WEkrYwJUZYHiGn">Encourages natural specificity flow - less fighting in the specificity wars</li>

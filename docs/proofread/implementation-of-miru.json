@@ -1,0 +1,12 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    { "from": "last week’s set back with", "to": "last week’s setback with", "kind": "spelling" },
+    { "from": "this week has gone considerable better", "to": "this week has gone considerably better", "kind": "grammar" },
+    { "from": "has been done to a real focus on work", "to": "has been due to a real focus on work", "kind": "typo" },
+    { "from": "I have also began to prepare", "to": "I have also begun to prepare", "kind": "grammar" }
+  ],
+  "links": [],
+  "images": []
+}
