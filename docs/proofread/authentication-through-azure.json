@@ -46,6 +46,11 @@
       "from": "I'm not 100% how secure",
       "to": "I'm not 100% sure how secure",
       "kind": "typo"
+    },
+    {
+      "from": "for it on Github. For me",
+      "to": "for it on GitHub. For me",
+      "kind": "spelling"
     }
   ],
   "links": [],

@@ -31,6 +31,16 @@
       "from": "let's get the to crux",
       "to": "let's get to the crux",
       "kind": "typo"
+    },
+    {
+      "from": "looking through a tube a sheet of images",
+      "to": "looking through a tube at a sheet of images",
+      "kind": "grammar"
+    },
+    {
+      "from": "You find more of this out",
+      "to": "You can find more of this out",
+      "kind": "grammar"
     }
   ],
   "links": [],

@@ -6,7 +6,7 @@ topic: Project
 tags: []
 ---
 
-I have been hard at work getting a few other pieces into the Miru app. There are still a few things left to do; the main is deciding on what data is required. The framework however, is in place for data to put in.
+I have been hard at work getting a few other pieces into the Miru app. There are still a few things left to do; the main one is deciding on what data is required. The framework however, is in place for data to be put in.
 
 Firstly, I have set up a Master/Detail activity which can be accessed from the main activity by tapping the info box of a specific element.
 

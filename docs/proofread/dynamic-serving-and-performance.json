@@ -61,6 +61,16 @@
       "from": "paving the way for optimized mobile",
       "to": "paving the way for optimised mobile",
       "kind": "spelling"
+    },
+    {
+      "from": "use Modernizer to",
+      "to": "use Modernizr to",
+      "kind": "spelling"
+    },
+    {
+      "from": "As developers we should, therefore presume a client does not have solid fast connection",
+      "to": "As developers we should therefore presume a client does not have a solid fast connection",
+      "kind": "grammar"
     }
   ],
   "links": [],

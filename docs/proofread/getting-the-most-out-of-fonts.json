@@ -2,9 +2,31 @@
   "title": [],
   "description": [],
   "body": [
-    { "from": "all the code you need, a will correctly load fonts", "to": "all the code you need, and will correctly load fonts", "kind": "typo" },
-    { "from": "only going to in your language", "to": "only going to be in your language", "kind": "typo" },
-    { "from": "Here some tricks to help", "to": "Here are some tricks to help", "kind": "typo" }
+    {
+      "from": "all the code you need, a will correctly load fonts",
+      "to": "all the code you need, and will correctly load fonts",
+      "kind": "typo"
+    },
+    {
+      "from": "only going to in your language",
+      "to": "only going to be in your language",
+      "kind": "typo"
+    },
+    {
+      "from": "Here some tricks to help",
+      "to": "Here are some tricks to help",
+      "kind": "typo"
+    },
+    {
+      "from": "opting to TTF fonts",
+      "to": "opting for TTF fonts",
+      "kind": "grammar"
+    },
+    {
+      "from": "to attempt to less then impact.",
+      "to": "to attempt to lessen the impact.",
+      "kind": "spelling"
+    }
   ],
   "links": [],
   "images": []

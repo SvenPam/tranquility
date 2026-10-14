@@ -19,7 +19,7 @@ Needless to say, this week I concluded my Analysis phase! And I have a beautiful
 <ol data-role="listview" data-inset="true" data-divider-theme="c">
 <li data-role="list-divider">Must</li>
 <li>Show device location on 2D aerial map.</li>
-<li>Show Location of Instruments on 2D aerial map.</li>
+<li>Show location of instruments on 2D aerial map.</li>
 <li>Show basic data for instruments.</li>
 <li data-role="list-divider">Should</li>
 <li>Show instrument types on map.</li>

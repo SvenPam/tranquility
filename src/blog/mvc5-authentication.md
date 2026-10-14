@@ -6,7 +6,7 @@ topic: Guide
 tags: []
 ---
 
-Recently I took on a new project to work on in my spare time, one of the features I've been playing around with has been MVC Authentication. It's possibly something you may have come across when creating a new ASP.NET in Visual Studio 2012+. Creating a new project almost has that same feeling as being the first person to step in fresh snow, and Visual Studio is like some kind of Winter Spirit helping you along the way.
+Recently I took on a new project to work on in my spare time, one of the features I've been playing around with has been MVC Authentication. It's possibly something you may have come across when creating a new ASP.NET project in Visual Studio 2012+. Creating a new project almost has that same feeling as being the first person to step in fresh snow, and Visual Studio is like some kind of Winter Spirit helping you along the way.
 
 > A lot of what I have learnt comes [from this tutorial](https://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on), you should check it out!
 
@@ -22,7 +22,7 @@ First things first - you will need to modify the connection string to point to y
 <add name="DefaultConnection" connectionString="Data Source=[Domain\ServerName]; Initial Catalog=[DatabaseName];Integrated Security=True" providerName="System.Data.SqlClient" />
 ```
 
-This will point your app away from the local database that will have been created - which you will be able to find inside your app data folder. By running the building your app again, tables will be **automatically scripted to your database**. 
+This will point your app away from the local database that will have been created - which you will be able to find inside your app data folder. By running and building your app again, tables will be **automatically scripted to your database**. 
 
 ## Custom User Models
 

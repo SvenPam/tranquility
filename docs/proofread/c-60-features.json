@@ -16,6 +16,16 @@
       "from": "we don;t have to",
       "to": "we don't have to",
       "kind": "typo"
+    },
+    {
+      "from": "null, oppose to a null exception",
+      "to": "null, as opposed to a null exception",
+      "kind": "grammar"
+    },
+    {
+      "from": "But, not more!",
+      "to": "But, no more!",
+      "kind": "typo"
     }
   ],
   "links": [],

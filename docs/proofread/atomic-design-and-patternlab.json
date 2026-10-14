@@ -16,6 +16,11 @@
       "from": "conflicting with PatternLabs.",
       "to": "conflicting with PatternLab's.",
       "kind": "punctuation"
+    },
+    {
+      "from": "by using `patternName.json`, where",
+      "to": "by using patternName.json, where",
+      "kind": "punctuation"
     }
   ],
   "links": [],

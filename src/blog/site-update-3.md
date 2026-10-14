@@ -28,7 +28,7 @@ The changes to this only affect the in-dev Windows Store App version of the site
 
 This is extremely crude at the moment, but should lay some foundations for future extension. It was mainly added as a way to secure the above CRUD functions, but I figured it would be quite a neat way to store some email addresses, so you can get a notification when I update my blog.
 
-I am going to post some more in-depth detail regarding this as there isn't much in date stuff on the web. In short, the system is built on the [MVC Identity](https://www.asp.net/identity/overview/getting-started/introduction-to-aspnet-identity) and [OWIN](http://owin.org/) (and OAuth) frameworks. The OWIN part is implemented but not used; I figured the only appropriate place for external authentication would be for comments - but DISQUS does the job well enough.
+I am going to post some more in-depth detail regarding this as there isn't much up-to-date stuff on the web. In short, the system is built on the [MVC Identity](https://www.asp.net/identity/overview/getting-started/introduction-to-aspnet-identity) and [OWIN](http://owin.org/) (and OAuth) frameworks. The OWIN part is implemented but not used; I figured the only appropriate place for external authentication would be for comments - but DISQUS does the job well enough.
 
 <p>&nbsp;</p>
 

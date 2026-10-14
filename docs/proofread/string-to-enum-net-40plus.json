@@ -6,6 +6,11 @@
       "from": "TryParse. if you Google",
       "to": "TryParse. If you Google",
       "kind": "typo"
+    },
+    {
+      "from": "shows to very useful method",
+      "to": "shows a very useful method",
+      "kind": "typo"
     }
   ],
   "links": [],

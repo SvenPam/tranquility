@@ -11,6 +11,11 @@
       "from": "optimization tweaks",
       "to": "optimisation tweaks",
       "kind": "spelling"
+    },
+    {
+      "from": "isn't much in date stuff",
+      "to": "isn't much up-to-date stuff",
+      "kind": "grammar"
     }
   ],
   "links": [],

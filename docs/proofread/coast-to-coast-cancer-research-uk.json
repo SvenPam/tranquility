@@ -1,6 +1,12 @@
 {
   "title": [],
-  "description": [],
+  "description": [
+    {
+      "from": "money for cancer research UK",
+      "to": "money for Cancer Research UK",
+      "kind": "spelling"
+    }
+  ],
   "body": [
     {
       "from": "the breadth of the England",

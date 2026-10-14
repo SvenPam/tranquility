@@ -2,7 +2,21 @@
   "title": [],
   "description": [],
   "body": [
-    { "from": "through the use the route interface", "to": "through the use of the route interface", "kind": "typo" }
+    {
+      "from": "through the use the route interface",
+      "to": "through the use of the route interface",
+      "kind": "typo"
+    },
+    {
+      "from": "the main is deciding",
+      "to": "the main one is deciding",
+      "kind": "grammar"
+    },
+    {
+      "from": "for data to put in.",
+      "to": "for data to be put in.",
+      "kind": "grammar"
+    }
   ],
   "links": [],
   "images": []

@@ -26,6 +26,11 @@
       "from": "this entire blog of my Nokia",
       "to": "this entire blog on my Nokia",
       "kind": "typo"
+    },
+    {
+      "from": "data is loaded shown",
+      "to": "data is loaded and shown",
+      "kind": "grammar"
     }
   ],
   "links": [],

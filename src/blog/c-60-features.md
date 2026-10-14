@@ -65,7 +65,7 @@ $"images/brands/{Env.CurrentManufacturer.ManufacturerCode}/logo.png"
 
 ## Null Conditional Operators
 
-Hands down, the best feature yet. It's always been a pain to have to check an object is null before trying to access one of its fields. But, not more!
+Hands down, the best feature yet. It's always been a pain to have to check an object is null before trying to access one of its fields. But, no more!
 
 <p>&nbsp;</p>
 
@@ -73,7 +73,7 @@ Hands down, the best feature yet. It's always been a pain to have to check an ob
 _keys = keysAccessor?.Value;
 ```
 
-In this instance, `_keys` will be set to null if `keysAccessor` is null, oppose to a null exception.
+In this instance, `_keys` will be set to null if `keysAccessor` is null, as opposed to a null exception.
 
 <p>&nbsp;</p>
 

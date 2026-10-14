@@ -2,11 +2,37 @@
   "title": [],
   "description": [],
   "body": [
-    { "from": "set up to be rather instusive on development", "to": "set up to be rather intrusive on development", "kind": "spelling" },
-    { "from": "This where I ran into problems", "to": "This is where I ran into problems", "kind": "typo" },
-    { "from": "To test this, obtained the google API demo", "to": "To test this, I obtained the google API demo", "kind": "typo" },
-    { "from": "how I ended setting it all up", "to": "how I ended up setting it all up", "kind": "typo" }
+    {
+      "from": "set up to be rather instusive on development",
+      "to": "set up to be rather intrusive on development",
+      "kind": "spelling"
+    },
+    {
+      "from": "This where I ran into problems",
+      "to": "This is where I ran into problems",
+      "kind": "typo"
+    },
+    {
+      "from": "To test this, obtained the google API demo",
+      "to": "To test this, I obtained the google API demo",
+      "kind": "typo"
+    },
+    {
+      "from": "how I ended setting it all up",
+      "to": "how I ended up setting it all up",
+      "kind": "typo"
+    },
+    {
+      "from": "two IDE’s in my",
+      "to": "two IDEs in my",
+      "kind": "punctuation"
+    }
   ],
-  "links": [],
+  "links": [
+    {
+      "from": "/blog/article/12",
+      "to": "/blog/google-maps-api-authorization-error-getting-round-it"
+    }
+  ],
   "images": []
 }

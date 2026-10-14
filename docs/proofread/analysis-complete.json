@@ -21,6 +21,11 @@
       "from": "prioritise instrument’s on screen",
       "to": "prioritise instruments on screen",
       "kind": "punctuation"
+    },
+    {
+      "from": "Show Location of Instruments on 2D",
+      "to": "Show location of instruments on 2D",
+      "kind": "typo"
     }
   ],
   "links": [],

@@ -22,7 +22,7 @@ The SABIC meeting highlighted some more important needs, for the project. The pr
 
 ### Iteration 2 - Data
 
-ITT2 will see an XML serialiser and deserialiser implemented. I discussed some different options on the best approach to the problem of getting data into the system from an external source. In keeping with my personal goals for the project, we discussed that XML would be the best option. XML provides the most generic form of input and output. It will mean that the majority of the data connection and handling can be done from an external source. The benefits from this means the scope of the project is not blown wide open in creating a data connection system, meaning we have a more functional application; which could still have a more solid data connection implemented later.
+ITT2 will see an XML serialiser and deserialiser implemented. I discussed some different options on the best approach to the problem of getting data into the system from an external source. In keeping with my personal goals for the project, we discussed that XML would be the best option. XML provides the most generic form of input and output. It will mean that the majority of the data connection and handling can be done from an external source. The benefit from this means the scope of the project is not blown wide open in creating a data connection system, meaning we have a more functional application; which could still have a more solid data connection implemented later.
 
 ### Iteration 3 - Augmented Reality
 

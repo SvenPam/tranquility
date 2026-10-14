@@ -6,6 +6,6 @@ topic: Project
 tags: []
 ---
 
-This week I further refined the project spec, and performed more research. This week also held the first meeting with the Sabisu to further expand the business problem with some high-level feature definement.
+This week I further refined the project spec, and performed more research. This week also held the first meeting with the Sabisu to further expand the business problem with some high-level feature definition.
 
 I also submitted the project spec.

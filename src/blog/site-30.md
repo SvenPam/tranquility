@@ -6,7 +6,7 @@ topic: Site
 tags: []
 ---
 
-Over the last few months I have been working on a couple of personal projects. It's always a great feeling starting a new project, I'm sure any developer would agree. Initially, I was asked to build a site for close family friend's local church. This really set a snow-ball in motion that prompted another serverside overhaul.
+Over the last few months I have been working on a couple of personal projects. It's always a great feeling starting a new project, I'm sure any developer would agree. Initially, I was asked to build a site for a close family friend's local church. This really set a snow-ball in motion that prompted another serverside overhaul.
 
 ## Church Site
 
