@@ -3,7 +3,7 @@ import path from "node:path";
 import { SITE } from "./site.mjs";
 
 /** Message used when routing checks run before the SWA config is generated. */
-export const ROUTING_SKIP = "routing config not built yet (C7)";
+export const ROUTING_SKIP = "routing config not built yet";
 
 /** Loads `staticwebapp.config.json` from the build output, or returns null. */
 export function loadConfig(root = SITE) {

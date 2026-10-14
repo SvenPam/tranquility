@@ -22,7 +22,7 @@ Build the site-wide safety net: URL parity, internal link and asset checking, ar
 - Use `node:test` and `node:assert/strict`, plus `cheerio` for HTML. No other test framework.
 - Name tests that need the full article set (all 58) with the prefix `[content]`, so `npm run test:core` can skip them before C10.
 - **Chunks land in waves.** Tests must degrade gracefully when a later chunk hasn't landed yet:
-  - if `_site/staticwebapp.config.json` is missing (C7 not merged), redirect and 404-routing checks call `t.skip("routing config not built yet (C7)")`;
+  - if `_site/staticwebapp.config.json` is missing (C7 not merged), redirect and 404-routing checks call `t.skip("routing config not built yet")`;
   - everything else fails normally.
 
 ## Steps
