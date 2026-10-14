@@ -1,0 +1,28 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "Amstel on draft",
+      "to": "Amstel on draught",
+      "kind": "spelling"
+    },
+    {
+      "from": "bottled Grolsh",
+      "to": "bottled Grolsch",
+      "kind": "spelling"
+    },
+    {
+      "from": "several plaza’s",
+      "to": "several plazas",
+      "kind": "punctuation"
+    },
+    {
+      "from": "helpful , this stood",
+      "to": "helpful, this stood",
+      "kind": "punctuation"
+    }
+  ],
+  "links": [],
+  "images": []
+}

@@ -34,7 +34,7 @@ Prep time: 20mins | Cooking time: 10mins | Serves: 2
 -   100g spring Onions
 -   100g Beansprouts
 -   300g Egg Noodles/Rice Noodles
--   3tbps Groundnut Oil
+-   3tbsp Groundnut Oil
 -   Pepper
 -   Salt
 -   1tbsp Sugar
@@ -67,7 +67,7 @@ This is quite a fast process, so make sure to have everything to hand. You shoul
 3.  Add your bell pepper and cook until it softens (about a min).
 4.  Throw in Beansprouts until they wilt (just over a min).
 5.  Add a decent amount of black pepper and soy sauce, stir in then set aside the contents on a plate.
-6.  It’s prawn time. Lift them out of the marinade (leave the juices) and wack them into the still hot pan and cook for 1-2 mins until they turn pink.
+6.  It’s prawn time. Lift them out of the marinade (leave the juices) and whack them into the still hot pan and cook for 1-2 mins until they turn pink.
 7.  At this point you want to chuck in your egg noodles, follow this up by adding the marinade. You want to keep things moving at this point so your noodles don’t burn. Cook for about 2-3 mins until the noodles ‘look right’.
 8.  Add the veg you set aside back to the pan, mix it all together then plate up.
 9.  Garnish with a good pinch of lightly chopped coriander leaves, and lime juice from your remaining lime.
@@ -75,4 +75,4 @@ This is quite a fast process, so make sure to have everything to hand. You shoul
 
 <p style="text-align: center;"><img src="/old/thai.jpg" alt="" width="705"></p>
 
-Credit: [I think this was the original recipe](http://www.bbcgoodfood.com/recipes/468653/thai-prawn-ginger-and-spring-onion-stirfry). I've modified it a little so you cook your noodles too, and you can actually find the ingredients at Tesco's (I was a student at this recipes' conception).
+Credit: [I think this was the original recipe](http://www.bbcgoodfood.com/recipes/468653/thai-prawn-ginger-and-spring-onion-stirfry). I've modified it a little so you cook your noodles too, and you can actually find the ingredients at Tesco's (I was a student at this recipe's conception).

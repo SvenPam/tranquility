@@ -1,0 +1,23 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "much exposure too is",
+      "to": "much exposure to is",
+      "kind": "spelling"
+    },
+    {
+      "from": "it's common practice",
+      "to": "It's common practice",
+      "kind": "typo"
+    },
+    {
+      "from": "the in's and outs",
+      "to": "the ins and outs",
+      "kind": "punctuation"
+    }
+  ],
+  "links": [],
+  "images": []
+}

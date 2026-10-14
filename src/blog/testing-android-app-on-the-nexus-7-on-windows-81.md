@@ -6,7 +6,7 @@ topic: Guide
 tags: []
 ---
 
-I managed to acquire a Nexus 7 from my friend so that I could test Miru on an actual device. Unfortunately I came across a few problems trying to get the device recognised my my PC, then to have it recognised in the ADT.
+I managed to acquire a Nexus 7 from my friend so that I could test Miru on an actual device. Unfortunately I came across a few problems trying to get the device recognised by my PC, then to have it recognised in the ADT.
 
 Firstly (and embarrassingly), if your PC keeps finding and losing the device it is **not a compatibility issue**. I had originally thought that it was, because the [Android Dev help implies Windows 8.1 is not supported](https://developer.android.com/tools/extras/oem-usb.html). Take my advice... check the cable first.
 

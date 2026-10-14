@@ -1,0 +1,24 @@
+{
+  "title": [
+    {
+      "from": "Site Changes and Seasons Greetings!",
+      "to": "Site Changes and Season's Greetings!",
+      "kind": "punctuation"
+    }
+  ],
+  "description": [],
+  "body": [
+    {
+      "from": "I have neglected it all together",
+      "to": "I have neglected it altogether",
+      "kind": "spelling"
+    },
+    {
+      "from": "the user base in no where near",
+      "to": "the user base is nowhere near",
+      "kind": "typo"
+    }
+  ],
+  "links": [],
+  "images": []
+}
