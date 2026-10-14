@@ -43,6 +43,7 @@ Each spec is written so an agent with **no prior context** can implement it. Rea
 - **No network assumptions in the build.** `npm run build` and `npm test` must work offline after `npm ci`. Only C4, C9 (baseline capture) and C10 fetch from `https://ste-pam.com`.
 - **Don't change the design.** No CSS edits apart from the import paths in C2. If markup and CSS disagree, change the markup to match the live HTML.
 - **Live HTML is the source of truth** for markup and copy. Snapshots are in `docs/baseline/live/pages/` (index in `docs/baseline/live/manifest.json`). The old Razor views are on branch `archive/umbraco` under `Tranquility.CMS/Views/` if you need to see the logic.
+- **No migration bookkeeping in code.** Comments, log lines and file contents outside `docs/` must not mention chunk IDs or the migration process (`// C1`, `// stub: replaced by C4`, `(C7)`, `added in wave 3`). Write comments that explain the code to someone who never saw these specs. When you replace another chunk's stub, remove its stub comment. A temporary stub may say what it is ("No-op until hero crops are implemented") but not which chunk replaces it.
 - **Writing style for any user-facing text you add:** British English, no em dashes.
 - **Finish by running** the commands in your spec's "Verify" section and pasting their output in your final report.
 

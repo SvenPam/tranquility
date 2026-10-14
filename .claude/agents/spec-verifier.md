@@ -17,7 +17,7 @@ A spec path, e.g. `docs/specs/C3-layouts.md`, and the branch or worktree holding
 3. **Ownership check:** list every file changed by the chunk. Flag any file outside the spec's ownership (README section 1) unless the spec explicitly allows it.
 4. Run `npm ci` if `node_modules` is missing, then `npm audit` (must report 0 vulnerabilities; anything else is a FAIL), then the spec's "Verify" commands exactly as written.
 5. Check **every** acceptance criterion one by one. For each, gather direct evidence: command output, file contents, a grep, or a rendered HTML fragment from `_site/`. Don't infer a pass from a passing test unless the criterion says the test is the evidence.
-6. Look for things the criteria imply but don't spell out: hard-coded values that should come from `site.json`, leftover debug output, TODOs, em dashes in user-facing text, files written outside `_site/` or `.cache/` during the build.
+6. Look for things the criteria imply but don't spell out: hard-coded values that should come from `site.json`, leftover debug output, TODOs, chunk IDs or migration bookkeeping in comments or files outside `docs/` (run `grep -rnE '\\bC(1[01]|[0-9])\\b|wave [0-9]' --exclude-dir=node_modules --exclude-dir=docs --exclude-dir=.claude --exclude-dir=_site .` and flag hits in files the chunk changed), em dashes in user-facing text, files written outside `_site/` or `.cache/` during the build.
 7. Don't edit, fix, commit or delete anything. You may write scratch output under `/tmp` only.
 
 ## Report

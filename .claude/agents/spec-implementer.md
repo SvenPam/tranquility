@@ -26,6 +26,7 @@ You are given a spec path, e.g. `docs/specs/C3-layouts.md`, and a branch to work
 - The live HTML snapshots in `docs/baseline/live/pages/` are the source of truth for markup and copy. Match them unless the spec lists a deliberate change.
 - Don't change the design or the SCSS beyond what the spec says.
 - No em dashes in user-facing text. British English.
+- No chunk IDs or migration bookkeeping in code comments or file contents outside `docs/` (no `// C4`, no `stub: replaced by C3`). Remove any such comments you find in files you own or replace.
 - Don't weaken, skip or delete tests to get green.
 - If the spec is ambiguous or contradicts the README, pick the reading that keeps the live site's output identical, and flag it.
 

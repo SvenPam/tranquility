@@ -15,7 +15,7 @@ Write and dry-run the runbook that takes ste-pam.com from Umbraco on App Service
 
 ## Owns
 
-`docs/runbook-cutover.md`, `scripts/cutover-check.sh`.
+`docs/runbook-cutover.md`, `scripts/cutover-check.sh`, plus comment-only cleanup anywhere (AC5).
 
 ## Facts the runbook relies on
 
@@ -103,6 +103,7 @@ A how-to in British English, no em dashes, numbered steps with **who** (owner or
 | AC1 | `docs/runbook-cutover.md` contains sections A to F with owner/agent, action and check for every step, including "write down the current DNS record" before changing it. |
 | AC2 | `scripts/cutover-check.sh` is executable, uses only `bash`, `curl` and `node`, and runs against the emulator with all checks passing. |
 | AC3 | The dry run against today's live site completes and its output is attached, with the expected differences explained. |
+| AC5 | Final code hygiene: `grep -rnE '\bC(1[01]\|[0-9])\b\|wave [0-9]' --exclude-dir=node_modules --exclude-dir=docs --exclude-dir=.claude --exclude-dir=_site .` returns nothing. Remove any leftover chunk references in comments (and the owner column in `config/README.md`) as part of this chunk; this is the one cross-ownership edit C11 is allowed. |
 | AC4 | The runbook uses the resource names from `infra/main.bicep` and the pipeline variable name from `azure-pipelines.yml`. |
 
 ## Verify

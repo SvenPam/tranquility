@@ -3,7 +3,7 @@ import { pathToFileURL } from "node:url";
 import path from "node:path";
 
 export default async function (eleventyConfig) {
-  // Non-template folders: C2 and C4 add passthrough copy for these.
+  // Non-template folders, published by passthrough copy instead.
   eleventyConfig.ignores.add("src/styles/**");
   eleventyConfig.ignores.add("src/assets/**");
   eleventyConfig.ignores.add("src/media/**");
