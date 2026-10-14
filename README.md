@@ -7,7 +7,7 @@ The previous Umbraco 7 version is preserved on the `archive/umbraco` branch.
 ## Writing a post
 
 1. Add `src/blog/<slug>.md` with front matter (copy the front matter from an existing post; `npm run validate` checks it).
-2. Push to `main`. The Azure DevOps pipeline builds, tests and deploys.
+2. Push to `main`. The GitHub Actions workflow builds, tests and deploys.
 
 ## Local development
 

@@ -1,0 +1,58 @@
+# Build, test and deploy ste-pam.com to Azure Static Web Apps.
+# PRs: build + test. main: build + test + deploy. Weekly: rebuild main so the
+# copyright year and "Old Article" banners stay current.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cache image crops and OG cards
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: build-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: build-cache-${{ runner.os }}-
+
+      - run: npm ci
+
+      - name: Dependency audit (must be 0 vulnerabilities)
+        run: npm audit
+
+      - run: npm run build
+
+      - run: npm test
+
+      - name: Deploy to Azure Static Web Apps
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.SWA_DEPLOYMENT_TOKEN }}
+          action: upload
+          app_location: _site
+          output_location: ""
+          skip_app_build: true
+          skip_api_build: true

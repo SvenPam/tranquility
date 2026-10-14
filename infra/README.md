@@ -1,6 +1,6 @@
 # Infrastructure
 
-The site is hosted on an Azure Static Web App, defined in `main.bicep`. The resource is created once by hand. The Azure DevOps pipeline then deploys to it using the deployment token only, so no Entra ID service connection is needed.
+The site is hosted on an Azure Static Web App, defined in `main.bicep`. The resource is created once by hand. The GitHub Actions workflow (`.github/workflows/deploy.yml`) then deploys to it using the deployment token only, so no Entra ID service connection is needed.
 
 ## 1. Prerequisites
 
@@ -24,11 +24,11 @@ az staticwebapp secrets list --name swa-ste-pam --resource-group rg-ste-pam --qu
 
 Treat the token as a secret. Never commit it.
 
-## 4. Azure DevOps setup
+## 4. GitHub setup
 
-- Create a pipeline from the existing YAML file `build/azure-pipelines.yml` in the GitHub repo (choose "Existing Azure Pipelines YAML file" and that path). This uses the Azure DevOps GitHub connection (OAuth or the GitHub App), not Entra ID.
-- Add a secret pipeline variable `SWA_DEPLOYMENT_TOKEN` with the token. If you prefer a variable group named `ste-pam`, add `variables: - group: ste-pam` to the YAML.
-- Rename or disable the old release pipeline so it stops trying to deploy Umbraco.
+- In the GitHub repo go to Settings > Secrets and variables > Actions and add a repository secret named `SWA_DEPLOYMENT_TOKEN` with the token.
+- The workflow needs nothing else: it runs on pushes and PRs to `main`, and deploys on `main` only.
+- Disable the old Azure DevOps build and release pipelines so they stop trying to deploy Umbraco.
 
 ## 5. Rotating the token
 
@@ -36,7 +36,7 @@ Treat the token as a secret. Never commit it.
 az staticwebapp secrets reset-api-key --name swa-ste-pam --resource-group rg-ste-pam
 ```
 
-Then update the `SWA_DEPLOYMENT_TOKEN` variable with the new value.
+Then update the `SWA_DEPLOYMENT_TOKEN` secret with the new value.
 
 ## 6. Custom domain
 

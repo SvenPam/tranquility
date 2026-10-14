@@ -13,7 +13,7 @@ resource swa 'Microsoft.Web/staticSites@2023-12-01' = {
   location: location
   sku: { name: 'Free', tier: 'Free' }
   properties: {
-    // No repository link: content is pushed by the Azure DevOps pipeline with the deployment token.
+    // No repository link: content is pushed by the GitHub Actions workflow with the deployment token.
     allowConfigFileUpdates: true
     stagingEnvironmentPolicy: 'Enabled'
   }
