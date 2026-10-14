@@ -1,0 +1,70 @@
+{
+  "title": [
+    {
+      "from": "Site Redesign - The Rekoning",
+      "to": "Site Redesign - The Reckoning",
+      "kind": "spelling"
+    }
+  ],
+  "description": [
+    {
+      "from": "what I have learn't over",
+      "to": "what I have learnt over",
+      "kind": "spelling"
+    }
+  ],
+  "body": [
+    {
+      "from": "old tosh creative’s spent",
+      "to": "old tosh creatives spent",
+      "kind": "punctuation"
+    },
+    {
+      "from": "I have utilized my expanded",
+      "to": "I have utilised my expanded",
+      "kind": "spelling"
+    },
+    {
+      "from": "I love pre-compliers",
+      "to": "I love pre-compilers",
+      "kind": "spelling"
+    },
+    {
+      "from": "&amp;:before {",
+      "to": "&:before {",
+      "kind": "code"
+    },
+    {
+      "from": "when people say the “know CSS3”",
+      "to": "when people say they “know CSS3”",
+      "kind": "typo"
+    },
+    {
+      "from": "I have utilized them pretty well",
+      "to": "I have utilised them pretty well",
+      "kind": "spelling"
+    },
+    {
+      "from": "was a simple as fixing",
+      "to": "was as simple as fixing",
+      "kind": "typo"
+    },
+    {
+      "from": "I suppose its cheating",
+      "to": "I suppose it’s cheating",
+      "kind": "punctuation"
+    },
+    {
+      "from": "I going to admit now",
+      "to": "I’m going to admit now",
+      "kind": "grammar"
+    },
+    {
+      "from": "I going to redesign it",
+      "to": "I’m going to redesign it",
+      "kind": "grammar"
+    }
+  ],
+  "links": [],
+  "images": []
+}

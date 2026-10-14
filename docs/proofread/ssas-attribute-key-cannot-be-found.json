@@ -1,0 +1,33 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "three assessment's that",
+      "to": "three assessments that",
+      "kind": "punctuation"
+    },
+    {
+      "from": "one specific warning lead me",
+      "to": "one specific warning led me",
+      "kind": "spelling"
+    },
+    {
+      "from": "could get passed this first value",
+      "to": "could get past this first value",
+      "kind": "spelling"
+    },
+    {
+      "from": "Go the “Dimension key errors” tab",
+      "to": "Go to the “Dimension key errors” tab",
+      "kind": "typo"
+    },
+    {
+      "from": "“Use custom error configuration “.",
+      "to": "“Use custom error configuration”.",
+      "kind": "punctuation"
+    }
+  ],
+  "links": [],
+  "images": []
+}

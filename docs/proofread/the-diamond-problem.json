@@ -1,0 +1,23 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "only on abstract class can be extended",
+      "to": "only one abstract class can be extended",
+      "kind": "typo"
+    },
+    {
+      "from": "bonaza",
+      "to": "bonanza",
+      "kind": "spelling"
+    },
+    {
+      "from": "overidden",
+      "to": "overridden",
+      "kind": "spelling"
+    }
+  ],
+  "links": [],
+  "images": []
+}

@@ -16,7 +16,7 @@ Initially I was creating blog posts by an editor and good old fashioned HTML, t
 
 ### Introducing CRUD
 
-[CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) in the world of HTTP makes use of the request types available, and that's pretty much what I have done with the sites blog controller. As an admin, I can now create, update and delete articles; which is extremely helpful - especially when integrated with the JavaScript HTML editor [CKEditor](http://ckeditor.com/).
+[CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) in the world of HTTP makes use of the request types available, and that's pretty much what I have done with the site's blog controller. As an admin, I can now create, update and delete articles; which is extremely helpful - especially when integrated with the JavaScript HTML editor [CKEditor](http://ckeditor.com/).
 
 ### WebAPI
 
@@ -34,7 +34,7 @@ I am going to post some more in-depth detail regarding this as there isn't much 
 
 ## Notification
 
-This was pretty sweet to work on. If you [register](/account/register) with my site, you will receive an email with a summary of the new blog. I based it on the HTML template I built a year ago for SABIC - making some minor style and optimization tweaks. What I like so much about what I did, was making use of a view model to generate the email. So feel free to register an account, I am sure at some point I will be adding some features that will apply specifically to authenticated users.
+This was pretty sweet to work on. If you [register](/account/register) with my site, you will receive an email with a summary of the new blog. I based it on the HTML template I built a year ago for SABIC - making some minor style and optimisation tweaks. What I like so much about what I did, was making use of a view model to generate the email. So feel free to register an account, I am sure at some point I will be adding some features that will apply specifically to authenticated users.
 
 <p>&nbsp;</p>
 

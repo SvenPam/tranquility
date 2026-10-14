@@ -22,19 +22,19 @@ If you're not too sure what a sprite is, here is a brief educational journey. Fi
 
 Pressing F12 in Chrome and going to the network tab will show you the above for a site. That's cool and all that but why? Well, the thing is; **browsers have a maximum number of connections they can make at any one time**. Once that connection limit is reached, everything else is blocked until the asset for that connection has been downloaded and the connection closed.
 
-This is why we use sprites. Say you have 100 icons in an icon set, you're going to find them being loaded onto the page is batches (Chrome is 10 at a time), which isn't great for _perceived_ page speed. Stitching many (small) images into one file is much quicker and more efficient. There is no overhead of finding a domain making a connection and closing 100 times, for example.
+This is why we use sprites. Say you have 100 icons in an icon set, you're going to find them being loaded onto the page in batches (Chrome is 10 at a time), which isn't great for _perceived_ page speed. Stitching many (small) images into one file is much quicker and more efficient. There is no overhead of finding a domain making a connection and closing 100 times, for example.
 
-The next bit is _unstiching_ the sprite. You can use CSS for this. Imagine looking through a tube a sheet of images. Your vision is obscured to just that view, right? As you move the page around, you can see another image - this is what a sprite does! You can use background-positions for this. I won't go into more detail on the ins and outs, on this. You find more of this out [in this CSS tricks article](https://css-tricks.com/css-sprites/).
+The next bit is _unstitching_ the sprite. You can use CSS for this. Imagine looking through a tube a sheet of images. Your vision is obscured to just that view, right? As you move the page around, you can see another image - this is what a sprite does! You can use background-positions for this. I won't go into more detail on the ins and outs, on this. You find more of this out [in this CSS tricks article](https://css-tricks.com/css-sprites/).
 
 ## SVGs
 
-First things first, if you have icons (or logos), you _really_ want to look at SVGs. If you're not au feit with SVGs, these are what we call vector graphics. You can't use them for a picture of the Mona Lisa, but for simple graphics, they are perfect. An SVG gives the browser instructions on how to draw an image, so whether an image is 1px or 10,000px, the quality is the same. This makes them perfect of high-resolution screens maintaining a crisp clear image. The best part about SVGs is; **they are just HTML**. Seriously, open an SVG in a browser and inspect it.
+First things first, if you have icons (or logos), you _really_ want to look at SVGs. If you're not au fait with SVGs, these are what we call vector graphics. You can't use them for a picture of the Mona Lisa, but for simple graphics, they are perfect. An SVG gives the browser instructions on how to draw an image, so whether an image is 1px or 10,000px, the quality is the same. This makes them perfect for high-resolution screens maintaining a crisp clear image. The best part about SVGs is; **they are just HTML**. Seriously, open an SVG in a browser and inspect it.
 
 ## Automation
 
 So I spoke about the many benefits of sprites, but I didn't touch on the downsides. That is: **maintainability**. A good example of this is using a sprite for logos. What happens when you need to add a new logo to that sprite? If you put it in the right place, hopefully, you just have to add some more CSS positioning. Worst case, it throws all your other positions out - not cool!
 
-For those of use using build tools, there are plenty of packages to do this for us! So let's get the to crux of this guide: automating sprites. I use the NPM package [SVG-Sprite](https://www.npmjs.com/package/svg-sprite).
+For those of us using build tools, there are plenty of packages to do this for us! So let's get to the crux of this guide: automating sprites. I use the NPM package [SVG-Sprite](https://www.npmjs.com/package/svg-sprite).
 
 I have a source folder of SVG icons - all separate images.
 

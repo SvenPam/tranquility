@@ -22,9 +22,9 @@ Meeting my sister in Centraal Station, we took a tram into Schiedam and then wal
 
 <p><img src="/res/meinPPE.jpg" alt="" title="Looking good in PPE! " width="100%"></p>
 
-At night we wandered Schiedam and found what I believe to be an [Israeli Restaurant](/umbraco/www.resturantasher.nl), and enjoyed a mystery dish. I can only describe it as being similar to some mild beef curry. After, we headed to some local bars ending in the Ships Mission of that port. European lager easily tops the chemically infused muck served in British pubs – that’s why I drink ale! Amstel on draft is amazing; as was the bottled Grolsh we drank at the mission.
+At night we wandered Schiedam and found what I believe to be an [Israeli Restaurant](/umbraco/www.resturantasher.nl), and enjoyed a mystery dish. I can only describe it as being similar to some mild beef curry. After, we headed to some local bars ending in the Ships Mission of that port. European lager easily tops the chemically infused muck served in British pubs – that’s why I drink ale! Amstel on draught is amazing; as was the bottled Grolsch we drank at the mission.
 
-The next day comprised of a walk around Rotterdam before we were required to head back home. Although Rotterdam was well built up, it seemed to be sparse in people unlike UK cities. I believe this to be because the streets are considerably wider, and there were several plaza’s located around the city. The Dutch from my experience have always been polite, well mannered and helpful , this stood true in my trip to Holland.
+The next day comprised of a walk around Rotterdam before we were required to head back home. Although Rotterdam was well built up, it seemed to be sparse in people unlike UK cities. I believe this to be because the streets are considerably wider, and there were several plazas located around the city. The Dutch from my experience have always been polite, well mannered and helpful, this stood true in my trip to Holland.
 
 <p><img src="/res/rotterdam.jpg" alt="" title="Rotterdam. " width="100%"></p>
 
