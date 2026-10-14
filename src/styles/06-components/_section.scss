@@ -118,8 +118,7 @@
         }
     }
 
-    &:nth-child(odd):not(&--footer)
-    &--dark {
+    &:nth-child(odd):not(&--footer) {
         background-color: $gray-200;
 
         .section__fact {
