@@ -10,12 +10,12 @@ On Sunday 29th June at around 13:00, we glided into Bridlington on our array of 
 
 <p><img style="width: 95%;" src="/content/img/c2c.jpg" alt=""></p>
 
-Friday night was spent at the lovely [Bewerley Hall Farm](http://www.bewerleyhallfarm.co.uk/index.html) in Pately Bridge, I would thoroughly recommend staying there (especially if you like pictures of cats, and Dolores Umbridge-esqe decor).
+Friday night was spent at the lovely [Bewerley Hall Farm](http://www.bewerleyhallfarm.co.uk/index.html) in Pateley Bridge, I would thoroughly recommend staying there (especially if you like pictures of cats, and Dolores Umbridge-esque decor).
 
 ### Saturday
 
                   
-Saturday was long, but relatively flat. Bizarly the route lead straight through the center of York during the peak of the day; needless to say it was packed with people! Following directly on from that, the route pittered out into a dirt track and we had a rough time especially considering that we're on road bikes. To get to our accommodation for Saturday night, we had to take a three mile detour from the route, leading us to the Steer Inn, near Pocklington. Food, service and beds were great; but if you're a fan of showers the Steer Inn is not the place for you. We had a hard time trying to conclude exactly how the plumbing worked in that place, the shower was either scalding hot or freezing cold - only coming in intermittent spurts!?
+Saturday was long, but relatively flat. Bizarrely the route led straight through the centre of York during the peak of the day; needless to say it was packed with people! Following directly on from that, the route petered out into a dirt track and we had a rough time especially considering that we're on road bikes. To get to our accommodation for Saturday night, we had to take a three mile detour from the route, leading us to the Steer Inn, near Pocklington. Food, service and beds were great; but if you're a fan of showers the Steer Inn is not the place for you. We had a hard time trying to conclude exactly how the plumbing worked in that place, the shower was either scalding hot or freezing cold - only coming in intermittent spurts!?
 
 ### Sunday
 
@@ -25,7 +25,7 @@ The entire trip went very smoothly on the whole, and we got extremely lucky with
 
 ## Charity
 
-Our cycling was hard, but the real work came from everyone making donations. Before we started the trip we were about 25% to our target, by the end we where at 70% and through a final push this week we **smashed the £500 target**! So on behalf of Dan Carl and myself, I want to say a **massive thank you** for raising a substantial amount of money for a life saving charity. It really shows that together, we can beat cancer.
+Our cycling was hard, but the real work came from everyone making donations. Before we started the trip we were about 25% to our target, by the end we were at 70% and through a final push this week we **smashed the £500 target**! So on behalf of Dan, Carl and myself, I want to say a **massive thank you** for raising a substantial amount of money for a life saving charity. It really shows that together, we can beat cancer.
 
 ## Special Thanks
 

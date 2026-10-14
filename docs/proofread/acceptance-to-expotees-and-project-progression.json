@@ -1,0 +1,33 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "the idea's that came",
+      "to": "the ideas that came",
+      "kind": "punctuation"
+    },
+    {
+      "from": "in aligment with",
+      "to": "in alignment with",
+      "kind": "spelling"
+    },
+    {
+      "from": "be replace by data",
+      "to": "be replaced by data",
+      "kind": "grammar"
+    },
+    {
+      "from": "an XML serilizer and",
+      "to": "an XML serialiser and",
+      "kind": "spelling"
+    },
+    {
+      "from": "and deserializer implemented",
+      "to": "and deserialiser implemented",
+      "kind": "spelling"
+    }
+  ],
+  "links": [],
+  "images": []
+}

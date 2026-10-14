@@ -10,9 +10,9 @@ Last year I did the [Cleveland Way](http://www.justgiving.com/daniel-holden2/eur
 
 <p><img style="margin: 0 auto; width: 70%;" src="/Content/img/walking2.jpg" alt=""></p>
 
-This year I will be joining my best mates: [Carl Morphet](https://www.linkedin.com/profile/view?id=203848608), [Dan Holden](https://www.linkedin.com/profile/view?id=285049837) and Dan's cousin, Alan Holden in a three-day 170 mile trip across the breadth of the England to try and raise £500 for Cancer Research UK.
+This year I will be joining my best mates: [Carl Morphet](https://www.linkedin.com/profile/view?id=203848608), [Dan Holden](https://www.linkedin.com/profile/view?id=285049837) and Dan's cousin, Alan Holden in a three-day 170 mile trip across the breadth of England to try and raise £500 for Cancer Research UK.
 
-We will be setting off this Friday, riding the way of  the roses from Morcambe, Lancashire to Bridlington, Yorkshire. The first day will take us on a 60mile ride into Pateley Bridge where we will stay the night.The second day we aim to reach Pocklington - 60miles -  to refresh ourselves for a third and final 50 mile ride into Bridlington on the Sunday.
+We will be setting off this Friday, riding the way of  the roses from Morecambe, Lancashire to Bridlington, Yorkshire. The first day will take us on a 60mile ride into Pateley Bridge where we will stay the night. The second day we aim to reach Pocklington - 60miles -  to refresh ourselves for a third and final 50 mile ride into Bridlington on the Sunday.
 
 We have chosen Cancer Research, because we have all been directly or indirectly affected by this ravaging disease. Only two years past my own mother defeated breast cancer, a victory aided by the work of cancer research.
 

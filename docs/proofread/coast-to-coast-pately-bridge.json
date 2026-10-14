@@ -1,0 +1,30 @@
+{
+  "title": [
+    {
+      "from": "Coast to Coast - Pately Bridge",
+      "to": "Coast to Coast - Pateley Bridge",
+      "kind": "title"
+    }
+  ],
+  "description": [
+    {
+      "from": "Arrived safe and sound in Pately Bridge.",
+      "to": "Arrived safe and sound in Pateley Bridge.",
+      "kind": "spelling"
+    }
+  ],
+  "body": [
+    {
+      "from": "Dan was best by four punctures",
+      "to": "Dan was beset by four punctures",
+      "kind": "spelling"
+    },
+    {
+      "from": "into Pately Bridge",
+      "to": "into Pateley Bridge",
+      "kind": "spelling"
+    }
+  ],
+  "links": [],
+  "images": []
+}

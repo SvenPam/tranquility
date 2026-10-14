@@ -1,0 +1,28 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    {
+      "from": "done the week I prior",
+      "to": "done the week prior",
+      "kind": "typo"
+    },
+    {
+      "from": "on the Mathmatical side",
+      "to": "on the Mathematical side",
+      "kind": "spelling"
+    },
+    {
+      "from": "Hind-sight is a great thing",
+      "to": "Hindsight is a great thing",
+      "kind": "spelling"
+    },
+    {
+      "from": "prioritise instrument’s on screen",
+      "to": "prioritise instruments on screen",
+      "kind": "punctuation"
+    }
+  ],
+  "links": [],
+  "images": []
+}
