@@ -1,0 +1,10 @@
+{
+  "routes": [
+    { "route": "/cv", "redirect": "https://www.linkedin.com/in/spammenter/", "statusCode": 302 },
+    { "route": "/cv/*", "redirect": "https://www.linkedin.com/in/spammenter/", "statusCode": 302 },
+    { "route": "/work", "redirect": "/about", "statusCode": 302 }
+  ],
+  "oldAliases": {
+    "MiruScreen1.jpg": "MiruSccreen1.jpg"
+  }
+}

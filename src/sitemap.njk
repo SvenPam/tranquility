@@ -1,0 +1,31 @@
+---
+title: Sitemap
+description: ""
+layout: layouts/page.njk
+leadingSpacer: true
+heroImage: /media/1056/6.jpg
+permalink: /sitemap/
+---
+<section class="section">
+    <div class="section__content">
+        <ul>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="/blog">Blog</a>
+                        <ul>
+{%- for a in collections.articlesAsc %}
+                                <li><a  href="{{ a.url | cleanUrl }}">{{ a.data.title }}</a></li>
+{%- endfor %}
+                        </ul>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/sitemap">Sitemap</a>
+                </li>
+        </ul>
+    </div>
+</section>

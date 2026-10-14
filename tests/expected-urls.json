@@ -1,0 +1,16 @@
+{
+  "ok": ["/", "/about", "/blog", "/contact", "/sitemap", "/not-found", "/sitemap.xml", "/robots.txt",
+         "/a/dist/css/ste-pam.min.css", "/a/dist/sprites/sprite.svg", "/a/dist/img/generic/2.jpg",
+         "/media/1058/mountains.jpg", "/old/thai.jpg", "/old/Stephen%20Pammenter%20-%20CV.pdf",
+         "/favicon.ico", "/manifest.json", "/browserconfig.xml"],
+  "redirects": [
+    { "from": "/about/", "to": "/about", "status": 301, "kind": "trailingSlash" },
+    { "from": "/blog/article/sass-loops", "to": "/blog/sass-loops", "status": 301 },
+    { "from": "/Areas/ste_pam/Uploads/thai.jpg", "to": "/old/thai.jpg", "status": 301 },
+    { "from": "/res/Class1.jpg", "to": "/old/Class1.jpg", "status": 301 },
+    { "from": "/res/MiruScreen1.jpg", "to": "/old/MiruSccreen1.jpg", "status": 301 },
+    { "from": "/cv", "to": "https://www.linkedin.com/in/spammenter/", "status": 302 },
+    { "from": "/work", "to": "/about", "status": 302 }
+  ],
+  "notFound": ["/this-does-not-exist", "/blog/no-such-post"]
+}
