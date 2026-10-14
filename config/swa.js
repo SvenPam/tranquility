@@ -21,11 +21,11 @@ export async function buildSwaConfig(outDir = "_site") {
     // /blog/article/{slug} -> /blog/{slug} (old URL scheme)
     ...slugs.map((s) => ({ route: `/blog/article/${s}`, redirect: `/blog/${s}`, statusCode: 301 })),
     // /Areas/ste_pam/Uploads/{file} -> /old/{file} (old upload folder)
-    ...oldFiles.map((f) => ({ route: `/Areas/ste_pam/Uploads/${enc(f)}`, redirect: `/old/${enc(f)}`, statusCode: 301 })),
+    ...oldFiles.map((f) => ({ route: `/Areas/ste_pam/Uploads/${f}`, redirect: `/old/${enc(f)}`, statusCode: 301 })),
     // /res/{file} -> /old/{file} where a matching file exists (fixes long-broken article images)
     ...[...new Set([...oldFiles, ...Object.keys(manual.oldAliases)])]
       .filter(aliasTarget)
-      .map((f) => ({ route: `/res/${enc(f)}`, redirect: `/old/${enc(aliasTarget(f))}`, statusCode: 301 })),
+      .map((f) => ({ route: `/res/${f}`, redirect: `/old/${enc(aliasTarget(f))}`, statusCode: 301 })),
     { route: "/a/dist/*", headers: { "cache-control": "public, max-age=604800" } },
     { route: "/media/*", headers: { "cache-control": "public, max-age=2592000" } },
     { route: "/old/*", headers: { "cache-control": "public, max-age=2592000" } },
