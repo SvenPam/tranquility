@@ -12,9 +12,11 @@ The site is hosted on an Azure Static Web App, defined in `main.bicep`. The reso
 One-off, from your machine:
 
 ```bash
-az group create --name rg-ste-pam --location westeurope
+az group create --name rg-ste-pam --location ukwest
 az deployment group create --resource-group rg-ste-pam --parameters infra/main.bicepparam
 ```
+
+The resource group can be in any region. The Static Web App's own `location` parameter is limited to the regions Static Web Apps supports (default `westeurope`), so the app sits in West Europe inside a UK West group. Readers are served from the edge network regardless.
 
 ## 3. Get the deployment token
 
