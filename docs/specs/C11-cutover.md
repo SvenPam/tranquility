@@ -60,6 +60,12 @@ A how-to in British English, no em dashes, numbered steps with **who** (owner or
 4. Owner: in GitHub settings, rename the default branch `master` to `main`. Check: `git ls-remote --symref origin HEAD` shows `refs/heads/main`.
 5. Owner: provision Azure with `infra/README.md` steps 1 to 3; store `SWA_DEPLOYMENT_TOKEN` in ADO; create the pipeline from `build/azure-pipelines.yml`; disable the old release pipeline.
 6. Owner: run the pipeline on `main`. Check: it deploys, and `scripts/cutover-check.sh https://<default-hostname>.azurestaticapps.net` passes (the `/cv` redirect and every other check).
+7. Agent or owner: **routing checks the local emulator can't do** (SWA CLI 2.0.10 ignores `trailingSlash` and breaks its 404 override after the first request). Against the `azurestaticapps.net` URL, confirm and record:
+   - `/about` returns 200 (no redirect) and `/about/` returns 301 to `/about`; same for `/blog/sass-loops`.
+   - `/blog?page=2` returns 200 with the full blog list.
+   - Two consecutive requests to an unknown URL both return 404 with the custom Not Found page ("U2 is still looking").
+   - `/Areas/ste_pam/Uploads/Stephen%20Pammenter%20-%20CV.pdf` and `/res/FYP%20Progress%20Review%20Poster%20(K0025970).pdf` redirect to `/old/...` (checks whether Azure matches routes on the encoded or decoded path).
+   If `/about` doesn't return 200, stop: the permalink scheme needs changing before DNS moves.
 
 **B. Domain switch** (do it at a quiet time; downtime should be minutes at most)
 1. Owner: in the Azure portal, Static Web App > Custom domains > Add > `ste-pam.com`, "Other DNS", **TXT** validation. Copy the TXT value.

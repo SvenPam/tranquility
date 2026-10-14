@@ -44,7 +44,7 @@ export async function buildSwaConfig(outDir = "_site") {
     },
     mimeTypes: { ".webmanifest": "application/manifest+json" },
   };
-  const json = JSON.stringify(config, null, 2);
+  const json = JSON.stringify(config);
   await writeFile(path.join(outDir, "staticwebapp.config.json"), json);
   return config;
 }
