@@ -1,29 +1,47 @@
 ---
-title: SASS Loops
-description: Putting SASS loops to good use.
+title: "SASS Loops"
+description: "Putting SASS loops to good use."
 date: 2017-04-23T15:46:11
 topic: Guide
 tags: []
 ---
-<p>As always, another interesting problem that I solved at work. Our lead designer often comes over to discuss solutions to some really interesting front-end style problems. I don't know how he finds them, but I love helping to solve them! Today:</p>
-<p> </p>
-<blockquote>
-<p>How can I style a list so it's in a gradient of colours?</p>
-</blockquote>
-<p>The boring solution would be to create a class for each li and write in each colour - boring! We're in the industrious modern age of CSS pre-processors!</p>
-<p> </p>
-<h3>CSS3 </h3>
-<p> </p>
-<p>Firstly lets stick with what we know, CSS3, :nth selectors have been a round for a while and they are a prefect fit here. Already we're not going to have to write .class-1{...} .class-2{...} .class-3{...} in our HTML we can forget this would ever be a thing, we just have to worry about our CSS, so we can instead do li:nth(1){...} li:nth(2){...} li:nth(3){...}.</p>
-<p>Still, we're lazy programmers, no one wants to do that.</p>
-<p> </p>
-<h2>The SASS Way</h2>
-<p>We can do this programatically. Firstly, we can change colours in sass with darken or lighten, that's pretty useful to know, because we're making a gradient through automation.</p>
-<p>Secondly, SASS has some nifty functions we would typically find outside of markup languages like loops. SASS call these the fancy name of 'control directives', and means you can do all sorts of things like if, for, while and each - you can read all about them <a href="http://thesassway.com/intermediate/if-for-each-while">on their site</a>.</p>
-<p> </p>
-<p>We want a loop here.</p>
-<p> </p>
-<h2>All Together Now</h2>
-<p>In demo.scss below, you can see how the above have been combined to create a gradient coloured list, for 1 to 5 children.</p>
-<p>You can see the code in action in this <a href="https://codepen.io/anon/pen/KrXPKE">CodePen</a>.</p>
-<p> </p>
+
+As always, another interesting problem that I solved at work. Our lead designer often comes over to discuss solutions to some really interesting front-end style problems. I don't know how he finds them, but I love helping to solve them! Today:
+
+<p>&nbsp;</p>
+
+> How can I style a list so it's in a gradient of colours?
+
+The boring solution would be to create a class for each li and write in each colour - boring! We're in the industrious modern age of CSS pre-processors!
+
+<p>&nbsp;</p>
+
+### CSS3 
+
+<p>&nbsp;</p>
+
+Firstly lets stick with what we know, CSS3, :nth selectors have been a round for a while and they are a prefect fit here. Already we're not going to have to write .class-1{...} .class-2{...} .class-3{...} in our HTML we can forget this would ever be a thing, we just have to worry about our CSS, so we can instead do li:nth(1){...} li:nth(2){...} li:nth(3){...}.
+
+Still, we're lazy programmers, no one wants to do that.
+
+<p>&nbsp;</p>
+
+## The SASS Way
+
+We can do this programatically. Firstly, we can change colours in sass with darken or lighten, that's pretty useful to know, because we're making a gradient through automation.
+
+Secondly, SASS has some nifty functions we would typically find outside of markup languages like loops. SASS call these the fancy name of 'control directives', and means you can do all sorts of things like if, for, while and each - you can read all about them [on their site](http://thesassway.com/intermediate/if-for-each-while).
+
+<p>&nbsp;</p>
+
+We want a loop here.
+
+<p>&nbsp;</p>
+
+## All Together Now
+
+In demo.scss below, you can see how the above have been combined to create a gradient coloured list, for 1 to 5 children.
+
+You can see the code in action in this [CodePen](https://codepen.io/anon/pen/KrXPKE).
+
+<p>&nbsp;</p>
