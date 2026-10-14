@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    
+
+<title>Dynamic Serving and Performance | Stephen Pammenter</title>
+<meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c0c0e">
+
+<meta name="description" content="">
+<link href="https://ste-pam.com/blog/dynamic-serving-and-performance" rel="canonical">
+
+<meta property="og:title" content="Dynamic Serving and Performance | Stephen Pammenter" />
+<meta property="og:locale" content="en_GB">
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ste-pam.com/blog/dynamic-serving-and-performance" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Stephen Pammenter" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SvenPam" />
+<meta name="twitter:creator" content="@SvenPam" />
+<meta name="twitter:image" content="" />
+    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    
+
+
+
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
+</head>
+<body>
+    <nav id="siteNav" class="site-nav">
+        <span class="nav-title">Site Nav</span>
+        <button id="closeMobMenu" class="close-site-nav">
+            <i class="hidden-lg hidden-md">
+                <svg class="icon icon--menu">
+                    <use xlink:href="/a/dist/sprites/sprite.svg#x"></use>
+                </svg>
+            </i>
+        </button>
+        <ul class="list list--nav">
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chevron-left"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="javascript:void(0)" onclick="history.back();">Back</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#home"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/">Home</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#person"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/about">About</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#pencil"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/blog">Blog</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#code"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/work">Work</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chat"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        
+
+<section class="hero hero--">
+    <div class="container">
+            <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+<div class="sections">
+    
+
+<div></div>
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact section__fact--lift">
+            <h1 class="lead"><a class="h2" href="/blog/dynamic-serving-and-performance">Dynamic Serving and Performance</a></h1>
+            <p class="text-center">Guide</p>
+            <p class="text-muted">
+                At work I have been working on dynamic serving and performance and have produced some great results, in this article I talk about the work I have been doing.
+            </p>
+            <div class="section__meta">
+                <span>Ste Pammenter <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@SvenPam</a> <span class="text-muted">//</span>
+
+                    </span><time datetime="23/04/2017 15:41:08">23-Apr-17</time>
+            </div>
+        </div>
+    </header>
+    <div class="article section__content">
+
+                    <div class="row">
+                    <div class="col-12 col-md-12">
+                                
+    
+<p>Early this year we began the process of optimizing our sites for mobile devices. That's not to say we weren't already mobile but there is a difference between <strong>responsive </strong>and <strong>dedicated </strong>pages for mobile devices.</p>
+<p>In 2013 we began the process of migrating from Web Forms to MVC, whilst totally redesigning all our sites to be responsive. This goal was achieved late last year and already, we reap benefits of having an easily changeable code base and loosely coupled components. Responsive sites serve all our customers, and given that analytics reports nearly a third of our traffic now comes from mobile, and a quarter on tablet this decision has proven invaluable. Some of our sites have <strong>over </strong>60% of traffic on mobile devices.</p>
+<p>Responsive is great, but has its drawbacks. Every client is served the same data; if it's too much for a small viewport, styles are used to hide it. Our small web pages look great, but what's the hit on performance? Mobile devices are that: <strong>mobile</strong>. As developers we should, therefore presume a client does not have solid fast connection; but could in fact have sketchy 3G or worse. In coalition with Marketing we pondered the thought and decided to go fully mobile. What we actually opted for is something called <em>dynamic serving</em>.</p>
+<blockquote>
+<p>Dynamic serving is a setup where the server responds with different HTML (and CSS) on the same URL depending on the user agent requesting the page. - <a href="https://developers.google.com/webmasters/mobile-sites/mobile-seo/configurations/dynamic-serving">Google</a></p>
+</blockquote>
+<p>Dedicated mobile pages can be problematic as it's difficult to reliably determine a device type on the server as browsers can lie about their true identity. Fortunately, already having a responsive site means devices that fall through mobile detection will not be hindered. This should be an important consideration to take before going mobile.</p>
+<h2>How Did We Do It?</h2>
+<p>Starting from the top, we worked down. At Swansway we use a base controller to handle all requests before any other action is executed. Here I set logic to make the application "device aware". One rule we laid out before this began was: a customer must still be able to access the responsive site. It is here the application checks for the presence of a cookie, to see if the client has requested our desktop site. As we are dynamically serving pages, it's imperative to set HTTP headers that reflect this, lest search engines accusing our sites of cloaking. Finally, to do all this I created a function which will return the correct view and <a href="https://developers.google.com/webmasters/mobile-sites/mobile-seo/configurations/dynamic-serving">HTTP Vary header</a> should it be required.</p>
+<p>Moving onto the <em>views</em>: I created a new set of layouts, which look the same as our responsive sites. Behind the scenes, all desktop-only components have been stripped out - as have resources used only on desktop.</p>
+<p><img src="/Areas/ste_pam/Uploads/sg-mob.png" alt="" width="607" /></p>
+<p>This laid the foundations for the rest of the site, I have since totally redesigned three of our core pages specifically for mobile. One of my main objectives was optimizing <em>above-the-fold content</em>. The term is used to describe content which appears in the viewport before any scrolling occurs. Google has said it's important and can/will penalise you for bad implementation. The concept is that for the best user experience (UX), content which can be seen first, must load the fastest.</p>
+<p>Where possible, I have tried to load textual data before images. The theory being that the perceived experience of the site is faster as a client isn't waiting for an image to load. With the pages being specific to mobile I have also been able build components specific to mobile UX: toolbars, button groups, card carrousels. This has enabled more content onto the screen and reduced vertical height.</p>
+<p style="text-align: center;"><img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAANEAAAAJDcyYTY0ZDI1LTQyODMtNDA4Zi1iOTgxLWUxOTgxMjE4YjZjNw.png" alt="" width="273" /></p>
+<p>On the search page, I heavily modified our JavaScript to load in content into the page, saving a full round trip to the server.Nearly all the functionality of our desktop site has been retained, and placed into clear, touch friendly button groups.</p>
+<p>A summary of each vehicle is provided, the information given is enough to give a good overview, but not so much that the user is overwhelmed or space of other vehicles is sacrificed.</p>
+<p>On the info page, textual information is prioritized - the image gallery is loaded further down the page. The look and feel is similar to the search page so users are familiar with controls and actions. In the gif (right), you can see the carrousel cards in action.</p>
+<p> </p>
+<h2>Performance</h2>
+<p>Over the last few months, we have really driven focus on the results of Google Page Speed Insights, and have been marking the impact of changes against previous scores. We figured this an important metric for a great experience on mobile (and Desktop).</p>
+<p>My manager, Dave has been working on optimizing the site as a whole and has built a lazy-load plugin, allowing us to load images below the fold after page ready. This has a drastic effect on performance, as the page is ready so much sooner. We've replaced many images on the site with the HTML5 picture element, allowing the browser to choose the image for the viewport size. This means small devices are not loading weighty images. To support legacy browsers, another plugin Dave wrote replaces picture elements with an image best suited to that viewport. We plan that in the future we may also take screen DPI into account, but support is not widespread just yet.</p>
+<p> </p>
+<p>We have managed to pull sites out of the red and into the yellow, and we're now working with vendors to get external scripts and styles minified which we're hoping will get us into the green. Sadly, we have use Modernizer to ensure legacy browser support at the cost of a "render blocking script".  We're also working on optimal browser caching. Overall we have seen speed of our sites double because of this work on optimization.</p>
+<p style="text-align: center;"><img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAOOAAAAJGFmMmFiMmY1LWE4ODYtNGUwOS05NWJhLTBjOWUwNjQ5MzhhYw.png" alt="" width="700" /></p>
+<p> </p>
+<p>I believe Swansway is paving the way for optimized mobile, we are one of the few groups dynamically serving web pages to clients. We'd welcome any feedback, so please check our sites out! For the full experience this article discusses, try it on your phone.</p>
+<p> <a href="http://www.swanswaygarages.com">www.swanswaygarages.com</a> is the best place to start - it leads to all our brands.</p>
+<p> </p>
+
+
+                    </div>
+            </div>
+
+    </div>
+    <footer class="section__content">
+        <nav>
+            <ul class="pager">
+                    <li><a href="/blog/site-30"><span>&larr;</span> Older</a></li>
+                                    <li><a href="/blog/site-redesign-the-rekoning">Newer <span>&rarr;</span></a></li>
+            </ul>
+        </nav>
+        <div id="comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                        var disqus_shortname = 'ste-pam';
+                        var disqus_identifier = 'article-1112';
+                        var disqus_title = 'Dynamic Serving and Performance';
+                        var disqus_url = 'https://ste-pam.com/blog/dynamic-serving-and-performance';
+                        (function () {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+            </script>
+        </div>
+    </footer>
+</article>
+
+<script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+</div>
+    </main>
+    <footer class="section section--footer footer hidden-print">
+    <button id="mobileMenu" class="menu-mobile">
+        <i class="hidden-lg hidden-md">
+            <svg class="icon icon--menu">
+                <use xlink:href="/a/dist/sprites/sprite.svg#menu"></use>
+            </svg>
+        </i>
+    </button>
+    <div class="container">
+        <div class="row">
+            <nav class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Site</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Me</a>
+                    </li>
+                    <li>
+                        <a href="/work">Work</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/sitemap">Site Map</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Social</h3>
+                <ul class="footer__list social">
+                    <li> <a class="social__twitter" href="//twitter.com/SvenPam">Twitter</a> </li>
+                    <li> <a class="social__linkedin" href="//linkedin.com/in/spammenter">LinkedIn</a> </li>
+                    <li> <a class="social__stack-overflow" href="//stackoverflow.com/cv/spammenter">Stack Overflow</a> </li>
+                    <li> <a class="social__github" href="//github.com/SvenPam">Github</a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>More</h3>
+                <ul class="footer__list">
+                    <li><a href="//stackoverflow.com/cv/spammenter">CV</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <h3>Based In</h3>
+                <ul class="footer__list">
+                    <li>Liverpool, UK</li>
+                </ul>
+                <a href="https://stackoverflow.com/users/2818648/ste-pammenter">
+                    <img src="https://stackoverflow.com/users/flair/2818648.png?theme=clean" width="208" height="58" alt="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <small>
+                    Copyright  &copy; 2012 - 2026 Stephen Pammenter
+                    <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+                        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+                        </span>
+                    </a>
+                </small>
+            </div>
+            <div class="col-sm-6 col-xs-12 text-right">
+                <small>Built with Umbraco, see <a href="https://github.com/SvenPam/tranquility">Source</a>.</small>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45636226-1', 'ste-pam.com');
+        ga('send', 'pageview');
+
+        document.getElementById('mobileMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "none";
+            document.getElementById('siteNav').classList.add('active');
+            //$('.site-nav').addClass('active')
+            document.body.className += 'menu-open';
+            return false;
+        }, false);
+
+        document.getElementById('closeMobMenu').addEventListener('click', function (ev) {
+
+            document.getElementById('mobileMenu').style.display = "";
+            document.getElementById('siteNav').classList.remove('active');
+            document.body.className = '';
+            return false;
+        }, false);
+
+        </script>
+</body>
+</html>

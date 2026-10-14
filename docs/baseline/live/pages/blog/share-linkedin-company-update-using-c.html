@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    
+
+<title>Share LinkedIn Company Update using C# | Stephen Pammenter</title>
+<meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c0c0e">
+
+<meta name="description" content="">
+<link href="https://ste-pam.com/blog/share-linkedin-company-update-using-c" rel="canonical">
+
+<meta property="og:title" content="Share LinkedIn Company Update using C# | Stephen Pammenter" />
+<meta property="og:locale" content="en_GB">
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ste-pam.com/blog/share-linkedin-company-update-using-c" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Stephen Pammenter" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SvenPam" />
+<meta name="twitter:creator" content="@SvenPam" />
+<meta name="twitter:image" content="" />
+    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    
+
+
+
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
+</head>
+<body>
+    <nav id="siteNav" class="site-nav">
+        <span class="nav-title">Site Nav</span>
+        <button id="closeMobMenu" class="close-site-nav">
+            <i class="hidden-lg hidden-md">
+                <svg class="icon icon--menu">
+                    <use xlink:href="/a/dist/sprites/sprite.svg#x"></use>
+                </svg>
+            </i>
+        </button>
+        <ul class="list list--nav">
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chevron-left"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="javascript:void(0)" onclick="history.back();">Back</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#home"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/">Home</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#person"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/about">About</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#pencil"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/blog">Blog</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#code"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/work">Work</a>
+            </li>
+            <li class="list__item">
+                <i class="list__icon">
+                    <svg class="icon icon--menu">
+                        <use xlink:href="/a/dist/sprites/sprite.svg#chat"></use>
+                    </svg>
+                </i>
+                <a class="list__link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        
+
+<section class="hero hero--">
+    <div class="container">
+            <h1 class="hero__title">Blog</h1>
+    </div>
+</section>
+<div class="sections">
+    
+
+<div></div>
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact section__fact--lift">
+            <h1 class="lead"><a class="h2" href="/blog/share-linkedin-company-update-using-c">Share LinkedIn Company Update using C#</a></h1>
+            <p class="text-center">Guide</p>
+            <p class="text-muted">
+                Discussing the steps required to successfully POST a share request to the LinkedIn REST API through server side C# code.
+            </p>
+            <div class="section__meta">
+                <span>Ste Pammenter <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@SvenPam</a> <span class="text-muted">//</span>
+
+                    </span><time datetime="23/04/2017 15:39:06">23-Apr-17</time>
+            </div>
+        </div>
+    </header>
+    <div class="article section__content">
+
+                    <div class="row">
+                    <div class="col-12 col-md-12">
+                                
+    
+<p>I am having to wait on access to the pages API for me to continue work with Google+, so in the mean time I am working on LinkedIn.</p>
+<h2>LinkedIn</h2>
+<p>It has taken me a long time to work out how to successfully share to LinkedIn as a company page due to the amount of wrong or out of date information floating around the web and a poor understanding of how OAuth works. Either way, I have arrived at a successful solution; so I’ll explain what I did here.</p>
+<h3>Account Preparation</h3>
+<p>First up, we need to ensure we’re all set up with LinkedIn. Before we begin ensure you have a LinkedIn account and a company page. The next step is to associate your account as a developer account and <a href="https://www.linkedin.com/secure/developer">register a LinkedIn application</a>. Ensure you keep track of the API key and the secret key as we’ll need them later.</p>
+<p>Next we’re going to follow steps found in the official LinkedIn documentation found <a href="https://developer.linkedin.com/documents/authentication">here</a>. I will simplify what you need to do here, so it’s your choice to follow the steps laid out there.  The end goal of this step is to retrieve an access token that grants access for us to post on behalf of a user.</p>
+<p>A URL redirect isn’t important for server side applications, so simply enter any secure (HTTPS) link to your site – make sure this is set for your application, in this I will use ‘https://example.com’. This URL is used to redirect a user back after they have grant the application permissions. Whilst you’re setting this, ensure the permissions for rw_company_admin and rw_nus are set.</p>
+<h3>Granting Permissions</h3>
+<p>Next we grant the application to act on behalf of our account, to do this go to:</p>
+<p>https://www.linkedin.com/uas/oauth2/authorization?response_type=code&amp;client_id=<strong>{API KEY}</strong>&amp;scope=rw_company_admin%20rw_nus&amp;state=<strong>thisisatest</strong>&amp;redirect_uri=<strong>https://example.com</strong></p>
+<p>Replace the bold values according to your own settings. This will redirect you to the specified URL, it will also append a key we need as a query string. You will find this after “?code=”, copy that and we’ll use it to get the access token. Next up, replace the values with your own settings and go to the below URL:</p>
+<p>https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&amp;code=<strong>{COPIED CODE}</strong>&amp;redirect_uri=<strong>https://example.com</strong>&amp;client_id=<strong>{API KEY}</strong>&amp;client_secret=<strong>{API Secret}</strong></p>
+<p>The return will be a JSON response which contains the access token we need to share updates! Cool, huh?</p>
+<h3>C#</h3>
+<p>Let’s share our first update, I’ll be summarising the steps found in <a href="https://developer.linkedin.com/creating-company-shares">this LinkedIn guide</a> for this step. Here you will need your company ID. If you’re lucky you should just be able to go to your company page, and pull out the number from the URL. If you’re not so lucky, you might get the company name instead, I’m afraid I don’t know another way to get the page ID. I’ll be using the LinkedIn <a href="https://www.linkedin.com/company/devtestco">test company page</a> ID for this (2414183). Before working with code for this, I initially played around with <a href="https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en">Postman</a>, an extension for Chrome which lets you test REST API’s. However, I’ll just put the C# code I used below:</p>
+<div style="background: #272822; overflow: auto; width: 100%; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em; font-size: 12px;">
+<table border="0">
+<tbody>
+<tr>
+<td>
+<pre style="margin: 0; line-height: 125%;"> 1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42</pre>
+</td>
+<td>
+<pre style="margin: 0; line-height: 125%;"><span style="color: #66d9ef;">private</span> <span style="color: #66d9ef;">static</span> <span style="color: #66d9ef;">bool</span> <span style="color: #a6e22e;">ShareLinkedInUpdate</span><span style="color: #f8f8f2;">(SocialDealership</span> <span style="color: #f8f8f2;">dealer,</span> <span style="color: #66d9ef;">string</span> <span style="color: #f8f8f2;">message,</span> <span style="color: #66d9ef;">string</span> <span style="color: #f8f8f2;">url)</span>    <span style="color: #f8f8f2;">{</span>     <span style="color: #75715e;">//ShareLinkedInUpdate Test Company ID: 2414183</span>     <span style="color: #66d9ef;">var</span> <span style="color: #f8f8f2;">requestUrl</span> <span style="color: #f8f8f2;">=</span> <span style="color: #e6db74;">"https://api.linkedin.com/v1/companies/2414183/shares"</span><span style="color: #f8f8f2;">;</span>       <span style="color: #75715e;">//Build JSON request.</span>     <span style="color: #66d9ef;">var</span> <span style="color: #f8f8f2;">jsonMsg</span> <span style="color: #f8f8f2;">=</span> <span style="color: #66d9ef;">new</span>     <span style="color: #f8f8f2;">{</span>      <span style="color: #f8f8f2;">comment</span> <span style="color: #f8f8f2;">=</span> <span style="color: #f8f8f2;">message,</span>      <span style="color: #f8f8f2;">content</span> <span style="color: #f8f8f2;">=</span> <span style="color: #66d9ef;">new</span> <span style="color: #f8f8f2;">Dictionary&lt;</span><span style="color: #66d9ef;">string</span><span style="color: #f8f8f2;">,</span> <span style="color: #66d9ef;">string</span><span style="color: #f8f8f2;">&gt;</span>      <span style="color: #f8f8f2;">{</span>        <span style="color: #f8f8f2;">{</span> <span style="color: #e6db74;">"submitted-url"</span><span style="color: #f8f8f2;">,</span> <span style="color: #f8f8f2;">url}</span>      <span style="color: #f8f8f2;">},</span>      <span style="color: #f8f8f2;">visibility</span> <span style="color: #f8f8f2;">=</span> <span style="color: #66d9ef;">new</span>      <span style="color: #f8f8f2;">{</span>       <span style="color: #f8f8f2;">code</span> <span style="color: #f8f8f2;">=</span> <span style="color: #e6db74;">"anyone"</span>      <span style="color: #f8f8f2;">}</span>     <span style="color: #f8f8f2;">};</span>       <span style="color: #66d9ef;">var</span> <span style="color: #f8f8f2;">requestJson</span> <span style="color: #f8f8f2;">=</span> <span style="color: #66d9ef;">new</span> <span style="color: #f8f8f2;">JavaScriptSerializer().Serialize(jsonMsg);</span>       <span style="color: #66d9ef;">var</span> <span style="color: #f8f8f2;">client</span> <span style="color: #f8f8f2;">=</span> <span style="color: #66d9ef;">new</span> <span style="color: #f8f8f2;">WebClient();</span>     <span style="color: #75715e;">//Build Header.</span>     <span style="color: #66d9ef;">var</span> <span style="color: #f8f8f2;">requestHeaders</span> <span style="color: #f8f8f2;">=</span> <span style="color: #66d9ef;">new</span> <span style="color: #f8f8f2;">NameValueCollection</span>     <span style="color: #f8f8f2;">{</span>      <span style="color: #f8f8f2;">{</span><span style="color: #e6db74;">"Content-Type"</span><span style="color: #f8f8f2;">,</span> <span style="color: #e6db74;">"application/json"</span> <span style="color: #f8f8f2;">},</span>      <span style="color: #f8f8f2;">{</span><span style="color: #e6db74;">"x-li-format"</span><span style="color: #f8f8f2;">,</span> <span style="color: #e6db74;">"json"</span> <span style="color: #f8f8f2;">},</span>      <span style="color: #f8f8f2;">{</span><span style="color: #e6db74;">"Authorization"</span><span style="color: #f8f8f2;">,</span> <span style="color: #e6db74;">"Bearer "</span> <span style="color: #f8f8f2;">+</span> <span style="color: #f8f8f2;">dealer.LinkedInAccessToken},</span> <span style="color: #75715e;">//It is important "Bearer " is included with the access token here.</span>      <span style="color: #f8f8f2;">{</span><span style="color: #e6db74;">"Host"</span><span style="color: #f8f8f2;">,</span> <span style="color: #e6db74;">"api.linkedin.com"</span><span style="color: #f8f8f2;">}</span>     <span style="color: #f8f8f2;">};</span>     <span style="color: #f8f8f2;">client.Headers.Add(requestHeaders);</span>     <span style="color: #66d9ef;">try</span>     <span style="color: #f8f8f2;">{</span>      <span style="color: #75715e;">//POST request.</span>      <span style="color: #f8f8f2;">client.UploadString(requestUrl,</span> <span style="color: #e6db74;">"POST"</span><span style="color: #f8f8f2;">,</span> <span style="color: #f8f8f2;">requestJson);</span>     <span style="color: #f8f8f2;">}</span>     <span style="color: #66d9ef;">catch</span>     <span style="color: #f8f8f2;">{</span>      <span style="color: #66d9ef;">return</span> <span style="color: #66d9ef;">false</span><span style="color: #f8f8f2;">;</span>     <span style="color: #f8f8f2;">}</span>     <span style="color: #66d9ef;">return</span> <span style="color: #66d9ef;">true</span><span style="color: #f8f8f2;">;</span>    <span style="color: #f8f8f2;">}</span>  </pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It’s important that the requestURL, or as LinkedIn calls it – the end point is SSL. If not, you will receive an error which doesn’t seem to be noted in the documentation. You'll also need to make sure you reference System.Web.Script which allows you to serialize objects into JSON.</p>
+<p>I’ll be performing tests over the course of the week to see how long the token lasts. I have done a little research on the subject, and by following the second step above you receive an access key good for 60 days. What isn’t so clear is how/if the token is refreshed when it is used, similarly to the Facebook access token. Additionally, I’ll be adding better exception handling.</p>
+
+
+                    </div>
+            </div>
+
+    </div>
+    <footer class="section__content">
+        <nav>
+            <ul class="pager">
+                    <li><a href="/blog/posting-to-a-facebook-page-via-server-c"><span>&larr;</span> Older</a></li>
+                                    <li><a href="/blog/site-30">Newer <span>&rarr;</span></a></li>
+            </ul>
+        </nav>
+        <div id="comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                        var disqus_shortname = 'ste-pam';
+                        var disqus_identifier = 'article-1110';
+                        var disqus_title = 'Share LinkedIn Company Update using C#';
+                        var disqus_url = 'https://ste-pam.com/blog/share-linkedin-company-update-using-c';
+                        (function () {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+            </script>
+        </div>
+    </footer>
+</article>
+
+<script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+</div>
+    </main>
+    <footer class="section section--footer footer hidden-print">
+    <button id="mobileMenu" class="menu-mobile">
+        <i class="hidden-lg hidden-md">
+            <svg class="icon icon--menu">
+                <use xlink:href="/a/dist/sprites/sprite.svg#menu"></use>
+            </svg>
+        </i>
+    </button>
+    <div class="container">
+        <div class="row">
+            <nav class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Site</h3>
+                <ul class="footer__list">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Me</a>
+                    </li>
+                    <li>
+                        <a href="/work">Work</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/sitemap">Site Map</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>Social</h3>
+                <ul class="footer__list social">
+                    <li> <a class="social__twitter" href="//twitter.com/SvenPam">Twitter</a> </li>
+                    <li> <a class="social__linkedin" href="//linkedin.com/in/spammenter">LinkedIn</a> </li>
+                    <li> <a class="social__stack-overflow" href="//stackoverflow.com/cv/spammenter">Stack Overflow</a> </li>
+                    <li> <a class="social__github" href="//github.com/SvenPam">Github</a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <h3>More</h3>
+                <ul class="footer__list">
+                    <li><a href="//stackoverflow.com/cv/spammenter">CV</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <h3>Based In</h3>
+                <ul class="footer__list">
+                    <li>Liverpool, UK</li>
+                </ul>
+                <a href="https://stackoverflow.com/users/2818648/ste-pammenter">
+                    <img src="https://stackoverflow.com/users/flair/2818648.png?theme=clean" width="208" height="58" alt="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ste Pammenter at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <small>
+                    Copyright  &copy; 2012 - 2026 Stephen Pammenter
+                    <a href="http://uk.linkedin.com/in/spammenter" style="text-decoration:none;">
+                        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Stephen Pammenter's LinkedIn profile" style="vertical-align:middle;margin-bottom: 5px;" border="0">
+                        </span>
+                    </a>
+                </small>
+            </div>
+            <div class="col-sm-6 col-xs-12 text-right">
+                <small>Built with Umbraco, see <a href="https://github.com/SvenPam/tranquility">Source</a>.</small>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45636226-1', 'ste-pam.com');
+        ga('send', 'pageview');
+
+        document.getElementById('mobileMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "none";
+            document.getElementById('siteNav').classList.add('active');
+            //$('.site-nav').addClass('active')
+            document.body.className += 'menu-open';
+            return false;
+        }, false);
+
+        document.getElementById('closeMobMenu').addEventListener('click', function (ev) {
+
+            document.getElementById('mobileMenu').style.display = "";
+            document.getElementById('siteNav').classList.remove('active');
+            document.body.className = '';
+            return false;
+        }, false);
+
+        </script>
+</body>
+</html>

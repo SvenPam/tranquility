@@ -44,9 +44,8 @@
     },
     {
       "url": "/blog/c-60-features",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/c-60-features.html"
     },
     {
       "url": "/blog/class-design",
@@ -60,21 +59,18 @@
     },
     {
       "url": "/blog/coast-to-coast-pately-bridge",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/coast-to-coast-pately-bridge.html"
     },
     {
       "url": "/blog/coast-to-coast-success",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/coast-to-coast-success.html"
     },
     {
       "url": "/blog/corrupted-html-when-using-visual-studio",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/corrupted-html-when-using-visual-studio.html"
     },
     {
       "url": "/blog/crewe-10k-run",
@@ -83,15 +79,13 @@
     },
     {
       "url": "/blog/decorator-pattern",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/decorator-pattern.html"
     },
     {
       "url": "/blog/dynamic-serving-and-performance",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/dynamic-serving-and-performance.html"
     },
     {
       "url": "/blog/expotees-complete",
@@ -160,9 +154,8 @@
     },
     {
       "url": "/blog/mvc5-authentication",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/mvc5-authentication.html"
     },
     {
       "url": "/blog/mvp-complete",
@@ -191,9 +184,8 @@
     },
     {
       "url": "/blog/posting-to-a-facebook-page-via-server-c",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/posting-to-a-facebook-page-via-server-c.html"
     },
     {
       "url": "/blog/research",
@@ -207,9 +199,8 @@
     },
     {
       "url": "/blog/share-linkedin-company-update-using-c",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/share-linkedin-company-update-using-c.html"
     },
     {
       "url": "/blog/simple-waypoint-scroll",
@@ -218,9 +209,8 @@
     },
     {
       "url": "/blog/site-30",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/site-30.html"
     },
     {
       "url": "/blog/site-40",
@@ -234,9 +224,8 @@
     },
     {
       "url": "/blog/site-redesign-the-rekoning",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/site-redesign-the-rekoning.html"
     },
     {
       "url": "/blog/site-update-3",
@@ -265,9 +254,8 @@
     },
     {
       "url": "/blog/string-to-enum-net-40plus",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/string-to-enum-net-40plus.html"
     },
     {
       "url": "/blog/svg-sprite-automation",
@@ -316,9 +304,8 @@
     },
     {
       "url": "/blog/web-config-transform",
-      "status": 404,
-      "file": null,
-      "note": "listed in sitemap but renders Not Found (no template)"
+      "status": 200,
+      "file": "pages/blog/web-config-transform.html"
     },
     {
       "url": "/contact",
