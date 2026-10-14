@@ -2,8 +2,36 @@
   "title": [],
   "description": [],
   "body": [
-    { "from": "write an ID you beat that other class?", "to": "write an ID to beat that other class?", "kind": "typo" },
-    { "from": "you can deal with specific much easier", "to": "you can deal with specificity much easier", "kind": "typo" }
+    {
+      "from": "write an ID you beat that other class?",
+      "to": "write an ID to beat that other class?",
+      "kind": "typo"
+    },
+    {
+      "from": "you can deal with specific much easier",
+      "to": "you can deal with specificity much easier",
+      "kind": "typo"
+    },
+    {
+      "from": "I.e Bootstrap",
+      "to": "I.e. Bootstrap",
+      "kind": "punctuation"
+    },
+    {
+      "from": "I.e Grid",
+      "to": "I.e. Grid",
+      "kind": "punctuation"
+    },
+    {
+      "from": "much easier. Ultimately",
+      "to": "much easier. Ultimately:",
+      "kind": "punctuation"
+    },
+    {
+      "from": "have the project setup, anyone",
+      "to": "have the project set up, anyone",
+      "kind": "grammar"
+    }
   ],
   "links": [],
   "images": []

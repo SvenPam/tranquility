@@ -2,10 +2,42 @@
   "title": [],
   "description": [],
   "body": [
-    { "from": "that works really well, and it based not on the scroll event", "to": "that works really well, and it's based not on the scroll event", "kind": "grammar" },
-    { "from": "Several changes when made just from issues", "to": "Several changes were made just from issues", "kind": "typo" },
-    { "from": "does not work on FIrefox.", "to": "does not work on Firefox.", "kind": "typo" }
+    {
+      "from": "that works really well, and it based not on the scroll event",
+      "to": "that works really well, and it's based not on the scroll event",
+      "kind": "grammar"
+    },
+    {
+      "from": "Several changes when made just from issues",
+      "to": "Several changes were made just from issues",
+      "kind": "typo"
+    },
+    {
+      "from": "does not work on FIrefox.",
+      "to": "does not work on Firefox.",
+      "kind": "typo"
+    },
+    {
+      "from": "community, and wanted to give",
+      "to": "community, and I wanted to give",
+      "kind": "grammar"
+    },
+    {
+      "from": "come up with a work around though",
+      "to": "come up with a workaround though",
+      "kind": "spelling"
+    },
+    {
+      "from": "I put it on Github.",
+      "to": "I put it on GitHub.",
+      "kind": "spelling"
+    }
   ],
-  "links": [],
+  "links": [
+    {
+      "from": "http://github/svenpam/Simple-Waypoint-Scroll",
+      "to": "https://github.com/SvenPam/Simple-Waypoint-Scroll"
+    }
+  ],
   "images": []
 }

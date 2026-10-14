@@ -2,10 +2,42 @@
   "title": [],
   "description": [],
   "body": [
-    { "from": "flags and optimize the original", "to": "flags and optimise the original", "kind": "spelling" },
-    { "from": "The obvious implications of this where sometimes", "to": "The obvious implications of this were sometimes", "kind": "grammar" },
-    { "from": "so pages would be server as quickly", "to": "so pages would be served as quickly", "kind": "typo" }
+    {
+      "from": "flags and optimize the original",
+      "to": "flags and optimise the original",
+      "kind": "spelling"
+    },
+    {
+      "from": "The obvious implications of this where sometimes",
+      "to": "The obvious implications of this were sometimes",
+      "kind": "grammar"
+    },
+    {
+      "from": "so pages would be server as quickly",
+      "to": "so pages would be served as quickly",
+      "kind": "typo"
+    },
+    {
+      "from": "simply makes uses the JustGiving API",
+      "to": "simply makes use of the JustGiving API",
+      "kind": "grammar"
+    },
+    {
+      "from": "knowledge of SVG’s to",
+      "to": "knowledge of SVGs to",
+      "kind": "punctuation"
+    },
+    {
+      "from": "All the CTA’s I feel",
+      "to": "All the CTAs I feel",
+      "kind": "punctuation"
+    }
   ],
-  "links": [],
+  "links": [
+    {
+      "from": "/blog/article/site-3-0",
+      "to": "/blog/site-30"
+    }
+  ],
   "images": []
 }

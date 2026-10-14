@@ -24,7 +24,7 @@ Pressing F12 in Chrome and going to the network tab will show you the above for 
 
 This is why we use sprites. Say you have 100 icons in an icon set, you're going to find them being loaded onto the page in batches (Chrome is 10 at a time), which isn't great for _perceived_ page speed. Stitching many (small) images into one file is much quicker and more efficient. There is no overhead of finding a domain making a connection and closing 100 times, for example.
 
-The next bit is _unstitching_ the sprite. You can use CSS for this. Imagine looking through a tube a sheet of images. Your vision is obscured to just that view, right? As you move the page around, you can see another image - this is what a sprite does! You can use background-positions for this. I won't go into more detail on the ins and outs, on this. You find more of this out [in this CSS tricks article](https://css-tricks.com/css-sprites/).
+The next bit is _unstitching_ the sprite. You can use CSS for this. Imagine looking through a tube at a sheet of images. Your vision is obscured to just that view, right? As you move the page around, you can see another image - this is what a sprite does! You can use background-positions for this. I won't go into more detail on the ins and outs, on this. You can find more of this out [in this CSS tricks article](https://css-tricks.com/css-sprites/).
 
 ## SVGs
 

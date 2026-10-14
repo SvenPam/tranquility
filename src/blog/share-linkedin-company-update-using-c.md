@@ -22,7 +22,7 @@ A URL redirect isn’t important for server side applications, so simply enter a
 
 ### Granting Permissions
 
-Next we grant the application to act on behalf of our account, to do this go to:
+Next we grant the application permission to act on behalf of our account, to do this go to:
 
 https://www.linkedin.com/uas/oauth2/authorization?response\_type=code&amp;client\_id=**{API KEY}**&amp;scope=rw\_company\_admin%20rw\_nus&amp;state=**thisisatest**&amp;redirect\_uri=**https://example.com**
 
@@ -34,7 +34,7 @@ The return will be a JSON response which contains the access token we need to sh
 
 ### C#
 
-Let’s share our first update, I’ll be summarising the steps found in [this LinkedIn guide](https://developer.linkedin.com/creating-company-shares) for this step. Here you will need your company ID. If you’re lucky you should just be able to go to your company page, and pull out the number from the URL. If you’re not so lucky, you might get the company name instead, I’m afraid I don’t know another way to get the page ID. I’ll be using the LinkedIn [test company page](https://www.linkedin.com/company/devtestco) ID for this (2414183). Before working with code for this, I initially played around with [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en), an extension for Chrome which lets you test REST API’s. However, I’ll just put the C# code I used below:
+Let’s share our first update, I’ll be summarising the steps found in [this LinkedIn guide](https://developer.linkedin.com/creating-company-shares) for this step. Here you will need your company ID. If you’re lucky you should just be able to go to your company page, and pull out the number from the URL. If you’re not so lucky, you might get the company name instead, I’m afraid I don’t know another way to get the page ID. I’ll be using the LinkedIn [test company page](https://www.linkedin.com/company/devtestco) ID for this (2414183). Before working with code for this, I initially played around with [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en), an extension for Chrome which lets you test REST APIs. However, I’ll just put the C# code I used below:
 
 ```csharp
 private static bool ShareLinkedInUpdate(SocialDealership dealer, string message, string url)

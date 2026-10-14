@@ -26,6 +26,21 @@
       "from": "“Use custom error configuration “.",
       "to": "“Use custom error configuration”.",
       "kind": "punctuation"
+    },
+    {
+      "from": "and lo behold in",
+      "to": "and lo and behold in",
+      "kind": "grammar"
+    },
+    {
+      "from": "the problem lied with",
+      "to": "the problem lay with",
+      "kind": "grammar"
+    },
+    {
+      "from": "I alluded this meant",
+      "to": "I deduced this meant",
+      "kind": "grammar"
     }
   ],
   "links": [],

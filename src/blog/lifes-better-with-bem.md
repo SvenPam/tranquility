@@ -103,7 +103,7 @@ Notice I still keep the block or element name associated with a modifier. This i
 
 Some examples of when you use modifiers would be:
 
--   button themes - i.e. bootstraps danger, success, warning etc.
+-   button themes - i.e. Bootstrap's danger, success, warning etc.
 -   transition states - open, closed, faded etc.
 -   general states - active, inactive etc.
 
@@ -131,7 +131,7 @@ We get the readability benefits of nesting, but none of the specificity problems
 
 I always put **one block per file**. This further goes to help with the flexibility of turning features on and off at the removal or addition of an import. This also feeds back into what I said earlier with blocks. They should be so standalone, you can delete a file without affecting any other CSS.
 
-In a work environment, we're able to place people on code they have never seen before and they hit the ground running with BEM - which is a huge benefit in itself. There is no more search through lines and lines of CSS to find something, you simply use the HTML as a reference.
+In a work environment, we're able to place people on code they have never seen before and they hit the ground running with BEM - which is a huge benefit in itself. There is no more searching through lines and lines of CSS to find something, you simply use the HTML as a reference.
 
 BEM is easy to use, but it relies heavily on knowing what components are stand alone and what is not. The other criticisms I've heard of BEM have been searchability. Especially when you nest things with SASS. I'd personally feel this isn't a problem, but I'll let the _dear reader_ form your own opinions.
 

@@ -16,6 +16,11 @@
       "from": "this recipes' conception",
       "to": "this recipe's conception",
       "kind": "punctuation"
+    },
+    {
+      "from": "You should be liken to an Octopus",
+      "to": "You should be like an Octopus",
+      "kind": "grammar"
     }
   ],
   "links": [],

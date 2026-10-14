@@ -60,7 +60,7 @@ When ready to get cooking, finely chop pepper, ginger and spring onions.
 
 ## Cook
 
-This is quite a fast process, so make sure to have everything to hand. You should be liken to an Octopus for the next steps.
+This is quite a fast process, so make sure to have everything to hand. You should be like an Octopus for the next steps.
 
 1.  Heat up a wok or large pan on a high heat and add oil.
 2.  Chuck in your Spring Onions and Ginger, cook for 1 min.

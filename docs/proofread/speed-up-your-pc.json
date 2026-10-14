@@ -131,6 +131,31 @@
       "from": "along the left.Select",
       "to": "along the left. Select",
       "kind": "punctuation"
+    },
+    {
+      "from": "simply go back, and add enable it.",
+      "to": "simply go back, and enable it.",
+      "kind": "typo"
+    },
+    {
+      "from": "Microsoft named application and",
+      "to": "Microsoft named applications and",
+      "kind": "grammar"
+    },
+    {
+      "from": "just deletes necessary files",
+      "to": "just deletes unnecessary files",
+      "kind": "typo"
+    },
+    {
+      "from": "then hit run it by hitting",
+      "to": "then run it by hitting",
+      "kind": "typo"
+    },
+    {
+      "from": "that may necessarily not make",
+      "to": "that may not necessarily make",
+      "kind": "grammar"
     }
   ],
   "links": [],

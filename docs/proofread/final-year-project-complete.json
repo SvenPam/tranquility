@@ -21,6 +21,16 @@
       "from": "want to see it in action",
       "to": "want to see it in action.",
       "kind": "punctuation"
+    },
+    {
+      "from": "some of the things parts that",
+      "to": "some of the parts that",
+      "kind": "typo"
+    },
+    {
+      "from": "full source code on Github",
+      "to": "full source code on GitHub",
+      "kind": "spelling"
     }
   ],
   "links": [],

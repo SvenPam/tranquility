@@ -1,6 +1,6 @@
 ---
 title: "Google Maps API Authorization Error - Getting Round It"
-description: "Stuck with Google Maps on Android? Look no further, here is a guide on how to win the war against the ARM EABI v7a System Image and Google API’s!"
+description: "Stuck with Google Maps on Android? Look no further, here is a guide on how to win the war against the ARM EABI v7a System Image and Google APIs!"
 date: 2013-12-12T20:24:09
 topic: Guide
 tags: []
@@ -25,7 +25,7 @@ So before I begin with this guide let me lay down some scope: it should be able 
 <p>In Eclipse, Window&gt;Android SDK Manager</p>
 </li>
 <li>
-<p>You’re going to want to check Android #.# (API #)&gt; SDK Platform, ARM EABI v7a System Image and Google API’s. That is three packages in the version you want to use – the demo is for Android 4.4 (API 19).</p>
+<p>You’re going to want to check Android #.# (API #)&gt; SDK Platform, ARM EABI v7a System Image and Google APIs. That is three packages in the version you want to use – the demo is for Android 4.4 (API 19).</p>
 </li>
 <li>
 <p>You also need to check Extras &gt; Google Play Services and Google Repository.</p>
@@ -75,7 +75,7 @@ So before I begin with this guide let me lay down some scope: it should be able 
 <div class="dvNumber">5.</div>
 
 <div class="item">
-<p>We’re going to want to modify the manifest of the map demo with our API key. Around line 33 in the Manifest of the demo you will find meta-tag with a value. Replace that value with your key – you can’t use the key that is already there.</p>
+<p>We’re going to want to modify the manifest of the map demo with our API key. Around line 33 in the Manifest of the demo you will find a meta-tag with a value. Replace that value with your key – you can’t use the key that is already there.</p>
 </div>
 
 <div class="dvNumber">6.</div>

@@ -26,7 +26,7 @@ To do this, go to your control panel, find programs, then click "Uninstall a pro
 
 <p><img style="height: 429px; width: 800px;" src="/res/control-pnl.jpg" alt=""></p>
 
-You'll be presented with a list of all your installed programs. If you don't know what it is, you mustn't use it; with exception to Windows or Microsoft named application and anything in (a), blitz it. It will take a while, but this is a major source of slowness.
+You'll be presented with a list of all your installed programs. If you don't know what it is, you mustn't use it; with exception to Windows or Microsoft named applications and anything in (a), blitz it. It will take a while, but this is a major source of slowness.
 
 <p>&nbsp;</p>
 
@@ -50,11 +50,11 @@ Once you're ready, hit "Fix All Selected issues", if you're having to read this 
 
 ### Disk Cleanup
 
-Disk clean, really just deletes necessary files from your PC. CCCleaner will have got most/all of it, but to be sure let's run disk cleaner. Simply enter "Disk Cleanup" then run that app. Check all the boxes, then click "Clean up system files". Easy squeezy!
+Disk clean, really just deletes unnecessary files from your PC. CCCleaner will have got most/all of it, but to be sure let's run disk cleaner. Simply enter "Disk Cleanup" then run that app. Check all the boxes, then click "Clean up system files". Easy squeezy!
 
 ### Defrag
 
-If you don't have [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) (and if you don't know, you probably don't) or you have Windows 8, 8.1, then doing a classic defrag of your PC could really speed things up. In your start bar simply type "Defragment" and select something along the lines of "Defragment" or "Defragment and Optimize" (Windows 8, 8.1), then hit run it by hitting "defragment" or "optimize".
+If you don't have [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) (and if you don't know, you probably don't) or you have Windows 8, 8.1, then doing a classic defrag of your PC could really speed things up. In your start bar simply type "Defragment" and select something along the lines of "Defragment" or "Defragment and Optimize" (Windows 8, 8.1), then run it by hitting "defragment" or "optimize".
 
 Fragmentation is a phenomenon that occurs in file systems, it's quite [interesting to read about](https://en.wikipedia.org/wiki/Defragmentation).
 
@@ -66,7 +66,7 @@ Fragmentation is a phenomenon that occurs in file systems, it's quite [interest
 
 One of the reasons for slow start-up times - loading windows etc. is to do with applications automagically starting when you log into Windows. This is like you clicking on 10 applications as fast as possible, which is why your PC will be slow. To do this, open run (Windows Key + R) then type in "msconfig" then go to the "startup" tab. Windows 8, 8.1 users will be directed to task manager so open that.
 
-Sort the list by status (click the column heading), you will then see all applications enabled to start when you log in. Disable all of it with exception to anything in (a). This will result in a faster start-up time, and an overall faster machine because there isn't random stuff running in the background. However, the flip side to this, is some applications that were in the list, will take a little longer to start. If it causes a problem, simply go back, and add enable it.
+Sort the list by status (click the column heading), you will then see all applications enabled to start when you log in. Disable all of it with exception to anything in (a). This will result in a faster start-up time, and an overall faster machine because there isn't random stuff running in the background. However, the flip side to this, is some applications that were in the list, will take a little longer to start. If it causes a problem, simply go back, and enable it.
 
 To give you an idea, here is my set up:
 
@@ -84,7 +84,7 @@ Whilst you have _msconfig_ open, go to the "Boot" tab then set the "Timeout" to
 
 [Services](https://en.wikipedia.org/wiki/Windows_service) are special background processes that will not show up in your task manager. A lot of them you don't need running, unless you're a developer/server admin/DBA. I am going to show you how to stop them starting up like the applications above. Go to run again (Windows Key + R), then type in "services.msc", you will then be taken to a special services manager. Sort the list by "Startup Type". This is a bit of a minefield, many of the services are vital to the smooth operation of Windows. Best thing to do is follow [this bad-ass looking guy's service](http://www.blackviper.com/) configurations for your operating system. Anything not in his list, just set to "manual".
 
-Again, this is **deep stuff**, that may necessarily not make a big difference, apart from breaking features on your machine.
+Again, this is **deep stuff**, that may not necessarily make a big difference, apart from breaking features on your machine.
 
 ## 7\. Hardware
 

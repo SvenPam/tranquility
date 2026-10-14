@@ -12,7 +12,7 @@ Ever had this problem?
 
 I just did, and it’s horrible! When I initially saw it, it was in such a niche part of our CMS that it looked more like a bug with our code rather than anything else. We spent a formidable amount of time as a **team** to try and solve the problem, yet everything from the Razor view to the data in SQL looked totally fine. The issue was prevalent in all browsers, and what made everything more bizarre was reverting to previous versions didn’t fix it, nor could it be replicated on other machines.
 
-It has to be something wrong with my machine, right? So we begin disabling all my browser extensions, and Visual Studio plugins… nothing. Perhaps it is IIS that is doing the deed? We reinstalled IIS express – nothing. We switched to local IIS and still, nothing! By this point it had fast approached home time and we weren’t getting anywhere.
+It has to be something wrong with my machine, right? So we began disabling all my browser extensions, and Visual Studio plugins… nothing. Perhaps it is IIS that is doing the deed? We reinstalled IIS express – nothing. We switched to local IIS and still, nothing! By this point it had fast approached home time and we weren’t getting anywhere.
 
 <p>&nbsp;</p>
 

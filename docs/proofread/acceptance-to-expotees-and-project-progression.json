@@ -26,6 +26,11 @@
       "from": "and deserializer implemented",
       "to": "and deserialiser implemented",
       "kind": "spelling"
+    },
+    {
+      "from": "The benefits from this means",
+      "to": "The benefit from this means",
+      "kind": "grammar"
     }
   ],
   "links": [],

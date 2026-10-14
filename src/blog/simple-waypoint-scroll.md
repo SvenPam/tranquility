@@ -38,9 +38,9 @@ You'll notice the use of 'offset' which is picked up from a custom attribute in 
 
 ## Plugin
 
-Having learnt the majority of what I know from the coding community, and wanted to give something back. Deciding this bit of code was unique enough to suffice, I put it on Github. I'm amazed by this process, it totally changes your mindset. Because you're making it public - and what's more, work to be used by peers - I found myself critically reviewing code. Several changes were made just from issues highlighted when producing some tutorials, and I love it.
+Having learnt the majority of what I know from the coding community, and I wanted to give something back. Deciding this bit of code was unique enough to suffice, I put it on GitHub. I'm amazed by this process, it totally changes your mindset. Because you're making it public - and what's more, work to be used by peers - I found myself critically reviewing code. Several changes were made just from issues highlighted when producing some tutorials, and I love it.
 
-You can find it [here](http://github/svenpam/Simple-Waypoint-Scroll).
+You can find it [here](https://github.com/SvenPam/Simple-Waypoint-Scroll).
 
 ## Issues
 
@@ -54,4 +54,4 @@ This essentially disables AJAX navigation for all links on a page.
 
 <p>&nbsp;</p>
 
-Finally, I've discovered the SWPS user scroll disable does not work on Firefox. This is due to Mozilla (the only browser) not supporting `document.onMousewheel` which is a shame. I'm sure to come up with a work around though, I believe it lies with `DOMMouseScroll`.
+Finally, I've discovered the SWPS user scroll disable does not work on Firefox. This is due to Mozilla (the only browser) not supporting `document.onMousewheel` which is a shame. I'm sure to come up with a workaround though, I believe it lies with `DOMMouseScroll`.

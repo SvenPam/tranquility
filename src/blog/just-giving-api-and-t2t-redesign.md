@@ -6,13 +6,13 @@ topic: Site
 tags: []
 ---
 
-We’re cycling to raise money for Mind this year, so it was also a good time to redesign the _T2T.bike_ site I made last year. So last year’s build was done on Skeleton.css, which I spoke about in this [article](/blog/article/site-3-0), but now I have firmly grounded myself with Bootstrap it seemed better to use that. To save some time, I used this site as a foundation.
+We’re cycling to raise money for Mind this year, so it was also a good time to redesign the _T2T.bike_ site I made last year. So last year’s build was done on Skeleton.css, which I spoke about in this [article](/blog/site-30), but now I have firmly grounded myself with Bootstrap it seemed better to use that. To save some time, I used this site as a foundation.
 
 ## Design
 
 It’s always fun to start a new project – if not a little daunting. I didn’t really know what I wanted at first, so built everything up from picking a font and a colour palette. That’s really where the whole sort of _hero_ theme came from. I saw the [Bangers](https://www.google.com/fonts/specimen/Bangers) theme, and thought yes! That is the font for our cycle!
 
-Everything really took off from there, and it’s all been built on to that. I loved last year’s hero video and wanted to carry that across to the new site, with a jazzed up texture overlay. I roped in my designer colleague to help me with some flat graphics and I have expanded my knowledge of SVG’s to build some flags and optimise the original _.eps_ files of the graphics sent to me.
+Everything really took off from there, and it’s all been built on to that. I loved last year’s hero video and wanted to carry that across to the new site, with a jazzed up texture overlay. I roped in my designer colleague to help me with some flat graphics and I have expanded my knowledge of SVGs to build some flags and optimise the original _.eps_ files of the graphics sent to me.
 
 <div class="browser-mockup">
 <div class="iframe-container"><iframe id="t2t" src="//t2t.bike"></iframe></div>
@@ -20,7 +20,7 @@ Everything really took off from there, and it’s all been built on to that. I l
 
 <p>&nbsp;</p>
 
-I really like how it came out, and it’s a really good template for any generic charity site. All the CTA’s I feel are well placed, and swap out some fonts and colours and the site is totally different. Fresh!
+I really like how it came out, and it’s a really good template for any generic charity site. All the CTAs I feel are well placed, and swap out some fonts and colours and the site is totally different. Fresh!
 
 ## Development
 
@@ -38,7 +38,7 @@ I wanted to have the data on my server, so pages would be served as quickly as p
 
 #### Here’s What I Did
 
-I installed the SDK and built an action in a controller. The action simply makes uses the _JustGiving_ API to get the latest charity info. It then writes this as JSON to a file on the server, and then returns the latest amount raised. The full process that occurs when someone visits the home page is:
+I installed the SDK and built an action in a controller. The action simply makes use of the _JustGiving_ API to get the latest charity info. It then writes this as JSON to a file on the server, and then returns the latest amount raised. The full process that occurs when someone visits the home page is:
 
 1.  Read values from the file on the server and write them to set them in the home page view model.
 2.  Render the view with these values.

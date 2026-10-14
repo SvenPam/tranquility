@@ -21,6 +21,16 @@
       "from": "allows you to serialize objects into JSON",
       "to": "allows you to serialise objects into JSON",
       "kind": "spelling"
+    },
+    {
+      "from": "grant the application to act",
+      "to": "grant the application permission to act",
+      "kind": "grammar"
+    },
+    {
+      "from": "test REST API’s.",
+      "to": "test REST APIs.",
+      "kind": "punctuation"
     }
   ],
   "links": [],

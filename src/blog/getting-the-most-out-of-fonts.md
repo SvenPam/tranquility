@@ -47,7 +47,7 @@ I won't bother with OTF or SVG as the above cover all browsers. You can then use
 
 ## Minification
 
-I spoke about opting to TTF fonts before, and now it's time for the reason - **build tools**. I'll be showing a way to do it with Gulp and then Webpack, but it will more than likely be possible to do it with other tools as well. There are two bits to this; formatting (as above) and filtering - that is removing the characters from font we are not going to use. This is really important as you're likely creating a site that's only going to be in your language. For example, English isn't going to need Cyrillic or Japanese characters. This alone can reduce some fonts to a third of the size! If you need to support multiple character sets, check out my tricks below.
+I spoke about opting for TTF fonts before, and now it's time for the reason - **build tools**. I'll be showing a way to do it with Gulp and then Webpack, but it will more than likely be possible to do it with other tools as well. There are two bits to this; formatting (as above) and filtering - that is removing the characters from font we are not going to use. This is really important as you're likely creating a site that's only going to be in your language. For example, English isn't going to need Cyrillic or Japanese characters. This alone can reduce some fonts to a third of the size! If you need to support multiple character sets, check out my tricks below.
 
 #### Gulp
 
@@ -94,7 +94,7 @@ You can expand on the build tools above, and break your fonts into multiple cha
 
 #### Font Display
 
-If you're having issues with FOIT, FOUT or FOFT you can use [font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) to attempt to less then impact. This allows you to tell the browser how it should deal with the font.
+If you're having issues with FOIT, FOUT or FOFT you can use [font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) to attempt to lessen the impact. This allows you to tell the browser how it should deal with the font.
 
 #### Local Directive
 

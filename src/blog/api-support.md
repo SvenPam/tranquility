@@ -8,7 +8,7 @@ tags: []
 
 Sadly a lot of my other assignments got pushed back by the work I did for Miru, and in true student fashion I worked right up to the deadline tonight. The reason for this was to create a new part of the site that would focus a lot more on mobile clients.
 
-If you head over to [m.ste-pam.com](http://m.ste-pam.com) you'll be able to see for yourself! The basic premise has been to build the existing controller CRUD that already exists into a web API. Nearly all the work is done in the client side now. One thing I am going to review is how data is loaded shown, because as it stands the entire database is pretty much loaded onto your tiny phone.
+If you head over to [m.ste-pam.com](http://m.ste-pam.com) you'll be able to see for yourself! The basic premise has been to build the existing controller CRUD that already exists into a web API. Nearly all the work is done in the client side now. One thing I am going to review is how data is loaded and shown, because as it stands the entire database is pretty much loaded onto your tiny phone.
 
 I have only tested on WiFi but I should think a change to 3G (or less) would be dramatic. Interestingly when I take into account some of my recent research into NoSQL technologies, one such method is document storage in JSON. This stands a little bit in testament into how powerful JSON can actually be.
 

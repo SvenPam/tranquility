@@ -18,6 +18,11 @@
       "kind": "punctuation"
     }
   ],
-  "links": [],
+  "links": [
+    {
+      "from": "/blog/article/3052",
+      "to": "/blog/expotees-complete"
+    }
+  ],
   "images": []
 }

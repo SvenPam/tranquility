@@ -19,7 +19,7 @@ Saturday was long, but relatively flat. Bizarrely the route led straight through
 
 ### Sunday
 
-Starting  with a full English, and another amazing day of weather for the final leg. Unbelievably we still had to do a lot of climbing, made much harder by the route passing through an airless sweltering valley. Peaking the top of this, and fresh breeze rolled over us, and the smell of the sea gushed forth. This stimulated a 'second wind', and we flew for miles on a downhill stretch all the way into Bridlington.
+Starting  with a full English, and another amazing day of weather for the final leg. Unbelievably we still had to do a lot of climbing, made much harder by the route passing through an airless sweltering valley. Peaking the top of this, a fresh breeze rolled over us, and the smell of the sea gushed forth. This stimulated a 'second wind', and we flew for miles on a downhill stretch all the way into Bridlington.
 
 The entire trip went very smoothly on the whole, and we got extremely lucky with the weather. I _want_ to call it a _healthy glow_ but I'll have to admit I got a _little_ sunburnt.
 

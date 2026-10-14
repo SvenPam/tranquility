@@ -1,6 +1,6 @@
 ---
 title: "Coast to Coast - Cancer Research UK"
-description: "Charity Cycle Ride to raise money for cancer research UK."
+description: "Charity Cycle Ride to raise money for Cancer Research UK."
 date: 2014-06-16T08:07:29
 topic: Personal
 tags: []

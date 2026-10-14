@@ -21,8 +21,23 @@
       "from": "helpful , this stood",
       "to": "helpful, this stood",
       "kind": "punctuation"
+    },
+    {
+      "from": "changed, and as we stopped a gentle roll",
+      "to": "changed, and we stopped a gentle roll",
+      "kind": "grammar"
+    },
+    {
+      "from": "do so much right in, the country",
+      "to": "do so much right, the country",
+      "kind": "typo"
     }
   ],
-  "links": [],
+  "links": [
+    {
+      "from": "/umbraco/www.resturantasher.nl",
+      "to": "http://www.resturantasher.nl"
+    }
+  ],
   "images": []
 }

@@ -10,7 +10,7 @@ Early this year we began the process of optimising our sites for mobile devices.
 
 In 2013 we began the process of migrating from Web Forms to MVC, whilst totally redesigning all our sites to be responsive. This goal was achieved late last year and already, we reap benefits of having an easily changeable code base and loosely coupled components. Responsive sites serve all our customers, and given that analytics reports nearly a third of our traffic now comes from mobile, and a quarter on tablet this decision has proven invaluable. Some of our sites have **over** 60% of traffic on mobile devices.
 
-Responsive is great, but has its drawbacks. Every client is served the same data; if it's too much for a small viewport, styles are used to hide it. Our small web pages look great, but what's the hit on performance? Mobile devices are that: **mobile**. As developers we should, therefore presume a client does not have solid fast connection; but could in fact have sketchy 3G or worse. In coalition with Marketing we pondered the thought and decided to go fully mobile. What we actually opted for is something called _dynamic serving_.
+Responsive is great, but has its drawbacks. Every client is served the same data; if it's too much for a small viewport, styles are used to hide it. Our small web pages look great, but what's the hit on performance? Mobile devices are that: **mobile**. As developers we should therefore presume a client does not have a solid fast connection; but could in fact have sketchy 3G or worse. In coalition with Marketing we pondered the thought and decided to go fully mobile. What we actually opted for is something called _dynamic serving_.
 
 > Dynamic serving is a setup where the server responds with different HTML (and CSS) on the same URL depending on the user agent requesting the page. - [Google](https://developers.google.com/webmasters/mobile-sites/mobile-seo/configurations/dynamic-serving)
 
@@ -46,7 +46,7 @@ My manager, Dave has been working on optimising the site as a whole and has buil
 
 <p>&nbsp;</p>
 
-We have managed to pull sites out of the red and into the yellow, and we're now working with vendors to get external scripts and styles minified which we're hoping will get us into the green. Sadly, we have to use Modernizer to ensure legacy browser support at the cost of a "render blocking script".  We're also working on optimal browser caching. Overall we have seen speed of our sites double because of this work on optimisation.
+We have managed to pull sites out of the red and into the yellow, and we're now working with vendors to get external scripts and styles minified which we're hoping will get us into the green. Sadly, we have to use Modernizr to ensure legacy browser support at the cost of a "render blocking script".  We're also working on optimal browser caching. Overall we have seen speed of our sites double because of this work on optimisation.
 
 <p style="text-align: center;"><img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAOOAAAAJGFmMmFiMmY1LWE4ODYtNGUwOS05NWJhLTBjOWUwNjQ5MzhhYw.png" alt="" width="700"></p>
 

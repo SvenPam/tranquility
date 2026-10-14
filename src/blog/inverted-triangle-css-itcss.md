@@ -37,11 +37,11 @@ The basic concept is that your styles should be put into layers. It doesn't matt
 
 These layers can be defined as follows:
 
-1.  Settings - Global variables, colour values, font-sizes etc. I.e Bootstrap `_variables.scss`
+1.  Settings - Global variables, colour values, font-sizes etc. I.e. Bootstrap `_variables.scss`
 2.  Tools - Mixins and functions
 3.  Generic - box sizing, resets etc.
 4.  Base - HTML Tags
-5.  Objects: Cosmetic-free design patterns. I.e Grid systems, cards, media etc.
+5.  Objects: Cosmetic-free design patterns. I.e. Grid systems, cards, media etc.
 6.  Components - UI components
 7.  Trumps - Utilities, theming and overrides
 
@@ -51,9 +51,9 @@ As your project becomes more mature, you will find yourself working mostly in th
 
 ## Why ITCSS?
 
-Once you have the project setup, anyone can follow it. That's the beauty of ITCSS.
+Once you have the project set up, anyone can follow it. That's the beauty of ITCSS.
 
-It allows you to deal with files and imports, instead of code. Having it in place means you can deal with specificity much easier. Ultimately
+It allows you to deal with files and imports, instead of code. Having it in place means you can deal with specificity much easier. Ultimately:
 
 <ul id="_uHEuMrzpufDduC">
 <li id="_WEkrYwJUZYHiGn">Encourages natural specificity flow - less fighting in the specificity wars</li>

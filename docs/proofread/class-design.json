@@ -16,6 +16,16 @@
       "from": "the addition more classes",
       "to": "the addition of more classes",
       "kind": "grammar"
+    },
+    {
+      "from": "I reading over",
+      "to": "I'm reading over",
+      "kind": "grammar"
+    },
+    {
+      "from": "take into consideration of systems",
+      "to": "take into consideration systems",
+      "kind": "grammar"
     }
   ],
   "links": [],

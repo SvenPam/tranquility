@@ -60,7 +60,7 @@ The docs are really good, I've added the mustache.js one in there because if you
 
 #### Gotchas
 
-Data precedence is an important part of PatternLab. At the lowest level, data comes from `_data/data.json`. Every pattern can then override values by using \`_patternName_.json\`, where the highest level wins.
+Data precedence is an important part of PatternLab. At the lowest level, data comes from `_data/data.json`. Every pattern can then override values by using `patternName.json`, where the highest level wins.
 
 Avoid listItems - whilst it is a neat part of PatternLab, I found it buggy and it doesn't appear to follow the same data precedence as the rest of the data. It's easier to control lists via an array in JSON.
 

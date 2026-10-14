@@ -41,6 +41,11 @@
       "from": "on behalf of Dan Carl and myself",
       "to": "on behalf of Dan, Carl and myself",
       "kind": "punctuation"
+    },
+    {
+      "from": "Peaking the top of this, and fresh breeze",
+      "to": "Peaking the top of this, a fresh breeze",
+      "kind": "grammar"
     }
   ],
   "links": [],

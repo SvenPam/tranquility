@@ -1,19 +1,73 @@
 {
   "title": [],
   "description": [
-    { "from": "clean architecture an maintainability gains", "to": "clean architecture and maintainability gains", "kind": "grammar" }
+    {
+      "from": "clean architecture an maintainability gains",
+      "to": "clean architecture and maintainability gains",
+      "kind": "grammar"
+    }
   ],
   "body": [
-    { "from": "Before I get onto the that,", "to": "Before I get onto that,", "kind": "typo" },
-    { "from": "BEM is my teams' favourite", "to": "BEM is my team's favourite", "kind": "punctuation" },
-    { "from": "what you're trying to categorize and", "to": "what you're trying to categorise and", "kind": "spelling" },
-    { "from": "Here you can a little SASS trick", "to": "Here you can see a little SASS trick", "kind": "typo" },
-    { "from": "Modifiers just the thing for this situation.", "to": "Modifiers are just the thing for this situation.", "kind": "typo" },
-    { "from": "the true power of BEM comes to live,", "to": "the true power of BEM comes to life,", "kind": "typo" },
-    { "from": "we can clear show the purpose", "to": "we can clearly show the purpose", "kind": "grammar" },
-    { "from": "just will classes.", "to": "just with classes.", "kind": "typo" },
-    { "from": "The other criticisms I've heard of BEM has been searchability.", "to": "The other criticisms I've heard of BEM have been searchability.", "kind": "grammar" },
-    { "from": "I would love to hear thought from anyone", "to": "I would love to hear thoughts from anyone", "kind": "typo" }
+    {
+      "from": "Before I get onto the that,",
+      "to": "Before I get onto that,",
+      "kind": "typo"
+    },
+    {
+      "from": "BEM is my teams' favourite",
+      "to": "BEM is my team's favourite",
+      "kind": "punctuation"
+    },
+    {
+      "from": "what you're trying to categorize and",
+      "to": "what you're trying to categorise and",
+      "kind": "spelling"
+    },
+    {
+      "from": "Here you can a little SASS trick",
+      "to": "Here you can see a little SASS trick",
+      "kind": "typo"
+    },
+    {
+      "from": "Modifiers just the thing for this situation.",
+      "to": "Modifiers are just the thing for this situation.",
+      "kind": "typo"
+    },
+    {
+      "from": "the true power of BEM comes to live,",
+      "to": "the true power of BEM comes to life,",
+      "kind": "typo"
+    },
+    {
+      "from": "we can clear show the purpose",
+      "to": "we can clearly show the purpose",
+      "kind": "grammar"
+    },
+    {
+      "from": "just will classes.",
+      "to": "just with classes.",
+      "kind": "typo"
+    },
+    {
+      "from": "The other criticisms I've heard of BEM has been searchability.",
+      "to": "The other criticisms I've heard of BEM have been searchability.",
+      "kind": "grammar"
+    },
+    {
+      "from": "I would love to hear thought from anyone",
+      "to": "I would love to hear thoughts from anyone",
+      "kind": "typo"
+    },
+    {
+      "from": "no more search through",
+      "to": "no more searching through",
+      "kind": "grammar"
+    },
+    {
+      "from": "i.e. bootstraps danger",
+      "to": "i.e. Bootstrap's danger",
+      "kind": "punctuation"
+    }
   ],
   "links": [],
   "images": []
