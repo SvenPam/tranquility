@@ -250,7 +250,7 @@ Acceptance: every converted article, rendered by the new site, has the same visi
 
 ### 8.2 Restoring the 13 broken articles (your action, before C10)
 
-The 13 articles exist in Umbraco but have no template. In the back office, for each one: **Properties > Template > Blog Article > Save and publish**. They then render live and C10 converts them with the rest. This needs no deploy, which avoids the pipeline problems. If that doesn't make them render, fall back to copying their content out of the back office by hand into Markdown files.
+The 13 articles exist in Umbraco but are most likely still on the old **Blog Article** template, whose view was deleted in 2017. In the back office, for each one: **Properties > Template > Article** (not Blog Article) **> Save and publish**. They then render live and C10 converts them with the rest. This needs no deploy, which avoids the pipeline problems. If that doesn't make them render, fall back to copying their content out of the back office by hand into Markdown files.
 
 ---
 

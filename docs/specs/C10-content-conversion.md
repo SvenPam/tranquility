@@ -8,7 +8,7 @@ Convert every blog article on the live site (58) from rendered HTML into Markdow
 
 ## Owner prerequisite (blocking)
 
-13 articles exist in Umbraco but render the Not Found page because no template is assigned. Before this chunk runs, the owner must, in the Umbraco back office, open each of these, set **Properties > Template > Blog Article**, and **Save and publish**:
+13 articles exist in Umbraco but render the Not Found page. Likely cause: they are still set to the old **Blog Article** template, whose view (`BlogArticle.cshtml`) was removed from the code in November 2017 (commit d79c175) when it was replaced by **Article**. Umbraco returns 404 when a node's template has no view. Before this chunk runs, the owner must, in the Umbraco back office, open each of these, set **Properties > Template > Article** (not Blog Article), and **Save and publish**:
 
 ```
 c-60-features                         coast-to-coast-pately-bridge
