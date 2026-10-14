@@ -3,7 +3,10 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import matter from "gray-matter";
 import * as cheerio from "cheerio";
-import markdownIt from "markdown-it";
+import { createRequire } from "node:module";
+
+// Use the same markdown-it that Eleventy renders with, rather than a separate copy.
+const markdownIt = createRequire(import.meta.resolve("@11ty/eleventy"))("markdown-it");
 import { rewriteUrl, rewriteSrcset } from "../scripts/lib/convert/urls.mjs";
 import { parseLiveDate, serialiseFrontMatter, extractFrontMatter } from "../scripts/lib/convert/front-matter.mjs";
 import { preprocessBody, toMarkdown } from "../scripts/lib/convert/body.mjs";

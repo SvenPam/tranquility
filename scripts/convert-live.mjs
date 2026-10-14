@@ -260,7 +260,7 @@ function renderReport() {
   lines.push("| Path | Articles | In `tests/known-broken.json` | Note |");
   lines.push("| --- | --- | --- | --- |");
   for (const p of unresolvedList) {
-    const note = p.startsWith("/blog/article/") ? "covered by the `/blog/article/*` redirect" : "";
+    const note = "";
     lines.push(
       `| ${p} | ${[...unresolved.get(p)].sort().join(", ")} | ${knownBroken.has(p) ? "yes" : "no (new)"} | ${note} |`,
     );

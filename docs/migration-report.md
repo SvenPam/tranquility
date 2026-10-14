@@ -96,13 +96,13 @@ Internal links and images in article bodies that point at neither a page nor a f
 | Path | Articles | In `tests/known-broken.json` | Note |
 | --- | --- | --- | --- |
 | /Content/img/walking2.jpg | coast-to-coast-cancer-research-uk | yes |  |
-| /account/register | site-update-3 | no (new) |  |
-| /blog/article/12 | lets-get-coding | no (new) | covered by the `/blog/article/*` redirect |
-| /blog/article/3052 | final-year-project-miru-awarded-preliminary-first-class-honours | no (new) | covered by the `/blog/article/*` redirect |
-| /blog/article/site-3-0 | just-giving-api-and-t2t-redesign | no (new) | covered by the `/blog/article/*` redirect |
-| /fyp/fyp.pdf | final-year-project-complete | no (new) |  |
-| /home/about | spanking-new-site | no (new) |  |
-| /miru | expotees-complete | no (new) |  |
+| /account/register | site-update-3 | yes |  |
+| /blog/article/12 | lets-get-coding | yes |  |
+| /blog/article/3052 | final-year-project-miru-awarded-preliminary-first-class-honours | yes |  |
+| /blog/article/site-3-0 | just-giving-api-and-t2t-redesign | yes |  |
+| /fyp/fyp.pdf | final-year-project-complete | yes |  |
+| /home/about | spanking-new-site | yes |  |
+| /miru | expotees-complete | yes |  |
 | /res/control-pnl.jpg | speed-up-your-pc | yes |  |
 | /res/holland.jpg | trip-to-rotterdam | yes |  |
 | /res/hull.jpg | trip-to-rotterdam | yes |  |
@@ -110,4 +110,4 @@ Internal links and images in article bodies that point at neither a page nor a f
 | /res/rotterdam.jpg | trip-to-rotterdam | yes |  |
 | /res/tsk-mgr.jpg | speed-up-your-pc | yes |  |
 | /umbraco/nothing.jpg | authentication-through-azure | yes |  |
-| /umbraco/www.resturantasher.nl | trip-to-rotterdam | no (new) |  |
+| /umbraco/www.resturantasher.nl | trip-to-rotterdam | yes |  |
