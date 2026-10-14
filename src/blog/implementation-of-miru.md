@@ -6,9 +6,9 @@ topic: Project
 tags: []
 ---
 
-Implementation has really started now; after last week’s set back with getting the project correctly set up with the Google Play API, this week has gone considerable better. In fact, it has gone so well I have managed to complete MVP 1, 2.1 and put 2.2 at 60% completion. This boost in progress has been done to a real focus on work, and assigning free time to catch up with setbacks from last week.
+Implementation has really started now; after last week’s setback with getting the project correctly set up with the Google Play API, this week has gone considerably better. In fact, it has gone so well I have managed to complete MVP 1, 2.1 and put 2.2 at 60% completion. This boost in progress has been due to a real focus on work, and assigning free time to catch up with setbacks from last week.
 
-Currently the system now has a map, which zooms to your location on opening. I have implemented the earlier class designs which has given me the availability of instrument types. I have added markers which are connected to instrument objects. I have also began to prepare the application for connection and handling of external data as currently I have hard coded in some sample objects.
+Currently the system now has a map, which zooms to your location on opening. I have implemented the earlier class designs which has given me the availability of instrument types. I have added markers which are connected to instrument objects. I have also begun to prepare the application for connection and handling of external data as currently I have hard coded in some sample objects.
 
 Here is a very early view of the system running in the GenyMotion emulator:
 

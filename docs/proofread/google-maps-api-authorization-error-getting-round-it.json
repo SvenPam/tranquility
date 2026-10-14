@@ -1,0 +1,12 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    { "from": "the certificate finger print, SHA1", "to": "the certificate fingerprint, SHA1", "kind": "spelling" },
+    { "from": "you will need double check that", "to": "you will need to double check that", "kind": "typo" },
+    { "from": "your project.propeties has the following line", "to": "your project.properties has the following line", "kind": "spelling" },
+    { "from": "if it dosen’t it could", "to": "if it doesn’t it could", "kind": "spelling" }
+  ],
+  "links": [],
+  "images": []
+}

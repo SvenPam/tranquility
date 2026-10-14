@@ -12,7 +12,7 @@ Firstly, I have set up a Master/Detail activity which can be accessed from the m
 
 <p><img src="/old/miruscreen3.png" alt="The master/detail activity showing test data." title="The master/detail activity showing test data." width="100%"></p>
 
-Finally, through the use the route interface – I have made it so any instrument implementing said interface will show a route on the map.
+Finally, through the use of the route interface – I have made it so any instrument implementing said interface will show a route on the map.
 
 <p><img src="/old/miruscreen4.png" alt="Pipeline data shown on Google map." title="Pipeline data shown on Google map." width="100%"></p>
 

@@ -1,0 +1,11 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    { "from": "I was using jQuery to serialize a form", "to": "I was using jQuery to serialise a form", "kind": "spelling" },
+    { "from": "It won’t serialize, your image(s)", "to": "It won’t serialise your image(s)", "kind": "punctuation" },
+    { "from": "would be to check is typeof FormData", "to": "would be to check if typeof FormData", "kind": "typo" }
+  ],
+  "links": [],
+  "images": []
+}

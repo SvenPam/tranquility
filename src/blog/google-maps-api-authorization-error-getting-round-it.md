@@ -42,13 +42,13 @@ So before I begin with this guide let me lay down some scope: it should be able 
 <p>You’re going to want to navigate to where your JDK has been installed eg. In CMD type: “cd “<span class="code">C:\Program Files\Java\jdk1.7.0_45\bin</span>" “ then press enter.</p>
 </li>
 <li>
-<p>Here we will use the Java keytool.exe to extract our API key. To do this, you will need to know where your debug.keystore file is. You will most likely find this here: %userprofile%\.android\debug.keystore</p>
+<p>Here we will use the Java <code>keytool.exe</code> to extract our API key. To do this, you will need to know where your <code>debug.keystore</code> file is. You will most likely find this here: <code>%userprofile%\.android\debug.keystore</code></p>
 </li>
 <li>
 <p>When you know that enter this into CMD: “<span class="code">keytool -v -list -alias androiddebugkey –keystore "%userprofile%\.android\debug.keystore" -storepass android -keypass android</span>"</p>
 </li>
 <li>
-<p>You’re looking to get a load of info back, specifically the certificate finger print, SHA1. When you find that, you will need to copy it.</p>
+<p>You’re looking to get a load of info back, specifically the certificate fingerprint, SHA1. When you find that, you will need to copy it.</p>
 </li>
 <li>
 <p>Next you need to go to the <a href="https://cloud.google.com/console">Google API Console</a>.</p>
@@ -69,7 +69,7 @@ So before I begin with this guide let me lay down some scope: it should be able 
 <div class="dvNumber">4.</div>
 
 <div class="item">
-<p>Before we go any further let’s get the map demo source. You can find it in the ADT package: \sdk\extras\google\google_play_services\samples\maps</p>
+<p>Before we go any further let’s get the map demo source. You can find it in the ADT package: <code>\sdk\extras\google\google_play_services\samples\maps</code></p>
 </div>
 
 <div class="dvNumber">5.</div>
@@ -87,14 +87,16 @@ So before I begin with this guide let me lay down some scope: it should be able 
 <div class="dvNumber">7.</div>
 
 <div class="item">
-<p>Next, you will need double check that your project.propeties has the following line (it should): <span class="code">android.library.reference.1=google-play-services_lib</span></p>
+<p>Next, you will need to double check that your <code>project.properties</code> has the following line (it should): <span class="code">android.library.reference.1=google-play-services_lib</span></p>
 </div>
 
 <div class="dvNumber">8.</div>
 
 <div class="item">
-<p>Next, a setting in proguard-project.txt needs to be appended:</p>
-<span class="code">-keep class * extends java.util.ListResourceBundle {</span> <br> <span class="code">protected Object[][] getContents();</span> <br> <span class="code">}</span>
+<p>Next, a setting in <code>proguard-project.txt</code> needs to be appended:</p>
+<pre><code class="language-text">-keep class * extends java.util.ListResourceBundle {
+    protected Object[][] getContents();
+}</code></pre>
 <p>Stackoverflow user <a href="http://stackoverflow.com/users/422654/rusfearuth">Rusfearuth</a> explains this point (with pics) for this <a href="http://stackoverflow.com/questions/13696620/google-maps-android-api-v2-authorization-failure">question</a>.</p>
 </div>
 
@@ -133,4 +135,4 @@ So before I begin with this guide let me lay down some scope: it should be able 
 <p>To test that Google Play is working, run the emulator, find it in the installed apps, and search for any android app – like SnapChat, if it works, you’re spot on.</p>
 </div>
 
-Once all these steps have been completed it should work, if it dosen’t it could be because you need to uninstall your app to clear out the cache. As far as I am aware, this won't work in the ADT Emulator, at least there is another step involved somewhere.
+Once all these steps have been completed it should work, if it doesn’t it could be because you need to uninstall your app to clear out the cache. As far as I am aware, this won't work in the ADT Emulator, at least there is another step involved somewhere.

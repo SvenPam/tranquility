@@ -1,0 +1,11 @@
+{
+  "title": [],
+  "description": [],
+  "body": [
+    { "from": "that works really well, and it based not on the scroll event", "to": "that works really well, and it's based not on the scroll event", "kind": "grammar" },
+    { "from": "Several changes when made just from issues", "to": "Several changes were made just from issues", "kind": "typo" },
+    { "from": "does not work on FIrefox.", "to": "does not work on Firefox.", "kind": "typo" }
+  ],
+  "links": [],
+  "images": []
+}

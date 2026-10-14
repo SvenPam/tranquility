@@ -1,12 +1,12 @@
 ---
 title: "Life's better with BEM"
-description: "Utilising the BEM style methodology for clean architecture an maintainability gains 💪"
+description: "Utilising the BEM style methodology for clean architecture and maintainability gains 💪"
 date: 2018-11-20T17:48:18
 topic: Guide
 tags: []
 ---
 
-I plan to write a bit of a series of methodologies and processes I use with styles. The first methodology is the Block Element Modifier (BEM) style methodology. Before I get onto the that, I want to be upfront and say there are _many_ methodologies out there. BEM is _my teams'_ favourite and it works for _us_. I'll list a load of other methodologies towards the end if you're interested in comparing them.
+I plan to write a bit of a series of methodologies and processes I use with styles. The first methodology is the Block Element Modifier (BEM) style methodology. Before I get onto that, I want to be upfront and say there are _many_ methodologies out there. BEM is _my team's_ favourite and it works for _us_. I'll list a load of other methodologies towards the end if you're interested in comparing them.
 
 ## What is BEM?
 
@@ -19,7 +19,7 @@ The premise for BEM is that your pages should be made up of independent componen
 -   headers
 -   lists
 
-I always say CSS is easy to learn and hard to master. This is why: it's easy for me to list them components because I am not there with you now to see what you're trying to categorize and I find this is the **root of all styling problems**. Just knowing what is its own independent component. So a good exercise before using BEM is looking around sites just trying your best to identify bits of shared UI - it will carry you miles.
+I always say CSS is easy to learn and hard to master. This is why: it's easy for me to list them components because I am not there with you now to see what you're trying to categorise and I find this is the **root of all styling problems**. Just knowing what is its own independent component. So a good exercise before using BEM is looking around sites just trying your best to identify bits of shared UI - it will carry you miles.
 
 <p>&nbsp;</p>
 
@@ -77,7 +77,7 @@ An element is defined by two underscores after the block name. So for our produc
 <script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
 </p>
 
-Here you can a little SASS trick that works so well with BEM. I'll touch on that later.
+Here you can see a little SASS trick that works so well with BEM. I'll touch on that later.
 
 Examples of elements could be anything, just as long as it pertains to its own block.
 
@@ -85,11 +85,11 @@ Examples of elements could be anything, just as long as it pertains to its own b
 
 ### Modifiers
 
-Blocks and elements build our baselines. Everything should look relatively ok with just blocks and elements. Sometimes though, we need to take other things into account like element state, or themes. A good example would be: how would you show a price was discounted? We would break DRY principles if we wrote how a price looked all over again. Modifiers just the thing for this situation.
+Blocks and elements build our baselines. Everything should look relatively ok with just blocks and elements. Sometimes though, we need to take other things into account like element state, or themes. A good example would be: how would you show a price was discounted? We would break DRY principles if we wrote how a price looked all over again. Modifiers are just the thing for this situation.
 
 <blockquote>[Modifiers are] Flags on blocks or elements. Use them to change appearance, behavior or state.</blockquote>
 
-Note here, that they can be used on both blocks and elements. We can define a modifier by two dashes, so say we want a discount variant of our price we might write `.product__price--discount`. Here we're saying we have created a variant of the price element which is an element of the product block. Here the true power of BEM comes to live, with three simple names we can clear show the purpose of a component.
+Note here, that they can be used on both blocks and elements. We can define a modifier by two dashes, so say we want a discount variant of our price we might write `.product__price--discount`. Here we're saying we have created a variant of the price element which is an element of the product block. Here the true power of BEM comes to life, with three simple names we can clearly show the purpose of a component.
 
 In the next stages, I will add a discount to the price and update the buttons to be different colours.
 
@@ -111,7 +111,7 @@ Some examples of when you use modifiers would be:
 
 ## Full Example
 
-I've added in some styles to give this example more character. It's still the same HTML from the first step, just will classes.
+I've added in some styles to give this example more character. It's still the same HTML from the first step, just with classes.
 
 <p class="codepen" data-height="656" data-theme-id="dark" data-slug-hash="yQpzab" data-default-tab="css,result" data-user="svenpam" data-pen-title="BEM Example - Full">&nbsp;</p>
 
@@ -133,7 +133,7 @@ I always put **one block per file**. This further goes to help with the flexibi
 
 In a work environment, we're able to place people on code they have never seen before and they hit the ground running with BEM - which is a huge benefit in itself. There is no more search through lines and lines of CSS to find something, you simply use the HTML as a reference.
 
-BEM is easy to use, but it relies heavily on knowing what components are stand alone and what is not. The other criticisms I've heard of BEM has been searchability. Especially when you nest things with SASS. I'd personally feel this isn't a problem, but I'll let the _dear reader_ form your own opinions.
+BEM is easy to use, but it relies heavily on knowing what components are stand alone and what is not. The other criticisms I've heard of BEM have been searchability. Especially when you nest things with SASS. I'd personally feel this isn't a problem, but I'll let the _dear reader_ form your own opinions.
 
 <p>&nbsp;</p>
 
@@ -150,6 +150,6 @@ BEM isn't the only methodology out there, some methodologies work better for c
 -   [SMACSS](https://smacss.com/)
 -   [SuitCSS](https://suitcss.github.io/)
 
-I would love to hear thought from anyone working with BEM and the others.
+I would love to hear thoughts from anyone working with BEM and the others.
 
 <p>&nbsp;</p>
