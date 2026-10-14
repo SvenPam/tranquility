@@ -1,0 +1,29 @@
+{%- set pageTitle = site.name if title == site.name else (title + " | " + site.name) -%}
+{%- set canonical = page.url | absoluteUrl -%}
+{%- set ogImageUrl = (ogImage or (page.url | ogImagePath)) | absoluteUrl -%}
+<meta charset="utf-8" />
+<title>{{ pageTitle }}</title>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="{{ site.themeColor }}">
+
+<meta name="description" content="{{ description }}">
+<link href="{{ canonical }}" rel="canonical">
+
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ canonical }}" />
+<meta property="og:image" content="{{ ogImageUrl }}" />
+<meta property="og:site_name" content="{{ site.name }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="{{ site.twitter }}" />
+<meta name="twitter:creator" content="{{ site.twitter }}" />
+<meta name="twitter:image" content="{{ ogImageUrl }}" />

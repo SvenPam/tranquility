@@ -1,0 +1,19 @@
+---
+title: Blog
+description: ""
+layout: layouts/page.njk
+heroImage: /media/1054/2.jpg
+heroFocus: { x: 0.49166666666666664, y: 0.34615384615384615 }
+permalink: /blog/
+---
+<section class="section">
+    <div class="section__content">
+            <ul class="list list--unstyled">
+{%- for article in collections.articles %}
+                    <li>
+{% include "partials/article-summary.njk" %}
+                    </li>
+{%- endfor %}
+            </ul>
+    </div>
+</section>

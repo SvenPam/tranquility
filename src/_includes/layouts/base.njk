@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-<head><meta charset="utf-8"><title>{{ title }} | {{ site.name }}</title></head>
-<body><main>{{ content | safe }}</main></body>
+<head>
+{% include "partials/meta.njk" %}
+    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+{% if heroImage %}{% heroStyle heroImage, heroFocus %}{% endif %}
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazyload",
+            class_loaded: "lazyloaded",
+            class_loading: "lazyloading"
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
+</head>
+<body>
+{% include "partials/nav.njk" %}
+    <main>
+{{ content | safe }}
+    </main>
+{% include "partials/footer.njk" %}
+    <script>
+        document.getElementById('mobileMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "none";
+            document.getElementById('siteNav').classList.add('active');
+            document.body.className += 'menu-open';
+            return false;
+        }, false);
+
+        document.getElementById('closeMobMenu').addEventListener('click', function (ev) {
+            document.getElementById('mobileMenu').style.display = "";
+            document.getElementById('siteNav').classList.remove('active');
+            document.body.className = '';
+            return false;
+        }, false);
+    </script>
+</body>
 </html>

@@ -1,0 +1,46 @@
+---
+layout: layouts/page.njk
+---
+{%- set older = collections.articlesAsc | getPreviousCollectionItem(page) -%}
+{%- set newer = collections.articlesAsc | getNextCollectionItem(page) -%}
+<article class="section">
+    <header class="section__facts section__facts--container">
+        <div class="section__fact section__fact--lift">
+            <h1 class="lead"><a class="h2" href="{{ page.url | cleanUrl }}">{{ title }}</a></h1>
+            <p class="text-center">{{ topic }}</p>
+            <p class="text-muted">
+                {{ description }}
+            </p>
+            <div class="section__meta">
+                <span>{{ site.author }} <span class="text-muted">//</span> <a href="//twitter.com/svenpam">@SvenPam</a> <span class="text-muted">//</span>
+                    {%- for tag in tags %} <span class="tag">{{ tag }}</span>{% endfor %}
+                    </span><time datetime="{{ page.date | dateIso }}">{{ page.date | dateShort }}</time>
+            </div>
+        </div>
+    </header>
+    <div class="article section__content">
+{%- if (updated or page.date) | isOld %}
+{% include "partials/old-alert.njk" %}
+{%- endif %}
+                    <div class="row">
+                    <div class="col-12 col-md-12">
+{{ content | safe }}
+                    </div>
+            </div>
+    </div>
+    <footer class="section__content">
+        <nav>
+            <ul class="pager">
+{%- if older %}
+                    <li><a href="{{ older.url | cleanUrl }}"><span>&larr;</span> Older</a></li>
+{%- endif %}
+{%- if newer %}
+                    <li><a href="{{ newer.url | cleanUrl }}">Newer <span>&rarr;</span></a></li>
+{%- endif %}
+            </ul>
+        </nav>
+    </footer>
+</article>
+{%- if "instagram-media" in content %}
+<script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+{%- endif %}
