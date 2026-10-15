@@ -8,7 +8,7 @@ tags: []
 
 A wild pump appears! You have Miru in your hands, and so far it’s been working out great – but it looks like someone missed this pump, what next?
 
-### Geotagging
+## Geotagging
 
 Fear not! Because this week I implemented the Geotagging function for Miru and it’s looking great:
 
@@ -16,7 +16,7 @@ Fear not! Because this week I implemented the Geotagging function for Miru and i
 
 With a tap here, and some typing there you can now start mapping your plant. Currently – with the scope of the project we’re only storing this on the device and there is no way to add full data. Let me explain this decision; realistically not everywhere has a [GIS](https://en.wikipedia.org/wiki/Geographic_information_system) – certainly not with our main client, SABIC. So the plan is to let operators and maintenance teams get out on the plant and _bosh_ in some geo data. As long as we have functional locations, the instrument/asset data can be hooked up to our lat long later.
 
-### Data Transfer
+## Data Transfer
 
 This has proven to be a little trickier than I had intended. I had planned that I could whip out an XML parser to serialise then deserialise device data. Alas! T’was not the case.
 

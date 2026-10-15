@@ -41,7 +41,7 @@ I won't bother with OTF or SVG as the above cover all browsers. You can then use
 
 I spoke about opting for TTF fonts before, and now it's time for the reason - **build tools**. I'll be showing a way to do it with Gulp and then Webpack, but it will more than likely be possible to do it with other tools as well. There are two bits to this; formatting (as above) and filtering - that is removing the characters from font we are not going to use. This is really important as you're likely creating a site that's only going to be in your language. For example, English isn't going to need Cyrillic or Japanese characters. This alone can reduce some fonts to a third of the size! If you need to support multiple character sets, check out my tricks below.
 
-#### Gulp
+### Gulp
 
 To do this in Gulp you will need to install the following:
 
@@ -54,7 +54,7 @@ Fontmin does most of the work, it sadly just doesn't do Woff2. You can then writ
 <script src="https://gist.github.com/SvenPam/78b9c4fd7faa241346d586873b83f3c8.js"></script>
 </p>
 
-#### Webpack/Node
+### Webpack/Node
 
 Using the original Fontmin, you can do the same as above. You will need:
 

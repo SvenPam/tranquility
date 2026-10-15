@@ -20,8 +20,6 @@ A heck of a lot of people buy their machines pre-built. Often, device manufactur
 
 To do this, go to your control panel, find programs, then click "Uninstall a program".
 
-<p><img style="height: 429px; width: 800px;" src="/res/control-pnl.jpg" alt=""></p>
-
 You'll be presented with a list of all your installed programs. If you don't know what it is, you mustn't use it; with exception to Windows or Microsoft named applications and anything in (a), blitz it. It will take a while, but this is a major source of slowness.
 
 ## 3\. Scan Your PC for Malware
@@ -59,8 +57,6 @@ One of the reasons for slow start-up times - loading windows etc. is to do with 
 Sort the list by status (click the column heading), you will then see all applications enabled to start when you log in. Disable all of it with exception to anything in (a). This will result in a faster start-up time, and an overall faster machine because there isn't random stuff running in the background. However, the flip side to this, is some applications that were in the list, will take a little longer to start. If it causes a problem, simply go back, and enable it.
 
 To give you an idea, here is my set up:
-
-<p><img style="height: 860px; width: 800px;" src="/res/tsk-mgr.jpg" alt=""></p>
 
 ### Boot Settings
 

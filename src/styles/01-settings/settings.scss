@@ -16,6 +16,8 @@ $link-hover-color:      darken($link-color, 10%);
 $link-color-on-dark:    $brand-primary;
 $link-hover-on-dark:    lighten($brand-primary, 15%);
 $brand-subtle:			#95A5A6;
+// Bootstrap's default muted grey (#868e96) fails WCAG AA contrast on the light sections.
+$text-muted:            #5f666d;
 
 $font-size-base: 1.1rem;
 $line-height-base: 1.7;

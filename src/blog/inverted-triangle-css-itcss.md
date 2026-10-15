@@ -26,7 +26,7 @@ Harry Roberts coined the concept in 2015 and it hasn't changed much since. It's 
 The basic concept is that your styles should be put into layers. It doesn't matter how many files are in each layer, the only thing that matters is the files are referenced in order the layers are. You can use ITCSS with any file types, in the below example I have used SASS. The examples are what I generally place in each layer.
 
 <div class="article__img-holder" style="padding-bottom: 52.375%;">
-        <img width="800" height="419" src="/media/1064/itcss-triangle.png">
+        <img width="800" height="419" src="/media/1064/itcss-triangle.png" alt="The ITCSS inverted triangle, from broad generic layers at the top down to specific ones at the point">
     </div>
 
 These layers can be defined as follows:

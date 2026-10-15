@@ -39,7 +39,7 @@ If you want to protect an Azure function, and call it from your SPA: here's what
     3.  Configure Azure Active Directory
     4.  Select "Express" > select the app you created before
     5.  **Gotcha:** You're going to need your Application ID URI which you can find in the expose API blade of your application (like in screenshot above). Go to advanced settings, you should see this has already been filled in. You need to paste your API URI in the "Allowed Token Audiences" section. Like so:   
-        ![](/umbraco/nothing.jpg)![Allowed token audiences example screenshot](/media/1067/azure-functon-ad-settings.jpg)
+        ![Allowed token audiences example screenshot](/media/1067/azure-functon-ad-settings.jpg)
     6.  Save
 3.  Set up your client with Microsoft's [MSAL client library](https://github.com/AzureAD/microsoft-authentication-library-for-js)
     1.  **Gotcha:** If you're using a framework like Vue.js, you might find after a user is logged in, the pop-up gets stuck, or after a redirect, nothing happens. You might see [this issue](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/174) for it on GitHub. For me, it was Vue router. Azure AD tries to route back with an ID token, but it's not actually a query string but a full-blown URL, ie. `/id_token=...` Make sure you have a catch-all route, with an instance of MSAL on that view!
