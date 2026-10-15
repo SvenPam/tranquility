@@ -1,0 +1,19 @@
+/// <reference path="../01-settings/settings" />
+/// <reference path="../02-tools/tools" />
+pre {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    background-color: $code-block-bg;
+    color: $code-block-color;
+    border-left: 4px solid $brand-primary;
+    border-radius: $border-radius;
+    font-size: .85em;
+    line-height: 1.6;
+    tab-size: 4;
+}
+
+code {
+    font-size: .9em;
+    word-break: break-word;
+}

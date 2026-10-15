@@ -1,12 +1,24 @@
 /// <reference path="../01-settings/settings" />
 /// <reference path="../02-tools/tools" />
 .media {
-    border-left: $brand-subtle dotted 4px;
-    padding-left: 10px;
-    background-color: $gray-100;
+    border-left: $brand-primary solid 4px;
+    padding: 1rem 1.25rem;
+    background-color: $white;
+    border-radius: 0 $border-radius $border-radius 0;
+    transition: box-shadow .15s ease-in-out;
+
+    &:hover,
+    &:focus-within {
+        box-shadow: 0 4px 16px rgba($black, .08);
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
 
     &__heading {
         font-size: $h5-font-size;
+        margin-bottom: .25rem;
     }
 
     &__link {

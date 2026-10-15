@@ -1,8 +1,9 @@
 /// <reference path="../01-settings/settings" />
 /// <reference path="../02-tools/tools" />
 .alert {
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    border-radius: $border-radius;
 
     &__icon {
         width: 1rem;
@@ -12,18 +13,24 @@
         svg {
             height: 90%;
             width: 90%;
-            fill: $gray-500;
+            fill: currentColor;
         }
     }
 
     &__title {
-        color: $gray-500;
+        color: inherit;
         font-size: 1rem;
+        margin-bottom: .25rem;
     }
 
+    // Tinted rather than solid so it reads on both the light and dark sections.
     &--old {
-        background-color: $gray-300;
-        border: $gray-600 solid 3px;
-        color: $gray-600;
+        background-color: rgba($brand-warning, .12);
+        border-left: 4px solid $brand-warning;
+        font-size: .95rem;
+
+        .alert__title {
+            color: $brand-warning;
+        }
     }
 }

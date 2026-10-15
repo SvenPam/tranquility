@@ -2,8 +2,9 @@
 /// <reference path="../02-tools/tools" />
 .tag {
     background-color: $brand-secondary;
-    color: $gray-300;
-    padding: 2px 4px;
+    color: $dark-bg;
+    padding: 1px 8px;
+    white-space: nowrap;
     font-size: 80%;
     border-radius: 10px;
 
