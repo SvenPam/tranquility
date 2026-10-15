@@ -14,6 +14,4 @@ I have only tested on WiFi but I should think a change to 3G (or less) would be 
 
 Back to Web APIs though. You should find slightly longer loading times, but with that exception your device will no longer have to download entire web pages from the server every time you want to read an article, which is very neat. The mobile page also lacks Disqus comments as I have found it to be quite a bulky load addition to the page, and it has yet to be used. So I only have Software Architecture to go and I am fine with uni!
 
-<p>&nbsp;</p>
-
 Also, I wrote this entire blog on my Nokia 920 Windows Phone running the dev preview of WP 8.1!

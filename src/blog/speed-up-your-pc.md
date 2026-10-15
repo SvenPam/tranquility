@@ -10,13 +10,9 @@ Often I am tasked with solving the "can you speed my computer up?" problem. I t
 
 The guide also heavily relies on other people's guides, so thanks to them! I have appended letters (a) &amp; (b) at the end for reference.
 
-<p>&nbsp;</p>
-
 ## 1\. Empty Recycle Bin
 
 Simplest thing, empty your overflowing recycle bin. If you don't know how to do this, it's best you don't continue with this guide.
-
-<p>&nbsp;</p>
 
 ## 2\.  Uninstall All That _Crap_
 
@@ -28,13 +24,9 @@ To do this, go to your control panel, find programs, then click "Uninstall a pro
 
 You'll be presented with a list of all your installed programs. If you don't know what it is, you mustn't use it; with exception to Windows or Microsoft named applications and anything in (a), blitz it. It will take a while, but this is a major source of slowness.
 
-<p>&nbsp;</p>
-
 ## 3\. Scan Your PC for Malware
 
 You have likely already run a virus scan, but did you get it all? Aside from adjusting your settings to max (deep, slow, full priority scan), I absolutely recommend [SuperAntiSpyware](http://www.superantispyware.com/). It's totally free, and the only thing you really lose in the free version is automation and real-time detection. Keep your existing anti-virus, and just run this at max settings once a month or so. It really does find stuff that anti-viruses do not.
-
-<p>&nbsp;</p>
 
 ## 4\. CC Clean
 
@@ -58,8 +50,6 @@ If you don't have [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) (and i
 
 Fragmentation is a phenomenon that occurs in file systems, it's quite [interesting to read about](https://en.wikipedia.org/wiki/Defragmentation).
 
-<p>&nbsp;</p>
-
 ## 6\. Start Up Settings
 
 ### Programs
@@ -69,8 +59,6 @@ One of the reasons for slow start-up times - loading windows etc. is to do with 
 Sort the list by status (click the column heading), you will then see all applications enabled to start when you log in. Disable all of it with exception to anything in (a). This will result in a faster start-up time, and an overall faster machine because there isn't random stuff running in the background. However, the flip side to this, is some applications that were in the list, will take a little longer to start. If it causes a problem, simply go back, and enable it.
 
 To give you an idea, here is my set up:
-
-<p>&nbsp;</p>
 
 <p><img style="height: 860px; width: 800px;" src="/res/tsk-mgr.jpg" alt=""></p>
 
@@ -96,15 +84,11 @@ If you want to blast one, fair enough! We need to check your spec first, press W
 
 Anything less than 2/3GB is probably making a difference. I would advise getting some more. I am not going to attempt to tell you how to do this, it is _easier_ than you might think. This guide will help, but I advise you get a knowledgeable/qualified helper to order the RAM and do it for you. Once they show you, it will be _**dead easy**_ to do it again.
 
-<p>&nbsp;</p>
-
 ### Storage Drive
 
 Ultimately before buying a new PC there is one last thing you can do, buy a Solid State Drive and put all your data (at least your OS) on that. I'm afraid you're going to have to Google around for this one, and get some help.
 
 SSD is rapid. You could be looking at cold to ready to word process in 8-14 seconds.
-
-<p>&nbsp;</p>
 
 ## References 
 
@@ -121,6 +105,3 @@ Go to the "Options" tab along the left. Select "Cookies", then just select cooki
 
 Common ones will be facebook.com, outlook.com, reddit.com etc...
 
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>

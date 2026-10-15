@@ -16,15 +16,15 @@ This problem will be in regards to the Adventure Works 2012 Data Warehouse as th
 
 If you’re familiar with SSAS in Visual Studio you may come across the infamous:
 
-<div style="background: #eee; border: 1px solid #ccc; padding: 5px 10px;">Internal error: The operation terminated unsuccessfully.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div style="background: #eee; color: #212529; border: 1px solid #ccc; padding: 5px 10px;">Internal error: The operation terminated unsuccessfully.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 
  and
 
-<div style="background: #eee; border: 1px solid #ccc; padding: 5px 10px;">Server: The current operation was cancelled because another operation in the transaction failed.</div>
+<div style="background: #eee; color: #212529; border: 1px solid #ccc; padding: 5px 10px;">Server: The current operation was cancelled because another operation in the transaction failed.</div>
 
 Errors. It is not very much help at all, the debug manager is only telling you what you already know. The trick here is to keep an eye on warnings, and lo and behold in this instance one specific warning led me in to a Crime Noir style solution hunt:
 
-<div style="background: #eee; border: 1px solid #ccc; padding: 5px 10px;">Errors in the OLAP storage engine: The attribute key cannot be found when processing: Table: 'dbo_DimProduct', Column: 'EnglishProductName', Value: ' Adjustable Race'. The attribute is 'English Product Name'. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>
+<div style="background: #eee; color: #212529; border: 1px solid #ccc; padding: 5px 10px;">Errors in the OLAP storage engine: The attribute key cannot be found when processing: Table: 'dbo_DimProduct', Column: 'EnglishProductName', Value: ' Adjustable Race'. The attribute is 'English Product Name'. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>
 
 The first thing I did was hit Google, and try to find an answer. Sadly the closest I got to a solution was a comprehensive article by [Todd McDermid](http://toddmcdermid.blogspot.co.uk/2009/01/ssas-quick-reference-attribute-key.html), this was the weapon in the mystery I was to solve.
 

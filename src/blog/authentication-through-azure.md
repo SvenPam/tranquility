@@ -47,8 +47,6 @@ If you want to protect an Azure function, and call it from your SPA: here's what
         ![](/media/1068/example-scope-silent-token-code.jpg) You can find the full scope in your expose API section in the application in Azure AD.
     3.  I stored my token in session storage as can be seen above. When you make your call to your API, you'll need to get that, and set an "Authorization" header with a "Bearer {your JWT token}".
 
-<p>&nbsp;</p>
-
 All the above steps can be pieced together from the guides I have linked to. Mostly, I want to highlight the parts I got stuck on. Fingers crossed, you won't see a 401 when you call your API. Azure AD is a superb approach if you're wanting to provide single sign-on to your clients. Especially if (to my assumption) you consider another Azure AD organisation can just loop into your organisation's AD and use your registered app but still manage their own users. 
 
 This is a whole world away from the pain I had with IdentityServer, and the whole thing is free. I'm not 100% sure how secure this is, as IdentityServer docs [suggest the implicit flow is bad](http://docs.identityserver.io/en/latest/topics/grant_types.html#implicit) and you should use the code flow. Microsoft docs [argue for pure SPA setups](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-oauth2-implicit-grant-flow), implicit is fine. My knowledge of security is enough to get by, but you should do your own research into the two.

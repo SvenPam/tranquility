@@ -21,8 +21,6 @@ The premise for BEM is that your pages should be made up of independent componen
 
 I always say CSS is easy to learn and hard to master. This is why: it's easy for me to list them components because I am not there with you now to see what you're trying to categorise and I find this is the **root of all styling problems**. Just knowing what is its own independent component. So a good exercise before using BEM is looking around sites just trying your best to identify bits of shared UI - it will carry you miles.
 
-<p>&nbsp;</p>
-
 ## Really though, what is BEM?
 
 Got your UI components in mind? Cool. Let's use a simple example.
@@ -34,8 +32,6 @@ Got your UI components in mind? Cool. Let's use a simple example.
 </p>
 
 I've knocked up some markup for a simple product. Little by little, we'll work through the example bit by bit.
-
-<p>&nbsp;</p>
 
 ### Blocks
 
@@ -61,8 +57,6 @@ Some examples of blocks might be:
 
 Now that we have identified our standalone components, it's time to get them sleeves rolled up.
 
-<p>&nbsp;</p>
-
 ### Elements
 
 The bulk of your styles will invariably end up as elements, which are dependent on blocks.
@@ -80,8 +74,6 @@ An element is defined by two underscores after the block name. So for our produc
 Here you can see a little SASS trick that works so well with BEM. I'll touch on that later.
 
 Examples of elements could be anything, just as long as it pertains to its own block.
-
-<p>&nbsp;</p>
 
 ### Modifiers
 
@@ -107,8 +99,6 @@ Some examples of when you use modifiers would be:
 -   transition states - open, closed, faded etc.
 -   general states - active, inactive etc.
 
-<p>&nbsp;</p>
-
 ## Full Example
 
 I've added in some styles to give this example more character. It's still the same HTML from the first step, just with classes.
@@ -118,8 +108,6 @@ I've added in some styles to give this example more character. It's still the sa
 <p>
 <script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
 </p>
-
-<p>&nbsp;</p>
 
 ## Benefits
 
@@ -134,8 +122,6 @@ I always put **one block per file**. This further goes to help with the flexibi
 In a work environment, we're able to place people on code they have never seen before and they hit the ground running with BEM - which is a huge benefit in itself. There is no more searching through lines and lines of CSS to find something, you simply use the HTML as a reference.
 
 BEM is easy to use, but it relies heavily on knowing what components are stand alone and what is not. The other criticisms I've heard of BEM have been searchability. Especially when you nest things with SASS. I'd personally feel this isn't a problem, but I'll let the _dear reader_ form your own opinions.
-
-<p>&nbsp;</p>
 
 ## Further Reading
 
@@ -152,4 +138,3 @@ BEM isn't the only methodology out there, some methodologies work better for c
 
 I would love to hear thoughts from anyone working with BEM and the others.
 
-<p>&nbsp;</p>

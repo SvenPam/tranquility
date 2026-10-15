@@ -82,8 +82,6 @@ private static bool PostToFacebook(SocialDealership dealership, string message, 
 
 A call is made to `FacebookSetExtendedAccessToken()` which will always retrieve a long life token, and set it in the database. By default access tokens last an hour, this is obviously inconvenient when we’re running this in a server application. An extended token lasts for 60 days, and by calling the function every time a post is made the token will always be refreshed assuming a post is made every 60 days. The function to do this:
 
-<p>&nbsp;</p>
-
 ```csharp
 private static void FacebookSetExtendedAccessToken(SocialDealership dealership)
 {

@@ -14,8 +14,6 @@ The brand new compiler MS built now means we don't have to build projects anymor
 
 ## Easy Publish - wwwroot
 
-<p>&nbsp;</p>
-
 This is a great change in this iteration, and totally separates out stuff we really don't want or need to publish. This root folder literally represents the root directory when the application is running. In previous versions it has always been manic trying to only publish files that we want, now we don't have to worry about that.
 
 <p style="text-align: center;"><img src="/old/wwwroot.jpg" alt="" width="249"></p>
@@ -26,11 +24,7 @@ Bye bye XML solution file, that always broke everything in source control, hi `p
 
 ## Auto Property Initializers 
 
-<p>&nbsp;</p>
-
 We can now default properties!
-
-<p>&nbsp;</p>
 
 ```csharp
 public class VehicleWrapViewModel
@@ -42,8 +36,6 @@ public class VehicleWrapViewModel
 
 We can use lambda to make function calls as well!
 
-<p>&nbsp;</p>
-
 ```csharp
 public class Document
 {
@@ -52,8 +44,6 @@ public class Document
     ...
 }
 ```
-
-<p>&nbsp;</p>
 
 ## String Interpolation
 
@@ -67,14 +57,9 @@ $"images/brands/{Env.CurrentManufacturer.ManufacturerCode}/logo.png"
 
 Hands down, the best feature yet. It's always been a pain to have to check an object is null before trying to access one of its fields. But, no more!
 
-<p>&nbsp;</p>
-
 ```csharp
 _keys = keysAccessor?.Value;
 ```
 
 In this instance, `_keys` will be set to null if `keysAccessor` is null, as opposed to a null exception.
 
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>

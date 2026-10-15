@@ -8,8 +8,6 @@ tags: []
 
 I'm sure that plenty has been written on the minification of fonts, but it's something I thought I would write about given my learnings over the last few years.
 
-<p>&nbsp;</p>
-
 ## System Fonts
 
 If you can, choose system fonts. You will never have to worry about terms like _FOIT_ or _FOUT_ or take any hit on performance at all! Of course, that isn't always possible as typography plays a big part in the readability of a web page. However, should you be able to shirk the responsibilities of design, you can use system fonts.
@@ -19,15 +17,11 @@ If you can, choose system fonts. You will never have to worry about terms like 
 
 The above comes from this [CSS Tricks article.](https://css-tricks.com/snippets/css/system-font-stack/) Of course, it's possible to stray from these families - if you're into your typography; you can check out this [opinionated article](https://practicaltypography.com/system-fonts.html) for a graded list of fonts you can use.
 
-<p>&nbsp;</p>
-
 ## Source
 
 Next steps if you're wanting custom fonts is choosing the source. If you can use a free font, [Google Fonts](https://fonts.google.com/) is a solid source. It gives you all the code you need, and will correctly load fonts with minimal impact on performance. Furthermore, if you're using a popular font, you can take comfort in the fact there is a chance a visitor may already have that cached.
 
 I've not used many font providers, but I did find [Adobe Typekit](https://fonts.adobe.com/) wasn't that great. Using their scripts, I frequently noticed FOIT - especially when testing on slow connections. I will generally request the TTF formats of fonts when I get given fonts from Adobe, in favour of hosting them via our own CDN.
-
-<p>&nbsp;</p>
 
 ## Format
 
@@ -42,8 +36,6 @@ I won't bother with OTF or SVG as the above cover all browsers. You can then use
 <p>
 <script src="https://gist.github.com/SvenPam/033c4f5ad7777b873d409555944380fc.js"></script>
 </p>
-
-<p>&nbsp;</p>
 
 ## Minification
 
@@ -72,8 +64,6 @@ Using the original Fontmin, you can do the same as above. You will need:
 <script src="https://gist.github.com/SvenPam/32c3d43012bae2e26014ae5e6d5d9ed6.js"></script>
 </p>
 
-<p>&nbsp;</p>
-
 ### Tricks
 
 Here are some tricks to help get a little more out of your fonts.
@@ -100,16 +90,12 @@ If you're having issues with FOIT, FOUT or FOFT you can use [font-display](https
 
 When using `@font-face`, you don't just have to use `url()`. If you want a browser to try and get a font you think the system might have before it goes off into the web to get one, you can use `local()`. It's rare that you would want a specific font over a custom one, but it's just one extra tool to help you speed that font load up.
 
-<p>&nbsp;</p>
-
 ## More Reading
 
 I'm by no means an expert. Fonts are complicated, even more so if you get on the topic of typography! If you're interested in reading more, here are some resources that helped me:
 
 -   [CSS Tricks - FOUT, FOIT, FOFT](https://css-tricks.com/fout-foit-foft/)
 -   [Google Web Font Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)
-
-<p>&nbsp;</p>
 
 ## Citation
 

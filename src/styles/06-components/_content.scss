@@ -1,12 +1,63 @@
 /// <reference path="../01-settings/settings" />
 /// <reference path="../02-tools/tools" />
 .article {
-    padding-top: 50px;
+    padding-top: 2.5rem;
     max-width: 100%;
-    overflow: hidden;
+    overflow-wrap: break-word;
+
+    > p,
+    > ul,
+    > ol {
+        margin-bottom: 1.25rem;
+    }
+
+    li + li {
+        margin-top: .35rem;
+    }
+
+    > h2,
+    > h3,
+    > h4 {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    > h2 {
+        font-size: 1.75rem;
+    }
+
+    > h3 {
+        font-size: 1.4rem;
+    }
+
+    > h4 {
+        font-size: 1.15rem;
+    }
 
     img {
+        display: block;
         max-width: 100%;
+        height: auto;
+        margin: 2rem auto;
+        border-radius: $border-radius;
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        margin-bottom: 1.25rem;
+    }
+
+    th,
+    td {
+        padding: .4rem .75rem;
+        border-bottom: 1px solid rgba($brand-subtle, .4);
     }
 
     &__img-holder {

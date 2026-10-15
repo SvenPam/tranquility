@@ -18,4 +18,3 @@ Ste
 <div class="g-person" data-width="450" data-href="//plus.google.com/118243407989708963411/about" data-theme="dark" data-showtagline="false" data-rel="author"></div>
 </div>
 
-<p>&nbsp;</p>

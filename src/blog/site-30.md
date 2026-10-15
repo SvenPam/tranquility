@@ -28,8 +28,6 @@ My friends and I decided we would take on another endurance challenge for charit
 
 <p style="text-align: center;"><img src="/a/dist/img/t2t.png" alt="" width="800"></p>
 
-<p>&nbsp;</p>
-
 ### Skeleton CSS
 
 Another framework! Skeleton CSS is the self-proclaimed dead simple, responsive boilerplate. Not so much a framework I suppose, but similar. As light as Skeleton is, I found the syntax to be really odd and the grid system to be rather rigid.
@@ -37,8 +35,6 @@ Another framework! Skeleton CSS is the self-proclaimed dead simple, responsive b
 Frustratingly, the grid system requires that each row be explicitly wrapped. This may well be great with static content, however not so great when it comes to dynamic content. It can make looping content difficult and borderline impossible to make responsive.
 
 The default design though, is beautiful and the Raleway font makes an excellent choice. It also really highlights the sheer amount you get at the get-go with other frameworks like JQM and Bootstrap.
-
-<p>&nbsp;</p>
 
 ## Overhaul
 

@@ -32,8 +32,6 @@ nxtWaypnt = prevWaypnt.next();
 prevWaypnt = prevWaypnt.prev();
 ```
 
-<p>&nbsp;</p>
-
 You'll notice the use of 'offset' which is picked up from a custom attribute in the waypoint element. This means that HTML5 can be used to set the offset, so say you want the page to be scrolled half way up - `data-offset` can be set to a number.
 
 ## Plugin
@@ -51,7 +49,5 @@ $.mobile.ajaxEnabled = false;
 ```
 
 This essentially disables AJAX navigation for all links on a page.
-
-<p>&nbsp;</p>
 
 Finally, I've discovered the SWPS user scroll disable does not work on Firefox. This is due to Mozilla (the only browser) not supporting `document.onMousewheel` which is a shame. I'm sure to come up with a workaround though, I believe it lies with `DOMMouseScroll`.

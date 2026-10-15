@@ -14,8 +14,6 @@ I just did, and it’s horrible! When I initially saw it, it was in such a niche
 
 It has to be something wrong with my machine, right? So we began disabling all my browser extensions, and Visual Studio plugins… nothing. Perhaps it is IIS that is doing the deed? We reinstalled IIS express – nothing. We switched to local IIS and still, nothing! By this point it had fast approached home time and we weren’t getting anywhere.
 
-<p>&nbsp;</p>
-
 So this morning I came to work, with gloom in my heart at the thought of having to tackle this problem all over. Sat at my desk, logged in, then did another quick google: “corrupted html visual studio”, I typed. Lo! A [Stack Overflow Question](http://stackoverflow.com/questions/20697329/visual-studio-2013-produces-garbled-corrupted-wrong-encoded-html)!
 
 > Uncheck _Enable Browser Link_ and reload the web page (rebuild shouldn't be necessary).

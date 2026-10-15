@@ -4,33 +4,57 @@
 .hero {
     @include media-breakpoint-up(md) {
         min-height: 370px;
-        padding: 30px;
+        padding: 3rem 2rem;
         background-image: url('#{$image-url}/generic/2.jpg');
+        background-size: 100% auto;
     }
 
     @include media-breakpoint-down(sm) {
         background-image: url('#{$image-url}/generic/2-100.jpg');
     }
 
-    min-height: 100px;
-    padding: 2rem;
+    position: relative;
+    min-height: 140px;
+    padding: 2rem 1rem;
     overflow: hidden;
-    background-size: 100%;
+    background-color: $dark-bg;
+    background-size: cover;
+    background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     text-align: center;
+    color: $white;
+
+    // Scrim: darkens the photo behind the title so white text stays legible on any image.
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba($dark-bg, .55) 0%, rgba($dark-bg, .25) 60%, rgba($dark-bg, .1) 100%);
+    }
+
+    > .container {
+        position: relative;
+    }
 
     &__title {
         @include media-breakpoint-up(md) {
-            font-size: 4.5rem;
-            margin-bottom: 30px;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
         }
+
+        font-size: 2.5rem;
+        text-shadow: 0 2px 12px rgba($black, .6), 0 1px 2px rgba($black, .8);
     }
 
     &__subtitle {
-        margin-bottom: 30px;
+        margin-bottom: 1.5rem;
         font-size: 1.5rem;
+        text-shadow: 0 1px 6px rgba($black, .8);
     }
 
     &__avatar {
@@ -42,11 +66,8 @@
         box-shadow: $black -1px 7px 30px;
     }
 
-    &--light {
-        color: $white;
-    }
-
-    &--dark {
-        color: $body-color;
+    // Bright photos: a heavier scrim rather than dark text, which disappears over busy images.
+    &--dark::before {
+        background: rgba($dark-bg, .55);
     }
 }

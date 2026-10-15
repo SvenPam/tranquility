@@ -8,8 +8,6 @@ tags: []
 
 <img src="/old/thai.jpg" alt="Thai Lime, Ginger and Prawn Stir Fry cooked by Stephen Pammenter." width="1">Here is something a little different for me to write about. This is one of my favourite dishes, it is super tasty and really easy to make. The ingredients aren't strict they are just rough estimates from what I get.
 
-<p>&nbsp;</p>
-
 <blockquote style="background: #FFF; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width: 658px; padding: 0; width: calc(100% - 2px);" class="instagram-media" data-instgrm-captioned="" data-instgrm-version="6">
 <div style="padding: 8px;">
 <div style="background: #F8F8F8; line-height: 0; margin-top: 40px; padding: 50.0% 0; text-align: center; width: 100%;">
@@ -39,8 +37,6 @@ Prep time: 20mins | Cooking time: 10mins | Serves: 2
 -   Salt
 -   1tbsp Sugar
 -   Soy Sauce
-
-<p>&nbsp;</p>
 
 ## Prep
 

@@ -22,11 +22,7 @@ layout: layouts/page.njk
 {%- if (updated or page.date) | isOld %}
 {% include "partials/old-alert.njk" %}
 {%- endif %}
-                    <div class="row">
-                    <div class="col-12 col-md-12">
 {{ content | safe }}
-                    </div>
-            </div>
     </div>
     <footer class="section__content">
         <nav>

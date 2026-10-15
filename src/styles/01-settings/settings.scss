@@ -9,11 +9,26 @@ $brand-danger:          #F44;
 $dark-bg:				#0C0C0E;
 $body-bg:               #EEE;
 $text-color:            #444;
-$link-color:            $brand-primary;
-$link-hover-color:      lighten($link-color, 15%);
+// The brand teal is too light for text on the pale sections, so links use a darker shade
+// there; dark sections switch back to the brand teal (see .section and .footer).
+$link-color:            darken($brand-primary, 18%);
+$link-hover-color:      darken($link-color, 10%);
+$link-color-on-dark:    $brand-primary;
+$link-hover-on-dark:    lighten($brand-primary, 15%);
 $brand-subtle:			#95A5A6;
 
 $font-size-base: 1.1rem;
+$line-height-base: 1.7;
+
+// Comfortable reading width for long-form text (roughly 65 characters of the monospace body font).
+$measure: 42rem;
+
+// Code: one dark block style that reads well on both the light and dark sections.
+$code-block-bg:         #16181B;
+$code-block-color:      #E9ECEF;
+$code-color:            inherit;
+$code-bg:               rgba(149, 165, 166, .2);
+$pre-color:             $code-block-color;
 
 $font-family-base: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 $image-url: '/a/dist/img';

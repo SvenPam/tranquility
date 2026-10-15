@@ -16,13 +16,9 @@ Long story short, here is the solution (I haven’t tested this):
 
 I make use of the HTML5 [Form Data](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object; this is [not supported in older browsers](http://caniuse.com/#feat=xhr2). The best fallback would be to check if `typeof FormData === "undefined"` and just do a normal form POST – you can’t use multiple file uploads anyway. FormData simply creates a valid XMLHttpRequest of key value pairs the server can read.
 
-<p>&nbsp;</p>
-
 ## AJAX Options
 
 The other important bit is the properties set in the AJAX call. Setting `contentType: false` means jQuery will not wrongly set HTTP content type header. Setting `processData: false` means the FormData object will not be processed wrongly into a string.
-
-<p>&nbsp;</p>
 
 ## C#
 

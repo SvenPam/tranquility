@@ -22,21 +22,15 @@ Initially I was creating blog posts by an editor and good old fashioned HTML, t
 
 The changes to this only affect the in-dev Windows Store App version of the site I am creating; simply amended to reflect the changes made with CRUD.
 
-<p>&nbsp;</p>
-
 ## Authentication
 
 This is extremely crude at the moment, but should lay some foundations for future extension. It was mainly added as a way to secure the above CRUD functions, but I figured it would be quite a neat way to store some email addresses, so you can get a notification when I update my blog.
 
 I am going to post some more in-depth detail regarding this as there isn't much up-to-date stuff on the web. In short, the system is built on the [MVC Identity](https://www.asp.net/identity/overview/getting-started/introduction-to-aspnet-identity) and [OWIN](http://owin.org/) (and OAuth) frameworks. The OWIN part is implemented but not used; I figured the only appropriate place for external authentication would be for comments - but DISQUS does the job well enough.
 
-<p>&nbsp;</p>
-
 ## Notification
 
 This was pretty sweet to work on. If you [register](/account/register) with my site, you will receive an email with a summary of the new blog. I based it on the HTML template I built a year ago for SABIC - making some minor style and optimisation tweaks. What I like so much about what I did, was making use of a view model to generate the email. So feel free to register an account, I am sure at some point I will be adding some features that will apply specifically to authenticated users.
-
-<p>&nbsp;</p>
 
 ## General
 
