@@ -17,7 +17,7 @@ I won't spend too much on this because I'm far more developer than a designer a
 When designers come to designing a website, I've seen a few different approaches. Each unique, with their own respective pros and cons. With Atomic Design, you design the little bits first, group them together and make gradually bigger bits. For example, you might start with a text box atom and a button atom. Put the two together, and you have a search molecule. Put a search molecule and a navigation molecule together and you might get a header organism. Put a load of organisms together, and you end up with a template. It sounds simple, but being strict in practice is hard.
 
 <figure>    <div class="article__img-holder" style="padding-bottom: 75%;">
-        <img width="1024" height="768" class="lazyload " data-src="/media/1061/atomic-design-process.png">
+        <img width="1024" height="768" src="/media/1061/atomic-design-process.png">
     </div>
         <figcaption>Atomic Design by Brad Frost</figcaption>
 </figure>

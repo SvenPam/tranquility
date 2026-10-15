@@ -13,7 +13,7 @@ Sprites are one of the classic web tricks you can use to prevent sequentially l
 If you're not too sure what a sprite is, here is a brief educational journey. Firstly, what do they solve? You might be familiar with network requests browsers make to pull assets onto the page.
 
 <figure>    <div class="article__img-holder" style="padding-bottom: 68.9530685920578%;">
-        <img width="831" height="573" class="lazyload " data-src="/media/1059/chrome-network-requests.jpg">
+        <img width="831" height="573" src="/media/1059/chrome-network-requests.jpg">
     </div>
         <figcaption>Network Requests in Chrome</figcaption>
 </figure>
@@ -37,7 +37,7 @@ For those of us using build tools, there are plenty of packages to do this for u
 I have a source folder of SVG icons - all separate images.
 
 <div class="article__img-holder" style="padding-bottom: 69.2682926829268%;">
-        <img width="205" height="142" class="lazyload " data-src="/media/1060/icon-files.jpg">
+        <img width="205" height="142" src="/media/1060/icon-files.jpg">
     </div>
 
 The package will use your folder names and file names to generate the CSS classes. Here is my gulp:

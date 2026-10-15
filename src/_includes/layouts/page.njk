@@ -1,9 +1,11 @@
 ---
 layout: layouts/base.njk
 ---
-<section class="hero hero--{{ theme or '' }}">
+<section class="hero hero--{{ theme or '' }}{% if page.url == "/" %} hero--blink{% endif %}">
+    {% heroTerrain heroSeed if heroSeed is number else (page.url | heroSeed) %}
     <div class="container">
-            <h1 class="hero__title">{{ heroTitle or altTitle or title }}</h1>
+            <p class="hero__prompt" aria-hidden="true"><span class="hero__host">ste@pam</span>:~$ {{ prompt or (page.url | heroPrompt) }}</p>
+            <h1 class="hero__title">{{ heroTitle or altTitle or title }}<span class="hero__cursor" aria-hidden="true"></span></h1>
 {%- if subtitle and not heroTitle %}
                 <h3 class="hero__subtitle">{{ subtitle }}</h3>
 {%- endif %}
