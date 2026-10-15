@@ -20,6 +20,4 @@ For your viewing pleasure, I have [**added the report to my site**](/fyp/fyp.pd
 
 It's not quite the end of Miru. I thoroughly anticipate in continuing work on the application, I have so many ideas flying around my head that I want to put in, specifically I want to drive some focus into the AR as Miru is a little bit... 'wet'. What's more, there is a little less "red-tape" with a solely personal project. During the project, some of the parts that may have been done quicker by re-using other code had to be avoided. So this will definitely be a very nice change.
 
-<p>&nbsp;</p>
-
 I will provide updates on any changes in due course, and perform the same blogging functions as I always have. The documentation will likely be less, if at all. Finally, as I have said Miru will be demoed at ExpoTees, so if you want to see it in action.

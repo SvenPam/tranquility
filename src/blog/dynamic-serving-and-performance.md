@@ -36,24 +36,17 @@ A summary of each vehicle is provided, the information given is enough to give a
 
 On the info page, textual information is prioritised - the image gallery is loaded further down the page. The look and feel is similar to the search page so users are familiar with controls and actions. In the gif (right), you can see the carousel cards in action.
 
-<p>&nbsp;</p>
-
 ## Performance
 
 Over the last few months, we have really driven focus on the results of Google Page Speed Insights, and have been marking the impact of changes against previous scores. We figured this an important metric for a great experience on mobile (and Desktop).
 
 My manager, Dave has been working on optimising the site as a whole and has built a lazy-load plugin, allowing us to load images below the fold after page ready. This has a drastic effect on performance, as the page is ready so much sooner. We've replaced many images on the site with the HTML5 picture element, allowing the browser to choose the image for the viewport size. This means small devices are not loading weighty images. To support legacy browsers, another plugin Dave wrote replaces picture elements with an image best suited to that viewport. We plan that in the future we may also take screen DPI into account, but support is not widespread just yet.
 
-<p>&nbsp;</p>
-
 We have managed to pull sites out of the red and into the yellow, and we're now working with vendors to get external scripts and styles minified which we're hoping will get us into the green. Sadly, we have to use Modernizr to ensure legacy browser support at the cost of a "render blocking script".  We're also working on optimal browser caching. Overall we have seen speed of our sites double because of this work on optimisation.
 
 <p style="text-align: center;"><img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAOOAAAAJGFmMmFiMmY1LWE4ODYtNGUwOS05NWJhLTBjOWUwNjQ5MzhhYw.png" alt="" width="700"></p>
-
-<p>&nbsp;</p>
 
 I believe Swansway is paving the way for optimised mobile, we are one of the few groups dynamically serving web pages to clients. We'd welcome any feedback, so please check our sites out! For the full experience this article discusses, try it on your phone.
 
  [www.swanswaygarages.com](http://www.swanswaygarages.com) is the best place to start - it leads to all our brands.
 
-<p>&nbsp;</p>

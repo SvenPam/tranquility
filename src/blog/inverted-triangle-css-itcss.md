@@ -8,8 +8,6 @@ tags: ["methodology", "itcss", "process", "front-end"]
 
 Yesterday I wrote about the [BEM methodology](/blog/lifes-better-with-bem "Life's better with BEM") as part of a small series on design to dev processes. I want to further expand on the processes I use and write about Inverted Triangle CSS or ITCSS. ITCSS is entirely _opinionated,_ there is no right or wrong. It's simply a tool which will help make your styles easier to maintain.
 
-<p>&nbsp;</p>
-
 ## A Note on Specificity
 
 CSS is easy to learn but very hard to master. One of the main reasons for this is a misunderstanding of specificity. Specificity is a fundamental principle to Cascading Style Sheets. See how I used the full name for CSS there? It was intentional. That's because specificity plays right into this cascading principle. I won't go into the details of specificity here, but if you aren't sure on what specificity is, I strongly advise reading the following: 
@@ -21,15 +19,11 @@ It's an important principle because **high specificity indicates poor maintaina
 
 If you want to measure your code maintainability, a useful tool is a [specificity graph generator](https://jonassebastianohlsson.com/specificity-graph/). A spiky graph is bad, one which is flat or curves upwards is good. This, of course, isn't the only measure and you shouldn't obsess over it. I hope by introducing you to ITCSS, it will really help make your styles more maintainable.
 
-<p>&nbsp;</p>
-
 ## So what is ITCSS?
 
 Harry Roberts coined the concept in 2015 and it hasn't changed much since. It's a pretty simple concept, and really just boils down to the directory structure, there is no mad tech involved.
 
 The basic concept is that your styles should be put into layers. It doesn't matter how many files are in each layer, the only thing that matters is the files are referenced in order the layers are. You can use ITCSS with any file types, in the below example I have used SASS. The examples are what I generally place in each layer.
-
-<p>&nbsp;</p>
 
 <div class="article__img-holder" style="padding-bottom: 52.375%;">
         <img width="800" height="419" class="lazyload " data-src="/media/1064/itcss-triangle.png">
@@ -46,8 +40,6 @@ These layers can be defined as follows:
 7.  Trumps - Utilities, theming and overrides
 
 As your project becomes more mature, you will find yourself working mostly in the components directory.
-
-<p>&nbsp;</p>
 
 ## Why ITCSS?
 
@@ -67,4 +59,3 @@ It allows you to deal with files and imports, instead of code. Having it in plac
 -   [How I applied ITCSS to this site](https://github.com/SvenPam/tranquility/tree/master/Tranquility.CMS/a/src/styles)
 -   [Harry Roberts' Talk](https://speakerdeck.com/dafed/managing-css-projects-with-itcss)
 
-<p>&nbsp;</p>

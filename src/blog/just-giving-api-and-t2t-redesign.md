@@ -18,8 +18,6 @@ Everything really took off from there, and it’s all been built on to that. I l
 <div class="iframe-container"><iframe id="t2t" src="//t2t.bike"></iframe></div>
 </div>
 
-<p>&nbsp;</p>
-
 I really like how it came out, and it’s a really good template for any generic charity site. All the CTAs I feel are well placed, and swap out some fonts and colours and the site is totally different. Fresh!
 
 ## Development
@@ -33,8 +31,6 @@ The project wasn’t just design either, it has required a little extra developm
 To get the donation meter on the front page I had to make some changes as well. Last year I really struggled to get the donations from _JustGiving_ directly, and resorted to using a third party API to pull down the information through JavaScript, client side. The obvious implications of this were sometimes the API I used failed; and, as the scripts to do this ran on page ready there was always going to be a delay in getting what should have been real-time data. Unfortunately, the API I used went down at some point between now and then, so I had to start from scratch. However, it looks like _JustGiving_ have been on the ball in that time, and they’ve built a full on API and SDK for an array of platforms including .NET. You can find their work on [GitHub](https://github.com/JustGiving/JustGiving.Api.Sdk), which is really cool of them to open source.
 
 I wanted to have the data on my server, so pages would be served as quickly as possible, and it looks like the API may still be in beta – sometimes the server times out. To get round this, I have every visitor update a JSON file for the next visitor. Sounds a bit weird right? Thought so.
-
-<p>&nbsp;</p>
 
 #### Here’s What I Did
 

@@ -8,16 +8,9 @@ tags: []
 
 In the back of my mind I was always sure that there was a short-cut to find a matching brace when working with source code. Turns out, there is!
 
-<p>&nbsp;</p>
-
 <blockquote>
 <p>Just discovered the short-cut "Ctrl+]" in <a href="https://twitter.com/VisualStudio">@VisualStudio</a> and it is glorious... Now to adapt it to muscle memory. <a href="https://twitter.com/search?q=%23timesaver&amp;src=hash">#timesaver</a></p>
 — Stephen Pammenter (@SvenPam) <a href="https://twitter.com/SvenPam/statuses/479196189053956096">June 18, 2014</a></blockquote>
 
-<p>&nbsp;</p>
-
 This is especially useful with stuff like Razor, as its syntax is already highlighted (at least in VS Sons of Obsidian theme I use), meaning it can be a little tricky trying to locate braces when stuff gets a little nested.
 
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>

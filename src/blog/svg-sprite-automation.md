@@ -12,8 +12,6 @@ Sprites are one of the classic web tricks you can use to prevent sequentially l
 
 If you're not too sure what a sprite is, here is a brief educational journey. Firstly, what do they solve? You might be familiar with network requests browsers make to pull assets onto the page.
 
-<p>&nbsp;</p>
-
 <figure>    <div class="article__img-holder" style="padding-bottom: 68.9530685920578%;">
         <img width="831" height="573" class="lazyload " data-src="/media/1059/chrome-network-requests.jpg">
     </div>
@@ -38,8 +36,6 @@ For those of us using build tools, there are plenty of packages to do this for u
 
 I have a source folder of SVG icons - all separate images.
 
-<p>&nbsp;</p>
-
 <div class="article__img-holder" style="padding-bottom: 69.2682926829268%;">
         <img width="205" height="142" class="lazyload " data-src="/media/1060/icon-files.jpg">
     </div>
@@ -56,4 +52,3 @@ There is a little trick to this package - especially if you're using build tools
 
 After this, you will just need to use the references for background positions, and style the icons as required.
 
-<p>&nbsp;</p>

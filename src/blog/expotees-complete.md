@@ -14,4 +14,3 @@ I was very overwhelmed with the amount of great people who sought me from every 
 
 For more information on Miru, please check out [this page](/miru) on my site...
 
-<p>&nbsp;</p>

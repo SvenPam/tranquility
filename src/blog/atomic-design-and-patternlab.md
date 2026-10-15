@@ -10,15 +10,11 @@ So I've spoken about [how to use BEM](/blog/lifes-better-with-bem "Life's better
 
 In 2015 I went to the annual [UpFront conference](https://upfrontconf.com/) in Manchester, one guest speaker was [Brad Frost](https://twitter.com/brad_frost). It was a really good conference, if you're a front-end developer or even a designer, it's well worth going. Brad introduced this concept of Atomic Design, a design methodology where you design the small pieces of UX first (atoms) and piece them together until you get to a full page. To support this concept, he also introduced the idea of putting Atomic Design into a style guide powered by Patternlab.
 
-<p>&nbsp;</p>
-
 ## Atomic Design
 
 I won't spend too much on this because I'm far more developer than a designer and I am very likely going to butcher this process...
 
 When designers come to designing a website, I've seen a few different approaches. Each unique, with their own respective pros and cons. With Atomic Design, you design the little bits first, group them together and make gradually bigger bits. For example, you might start with a text box atom and a button atom. Put the two together, and you have a search molecule. Put a search molecule and a navigation molecule together and you might get a header organism. Put a load of organisms together, and you end up with a template. It sounds simple, but being strict in practice is hard.
-
-<p>&nbsp;</p>
 
 <figure>    <div class="article__img-holder" style="padding-bottom: 75%;">
         <img width="1024" height="768" class="lazyload " data-src="/media/1061/atomic-design-process.png">
@@ -29,8 +25,6 @@ When designers come to designing a website, I've seen a few different approaches
 What this process brings to the table is loosely coupled UI elements. It makes design easier (I assume) and it makes handing designs over to developers really easy. At _The Lead Agency_ we combine this with [Zeplin](https://zeplin.io/). Our designers create a style guide in a PSD or whatever software they work with and upload it to Zeplin. This gives us developers all the colours, margins, fonts, sizes - you name it - to work with. Having these little pieces, also means we can really concentrate on the quality of each little component and isolate styles at a micro level.
 
 If you want to read more about Atomic Design, Brad wrote a [book you can read for free](http://atomicdesign.bradfrost.com/table-of-contents/).
-
-<p>&nbsp;</p>
 
 ## Patternlab
 
@@ -63,8 +57,6 @@ The docs are really good, I've added the mustache.js one in there because if you
 Data precedence is an important part of PatternLab. At the lowest level, data comes from `_data/data.json`. Every pattern can then override values by using `patternName.json`, where the highest level wins.
 
 Avoid listItems - whilst it is a neat part of PatternLab, I found it buggy and it doesn't appear to follow the same data precedence as the rest of the data. It's easier to control lists via an array in JSON.
-
-<p>&nbsp;</p>
 
 ## Cons
 
