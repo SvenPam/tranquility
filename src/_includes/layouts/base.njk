@@ -2,7 +2,7 @@
 <html lang="en-gb">
 <head>
 {% include "partials/meta.njk" %}
-    <link href="/a/dist/css/ste-pam.min.css" rel="stylesheet" />
+    <link href="/a/dist/css/ste-pam.min.css?v={{ cssVersion }}" rel="stylesheet" />
 {% if heroImage %}{% heroStyle heroImage, heroFocus %}{% endif %}
     <script>
         window.lazyLoadOptions = {

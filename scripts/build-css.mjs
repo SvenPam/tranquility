@@ -2,6 +2,7 @@ import * as sass from "sass";
 import postcss from "postcss";
 import autoprefixer from "autoprefixer";
 import CleanCSS from "clean-css";
+import { createHash } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -23,9 +24,11 @@ export async function buildCss({ outDir = "_site" } = {}) {
   const outFile = path.join(outDir, "a/dist/css/ste-pam.min.css");
   await mkdir(path.dirname(outFile), { recursive: true });
   await writeFile(outFile, min.styles);
-  return outFile;
+  // Content hash, appended to the stylesheet URL so each change busts browser and CDN caches.
+  const version = createHash("sha256").update(min.styles).digest("hex").slice(0, 10);
+  return { file: outFile, version };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  console.log(await buildCss());
+  console.log((await buildCss()).file);
 }
