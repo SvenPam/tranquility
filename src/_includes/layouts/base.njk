@@ -3,15 +3,6 @@
 <head>
 {% include "partials/meta.njk" %}
     <link href="/a/dist/css/ste-pam.min.css?v={{ cssVersion }}" rel="stylesheet" />
-{% if heroImage %}{% heroStyle heroImage, heroFocus %}{% endif %}
-    <script>
-        window.lazyLoadOptions = {
-            elements_selector: ".lazyload",
-            class_loaded: "lazyloaded",
-            class_loading: "lazyloading"
-        };
-    </script>
-    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script>
 </head>
 <body>
 {% include "partials/nav.njk" %}

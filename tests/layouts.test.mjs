@@ -83,7 +83,7 @@ test("article: title, canonical and og:image", () => {
   assert.equal($('link[rel="canonical"]').attr("href"), "https://ste-pam.com/blog/sass-loops");
   assert.equal($('meta[property="og:image"]').attr("content"), "https://ste-pam.com/og/blog/sass-loops.png");
   assert.equal($('meta[name="twitter:image"]').attr("content"), "https://ste-pam.com/og/blog/sass-loops.png");
-  assert.match(read("blog/sass-loops/index.html"), /<head>\s*<meta charset="utf-8" \/>/);
+  assert.match(read("blog/sass-loops/index.html"), /<head>\s*<meta charset="utf-8"\s*\/?>/);
 });
 
 test("article: no Instagram script unless the body embeds Instagram", () => {

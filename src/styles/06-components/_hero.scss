@@ -5,12 +5,6 @@
     @include media-breakpoint-up(md) {
         min-height: 370px;
         padding: 3rem 2rem;
-        background-image: url('#{$image-url}/generic/2.jpg');
-        background-size: 100% auto;
-    }
-
-    @include media-breakpoint-down(sm) {
-        background-image: url('#{$image-url}/generic/2-100.jpg');
     }
 
     position: relative;
@@ -18,15 +12,19 @@
     padding: 2rem 1rem;
     overflow: hidden;
     background-color: $dark-bg;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     margin: 0;
-    text-align: center;
     color: $white;
 
-    // Scrim: darkens the photo behind the title so white text stays legible on any image.
+    // Contour map drawn by an inline SVG filter (config/hero.js).
+    &__terrain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    // Scrim: fades the contour lines behind the text, which sits on the left.
     &::before {
         content: '';
         position: absolute;
@@ -34,11 +32,44 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: linear-gradient(to bottom, rgba($dark-bg, .55) 0%, rgba($dark-bg, .25) 60%, rgba($dark-bg, .1) 100%);
+        z-index: 1;
+        background: linear-gradient(to right, rgba($dark-bg, .85) 0%, rgba($dark-bg, .5) 45%, rgba($dark-bg, 0) 85%);
+    }
+
+    &__prompt {
+        margin-bottom: .5rem;
+        color: $brand-subtle;
+        font-size: .95rem;
+        overflow-wrap: anywhere;
+    }
+
+    &__host {
+        color: $brand-primary;
+    }
+
+    &__cursor {
+        display: inline-block;
+        width: .55em;
+        height: .9em;
+        margin-left: .2em;
+        vertical-align: -.05em;
+        background-color: $brand-secondary;
+        opacity: .7;
+    }
+
+    // Home page only: the cursor blinks.
+    &--blink &__cursor {
+        opacity: 1;
+        animation: hero-blink 1.1s steps(2, jump-none) infinite;
+
+        @media (prefers-reduced-motion: reduce) {
+            animation: none;
+        }
     }
 
     > .container {
         position: relative;
+        z-index: 2;
     }
 
     &__title {
@@ -66,8 +97,19 @@
         box-shadow: $black -1px 7px 30px;
     }
 
-    // Bright photos: a heavier scrim rather than dark text, which disappears over busy images.
+    // Busier pages: a heavier scrim, so the contour lines sit further back.
     &--dark::before {
-        background: rgba($dark-bg, .55);
+        background: rgba($dark-bg, .6);
+    }
+}
+
+// from/to rather than 50%: Beasties can't parse percentage keyframes in the -o- prefixed copy.
+@keyframes hero-blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }

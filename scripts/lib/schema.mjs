@@ -1,14 +1,12 @@
 import { z } from "zod";
 
-const focus = z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) });
-
 export const page = z.object({
   title: z.string().min(1),
   altTitle: z.string().optional(),
   subtitle: z.string().optional(),
   description: z.string().optional(),
-  heroImage: z.string().regex(/^\/media\/\d+\/[^?#]+$/).optional(),
-  heroFocus: focus.optional(),
+  prompt: z.string().min(1).optional(),
+  heroSeed: z.number().int().min(0).optional(),
   theme: z.enum(["", "light", "dark"]).optional(),
   leadingSpacer: z.boolean().optional(),
   ogImage: z.string().optional(),
