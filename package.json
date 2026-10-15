@@ -5,7 +5,7 @@
   "description": "Source for ste-pam.com",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=26"
   },
   "scripts": {
     "build": "npm run validate && eleventy",
