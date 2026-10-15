@@ -26,6 +26,6 @@ At the start, I kept pace with our designer and would continue to do so for at l
 
 All in all, I really enjoyed the experience and I would like to keep at running. It’s an extremely refreshing sport, and there is just something really nice about needing no equipment or any skills to just go out and enjoy life!
 
-<p><iframe height="405" width="590" frameborder="0" allowtransparency="true" scrolling="no" src="https://www.strava.com/activities/527943682/embed/a594ea32b6e8f4329615b880c8d29b3dbdf20a7b"></iframe></p>
+<p><iframe title="Strava activity: Crewe 10k run" height="405" width="590" frameborder="0" allowtransparency="true" scrolling="no" src="https://www.strava.com/activities/527943682/embed/a594ea32b6e8f4329615b880c8d29b3dbdf20a7b"></iframe></p>
 
-…Now to start training for this year’s [Tower to Tower cycle](http://t2t.bike/) from Paris, France to Pisa, Italy!
+…Now to start training for this year’s [Tower to Tower cycle](https://t2t.bike/) from Paris, France to Pisa, Italy!

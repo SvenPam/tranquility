@@ -14,7 +14,7 @@ tags: []
 <div style="background: url(data:image/png; base64,ivborw0kggoaaaansuheugaaacwaaaascamaaaapwqozaaaagfbmveuiiii9pt0ehh4gib4hibkchbwchbwchbydr+jqaaaachrstlmaba4yhyqsm5jtamwaaadfsurbvdjl7zvbegmhcaqbaf//42xcnbpaqakcm0ftumfaaibe81iqbjds3ls6zs3bipb9wed3yyxfpmhrft8sgyrcp1x8ueuxlmznwelfoycv6mhwwwmzdpekhlhlw7nwjqkhc4uizphavdza2jpzudsbzzinae2s6owh8xpmx8g7zzgkeopuoyhvgz1tbcxmkd3kwnvbu0gkhkx+izilf77iofhry1nyfnb/lqpb79drwoyjva/davg9b/rlb4cc+nqgdz/tvbbbnr6gbreqn/nrmdgaqeej7whonozjf+y2i/fzou/qaaaaaelftksuqmcc); display: block; height: 44px; margin: 0 auto -44px; position: relative; top: -22px; width: 44px;"></div>
 </div>
 <p style="margin: 8px 0 0 0; padding: 0 4px;"><a style="color: #000; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 17px; text-decoration: none; word-wrap: break-word;" href="https://www.instagram.com/p/BBS3TzPxZzr/" target="_blank">To think @holly1478 and @emma_g_89 say I can't cook! #thai #chilli #stirfry 🍜</a></p>
-<p style="color: #c9c8cd; font-family: Arial,sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; text-overflow: ellipsis; white-space: nowrap;">A photo posted by Stephen Pammenter (@spammenter) on Feb 2, 2016 at 10:57am PST</p>
+<p style="color: #595959; font-family: Arial,sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; text-overflow: ellipsis; white-space: nowrap;">A photo posted by Stephen Pammenter (@spammenter) on Feb 2, 2016 at 10:57am PST</p>
 </div>
 </blockquote>
 

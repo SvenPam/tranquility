@@ -12,7 +12,7 @@ As always, another interesting problem that I solved at work. Our lead designer 
 
 The boring solution would be to create a class for each li and write in each colour - boring! We're in the industrious modern age of CSS pre-processors!
 
-### CSS3 
+## CSS3 
 
 Firstly let's stick with what we know, CSS3, `:nth` selectors have been around for a while and they are a perfect fit here. Already we're not going to have to write `.class-1{...} .class-2{...} .class-3{...}` in our HTML we can forget this would ever be a thing, we just have to worry about our CSS, so we can instead do `li:nth(1){...} li:nth(2){...} li:nth(3){...}`.
 

@@ -8,16 +8,14 @@ tags: []
 
 On Sunday 29th June at around 13:00, we glided into Bridlington on our array of road bikes.
 
-<p><img style="width: 95%;" src="/content/img/c2c.jpg" alt=""></p>
-
 Friday night was spent at the lovely [Bewerley Hall Farm](http://www.bewerleyhallfarm.co.uk/index.html) in Pateley Bridge, I would thoroughly recommend staying there (especially if you like pictures of cats, and Dolores Umbridge-esque decor).
 
-### Saturday
+## Saturday
 
                   
 Saturday was long, but relatively flat. Bizarrely the route led straight through the centre of York during the peak of the day; needless to say it was packed with people! Following directly on from that, the route petered out into a dirt track and we had a rough time especially considering that we're on road bikes. To get to our accommodation for Saturday night, we had to take a three mile detour from the route, leading us to the Steer Inn, near Pocklington. Food, service and beds were great; but if you're a fan of showers the Steer Inn is not the place for you. We had a hard time trying to conclude exactly how the plumbing worked in that place, the shower was either scalding hot or freezing cold - only coming in intermittent spurts!?
 
-### Sunday
+## Sunday
 
 Starting  with a full English, and another amazing day of weather for the final leg. Unbelievably we still had to do a lot of climbing, made much harder by the route passing through an airless sweltering valley. Peaking the top of this, a fresh breeze rolled over us, and the smell of the sea gushed forth. This stimulated a 'second wind', and we flew for miles on a downhill stretch all the way into Bridlington.
 

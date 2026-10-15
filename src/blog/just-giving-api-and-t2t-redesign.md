@@ -15,7 +15,7 @@ It’s always fun to start a new project – if not a little daunting. I didn’
 Everything really took off from there, and it’s all been built on to that. I loved last year’s hero video and wanted to carry that across to the new site, with a jazzed up texture overlay. I roped in my designer colleague to help me with some flat graphics and I have expanded my knowledge of SVGs to build some flags and optimise the original _.eps_ files of the graphics sent to me.
 
 <div class="browser-mockup">
-<div class="iframe-container"><iframe id="t2t" src="//t2t.bike"></iframe></div>
+<div class="iframe-container"><iframe id="t2t" title="Tower to Tower cycle website" src="https://t2t.bike"></iframe></div>
 </div>
 
 I really like how it came out, and it’s a really good template for any generic charity site. All the CTAs I feel are well placed, and swap out some fonts and colours and the site is totally different. Fresh!

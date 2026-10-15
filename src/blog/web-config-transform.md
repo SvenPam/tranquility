@@ -22,6 +22,6 @@ I did some more digging around to try and find out a little more information on 
 > 
 > **web.release.config** This is the transform that is applied when you publish your application to the "production" environment. Obviously you'll have to be careful with passwords depending on your application/team.
 > 
->     - <a style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: #4a6b82; cursor: pointer; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-style: normal; line-height: 17px; white-space: nowrap; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" href="http://stackoverflow.com/users/105999/sayed-ibrahim-hashimi">Sayed Ibrahim Hashimi</a>
+>     - <a href="http://stackoverflow.com/users/105999/sayed-ibrahim-hashimi">Sayed Ibrahim Hashimi</a>
 
 Sayed really sums it up, and the whole thing instantly makes a lot more sense!

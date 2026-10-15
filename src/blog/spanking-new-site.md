@@ -14,7 +14,7 @@ Which leads me on to the final reason for change: new technology. After seeing a
 
 Welcome to my new site.
 
-### So what’s New?
+## So what’s New?
 
 Good question! As you can see, the colour scheme has changed; and the whole site looks a lot brighter.
 

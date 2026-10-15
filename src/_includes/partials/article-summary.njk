@@ -1,6 +1,6 @@
 <article class="media">
     <div class="media_body">
-        <h4 class="media__heading"><a class="media__link" href="{{ article.url | cleanUrl }}">{{ article.data.title }}</a></h4>
+        <h2 class="media__heading h4"><a class="media__link" href="{{ article.url | cleanUrl }}">{{ article.data.title }}</a></h2>
         <time class="text-muted" datetime="{{ article.date | dateIso }}">{{ article.date | dateShort }}</time>
         <p>{{ article.data.description }}</p>
     </div>

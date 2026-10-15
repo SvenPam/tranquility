@@ -18,4 +18,4 @@ Sick.
 
 Here is a [video](https://www.youtube.com/watch?v=vzJFzNr5YL4) of our sadistic killer in action!
 
-<p><iframe width="560" height="315" src="//www.youtube.com/embed/vzJFzNr5YL4" frameborder="0" allowfullscreen=""></iframe></p>
+<p><iframe title="YouTube video: tarantula hawk" width="560" height="315" src="https://www.youtube.com/embed/vzJFzNr5YL4" frameborder="0" allowfullscreen=""></iframe></p>

@@ -17,7 +17,7 @@ I won't spend too much on this because I'm far more developer than a designer a
 When designers come to designing a website, I've seen a few different approaches. Each unique, with their own respective pros and cons. With Atomic Design, you design the little bits first, group them together and make gradually bigger bits. For example, you might start with a text box atom and a button atom. Put the two together, and you have a search molecule. Put a search molecule and a navigation molecule together and you might get a header organism. Put a load of organisms together, and you end up with a template. It sounds simple, but being strict in practice is hard.
 
 <figure>    <div class="article__img-holder" style="padding-bottom: 75%;">
-        <img width="1024" height="768" src="/media/1061/atomic-design-process.png">
+        <img width="1024" height="768" src="/media/1061/atomic-design-process.png" alt="Atomic Design process: atoms, molecules, organisms, templates and pages">
     </div>
         <figcaption>Atomic Design by Brad Frost</figcaption>
 </figure>
@@ -43,7 +43,7 @@ It's really important you read the documentation on the Patternlab site because 
 -   Pseudo Patterns
 -   Style Modifiers
 
-#### Getting Set Up
+### Getting Set Up
 
 Patternlab takes a bit of getting used to because you can go overboard very quickly. I would suggest before starting you read up on two things:
 
@@ -52,7 +52,7 @@ Patternlab takes a bit of getting used to because you can go overboard very qui
 
 The docs are really good, I've added the mustache.js one in there because if you haven't seen this before, it's simply a new concept to understand. I won't go into more detail than the docs - they show you how to set everything up and it's going to be far more up to date than this article will ever be!
 
-#### Gotchas
+### Gotchas
 
 Data precedence is an important part of PatternLab. At the lowest level, data comes from `_data/data.json`. Every pattern can then override values by using `patternName.json`, where the highest level wins.
 

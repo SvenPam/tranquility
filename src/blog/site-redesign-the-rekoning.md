@@ -10,7 +10,7 @@ So, I finally got around to redesigning my website. It’s been a long time look
 
 <div class="col-xs-12">
 <div class="browser-mockup">
-<div class="iframe-container"><iframe id="test" src="/?domain=old.ste-pam.com"></iframe></div>
+<div class="iframe-container"><iframe id="test" title="The old ste-pam.com design" src="/?domain=old.ste-pam.com"></iframe></div>
 </div>
 </div>
 
