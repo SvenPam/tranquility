@@ -94,6 +94,10 @@ The implementation plan broke the work up. It is then a case of Claude working t
 
 One of the final tasks was migrating content over. Now there is 15 years of content, various migrations, etc. Perfect task for Claude again. Proof reading was included, my goodness, there were grammatical and spelling errors galore. All fixed by Claude.
 
+![An article on the new site: the SASS Loops post under a terminal style hero, with an old article warning](/media/site-50/article-now.png)
+
+*An old article on the new site.*
+
 ## The DevOpsy bits
 
 Another step was the *DevOpsy* stuff. It's not an interest of mine. I love it when it works. I have seen some really cool stuff. However, the yml, and the configuration and infrastructure code to get there is not something I enjoy reading or writing. I could defer to the expertise of Claude to plumb everything together based on my desire to host on Azure Static Web Apps. Claude wrote the bicep and the GitHub pipelines. The E2E tests ran throughout the changes. 
@@ -115,6 +119,14 @@ The final thing was orchestration of everything, and the switchover. Up to now, 
 ## Where it ended up
 
 So here we are now. V5 is on Eleventy. All the content is in Markdown. I wrote this article in Obsidian, and had Claude push into Git. The CSS is nearly all the same. The HTML too. It's all hosted on Azure Static Web Apps. No database.
+
+![The old Umbraco home page: a photo of Lake District hills behind the name, with the intro text on a pale background](/media/site-50/home-umbraco.png)
+
+*Before: the Umbraco site.*
+
+![The same home page on the static site: a terminal style prompt over a dark contour map, with the same intro text below](/media/site-50/home-now.png)
+
+*After: the static site today.*
 
 - 58 articles, all on their original URLs. 84 URL checks pass against the live domain.
 - Around 290 spelling, typo and grammar fixes across 54 articles. Each one is logged, so I could review them and the tests could prove nothing else changed.
