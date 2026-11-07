@@ -118,7 +118,7 @@ The final thing was orchestration of everything, and the switchover. Up to now, 
 
 ## Where it ended up
 
-So here we are now. V5 is on Eleventy. All the content is in Markdown. I wrote this article in Obsidian, and had Claude push into Git. The CSS is nearly all the same. The HTML too. It's all hosted on Azure Static Web Apps. No database.
+So here we are now. V5 is on Eleventy. All the content is in Markdown. I wrote this article in Obsidian, and had Claude push into Git. The CSS and HTML matched the old site when it went live. I have restyled it since, with a new hero and better contrast, which is easy to do when the whole site is a few Markdown files and a stylesheet. It's all hosted on Azure Static Web Apps. No database.
 
 ![The old Umbraco home page: a photo of Lake District hills behind the name, with the intro text on a pale background](/media/site-50/home-umbraco.png)
 
